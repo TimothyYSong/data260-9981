@@ -1,0 +1,1147 @@
+* I forgot to save the console output from the original nondeterminism runs.
+The original 40-run results and reported metrics are preserved in
+reports/hw01/raw/nondeterminism_results.json and reports/hw01/METRICS.md. 
+I reran the 40 runs and saved the console output here.
+
+Run started: Sun Aug 30 23:09:39 PDT 2026
+
+Temperature: 0.7
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Run 1: ['Routine Inspection', 'Inspection Passed', 'Facility Compliance'] 18955.67 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Run 2: ['Routine Inspection', 'Inspection Passed', 'Facility Compliance'] 16947.82 ms
+Planner Output
+{
+  "tags": [
+    "Inspection Passed",
+    "Facility Compliance",
+    "Health Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all facilities meeting required standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection Passed",
+    "Facility Compliance",
+    "Health Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all facilities meeting required standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection Passed",
+    "Facility Compliance",
+    "Health Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all facilities meeting required standards."
+}
+Run 3: ['Inspection Passed', 'Facility Compliance', 'Health Standards'] 26034.61 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Run 4: ['Routine Inspection', 'Inspection Passed', 'Facility Standards'] 19956.26 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Run 5: ['Inspection', 'Routine Check', 'Food Safety'] 16809.59 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "O2 Valley",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "O2 Valley",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "O2 Valley",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Run 6: ['Routine Inspection', 'O2 Valley', 'Facility Standards'] 18319.60 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Run 7: ['Routine Inspection', 'Inspection Passed', 'Compliance Check'] 18439.67 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all facilities meeting required standards."
+}
+Run 8: ['Routine Inspection', 'Inspection Passed', 'Facility Standards'] 17807.22 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed its routine inspection, with dining, kitchen, freezer, and prep areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed its routine inspection, with dining, kitchen, freezer, and prep areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed its routine inspection, with dining, kitchen, freezer, and prep areas meeting standards."
+}
+Run 9: ['Inspection', 'Routine Check', 'Facility Standards'] 19938.70 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting compliance standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting compliance standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting compliance standards."
+}
+Run 10: ['Routine Inspection', 'Inspection Passed', 'Compliance Standards'] 16672.16 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Run 11: ['Routine Inspection', 'Inspection Passed', 'Facility Compliance'] 17182.62 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Compliance Check"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Run 12: ['Routine Inspection', 'Inspection Passed', 'Compliance Check'] 18498.47 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley successfully passed the routine inspection with all dining, kitchen, freezer, and prep areas meeting standards."
+}
+Run 13: ['Routine Inspection', 'Inspection Passed', 'Facility Standards'] 23901.57 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety"
+  ],
+  "summary": "O2 Valley passed routine inspection; dining, kitchen, freezer, and prep areas met standards."
+}
+Run 14: ['Inspection', 'Routine Check', 'Food Safety'] 18224.32 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Standards"
+  ],
+  "summary": "O2 Valley passed routine inspection with all areas meeting standards."
+}
+Run 15: ['Inspection', 'Routine Check', 'Facility Standards'] 20352.65 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with all key areas including dining, kitchen, freezer, and prep station meeting standards."
+}
+Run 16: ['Inspection', 'Routine Check', 'Facility Compliance'] 19021.70 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in all inspected areas including dining, kitchen, freezer, and prep station."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in all inspected areas including dining, kitchen, freezer, and prep station."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Food Safety Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in all inspected areas including dining, kitchen, freezer, and prep station."
+}
+Run 17: ['Inspection', 'Routine Check', 'Food Safety Compliance'] 17917.08 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with dining, kitchen, freezer, and prep areas meeting all standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with dining, kitchen, freezer, and prep areas meeting all standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley passed routine inspection with dining, kitchen, freezer, and prep areas meeting all standards."
+}
+Run 18: ['Routine Inspection', 'Inspection Passed', 'Facility Compliance'] 17469.19 ms
+Planner Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Hygiene Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting hygiene standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Hygiene Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting hygiene standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Routine Inspection",
+    "Inspection Passed",
+    "Hygiene Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting hygiene standards."
+}
+Run 19: ['Routine Inspection', 'Inspection Passed', 'Hygiene Compliance'] 20164.73 ms
+Planner Output
+{
+  "tags": [
+    "Compliance",
+    "Food Safety",
+    "Operational Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in dining, kitchen, freezer, and prep areas."
+}
+Reviewer Output
+{
+  "tags": [
+    "Compliance",
+    "Food Safety",
+    "Operational Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in dining, kitchen, freezer, and prep areas."
+}
+Finalized Output
+{
+  "tags": [
+    "Compliance",
+    "Food Safety",
+    "Operational Standards"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, meeting standards in dining, kitchen, freezer, and prep areas."
+}
+Run 20: ['Compliance', 'Food Safety', 'Operational Standards'] 18443.67 ms
+
+Temperature: 0.0
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 1: ['Inspection', 'Routine Check', 'Facility Compliance'] 14936.01 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 2: ['Inspection', 'Routine Check', 'Facility Compliance'] 13489.60 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 3: ['Inspection', 'Routine Check', 'Facility Compliance'] 13479.31 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 4: ['Inspection', 'Routine Check', 'Facility Compliance'] 13759.02 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 5: ['Inspection', 'Routine Check', 'Facility Compliance'] 14067.12 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 6: ['Inspection', 'Routine Check', 'Facility Compliance'] 13705.72 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 7: ['Inspection', 'Routine Check', 'Facility Compliance'] 13670.11 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 8: ['Inspection', 'Routine Check', 'Facility Compliance'] 13936.26 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 9: ['Inspection', 'Routine Check', 'Facility Compliance'] 13804.77 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 10: ['Inspection', 'Routine Check', 'Facility Compliance'] 13705.61 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 11: ['Inspection', 'Routine Check', 'Facility Compliance'] 13664.55 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 12: ['Inspection', 'Routine Check', 'Facility Compliance'] 13709.33 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 13: ['Inspection', 'Routine Check', 'Facility Compliance'] 13819.24 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 14: ['Inspection', 'Routine Check', 'Facility Compliance'] 13792.48 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 15: ['Inspection', 'Routine Check', 'Facility Compliance'] 13773.06 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 16: ['Inspection', 'Routine Check', 'Facility Compliance'] 13659.10 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 17: ['Inspection', 'Routine Check', 'Facility Compliance'] 13713.72 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 18: ['Inspection', 'Routine Check', 'Facility Compliance'] 13766.89 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 19: ['Inspection', 'Routine Check', 'Facility Compliance'] 13672.01 ms
+Planner Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Reviewer Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Finalized Output
+{
+  "tags": [
+    "Inspection",
+    "Routine Check",
+    "Facility Compliance"
+  ],
+  "summary": "O2 Valley successfully passed its routine inspection, with all key areas meeting standards."
+}
+Run 20: ['Inspection', 'Routine Check', 'Facility Compliance'] 13605.55 ms
+
+The results for temperature 0.7
+The distinct tag sets: 12
+The tags in all 20 runs: []
+The tags in exactly 1 run: ['Health Standards', 'O2 Valley', 'Compliance Standards', 'Food Safety Compliance', 'Hygiene Compliance', 'Compliance', 'Operational Standards']
+Latency for p50: 18441.67 ms
+Latency for p95: 24008.22 ms
+Latency for p99: 25629.33 ms
+
+The results for temperature 0.0
+The distinct tag sets: 1
+The tags in all 20 runs: ['Facility Compliance', 'Routine Check', 'Inspection']
+The tags in exactly 1 run: []
+Latency for p50: 13711.52 ms
+Latency for p95: 14110.56 ms
+Latency for p99: 14770.92 ms
+Run finished: Sun Aug 30 23:20:36 PDT 2026

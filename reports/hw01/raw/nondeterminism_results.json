@@ -1,0 +1,402 @@
+[
+  {
+    "temperature": 0.7,
+    "trial": 1,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Compliance"
+    ],
+    "latency_ms": 18955.673457996454
+  },
+  {
+    "temperature": 0.7,
+    "trial": 2,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Compliance"
+    ],
+    "latency_ms": 16947.824874980142
+  },
+  {
+    "temperature": 0.7,
+    "trial": 3,
+    "tags": [
+      "Inspection Passed",
+      "Facility Compliance",
+      "Health Standards"
+    ],
+    "latency_ms": 26034.6094169945
+  },
+  {
+    "temperature": 0.7,
+    "trial": 4,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Standards"
+    ],
+    "latency_ms": 19956.259083002806
+  },
+  {
+    "temperature": 0.7,
+    "trial": 5,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Food Safety"
+    ],
+    "latency_ms": 16809.594375023153
+  },
+  {
+    "temperature": 0.7,
+    "trial": 6,
+    "tags": [
+      "Routine Inspection",
+      "O2 Valley",
+      "Facility Standards"
+    ],
+    "latency_ms": 18319.5968750224
+  },
+  {
+    "temperature": 0.7,
+    "trial": 7,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Compliance Check"
+    ],
+    "latency_ms": 18439.668624982005
+  },
+  {
+    "temperature": 0.7,
+    "trial": 8,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Standards"
+    ],
+    "latency_ms": 17807.221499999287
+  },
+  {
+    "temperature": 0.7,
+    "trial": 9,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Standards"
+    ],
+    "latency_ms": 19938.69683300727
+  },
+  {
+    "temperature": 0.7,
+    "trial": 10,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Compliance Standards"
+    ],
+    "latency_ms": 16672.161458001938
+  },
+  {
+    "temperature": 0.7,
+    "trial": 11,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Compliance"
+    ],
+    "latency_ms": 17182.6246669807
+  },
+  {
+    "temperature": 0.7,
+    "trial": 12,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Compliance Check"
+    ],
+    "latency_ms": 18498.46916599199
+  },
+  {
+    "temperature": 0.7,
+    "trial": 13,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Standards"
+    ],
+    "latency_ms": 23901.56900000875
+  },
+  {
+    "temperature": 0.7,
+    "trial": 14,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Food Safety"
+    ],
+    "latency_ms": 18224.323834001552
+  },
+  {
+    "temperature": 0.7,
+    "trial": 15,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Standards"
+    ],
+    "latency_ms": 20352.654000016628
+  },
+  {
+    "temperature": 0.7,
+    "trial": 16,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 19021.7013329966
+  },
+  {
+    "temperature": 0.7,
+    "trial": 17,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Food Safety Compliance"
+    ],
+    "latency_ms": 17917.082208994543
+  },
+  {
+    "temperature": 0.7,
+    "trial": 18,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Facility Compliance"
+    ],
+    "latency_ms": 17469.1892080009
+  },
+  {
+    "temperature": 0.7,
+    "trial": 19,
+    "tags": [
+      "Routine Inspection",
+      "Inspection Passed",
+      "Hygiene Compliance"
+    ],
+    "latency_ms": 20164.734417019645
+  },
+  {
+    "temperature": 0.7,
+    "trial": 20,
+    "tags": [
+      "Compliance",
+      "Food Safety",
+      "Operational Standards"
+    ],
+    "latency_ms": 18443.66612500744
+  },
+  {
+    "temperature": 0.0,
+    "trial": 1,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 14936.013333004666
+  },
+  {
+    "temperature": 0.0,
+    "trial": 2,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13489.604041998973
+  },
+  {
+    "temperature": 0.0,
+    "trial": 3,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13479.313582996838
+  },
+  {
+    "temperature": 0.0,
+    "trial": 4,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13759.018125012517
+  },
+  {
+    "temperature": 0.0,
+    "trial": 5,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 14067.119874991477
+  },
+  {
+    "temperature": 0.0,
+    "trial": 6,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13705.71837501484
+  },
+  {
+    "temperature": 0.0,
+    "trial": 7,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13670.110791019397
+  },
+  {
+    "temperature": 0.0,
+    "trial": 8,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13936.264000018127
+  },
+  {
+    "temperature": 0.0,
+    "trial": 9,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13804.774374992121
+  },
+  {
+    "temperature": 0.0,
+    "trial": 10,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13705.609750002623
+  },
+  {
+    "temperature": 0.0,
+    "trial": 11,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13664.545250008814
+  },
+  {
+    "temperature": 0.0,
+    "trial": 12,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13709.329582983628
+  },
+  {
+    "temperature": 0.0,
+    "trial": 13,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13819.237209012499
+  },
+  {
+    "temperature": 0.0,
+    "trial": 14,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13792.478749994189
+  },
+  {
+    "temperature": 0.0,
+    "trial": 15,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13773.056040983647
+  },
+  {
+    "temperature": 0.0,
+    "trial": 16,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13659.098875010386
+  },
+  {
+    "temperature": 0.0,
+    "trial": 17,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13713.715666992357
+  },
+  {
+    "temperature": 0.0,
+    "trial": 18,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13766.892667015782
+  },
+  {
+    "temperature": 0.0,
+    "trial": 19,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13672.006667009555
+  },
+  {
+    "temperature": 0.0,
+    "trial": 20,
+    "tags": [
+      "Inspection",
+      "Routine Check",
+      "Facility Compliance"
+    ],
+    "latency_ms": 13605.551750020823
+  }
+]

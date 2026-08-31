@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <<title>HW1-Timothy Song</title>
+</head>
+<body> 
+    <h1>Local Restaurant Inspections</h1>
+    <form id="inspectionForm">
+        <label for="restaurantName">What is the restaurant's name?</label>
+        <input type="text" id="restaurantName" name="restaurantName" placeholder="Please enter the restaurant's name..." required autofocus><br><br>
+        <label for="restaurantAddress">What is the restaurant's address?</label>
+        <input type="text" id="restaurantAddress" name="restaurantAddress" placeholder="Please enter the restaurant's address..." required><br><br>
+        <label for="submitterEmail">What is the submitter's email?</label>
+        <input type="email" id="submitterEmail" name="submitterEmail" placeholder="Please enter the submitter's email..." required><br><br>
+        <label for="inspectionSummary">Please give a summary of the inspection:</label>
+        <textarea id="inspectionSummary" name="inspectionSummary" placeholder="Please enter the inspection summary..." required></textarea><br><br>
+        <label for="category">Please select the type of inspection:</label>
+        <select id="category" name="category">
+            <option value="routine">Routine Inspection</option>
+            <option value="follow-up">Follow-Up Inspection</option>
+            <option value="complaint">Complaint Inspection</option>
+            <option value="reinstatement">Reinstatement Inspection</option>
+        </select><br><br>
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the terms and conditions.</label><br><br>
+        <input type="submit" value="Submit inspection">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

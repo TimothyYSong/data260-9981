@@ -1,5 +1,5 @@
 (1) what you used an AI assistant for and what you did yourself
-I used an AI assistant to help explain parts of the assignment requirements I did not understand, assist with debugging and troubleshooting, check syntax, styling, and formatting, and provide help when I got stuck. I implemented and ran the code myself, tested and collected the results, took the screenshots, and created the report. I also summarized the assignment process for AI to help me create the run instructions.
+I used an AI assistant to help explain parts of the assignment requirements I did not understand, assist with coding, debugging, and troubleshooting, check syntax, styling, and formatting, help with Docker, Ollama, and AWS setup and configuration, and provide help when I got stuck. I also used an AI assistant for help with Git/GitHub and summarized the assignment process for AI to help me create the reproducible run instructions. I implemented and ran the code myself, tested and collected the results, took the screenshots, and created the report.
 
 (2) one AI-produced output that was wrong/unsuitable, or one thing you independently verified
 An AI assistant helped me with an import "from code.agents_demo import pipeline", but I had edited my repository and the AI assistant was not up to date. 

@@ -1,30 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <<title>HW1-Timothy Song</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2-Timothy Song</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body> 
-    <h1>Local Restaurant Inspections</h1>
-    <form id="inspectionForm">
-        <label for="restaurantName">What is the restaurant's name?</label>
-        <input type="text" id="restaurantName" name="restaurantName" placeholder="Please enter the restaurant's name..." required autofocus><br><br>
-        <label for="restaurantAddress">What is the restaurant's address?</label>
-        <input type="text" id="restaurantAddress" name="restaurantAddress" placeholder="Please enter the restaurant's address..." required><br><br>
-        <label for="submitterEmail">What is the submitter's email?</label>
-        <input type="email" id="submitterEmail" name="submitterEmail" placeholder="Please enter the submitter's email..." required><br><br>
-        <label for="inspectionSummary">Please give a summary of the inspection:</label>
-        <textarea id="inspectionSummary" name="inspectionSummary" placeholder="Please enter the inspection summary..." required></textarea><br><br>
-        <label for="category">Please select the type of inspection:</label>
-        <select id="category" name="category">
-            <option value="routine">Routine Inspection</option>
-            <option value="follow-up">Follow-Up Inspection</option>
-            <option value="complaint">Complaint Inspection</option>
-            <option value="reinstatement">Reinstatement Inspection</option>
-        </select><br><br>
-        <input type="checkbox" id="terms" name="terms">
-        <label for="terms">I agree to the terms and conditions.</label><br><br>
-        <input type="submit" value="Submit inspection">
+<body>
+    <h1 class="heading">Local Restaurant Inspections</h1>
+    <div class="form-container">
+        <form id="inspectionForm">
+            <div class="form-group">
+                <label for="restaurantName">What is the restaurant's name?</label>
+                <input type="text" id="restaurantName" name="restaurantName" placeholder="Please enter the restaurant's name..." required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="restaurantAddress">What is the restaurant's address?</label>
+                <input type="text" id="restaurantAddress" name="restaurantAddress" placeholder="Please enter the restaurant's address..." required>
+            </div>
+            <div class="form-group">
+                <label for="submitterEmail">What is the submitter's email?</label>
+                <input type="email" id="submitterEmail" name="submitterEmail" placeholder="Please enter the submitter's email..." required>
+            </div>
+            <div class="form-group">
+                <label for="inspectionSummary">Please give a summary of the inspection:</label>
+                <textarea id="inspectionSummary" name="inspectionSummary" placeholder="Please enter the inspection summary..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Please select the type of inspection:</label>
+                <select id="category" name="category">
+                    <option value="routine">Routine Inspection</option>
+                    <option value="follow-up">Follow-Up Inspection</option>
+                    <option value="complaint">Complaint Inspection</option>
+                    <option value="reinstatement">Reinstatement Inspection</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">I agree to the terms and conditions.</label>
+            </div>
+            <input type="submit" value="Submit inspection">
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Update Restaurant ID 1</h2>
+        <form id="updateForm">
+            <div class="form-group">
+                <label for="updateRestaurantName">New restaurant name:</label>
+                <input type="text" id="updateRestaurantName" name="updateRestaurantName" placeholder="Enter new restaurant name..." required>
+            </div>
+            <div class="form-group">
+                <label for="updateRestaurantAddress">New restaurant address:</label>
+                <input type="text" id="updateRestaurantAddress" name="updateRestaurantAddress" placeholder="Enter new restaurant address..." required>
+            </div>
+            <input type="submit" value="Update ID 1">
+        </form>
+    </div>
+    <div class="form-container">
+    <h2>Delete Highest ID</h2>
+    <form id="deleteForm">
+        <input type="submit" value="Delete Highest ID">
     </form>
-    <script src="script.js"></script>
+    </div>
+    <div class="inspection-list">
+        <h2>Restaurant Inspection List</h2>
+        <div id="loadingState" class="state-message">Loading inspections...</div>
+        <div id="emptyState" class="state-message" hidden>No restaurant inspections found.</div>
+        <div id="errorState" class="state-message" hidden>Unable to load restaurant inspections.</div>
+        <div id="listState" class="table-wrapper" hidden>
+            <table class="inspection-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Restaurant</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="inspectionTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="form-container">
+    <h2>Search Restaurants</h2>
+    <form id="searchForm">
+        <div class="form-group">
+            <label for="searchInput">Search by restaurant name or address:</label>
+            <input type="text" id="searchInput" name="searchInput" placeholder="Enter restaurant name or address..." required>
+        </div>
+        <input type="submit" value="Search">
+    </form>
+    </div>
+    <script src="/static/script.js"></script>
 </body>
 </html>

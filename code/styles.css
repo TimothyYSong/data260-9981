@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+h1,
+h2 {
+    color: black;
+}
+.heading {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.form-container,
+.inspection-list {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+textarea {
+    min-height: 100px;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.checkbox-group label {
+    margin-bottom: 0;
+}
+button,
+input[type="submit"] {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+button:hover,
+input[type="submit"]:hover {
+    background-color: #0b7dda;
+}
+.state-message {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.inspection-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+}
+.inspection-table th,
+.inspection-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.inspection-table th {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+@media (max-width: 375px) {
+    body {
+        padding: 10px;
+    }
+    .form-container,
+    .inspection-list {
+        margin: 10px auto;
+        padding: 12px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select,
+    input[type="submit"] {
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .inspection-table {
+        min-width: 500px;
+    }
+}

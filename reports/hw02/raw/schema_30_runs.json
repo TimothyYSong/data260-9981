@@ -1,0 +1,266 @@
+{
+  "input": {
+    "title": "O2 Valley Inspection",
+    "content": "O2 Valley passed the routine inspection with flying colors."
+  },
+  "runs": [
+    {
+      "run": 1,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 19546.01
+    },
+    {
+      "run": 2,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16827.0
+    },
+    {
+      "run": 3,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16836.92
+    },
+    {
+      "run": 4,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16855.14
+    },
+    {
+      "run": 5,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16838.78
+    },
+    {
+      "run": 6,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16859.85
+    },
+    {
+      "run": 7,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16884.49
+    },
+    {
+      "run": 8,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16882.84
+    },
+    {
+      "run": 9,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16870.86
+    },
+    {
+      "run": 10,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16914.97
+    },
+    {
+      "run": 11,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16881.43
+    },
+    {
+      "run": 12,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16848.9
+    },
+    {
+      "run": 13,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16846.72
+    },
+    {
+      "run": 14,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16836.61
+    },
+    {
+      "run": 15,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16851.45
+    },
+    {
+      "run": 16,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16838.18
+    },
+    {
+      "run": 17,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16845.71
+    },
+    {
+      "run": 18,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16848.19
+    },
+    {
+      "run": 19,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16840.01
+    },
+    {
+      "run": 20,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16837.33
+    },
+    {
+      "run": 21,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16849.79
+    },
+    {
+      "run": 22,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16854.52
+    },
+    {
+      "run": 23,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16828.53
+    },
+    {
+      "run": 24,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16841.28
+    },
+    {
+      "run": 25,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16819.02
+    },
+    {
+      "run": 26,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16853.46
+    },
+    {
+      "run": 27,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16843.34
+    },
+    {
+      "run": 28,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16828.31
+    },
+    {
+      "run": 29,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16826.44
+    },
+    {
+      "run": 30,
+      "classification": "valid_first_attempt",
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "turn_count": 3,
+      "latency_ms": 16828.98
+    }
+  ],
+  "summary": {
+    "valid_first_attempt": {
+      "count": 30,
+      "mean_latency_ms": 16938.84
+    },
+    "valid_after_1_retry": {
+      "count": 0,
+      "mean_latency_ms": null
+    },
+    "valid_after_2_or_more_retries": {
+      "count": 0,
+      "mean_latency_ms": null
+    },
+    "abandoned_at_ceiling": {
+      "count": 0,
+      "mean_latency_ms": null
+    }
+  }
+}

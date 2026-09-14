@@ -1,0 +1,386 @@
+{
+  "input": {
+    "title": "O2 Valley Inspection",
+    "content": "O2 Valley passed the routine inspection with flying colors."
+  },
+  "model_settings": {
+    "model": "qwen3:8b",
+    "temperature": 0.0
+  },
+  "runs": [
+    {
+      "ceiling": 2,
+      "run": 1,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 11545.41
+    },
+    {
+      "ceiling": 2,
+      "run": 2,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9581.63
+    },
+    {
+      "ceiling": 2,
+      "run": 3,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9596.55
+    },
+    {
+      "ceiling": 2,
+      "run": 4,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9609.44
+    },
+    {
+      "ceiling": 2,
+      "run": 5,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9602.15
+    },
+    {
+      "ceiling": 2,
+      "run": 6,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9608.21
+    },
+    {
+      "ceiling": 2,
+      "run": 7,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9589.37
+    },
+    {
+      "ceiling": 2,
+      "run": 8,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9588.91
+    },
+    {
+      "ceiling": 2,
+      "run": 9,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9598.27
+    },
+    {
+      "ceiling": 2,
+      "run": 10,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9605.84
+    },
+    {
+      "ceiling": 2,
+      "run": 11,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9622.74
+    },
+    {
+      "ceiling": 2,
+      "run": 12,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9605.02
+    },
+    {
+      "ceiling": 2,
+      "run": 13,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9610.01
+    },
+    {
+      "ceiling": 2,
+      "run": 14,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9606.51
+    },
+    {
+      "ceiling": 2,
+      "run": 15,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9612.56
+    },
+    {
+      "ceiling": 2,
+      "run": 16,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9614.14
+    },
+    {
+      "ceiling": 2,
+      "run": 17,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9605.45
+    },
+    {
+      "ceiling": 2,
+      "run": 18,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9595.01
+    },
+    {
+      "ceiling": 2,
+      "run": 19,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9591.06
+    },
+    {
+      "ceiling": 2,
+      "run": 20,
+      "completed": false,
+      "turn_count": 2,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 9596.43
+    },
+    {
+      "ceiling": 10,
+      "run": 1,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 17501.14
+    },
+    {
+      "ceiling": 10,
+      "run": 2,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16792.41
+    },
+    {
+      "ceiling": 10,
+      "run": 3,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16793.11
+    },
+    {
+      "ceiling": 10,
+      "run": 4,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16797.51
+    },
+    {
+      "ceiling": 10,
+      "run": 5,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16801.33
+    },
+    {
+      "ceiling": 10,
+      "run": 6,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16804.44
+    },
+    {
+      "ceiling": 10,
+      "run": 7,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16886.31
+    },
+    {
+      "ceiling": 10,
+      "run": 8,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 17720.01
+    },
+    {
+      "ceiling": 10,
+      "run": 9,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16965.64
+    },
+    {
+      "ceiling": 10,
+      "run": 10,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16844.09
+    },
+    {
+      "ceiling": 10,
+      "run": 11,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16801.37
+    },
+    {
+      "ceiling": 10,
+      "run": 12,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16934.25
+    },
+    {
+      "ceiling": 10,
+      "run": 13,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 17045.65
+    },
+    {
+      "ceiling": 10,
+      "run": 14,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 17133.4
+    },
+    {
+      "ceiling": 10,
+      "run": 15,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16981.77
+    },
+    {
+      "ceiling": 10,
+      "run": 16,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16963.65
+    },
+    {
+      "ceiling": 10,
+      "run": 17,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16887.52
+    },
+    {
+      "ceiling": 10,
+      "run": 18,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16871.04
+    },
+    {
+      "ceiling": 10,
+      "run": 19,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16823.71
+    },
+    {
+      "ceiling": 10,
+      "run": 20,
+      "completed": true,
+      "turn_count": 3,
+      "planner_attempts": 1,
+      "validation_failures": 0,
+      "latency_ms": 16823.64
+    }
+  ],
+  "summary": {
+    "2": {
+      "runs": 20,
+      "completed": 0,
+      "completion_rate_percent": 0.0,
+      "mean_latency_ms": 9699.24
+    },
+    "10": {
+      "runs": 20,
+      "completed": 20,
+      "completion_rate_percent": 100.0,
+      "mean_latency_ms": 16958.6
+    }
+  }
+}

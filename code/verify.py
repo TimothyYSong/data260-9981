@@ -1,28 +1,51 @@
 import json
-import py_compile
+import os
+import subprocess
+import sys
+import time
+import urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
+CODE = ROOT / "code"
+OUTPUT = ROOT / "reports" / "hw02" / "verification.json"
+SID4 = 9981
+PORT_BASE = 8081
+PREFIX = "s9981"
+SEED = 9981
+VERIFY_SEED = 269981
+DOMAIN_ID = 5
+MODEL = "qwen3:8b"
+TEMPERATURE = 0.0
+sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(CODE))
 checks = {}
 def record(name, passed, details=""):
     checks[name] = {
         "passed": bool(passed),
         "details": details
     }
+def get_commit_hash():
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True
+        ).strip()
+    except Exception:
+        return "unknown"
 required_files = [
-    "AGENT.md",
-    "DOMAIN_SCHEMA.md",
-    "README.md",
+    "code/main.py",
     "code/agents_demo.py",
-    "code/hw1_client.py",
-    "code/run_pipeline.py",
-    "code/Dockerfile",
     "src/model_client.py",
-    "reports/hw01/RUN_LOG.txt",
-    "reports/hw01/METRICS.md",
-    "reports/hw01/AI_USE.md",
-    "reports/hw01/cases/nondeterminism_input.json",
-    "reports/hw01/raw/nondeterminism_results.json",
-    "reports/hw01/raw/token_counts.json"
+    "reports/hw02/cases/schema_input.json",
+    "reports/hw02/cases/adversarial_input.json",
+    "reports/hw02/raw/schema_30_runs.json",
+    "reports/hw02/raw/ceiling_comparison.json",
+    "reports/hw02/raw/adversarial_5_runs.json",
+    "reports/hw02/RUN_LOG.txt",
+    "reports/hw02/METRICS.md",
+    "reports/hw02/AI_USE.md",
+    "reports/hw02/reproducible_run_instructions.md"
 ]
 missing_files = [
     path for path in required_files
@@ -31,149 +54,124 @@ missing_files = [
 record(
     "required_files_exist",
     len(missing_files) == 0,
-    "All required files exist."
+    "All required HW2 files exist."
     if not missing_files
     else f"Missing files: {missing_files}"
 )
-python_files = [
-    ROOT / "code/agents_demo.py",
-    ROOT / "code/hw1_client.py",
-    ROOT / "code/run_pipeline.py",
-    ROOT / "src/model_client.py"
-]
-compile_errors = []
-for file in python_files:
-    try:
-        py_compile.compile(str(file), doraise=True)
-    except Exception as error:
-        compile_errors.append(f"{file.name}: {error}")
-record(
-    "python_files_compile",
-    len(compile_errors) == 0,
-    "All Python files compiled successfully."
-    if not compile_errors
-    else str(compile_errors)
-)
+server = None
 try:
-    from src.model_client import ModelClient
-
-    record(
-        "model_client_complete_interface",
-        hasattr(ModelClient, "complete"),
-        "ModelClient defines the complete method."
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT)
+    server = subprocess.Popen(
+        [sys.executable, "main.py"],
+        cwd=CODE,
+        env=env,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
     )
-except Exception as error:
+    backend_responded = False
+    status_code = None
+    for _ in range(20):
+        try:
+            with urllib.request.urlopen(
+                f"http://127.0.0.1:{PORT_BASE}/api/restaurants",
+                timeout=2
+            ) as response:
+                status_code = response.status
+                backend_responded = status_code == 200
+                break
+        except Exception:
+            time.sleep(0.5)
     record(
-        "model_client_complete_interface",
-        False,
-        str(error)
+        "fastapi_responds_on_port_base",
+        backend_responded,
+        f"GET /api/restaurants returned HTTP {status_code}."
+        if backend_responded
+        else f"FastAPI did not return HTTP 200 on port {PORT_BASE}."
     )
-input_path = ROOT / "reports/hw01/cases/nondeterminism_input.json"
+finally:
+    if server is not None:
+        server.terminate()
+        try:
+            server.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            server.kill()
 try:
+    from agents_demo import build_graph
+    input_path = ROOT / "reports" / "hw02" / "cases" / "schema_input.json"
     with open(input_path, "r") as file:
         fixed_input = json.load(file)
-    valid_input = (
-        isinstance(fixed_input.get("title"), str)
-        and len(fixed_input["title"]) > 0
-        and isinstance(fixed_input.get("content"), str)
-        and len(fixed_input["content"]) > 0
+    app = build_graph()
+    initial_state = {
+        "title": fixed_input["title"],
+        "content": fixed_input["content"],
+        "planner_proposal": {},
+        "reviewer_feedback": {},
+        "turn_count": 0,
+        "max_turns": 10,
+        "planner_attempts": 0,
+        "validation_failures": 0
+    }
+    start = time.perf_counter()
+    final_state = app.invoke(initial_state)
+    elapsed_seconds = time.perf_counter() - start
+    graph_finished = isinstance(final_state, dict)
+    record(
+        "langgraph_finishes",
+        graph_finished,
+        f"LangGraph finished in {elapsed_seconds:.2f} seconds."
+        if graph_finished
+        else "LangGraph did not return a final state."
+    )
+    proposal = final_state.get("planner_proposal", {})
+    tags = proposal.get("tags", [])
+    summary = proposal.get("summary", "")
+    valid_tags = (
+        isinstance(tags, list)
+        and len(tags) == 3
+        and all(
+            isinstance(tag, str)
+            and 3 <= len(tag) <= 30
+            for tag in tags
+        )
     )
     record(
-        "nondeterminism_input_valid",
-        valid_input,
-        "Fixed input contains a non-empty title and content."
+        "planner_returns_exactly_three_valid_tags",
+        valid_tags,
+        f"Planner returned {len(tags)} tags."
+    )
+    valid_summary = (
+        isinstance(summary, str)
+        and len(summary.split()) <= 25
+    )
+    record(
+        "planner_summary_within_25_words",
+        valid_summary,
+        f"Planner summary contains {len(summary.split())} words."
+    )
+    reviewer_feedback = final_state.get("reviewer_feedback", {})
+    reviewer_completed = (
+        isinstance(reviewer_feedback, dict)
+        and "has_issue" in reviewer_feedback
+    )
+    record(
+        "reviewer_completes",
+        reviewer_completed,
+        "Reviewer returned structured feedback."
+        if reviewer_completed
+        else "Reviewer feedback was missing."
+    )
+    within_turn_ceiling = (
+        final_state.get("turn_count", 0) <= 10
+    )
+    record(
+        "graph_respects_turn_ceiling",
+        within_turn_ceiling,
+        f"Graph finished with turn_count={final_state.get('turn_count')}."
     )
 except Exception as error:
     record(
-        "nondeterminism_input_valid",
-        False,
-        str(error)
-    )
-results_path = ROOT / "reports/hw01/raw/nondeterminism_results.json"
-try:
-    with open(results_path, "r") as file:
-        results = json.load(file)
-
-    record(
-        "nondeterminism_total_runs",
-        len(results) == 40,
-        f"Found {len(results)} runs; expected 40."
-    )
-    temp_07 = [
-        run for run in results
-        if run.get("temperature") == 0.7
-    ]
-    temp_00 = [
-        run for run in results
-        if run.get("temperature") == 0.0
-    ]
-    record(
-        "temperature_0_7_runs",
-        len(temp_07) == 20,
-        f"Found {len(temp_07)} runs at temperature 0.7; expected 20."
-    )
-    record(
-        "temperature_0_0_runs",
-        len(temp_00) == 20,
-        f"Found {len(temp_00)} runs at temperature 0.0; expected 20."
-    )
-    exactly_three_tags = all(
-        isinstance(run.get("tags"), list)
-        and len(run["tags"]) == 3
-        for run in results
-    )
-    record(
-        "three_tags_per_run",
-        exactly_three_tags,
-        "Every nondeterminism run contains exactly 3 tags."
-    )
-    valid_latencies = all(
-        isinstance(run.get("latency_ms"), (int, float))
-        and run["latency_ms"] >= 0
-        for run in results
-    )
-    record(
-        "latency_values_valid",
-        valid_latencies,
-        "Every nondeterminism run contains a valid non-negative latency."
-    )
-except Exception as error:
-    record(
-        "nondeterminism_results_valid",
-        False,
-        str(error)
-    )
-token_path = ROOT / "reports/hw01/raw/token_counts.json"
-try:
-    with open(token_path, "r") as file:
-        token_counts = json.load(file)
-    record(
-        "token_count_turns",
-        len(token_counts) == 5,
-        f"Found {len(token_counts)} token-count turns; expected 5."
-    )
-    correct_turn_numbers = [
-        item.get("turn") for item in token_counts
-    ] == [1, 2, 3, 4, 5]
-    record(
-        "token_turn_numbers",
-        correct_turn_numbers,
-        "Token-count records contain turns 1 through 5."
-    )
-    totals_match = all(
-        item.get("total_tokens")
-        == item.get("input_tokens", 0)
-        + item.get("output_tokens", 0)
-        for item in token_counts
-    )
-    record(
-        "token_totals_match",
-        totals_match,
-        "Each total token count equals input tokens plus output tokens."
-    )
-except Exception as error:
-    record(
-        "token_counts_valid",
+        "langgraph_smoke_test",
         False,
         str(error)
     )
@@ -182,12 +180,22 @@ overall_pass = all(
     for check in checks.values()
 )
 verification = {
-    "homework": "HW1",
-    "overall_pass": overall_pass,
-    "checks": checks
+    "homework": "HW2",
+    "sid4": SID4,
+    "commit_hash": get_commit_hash(),
+    "configuration": {
+        "port_base": PORT_BASE,
+        "prefix": PREFIX,
+        "domain_id": DOMAIN_ID,
+        "model": MODEL,
+        "temperature": TEMPERATURE
+    },
+    "seed": SEED,
+    "verify_seed": VERIFY_SEED,
+    "checks": checks,
+    "overall_pass": overall_pass
 }
-output_path = ROOT / "reports/hw01/verification.json"
-with open(output_path, "w") as file:
+with open(OUTPUT, "w") as file:
     json.dump(verification, file, indent=2)
 print(json.dumps(verification, indent=2))
-print(f"\nSaved verification results to: {output_path}")
+print(f"\nSaved verification results to: {OUTPUT}")

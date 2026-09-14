@@ -1,0 +1,45 @@
+{
+  "homework": "HW2",
+  "sid4": 9981,
+  "commit_hash": "0828c82a6a8c90a9ba5f4bc537c343c5dad527f4",
+  "configuration": {
+    "port_base": 8081,
+    "prefix": "s9981",
+    "domain_id": 5,
+    "model": "qwen3:8b",
+    "temperature": 0.0
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "checks": {
+    "required_files_exist": {
+      "passed": true,
+      "details": "All required HW2 files exist."
+    },
+    "fastapi_responds_on_port_base": {
+      "passed": true,
+      "details": "GET /api/restaurants returned HTTP 200."
+    },
+    "langgraph_finishes": {
+      "passed": true,
+      "details": "LangGraph finished in 21.93 seconds."
+    },
+    "planner_returns_exactly_three_valid_tags": {
+      "passed": true,
+      "details": "Planner returned 3 tags."
+    },
+    "planner_summary_within_25_words": {
+      "passed": true,
+      "details": "Planner summary contains 10 words."
+    },
+    "reviewer_completes": {
+      "passed": true,
+      "details": "Reviewer returned structured feedback."
+    },
+    "graph_respects_turn_ceiling": {
+      "passed": true,
+      "details": "Graph finished with turn_count=3."
+    }
+  },
+  "overall_pass": true
+}

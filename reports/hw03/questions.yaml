@@ -1,0 +1,36 @@
+questions:
+  - id: q1
+    question: "What are the three major activities in the verification process for a voluntary food safety management system?"
+    expected_answer: >
+      The three major activities are document review, record review,
+      and on-site verification.
+    expected_source: "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf"
+
+  - id: q2
+    question: "What is the primary purpose of field verification when reviewing a voluntary food safety management system?"
+    expected_answer: >
+      The primary purpose of field verification is to determine whether the activities
+      carried out in support of a validated food safety management system are being
+      conducted according to the written plan.
+    expected_source: "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf"
+
+  - id: q3
+    question: "What is the purpose of the FDA Food Code?"
+    expected_answer: >
+      The purpose of the FDA Food Code is to safeguard public health and provide
+      consumers food that is safe, unadulterated, and honestly presented.
+    expected_source: "fda-food-code-2026.pdf"
+
+  - id: q4
+    question: "What are common examples of critical control points in a retail food HACCP system?"
+    expected_answer: >
+      Common examples include cooking, cooling, hot holding, and cold holding of
+      ready-to-eat time/temperature control for safety foods.
+    expected_source: "fda-food-code-2026.pdf"
+
+  - id: q5
+    question: "What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?"
+    expected_answer: >
+      The candidate must have an average score of at least 90 percent and must not
+      disagree with the FDA Standard on more than 12 items in any one establishment.
+    expected_source: "retail_standardization_manual_2022.pdf"

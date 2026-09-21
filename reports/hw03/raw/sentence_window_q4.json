@@ -1,0 +1,74 @@
+{
+  "technique": "sentence_window",
+  "question_id": "q4",
+  "query": "What are common examples of critical control points in a retail food HACCP system?",
+  "expected_answer": "Common examples include cooking, cooling, hot holding, and cold holding of ready-to-eat time/temperature control for safety foods.\n",
+  "expected_source": "fda-food-code-2026.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.006045117042958736,
+    -0.021328838542103767,
+    -0.07716592401266098,
+    0.030889352783560753,
+    -0.005775071680545807,
+    0.060758840292692184,
+    0.00328802689909935,
+    0.05551189184188843
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 125.1820829929784,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7391930703389826,
+      "cosine_sim": 0.7391930691121722,
+      "chunk_len": 203,
+      "preview": "Control measures essential to food safety like proper cooking, cooling, and refrigeration of ready-to-eat, potentially hazardous foods are applied at critical c",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": " \n 60\nthat can be used to prevent, eliminate, or reduce a hazard.   Some control measures are \nnot essential to food safety, while others are.   \n Control measures essential to food safety like proper cooking, cooling, and refrigeration \nof ready-to-eat, potentially hazardous foods are applied at critical control points (CCPs) \nin the HACCP plan.   The term control measure is used because not all hazards can be \nprevented, but virtually all can be controlled.  More than one control measure may be \nrequired for a specific hazard.   Likewise, more than one hazard may be addressed by a \nspecific control measure (e.g. "
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7274187182603282,
+      "cosine_sim": 0.7274187210764653,
+      "chunk_len": 243,
+      "preview": "Control measures essential to food safety like proper cooking, cooling, and refrigeration of ready-to-eat, time/temperature control for safety foods are usually",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "Upon completion of the hazard analysis, a list of significant hazards that must be \nconsidered in the HACCP plan is made, along with any measure(s) that can be used to \ncontrol the hazards.  These measures, called control measures, are actions or activities \nthat can be used to prevent, eliminate, or reduce a hazard.  Some control measures are \nnot essential to food safety, while others are.  Control measures essential to food safety \nlike proper cooking, cooling, and refrigeration of ready-to-eat, time/temperature control \nfor safety foods are usually applied at critical control points (CCPs) in the HACCP plan \n(discussed later).  The term control measure is used because not all hazards can be \nprevented, but virtually all can be controlled.  More than one control measure may be \nrequired for a specific hazard.  Likewise, more than one hazard may be addressed by a \nspecific control measure (e.g., proper cooking).  \n  "
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6861558814846594,
+      "cosine_sim": 0.6861558824081555,
+      "chunk_len": 133,
+      "preview": "Consequently, many food safety management systems at the retail level incorporate some, if not all, of the principles of HACCP.",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "The resources available to retail and food service \noperators to help them with identifying and controlling the risk factors particular to their \noperations also vary.   Due to this diversity, implementation of “textbook HACCP” is \nimpractical in most retail and food service operations.      \n \n Like many other quality assurance programs, the principles of HACCP provide a \ncommon-sense approach to identifying and controlling “problems.”    Consequently,   \nmany food safety management systems at the retail level incorporate some, if not all, of \nthe principles of HACCP.   Given the diversity of retail and food service operations, \nhowever, it is important for you to recognize that there is more than one  “correct” \napplication of HACCP principles.   Regulatory inspection programs must be flexible "
+    },
+    {
+      "rank": 4,
+      "store_score": 0.6807067505373193,
+      "cosine_sim": 0.6807067485537489,
+      "chunk_len": 213,
+      "preview": "HAZARD ANALYSIS AND CRITICAL CONTROL POINT (HACCP) means a prevention-based food safety system that identifies and monitors specific food safety hazards that ca",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "FOODBORNE ILLNESS means illness resulting from the consumption of foods or \nbeverages contaminated with disease-causing microorganisms, chemicals, or other \nharmful substances.  \n \n FOODBORNE OUTBREAK means the occurrence of two or more cases of a similar \nillness resulting from the ingestion of a common food. \n \n HAZARD means a biological, chemical, or physical property that may cause a food to \nbe unsafe for human consumption. \n \n HAZARD ANALYSIS AND CRITICAL CONTROL POINT (HACCP) means a \nprevention-based food safety system that identifies and monitors specific food safety \nhazards that can adversely affect the safety of food products. \n \n HACCP PLAN means a written document that is based on the principles of HACCP and \nthat describes the procedures to be followed to ensure the control of a specific process \nor procedure. \n \n HACCP SYSTEM means the result of the implementation of the HACCP plan.   A \nHACCP system includes the HACCP plan and all the prerequisite programs. \n \n"
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6781364672077096,
+      "cosine_sim": 0.6781364733141878,
+      "chunk_len": 148,
+      "preview": "\"Critical control point\" means a point or procedure in a specific *FOOD system where loss of control may result in an unacceptable health *RISK.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "(2) \"Core item\" includes an item that usually relates to general sanitation, \noperational controls, sanitation standard operating procedures (SSOPs), \nfacilities or structures, *EQUIPMENT design, or general maintenance.  \n \"Corrosion-resistant material\" means a material that maintains acceptable \nsurface cleanability characteristics under prolonged influence of the *FOOD to be \ncontacted, the normal use of cleaning compounds and *SANITIZING solutions, and \nother conditions of the use environment.  \n \"Counter-mounted equipment\" means *EQUIPMENT that is not portable and is \ndesigned to be mounted off the floor on a table, counter, or shelf.  \n \"Critical control point\" means a point or procedure in a specific *FOOD system \nwhere loss of control may result in an unacceptable health *RISK.  \n \"Critical limit\" means the maximum or minimum value to which a physical, \nbiological, or chemical parameter must be controlled at a *CRITICAL CONTROL \nPOINT to minimize the *RISK that the identified *FOOD safety *HAZARD may occur. "
+    }
+  ]
+}

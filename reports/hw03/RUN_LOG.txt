@@ -1,0 +1,434 @@
+RUN START: 2026-09-21T01:03:39-07:00
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11344.89it/s]
+Loaded 1023 document/page objects.
+
+First extracted page preview:
+Managing Food Safety: 
+A Regulator’s Manual  
+For Applying HACCP 
+Principles to Risk-
+based Retail and Food 
+Service Inspections 
+and Evaluating 
+Voluntary Food Safety 
+Management Systems 
+ 
+Additional copies are available from: 
+ 
+Office of Food Safety 
+    Retail Food and Cooperative Programs
+       Coordination Staff/Retail Food Protection Team (HFS-320)
+                          Center for Food Safety and Applied Nutrition
+                                      Food and Drug Administration
+  
+
+Token chunks: 3220
+Semantic chunks: 2253
+Sentence-window chunks: 17016
+
+Chunk statistics:
+{
+  "token": {
+    "chunks": 3220,
+    "avg_chunk_len": 852.1984472049689
+  },
+  "semantic": {
+    "chunks": 2253,
+    "avg_chunk_len": 1016.1975144252108
+  },
+  "sentence_window": {
+    "chunks": 17016,
+    "avg_chunk_len": 134.54942407146214
+  }
+}
+
+Sentence-window example:
+Indexed sentence:
+Managing Food Safety: 
+A Regulator’s Manual  
+For Applying HACCP 
+Principles to Risk-
+based Retail and Food 
+Service Inspections 
+and Evaluating 
+Voluntary Food Safety 
+Management Systems 
+ 
+Additional copies are available from: 
+ 
+Office of Food Safety 
+    Retail Food and Cooperative Programs
+       Coordination Staff/Retail Food Protection Team (HFS-320)
+                          Center for Food Safety and Applied Nutrition
+                                      Food and Drug Administration
+                                        5100 Paint Branch Parkway
+                                          College Park, MD 20740
+                                              (Tel) 240-402-2349 
+ 
+ 
+ 
+U.S. 
+
+Window metadata:
+Managing Food Safety: 
+A Regulator’s Manual  
+For Applying HACCP 
+Principles to Risk-
+based Retail and Food 
+Service Inspections 
+and Evaluating 
+Voluntary Food Safety 
+Management Systems 
+ 
+Additional copies are available from: 
+ 
+Office of Food Safety 
+    Retail Food and Cooperative Programs
+       Coordination Staff/Retail Food Protection Team (HFS-320)
+                          Center for Food Safety and Applied Nutrition
+                                      Food and Drug Administration
+                                        5100 Paint Branch Parkway
+                                          College Park, MD 20740
+                                              (Tel) 240-402-2349 
+ 
+ 
+ 
+U.S.  Department of Health and Human Services 
+Food and Drug Administration 
+Center for Food Safety and Applied Nutrition 
+ 
+[April 2006] 
+ 
+OMB Control No.  0910-0578 
+Expiration Date: 01/31/2013 
+See additional PRA statement in Annex 8 of this manual 
+ 
+ 
+ 
+ 
+ 
+  
+
+====================================================================================================
+Technique: token
+Question ID: q1
+Query: What are the three major activities in the verification process for a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.022736089304089546, 0.016523387283086777, -0.03188064321875572, -0.04794027656316757, 0.05016084015369415, 0.006033062003552914, 0.02393440529704094, -0.0268405731767416]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 29.956 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.740235       0.740235       976         of record keeping procedures. FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a va
+2     0.715726       0.715726       998         report similar to the one in Annex 7 of the Manual may be completed. The report in Annex 7 contains a suggested checklist to use when evaluating a food safety m
+3     0.715413       0.715413       349         of HACCP. Therefore, flexibility is an important component when providing guidance for voluntarily implemented food safety management systems using HACCP princi
+4     0.712574       0.712574       966         • Formulations or recipes • A flow diagram showing the preparation of the food • Training plans for managers and food employees • Scientific data or other infor
+5     0.705052       0.705052       412         the operator. It should be noted, however, that you can sufficiently determine if an operator has active managerial control of foodborne illness risk factors by
+
+Saved raw output: reports/hw03/raw/token_q1.json
+
+====================================================================================================
+Technique: semantic
+Question ID: q1
+Query: What are the three major activities in the verification process for a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.022736089304089546, 0.016523387283086777, -0.03188064321875572, -0.04794027656316757, 0.05016084015369415, 0.006033062003552914, 0.02393440529704094, -0.0268405731767416]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 20.098 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.751758       0.751758       1303        • How was the process brought back under control so that the deviation would not recur? Verification Report At the conclusion of the on-site verification, a rep
+2     0.742028       0.742028       1195        Clearly your role as a consultant becomes particularly important with regard to your review of record keeping procedures. FIELD VERIFICATION The primary purpose
+3     0.735018       0.735018       591         If the answer is no to either of these questions, changes probably need to be made to the plan. The plan should also list who is responsible for taking correcti
+4     0.718630       0.718630       1643        36 Step 1 - Document Review The review of the documents related to the food safety management system should be completed before you make on-site observations an
+5     0.715419       0.715419       2638        FDA Food Code 2026 Annex 4. Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 504 • Confirming that al
+
+Saved raw output: reports/hw03/raw/semantic_q1.json
+
+====================================================================================================
+Technique: sentence_window
+Question ID: q1
+Query: What are the three major activities in the verification process for a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.022736089304089546, 0.016523387283086777, -0.03188064321875572, -0.04794027656316757, 0.05016084015369415, 0.006033062003552914, 0.02393440529704094, -0.0268405731767416]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 132.355 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.837418       0.837418       179         THE VERIFICATION PROCESS The verification of food safety management systems involves three major activities: • Document Review • Record Review • On-site Verific
+2     0.789988       0.789988       223         Reviewing a voluntary food safety management system to determine whether the corrective actions and the monitoring, verification, and record keeping procedures 
+3     0.767192       0.767192       205         Validation and verification of voluntarily implemented food safety management systems are services you can offer your industry partners to provide them with fee
+4     0.745458       0.745458       83          Elements of an effective food safety management system may include the following:
+5     0.742994       0.742994       1233        Generally, a written, voluntary food safety management system developed using the FDA document entitled, Managing Food Safety: A Manual for the Voluntary Use of
+
+Saved raw output: reports/hw03/raw/sentence_window_q1.json
+
+====================================================================================================
+Technique: token
+Question ID: q2
+Query: What is the primary purpose of field verification when reviewing a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.009101193398237228, 0.04461948201060295, -0.03867289796471596, -0.03248143196105957, 0.11751547455787659, -0.00883092824369669, 0.03490833938121796, -0.022668125107884407]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 26.897 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.794825       0.794825       976         of record keeping procedures. FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a va
+2     0.699914       0.699914       1013        35 However, the facility may be completely comfortable with the record keeping that is already specified in their plan. If you see that records are not specifie
+3     0.685303       0.685303       412         the operator. It should be noted, however, that you can sufficiently determine if an operator has active managerial control of foodborne illness risk factors by
+4     0.671939       0.671939       998         report similar to the one in Annex 7 of the Manual may be completed. The report in Annex 7 contains a suggested checklist to use when evaluating a food safety m
+5     0.665305       0.665305       1027        in Annex 1. VALIDATION A voluntarily implemented food safety management system using HACCP principles needs to be “validated.” Validation, for the purposes of t
+
+Saved raw output: reports/hw03/raw/token_q2.json
+
+====================================================================================================
+Technique: semantic
+Question ID: q2
+Query: What is the primary purpose of field verification when reviewing a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.009101193398237228, 0.04461948201060295, -0.03867289796471596, -0.03248143196105957, 0.11751547455787659, -0.00883092824369669, 0.03490833938121796, -0.022668125107884407]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 20.004 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.761281       0.761281       1195        Clearly your role as a consultant becomes particularly important with regard to your review of record keeping procedures. FIELD VERIFICATION The primary purpose
+2     0.720299       0.720299       1303        • How was the process brought back under control so that the deviation would not recur? Verification Report At the conclusion of the on-site verification, a rep
+3     0.651230       0.651230       2638        FDA Food Code 2026 Annex 4. Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 504 • Confirming that al
+4     0.636168       0.636168       591         If the answer is no to either of these questions, changes probably need to be made to the plan. The plan should also list who is responsible for taking correcti
+5     0.629325       0.629324       1643        36 Step 1 - Document Review The review of the documents related to the food safety management system should be completed before you make on-site observations an
+
+Saved raw output: reports/hw03/raw/semantic_q2.json
+
+====================================================================================================
+Technique: sentence_window
+Question ID: q2
+Query: What is the primary purpose of field verification when reviewing a voluntary food safety management system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.009101193398237228, 0.04461948201060295, -0.03867289796471596, -0.03248143196105957, 0.11751547455787659, -0.00883092824369669, 0.03490833938121796, -0.022668125107884407]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 126.306 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.846013       0.846013       219         FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a validated food safety management
+2     0.767978       0.767978       179         THE VERIFICATION PROCESS The verification of food safety management systems involves three major activities: • Document Review • Record Review • On-site Verific
+3     0.748660       0.748660       205         Validation and verification of voluntarily implemented food safety management systems are services you can offer your industry partners to provide them with fee
+4     0.724885       0.724885       223         Reviewing a voluntary food safety management system to determine whether the corrective actions and the monitoring, verification, and record keeping procedures 
+5     0.698480       0.698480       140         It also provides recommendations for evaluating voluntarily-implemented food safety management systems if invited to do so by industry.
+
+Saved raw output: reports/hw03/raw/sentence_window_q2.json
+
+====================================================================================================
+Technique: token
+Question ID: q3
+Query: What is the purpose of the FDA Food Code?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.07798438519239426, 0.05725274235010147, -0.04647590592503548, 0.010959824547171593, -0.005929284263402224, 0.05089207738637924, 0.02441580779850483, 0.007491742260754108]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 26.833 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.780511       0.780511       835         FDA Food Code 2026 Chapter 1 Purpose and Definitions 1 Chapter 1. Purpose and Definitions Parts: 1-1 Title, Intent, Scope 1-2 Definitions 1-1 Title, Intent, Sco
+2     0.773527       0.773527       1181        FDA Food Code 2026 Preface vii to ensure that food at retail is safe and properly protected and presented. Although not federal requirements (until adopted by f
+3     0.767933       0.767933       685         Many individuals devoted considerable time and effort in addressing concerns and developing recommendations that are now reflected in the Food Code. These indiv
+4     0.737314       0.737314       1206        FDA Food Code 2026 Preface viii Accordingly, the provisions of the Food Code provide a system of prevention and overlapping safeguards designed to minimize food
+5     0.728471       0.728471       1194        FDA Food Code 2026 Preface xv Conference for Food Protection (CFP) and with the occurrence of the COVID-19 pandemic, the CFP changed to an odd-year meeting cycl
+
+Saved raw output: reports/hw03/raw/token_q3.json
+
+====================================================================================================
+Technique: semantic
+Question ID: q3
+Query: What is the purpose of the FDA Food Code?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.07798438519239426, 0.05725274235010147, -0.04647590592503548, 0.010959824547171593, -0.005929284263402224, 0.05089207738637924, 0.02441580779850483, 0.007491742260754108]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 20.617 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.770854       0.770854       992         FDA Food Code 2026 Chapter 1 Purpose and Definitions 1 Chapter 1. Purpose and Definitions Parts: 1-1 Title, Intent, Scope 1-2 Definitions 1-1 Title, Intent, Sco
+2     0.767977       0.767977       397         FDA Food Code 2026 Preface viii Accordingly, the provisions of the Food Code provide a system of prevention and overlapping safeguards designed to minimize food
+3     0.747277       0.747277       2122        FDA Food Code 2026 Preface vii to ensure that food at retail is safe and properly protected and presented. Although not federal requirements (until adopted by f
+4     0.738164       0.738164       907         FDA encourages interested individuals to consider raising issues and suggesting solutions involving the federal-state cooperative programs based on FDA's model 
+5     0.735844       0.735844       80          FDA Food Code 2026 Annex 2. References 235 4. Goverd, K.A., F.W. Beech, R .
+
+Saved raw output: reports/hw03/raw/semantic_q3.json
+
+====================================================================================================
+Technique: sentence_window
+Question ID: q3
+Query: What is the purpose of the FDA Food Code?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [-0.07798438519239426, 0.05725274235010147, -0.04647590592503548, 0.010959824547171593, -0.005929284263402224, 0.05089207738637924, 0.02441580779850483, 0.007491742260754108]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 131.399 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.841122       0.841122       74          It is recommended that it be used in conjunction with the FDA Food Code.
+2     0.815162       0.815162       262         Today, FDA's purpose in maintaining an updated model food code is to assist food control jurisdictions at all levels of government by providing them with a scie
+3     0.796097       0.796097       41          The FDA Food Code now requires each food
+4     0.787292       0.787292       44          FDA Food Code 2026 Preface v Preface 1.
+5     0.778526       0.778526       69          FDA Food Code 2026 Chapter 1 Purpose and Definitions 1 Chapter 1.
+
+Saved raw output: reports/hw03/raw/sentence_window_q3.json
+
+====================================================================================================
+Technique: token
+Question ID: q4
+Query: What are common examples of critical control points in a retail food HACCP system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.006045117042958736, -0.021328838542103767, -0.07716592401266098, 0.030889352783560753, -0.005775071680545807, 0.060758840292692184, 0.00328802689909935, 0.05551189184188843]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 26.896 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.682534       0.682534       992         2 strengths and weaknesses in their systems and suggesting possible solutions for improvement during inspections. This Manual was written to provide a "roadmap"
+2     0.677072       0.677072       338         53 Annex 2 Sample HACCP Tables Table 1a. Process #1 – Food Preparation with No Cook Step FOOD/MENU ITEMS: HAZARD(S) CRITICAL CONTROL POINTS (List Only the Opera
+3     0.670984       0.670984       1085        consume the product should be considered to determine how each of these factors may influence the likely occurrence and severity of the hazard being controlled.
+4     0.670248       0.670248       872         Since the 1980’s, operators and regulators have been exploring the use of the HACCP principles in restaurants, grocery stores, institutional care facilities, an
+5     0.669158       0.669158       615         77 2. List Critical Control Points (CCPs) and Critical Limits identified by the establishment’s HACCP plan. Food Item or Process Critical Control Point Critical
+
+Saved raw output: reports/hw03/raw/token_q4.json
+
+====================================================================================================
+Technique: semantic
+Question ID: q4
+Query: What are common examples of critical control points in a retail food HACCP system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.006045117042958736, -0.021328838542103767, -0.07716592401266098, 0.030889352783560753, -0.005775071680545807, 0.060758840292692184, 0.00328802689909935, 0.05551189184188843]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 19.549 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.697197       0.697197       3378        Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 484 2. Introduction to HACCP (A) What is HACCP and h
+2     0.687708       0.687708       461         60 that can be used to prevent, eliminate, or reduce a hazard. Some control measures are not essential to food safety, while others are. Control measures essent
+3     0.677647       0.677647       1048        2 strengths and weaknesses in their systems and suggesting possible solutions for improvement during inspections. This Manual was written to provide a "roadmap"
+4     0.677072       0.677072       347         53 Annex 2 Sample HACCP Tables Table 1a. Process #1 – Food Preparation with No Cook Step FOOD/MENU ITEMS: HAZARD(S) CRITICAL CONTROL POINTS (List Only the Opera
+5     0.657121       0.657121       1587        FDA Food Code 2026 Annex 4. Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 500 (B) Principle #2: De
+
+Saved raw output: reports/hw03/raw/semantic_q4.json
+
+====================================================================================================
+Technique: sentence_window
+Question ID: q4
+Query: What are common examples of critical control points in a retail food HACCP system?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.006045117042958736, -0.021328838542103767, -0.07716592401266098, 0.030889352783560753, -0.005775071680545807, 0.060758840292692184, 0.00328802689909935, 0.05551189184188843]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 125.182 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.739193       0.739193       203         Control measures essential to food safety like proper cooking, cooling, and refrigeration of ready-to-eat, potentially hazardous foods are applied at critical c
+2     0.727419       0.727419       243         Control measures essential to food safety like proper cooking, cooling, and refrigeration of ready-to-eat, time/temperature control for safety foods are usually
+3     0.686156       0.686156       133         Consequently, many food safety management systems at the retail level incorporate some, if not all, of the principles of HACCP.
+4     0.680707       0.680707       213         HAZARD ANALYSIS AND CRITICAL CONTROL POINT (HACCP) means a prevention-based food safety system that identifies and monitors specific food safety hazards that ca
+5     0.678136       0.678136       148         "Critical control point" means a point or procedure in a specific *FOOD system where loss of control may result in an unacceptable health *RISK.
+
+Saved raw output: reports/hw03/raw/sentence_window_q4.json
+
+====================================================================================================
+Technique: token
+Question ID: q5
+Query: What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.11198068410158157, 0.004936871584504843, -0.08878888934850693, -0.008654548786580563, -0.029559284448623657, 0.06696674972772598, -0.05505412817001343, 0.07585713267326355]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 27.081 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.766328       0.766328       1273        is the mechanism through which FDA, as a lead federal food protection agency, promotes uniform implementation of national food regulatory policy among federal, 
+2     0.750861       0.750861       1010        Page | 13 Chapter 3: Field Requirements and Administration 3-1 SCOPE 3-101 Objective This chapter explains the field requirements leading to FDA STANDARDIZATION
+3     0.746892       0.746892       1093        • Focused inspection on activities associated with FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS (with specific attention to handwashing, bare hand
+4     0.740402       0.740402       1125        of the inspection process that need improvement. The check boxes may be used to check specific observations of the CANDIDATE’S performance. Only one checklist s
+5     0.733626       0.733626       1266        hazards associated with foodborne illness or injury or on provisions that support or facilitate them. The Food Code designates these provisions as Priority and 
+
+Saved raw output: reports/hw03/raw/token_q5.json
+
+====================================================================================================
+Technique: semantic
+Question ID: q5
+Query: What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.11198068410158157, 0.004936871584504843, -0.08878888934850693, -0.008654548786580563, -0.029559284448623657, 0.06696674972772598, -0.05505412817001343, 0.07585713267326355]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 20.474 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.753511       0.753511       2050        This process provides regulatory personnel with the opportunity to subject their knowledge and skills related to the Code’s provisions to a uniform system of me
+2     0.731804       0.731804       1693        Page | 34 Appendix 2: Instructions for Scoring and Determining Performance The purpose of the following chart is to tally the disagreement between the CANDIDATE
+3     0.719344       0.719344       2818        Page | 41 Template for Conducting a Risk-Based Inspection The STANDARDIZATION exercise serves as a template for regulatory inspections conducted by federal, sta
+4     0.715283       0.715283       240         FDA Food Code 2026 Preface v Preface 1. Foodborne Illness Estimates, Risk Factors, and Interventions 2. PHS Model Codes History, Purpose, and Authority 3. Publi
+5     0.714137       0.714137       794         The checklist for STANDARDIZATION performance areas found in Appendix 2 can be used as an aid in this determination. (E) Termination of the Exercise/Inspection:
+
+Saved raw output: reports/hw03/raw/semantic_q5.json
+
+====================================================================================================
+Technique: sentence_window
+Question ID: q5
+Query: What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?
+====================================================================================================
+Query embedding dimension: 384
+First 8 query embedding values: [0.11198068410158157, 0.004936871584504843, -0.08878888934850693, -0.008654548786580563, -0.029559284448623657, 0.06696674972772598, -0.05505412817001343, 0.07585713267326355]
+Query vector shape: (384,)
+Stacked document vector shape: (5, 384)
+Retrieval latency: 125.582 ms
+
+Rank  Store Score    Cosine Sim     Chunk Len   Preview
+----------------------------------------------------------------------------------------------------
+1     0.848008       0.848008       433         3-102 Performance Areas The following areas of performance shall be addressed by the CANDIDATE during the food establishment inspections and evaluated by the ST
+2     0.824983       0.824983       83          Performance Area A – Foodborne Illness Risk Factors and Food Code Interventions.
+3     0.802210       0.802210       298         (a) To satisfy the FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS performance area, the CANDIDATE shall not disagree with the STANDARD on more than 
+4     0.795317       0.795317       240         3-302 Performance Criteria To be standardized by FDA, a CANDIDATE shall meet the following criteria for each performance area: (A) FOODBORNE ILLNESS RISK FACTOR
+5     0.768127       0.768127       298         Summary of Level of Agreement Required for Each Performance Area Performance Area Level Of Agreement FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS 
+
+Saved raw output: reports/hw03/raw/sentence_window_q5.json
+
+====================================================================================================
+Completed all retrieval runs.
+Raw outputs saved in: reports/hw03/raw
+====================================================================================================
+RUN END: 2026-09-21T01:04:46-07:00

@@ -1,0 +1,74 @@
+{
+  "technique": "sentence_window",
+  "question_id": "q3",
+  "query": "What is the purpose of the FDA Food Code?",
+  "expected_answer": "The purpose of the FDA Food Code is to safeguard public health and provide consumers food that is safe, unadulterated, and honestly presented.\n",
+  "expected_source": "fda-food-code-2026.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.07798438519239426,
+    0.05725274235010147,
+    -0.04647590592503548,
+    0.010959824547171593,
+    -0.005929284263402224,
+    0.05089207738637924,
+    0.02441580779850483,
+    0.007491742260754108
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 131.3990000053309,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.8411216871394138,
+      "cosine_sim": 0.8411216867514163,
+      "chunk_len": 74,
+      "preview": "It is recommended that it be used in conjunction with the FDA Food Code.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "It is not possible to anticipate all conceivable situations.  Therefore, there will always be \nneed for discussion between the food establishment and the Regulatory Authority as to \nthe most effective way to meet the objectives of satisfactory compliance. \n The Implementation Guidance for the Consumer Advisory Provision of the FDA Food \nCode (Section 3-603.11 in the FDA Model Food Code) is a resource intended to assist \nregulators and industry in the implementation of the Consumer Advisory provision.  It is \nrecommended that it be used in conjunction with the FDA Food Code.  It is available \nfrom FDA through the Retail Food Protection Team by writing to: FDA/CFSAN, 5100 \nPaint Branch Parkway, (HFS-320) College Park, Maryland 20740.  \n Locating the Advisory \nDisclosure of raw or undercooked animal-derived foods or ingredients and reminders \nabout the risk of consuming such foods belong at the point where the food is selected \nby the consumer.  Both the disclosure and the reminder need to accompany the \ninformation from which the consumer makes a selection. "
+    },
+    {
+      "rank": 2,
+      "store_score": 0.8151617239894291,
+      "cosine_sim": 0.8151617209759272,
+      "chunk_len": 262,
+      "preview": "Today, FDA's purpose in maintaining an updated model food code is to assist food control jurisdictions at all levels of government by providing them with a scie",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "These code editions are listed chronologically on pp.  iii \nand iv.  Through the years all states, hundreds of local jurisdictions, and many federal \nagencies have adopted some edition of model food codes recommended by the PHS.  \n Today, FDA's purpose in maintaining an updated model food code is to assist food \ncontrol jurisdictions at all levels of government by providing them with a scientifically \nsound technical and legal basis for regulating the retail segment of the food industry. \n The retail segment includes those establishments or locations in the food distribution \nchain where the consumer takes possession of the food.  \n The model Food Code is neither federal law nor federal regulation and is not \npreemptive.  Rather, it represents FDA's best advice for a uniform system of regulation "
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7960974272876142,
+      "cosine_sim": 0.7960973976422727,
+      "chunk_len": 41,
+      "preview": "The FDA Food Code now requires each food",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "Second \nEdition, 2012. available at Bad Bug Book (Second Edition) | FDA. \n The information provided in Subpart 2-201 is designed to assist food establishment \nmanagers and regulatory officials in removing infected food employees when they are at \ngreatest risk of transmitting foodborne pathogens to food.  Practical applications of the \ninformation in Subpart 2-201 by a food establishment manager may involve using \nSubpart 2-201 as a basis for obtaining information on the health status of food \nemployees and can also be used as a basis in developing and implementing an \neffective Employee Illness Policy.  The FDA Food Code now requires each food "
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7872923447127292,
+      "cosine_sim": 0.7872923797342548,
+      "chunk_len": 44,
+      "preview": "FDA Food Code 2026 Preface v Preface 1.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "FDA Food Code 2026  Preface \nv \nPreface \n1.  Foodborne Illness Estimates, Risk Factors, and Interventions \n2.  PHS Model Codes History, Purpose, and Authority \n3.  Public Health and Consumer Expectations \n4. "
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7785261130975757,
+      "cosine_sim": 0.778526111849416,
+      "chunk_len": 69,
+      "preview": "FDA Food Code 2026 Chapter 1 Purpose and Definitions 1 Chapter 1.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "FDA Food Code 2026  Chapter 1 Purpose and Definitions \n1 \nChapter 1.  Purpose and \nDefinitions \nParts: \n1-1 Title, Intent, Scope \n1-2 Definitions \n1-1 Title, Intent, Scope \nSubparts: \n1-101 Title \n1-102 Intent \n1-103 Scope \n1-101 Title \n1-101.10 Food Code.  \n These provisions shall be known as the “Food Code,” hereinafter referred to as \n\"this Code.\"  \n 1-102 Intent \n1-102.10 Food Safety, Illness Prevention, and Honest Presentation.  \n"
+    }
+  ]
+}

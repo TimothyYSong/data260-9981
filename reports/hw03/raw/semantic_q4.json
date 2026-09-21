@@ -1,0 +1,74 @@
+{
+  "technique": "semantic",
+  "question_id": "q4",
+  "query": "What are common examples of critical control points in a retail food HACCP system?",
+  "expected_answer": "Common examples include cooking, cooling, hot holding, and cold holding of ready-to-eat time/temperature control for safety foods.\n",
+  "expected_source": "fda-food-code-2026.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.006045117042958736,
+    -0.021328838542103767,
+    -0.07716592401266098,
+    0.030889352783560753,
+    -0.005775071680545807,
+    0.060758840292692184,
+    0.00328802689909935,
+    0.05551189184188843
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 19.548999996914063,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.6971967267996361,
+      "cosine_sim": 0.6971967250466409,
+      "chunk_len": 3378,
+      "preview": "Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 484 2. Introduction to HACCP (A) What is HACCP and h",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.6877075408639662,
+      "cosine_sim": 0.6877075443604097,
+      "chunk_len": 461,
+      "preview": "60 that can be used to prevent, eliminate, or reduce a hazard. Some control measures are not essential to food safety, while others are. Control measures essent",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6776472189405404,
+      "cosine_sim": 0.6776472188164828,
+      "chunk_len": 1048,
+      "preview": "2 strengths and weaknesses in their systems and suggesting possible solutions for improvement during inspections. This Manual was written to provide a \"roadmap\"",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.6770718954922852,
+      "cosine_sim": 0.677071892948338,
+      "chunk_len": 347,
+      "preview": "53 Annex 2 Sample HACCP Tables Table 1a. Process #1 – Food Preparation with No Cook Step FOOD/MENU ITEMS: HAZARD(S) CRITICAL CONTROL POINTS (List Only the Opera",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6571211174368046,
+      "cosine_sim": 0.6571211230183821,
+      "chunk_len": 1587,
+      "preview": "FDA Food Code 2026 Annex 4. Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 500 (B) Principle #2: De",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    }
+  ]
+}

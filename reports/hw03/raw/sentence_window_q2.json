@@ -1,0 +1,74 @@
+{
+  "technique": "sentence_window",
+  "question_id": "q2",
+  "query": "What is the primary purpose of field verification when reviewing a voluntary food safety management system?",
+  "expected_answer": "The primary purpose of field verification is to determine whether the activities carried out in support of a validated food safety management system are being conducted according to the written plan.\n",
+  "expected_source": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.009101193398237228,
+    0.04461948201060295,
+    -0.03867289796471596,
+    -0.03248143196105957,
+    0.11751547455787659,
+    -0.00883092824369669,
+    0.03490833938121796,
+    -0.022668125107884407
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 126.30608299514279,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.8460134103320026,
+      "cosine_sim": 0.8460134093852066,
+      "chunk_len": 219,
+      "preview": "FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a validated food safety management",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Keep in mind that the facility \nhas developed a voluntary food safety management system tailored to their needs and \navailable resources.   If the facility does not want to keep records, your opinion of what \nshould be documented is irrelevant as long as active managerial control is achieved.  \n Clearly your role as a consultant becomes particularly important with regard to your \nreview of record keeping procedures. \n \n \n FIELD VERIFICATION  \n \nThe primary purpose of field verification is to determine whether the activities carried out \nin support of a validated food safety management system are conducted according to \nthe written plan.  In other words,  “Is the firm accurately doing what it said it does and are \nthey operating according to the food safety management system they have in place?”  \n By conducting a verification inspection, you can help an operator identify strengths and \nweaknesses in the system and offer suggestions for improvement.  \n \n Keep in mind that that there are many different types of food safety management \nsystems.  "
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7679775486719926,
+      "cosine_sim": 0.7679775504463323,
+      "chunk_len": 179,
+      "preview": "THE VERIFICATION PROCESS The verification of food safety management systems involves three major activities: • Document Review • Record Review • On-site Verific",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Keep in mind that that there are many different types of food safety management \nsystems.   Some may control foodborne illness risk factors using only some of the \nprinciples of HACCP.   Therefore, flexibility is an important component when providing \nguidance for voluntarily implemented food safety management systems using HACCP \nprinciples.  \n \n \n THE VERIFICATION PROCESS  \n \nThe verification of food safety management systems involves three major activities: \n \n• Document Review \n• Record Review \n• On-site Verification \n \n "
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7486604922624845,
+      "cosine_sim": 0.7486604951666915,
+      "chunk_len": 205,
+      "preview": "Validation and verification of voluntarily implemented food safety management systems are services you can offer your industry partners to provide them with fee",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Periodic review of these systems provides the operator with valuable \ninformation that can be used to make improvements.   As a food safety professional, \nyour knowledge and expertise make you qualified to conduct such reviews, but only at \nthe request of the operator.   It should be noted, however, that you can sufficiently \ndetermine if an operator has active managerial control of foodborne illness risk factors \nby simply conducting a risk-based inspection.   Validation and verification of voluntarily \nimplemented food safety management systems are services you can offer your industry \npartners to provide them with feedback on how well their system is working. "
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7248845412162742,
+      "cosine_sim": 0.7248845444048349,
+      "chunk_len": 223,
+      "preview": "Reviewing a voluntary food safety management system to determine whether the corrective actions and the monitoring, verification, and record keeping procedures ",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "You may use observations, \nmeasurements, and evaluations taken in the \nestablishment, as well as scientific studies and other \nreference materials such as the Food Code or other \napplicable regulations when validating food safety \nmanagement systems.   \n \n Since voluntarily implemented food safety management systems involve normal \nprocesses and not high-risk specialized processes that might otherwise require a \nHACCP plan, regulators or other food safety professionals should be able to validate a \nvoluntary plan without assistance.  This is especially true since the critical limits listed in \nthe plan should either be the same or more stringent than those established by the \nFood Code or other applicable regulations.  \n \n Reviewing a voluntary food safety management system to determine whether the \ncorrective actions and the monitoring, verification, and record keeping procedures are \nsufficient to support the system may be time consuming.   Because of this, it may be \nhelpful to seek expert advise from outside sources.    Outside sources include, but are \nnot limited to, members of academia, private food safety consultants, and other federal \nand state governmental officials.    \n "
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6984804351656203,
+      "cosine_sim": 0.6984804369994112,
+      "chunk_len": 140,
+      "preview": "It also provides recommendations for evaluating voluntarily-implemented food safety management systems if invited to do so by industry.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": "(D) Managing Food Safety: A Regulator’s Manual for Applying HACCP Principles to \nRisk-based Retail and Food Service Inspections and Evaluating Voluntary Food \nSafety Management Systems  \nThe Regulator’s Manual can be found by accessing Managing Food Safety: A \nRegulator's Manual For Applying HACCP Principles to Risk-based Retail and Food \nService Inspections and Evaluating Voluntary Food Safety Management Systems | \nFDA.  This document provides State, local, and tribal regulatory authorities with a step-\nby-step scheme for conducting risk-based inspections based on HACCP principles to \nassist them with identifying and assessing control of foodborne illness risk factors.  In \naddition, the manual details intervention strategies that can be developed with retail and \nfood service operators to reduce the occurrence of foodborne illness risk factors.  It also \nprovides recommendations for evaluating voluntarily-implemented food safety \nmanagement systems if invited to do so by industry.  \n The utilization of voluntary food safety management systems by industry and the \nincorporation of risk-based methodology into regulatory inspection programs are \nimportant elements in reaching the goals established by the Healthy People 2010 health \nimprovement strategy and FDA retail program goals.  \n In 2004, the Conference for Food Protection (CFP) endorsed both documents with a \nrecommendation that both industry and regulatory entities consider implementing the \nprinciples of the documents into their respective food safety programs.  The CFP is \ncomposed of regulators, industry, academia, professional organizations, and consumers \nwhose purpose is to identify problems, formulate recommendations, and develop and \nimplement practices that relate to food safety.  \n"
+    }
+  ]
+}

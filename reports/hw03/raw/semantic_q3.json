@@ -1,0 +1,74 @@
+{
+  "technique": "semantic",
+  "question_id": "q3",
+  "query": "What is the purpose of the FDA Food Code?",
+  "expected_answer": "The purpose of the FDA Food Code is to safeguard public health and provide consumers food that is safe, unadulterated, and honestly presented.\n",
+  "expected_source": "fda-food-code-2026.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.07798438519239426,
+    0.05725274235010147,
+    -0.04647590592503548,
+    0.010959824547171593,
+    -0.005929284263402224,
+    0.05089207738637924,
+    0.02441580779850483,
+    0.007491742260754108
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 20.616750000044703,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7708537385758845,
+      "cosine_sim": 0.7708537364421223,
+      "chunk_len": 992,
+      "preview": "FDA Food Code 2026 Chapter 1 Purpose and Definitions 1 Chapter 1. Purpose and Definitions Parts: 1-1 Title, Intent, Scope 1-2 Definitions 1-1 Title, Intent, Sco",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7679771872338716,
+      "cosine_sim": 0.7679771867485603,
+      "chunk_len": 397,
+      "preview": "FDA Food Code 2026 Preface viii Accordingly, the provisions of the Food Code provide a system of prevention and overlapping safeguards designed to minimize food",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7472769552154643,
+      "cosine_sim": 0.7472769562610744,
+      "chunk_len": 2122,
+      "preview": "FDA Food Code 2026 Preface vii to ensure that food at retail is safe and properly protected and presented. Although not federal requirements (until adopted by f",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7381644734995936,
+      "cosine_sim": 0.7381644746253241,
+      "chunk_len": 907,
+      "preview": "FDA encourages interested individuals to consider raising issues and suggesting solutions involving the federal-state cooperative programs based on FDA's model ",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7358443768250302,
+      "cosine_sim": 0.7358443738806724,
+      "chunk_len": 80,
+      "preview": "FDA Food Code 2026 Annex 2. References 235 4. Goverd, K.A., F.W. Beech, R .",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    }
+  ]
+}

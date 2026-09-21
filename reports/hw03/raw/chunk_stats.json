@@ -1,0 +1,14 @@
+{
+  "token": {
+    "chunks": 3220,
+    "avg_chunk_len": 852.1984472049689
+  },
+  "semantic": {
+    "chunks": 2253,
+    "avg_chunk_len": 1016.1975144252108
+  },
+  "sentence_window": {
+    "chunks": 17016,
+    "avg_chunk_len": 134.54942407146214
+  }
+}

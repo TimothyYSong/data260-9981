@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "filename": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "bytes": 2356082,
+      "sha256": "2482c02bc8f38231c0c22d690c17165c39a05f87af2bee11c4731168a81aa6e1"
+    },
+    {
+      "filename": "fda-food-code-2026.pdf",
+      "bytes": 5215431,
+      "sha256": "a608605db1a44d07fc9255db281175a933b4290597b4dc4cf58e035158fc8e06"
+    },
+    {
+      "filename": "retail_standardization_manual_2022.pdf",
+      "bytes": 2402088,
+      "sha256": "20a65c33c92cc27905ac5a49899989ace7a533db8dc0f377d18221299297ca5c"
+    }
+  ],
+  "total_bytes": 9973601
+}

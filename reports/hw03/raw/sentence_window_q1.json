@@ -1,0 +1,74 @@
+{
+  "technique": "sentence_window",
+  "question_id": "q1",
+  "query": "What are the three major activities in the verification process for a voluntary food safety management system?",
+  "expected_answer": "The three major activities are document review, record review, and on-site verification.\n",
+  "expected_source": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.022736089304089546,
+    0.016523387283086777,
+    -0.03188064321875572,
+    -0.04794027656316757,
+    0.05016084015369415,
+    0.006033062003552914,
+    0.02393440529704094,
+    -0.0268405731767416
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 132.35479200375266,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.8374180885844049,
+      "cosine_sim": 0.8374180892242347,
+      "chunk_len": 179,
+      "preview": "THE VERIFICATION PROCESS The verification of food safety management systems involves three major activities: • Document Review • Record Review • On-site Verific",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Keep in mind that that there are many different types of food safety management \nsystems.   Some may control foodborne illness risk factors using only some of the \nprinciples of HACCP.   Therefore, flexibility is an important component when providing \nguidance for voluntarily implemented food safety management systems using HACCP \nprinciples.  \n \n \n THE VERIFICATION PROCESS  \n \nThe verification of food safety management systems involves three major activities: \n \n• Document Review \n• Record Review \n• On-site Verification \n \n "
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7899878245628774,
+      "cosine_sim": 0.7899878281109953,
+      "chunk_len": 223,
+      "preview": "Reviewing a voluntary food safety management system to determine whether the corrective actions and the monitoring, verification, and record keeping procedures ",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "You may use observations, \nmeasurements, and evaluations taken in the \nestablishment, as well as scientific studies and other \nreference materials such as the Food Code or other \napplicable regulations when validating food safety \nmanagement systems.   \n \n Since voluntarily implemented food safety management systems involve normal \nprocesses and not high-risk specialized processes that might otherwise require a \nHACCP plan, regulators or other food safety professionals should be able to validate a \nvoluntary plan without assistance.  This is especially true since the critical limits listed in \nthe plan should either be the same or more stringent than those established by the \nFood Code or other applicable regulations.  \n \n Reviewing a voluntary food safety management system to determine whether the \ncorrective actions and the monitoring, verification, and record keeping procedures are \nsufficient to support the system may be time consuming.   Because of this, it may be \nhelpful to seek expert advise from outside sources.    Outside sources include, but are \nnot limited to, members of academia, private food safety consultants, and other federal \nand state governmental officials.    \n "
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7671918155435394,
+      "cosine_sim": 0.7671918209287225,
+      "chunk_len": 205,
+      "preview": "Validation and verification of voluntarily implemented food safety management systems are services you can offer your industry partners to provide them with fee",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Periodic review of these systems provides the operator with valuable \ninformation that can be used to make improvements.   As a food safety professional, \nyour knowledge and expertise make you qualified to conduct such reviews, but only at \nthe request of the operator.   It should be noted, however, that you can sufficiently \ndetermine if an operator has active managerial control of foodborne illness risk factors \nby simply conducting a risk-based inspection.   Validation and verification of voluntarily \nimplemented food safety management systems are services you can offer your industry \npartners to provide them with feedback on how well their system is working. "
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7454580625731596,
+      "cosine_sim": 0.7454579925520495,
+      "chunk_len": 83,
+      "preview": "Elements of an effective food safety management system may include the following:",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": "Active managerial control means the purposeful incorporation of specific \nactions or procedures by industry management into the operation of \ntheir business to attain control over foodborne illness risk factors.  It \nembodies a preventive rather than reactive approach to food safety \nthrough a continuous system of monitoring and verification.  \n \n There are many tools that can be used by industry to provide active managerial control \nof risk factors.   Elements of an effective food safety management system may include \nthe following: "
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7429942908861868,
+      "cosine_sim": 0.7429942963299331,
+      "chunk_len": 1233,
+      "preview": "Generally, a written, voluntary food safety management system developed using the FDA document entitled, Managing Food Safety: A Manual for the Voluntary Use of",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": " \n 33\nThe written plan for a voluntary food safety management system based on HACCP \nprinciples may be relatively simple and therefore probably will not include complex \ninformation that you might otherwise expect to see in a mandatory HACCP plan.   You \nshould be very flexible in the application of HACCP principles during your review.   \n Generally, a written, voluntary food safety management system developed using the \nFDA document entitled, Managing Food Safety:  A Manual for the Voluntary Use of \nHACCP Principles for Operators of Food Service and Retail Establishment, will include: \n \n• Types of food included in the plan by  category or by food preparation process \n• Materials and equipment layout \n• Formulations or recipes \n• A flow diagram showing the preparation of the food \n• Training plans for managers and food employees  \n• Scientific data or other information supporting the plan \n \nThe proposed food safety management system should also detail: \n \n• Significant food safety hazards \n• Each Critical Control Point (CCP) \n• Critical limits at each CCP \n• Methods, frequency, and responsible personnel for monitoring \n• Corrective actions to be taken if the cr itical limits at each CCP are not met \n• Methods, frequency, and responsible personnel for verifying that monitoring is \ntaking place and prerequisite programs are being followed \n• Records to be maintained  \n \nAs you review the identified hazards in the plan, it is recommended that you check to \nsee that all control measures vital to food safety are somehow implemented in the \noperation.   You may use Annex 3 of this Manual to assist you.   Due to the flexible \nnature of voluntary food safety management systems, control measures, such as proper \nrefrigeration or cooling, may be implemented as part of the establishment’s  Standard \nOperating Procedures and not as critical control points.   Remember that the goal of \nvoluntary food safety management systems is active managerial control of foodborne \nillness risk factors.  "
+    }
+  ]
+}

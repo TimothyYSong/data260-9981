@@ -1,0 +1,74 @@
+{
+  "technique": "semantic",
+  "question_id": "q2",
+  "query": "What is the primary purpose of field verification when reviewing a voluntary food safety management system?",
+  "expected_answer": "The primary purpose of field verification is to determine whether the activities carried out in support of a validated food safety management system are being conducted according to the written plan.\n",
+  "expected_source": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.009101193398237228,
+    0.04461948201060295,
+    -0.03867289796471596,
+    -0.03248143196105957,
+    0.11751547455787659,
+    -0.00883092824369669,
+    0.03490833938121796,
+    -0.022668125107884407
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 20.00416700320784,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7612810714924246,
+      "cosine_sim": 0.7612810681848398,
+      "chunk_len": 1195,
+      "preview": "Clearly your role as a consultant becomes particularly important with regard to your review of record keeping procedures. FIELD VERIFICATION The primary purpose",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.720299225306214,
+      "cosine_sim": 0.7202992253466144,
+      "chunk_len": 1303,
+      "preview": "• How was the process brought back under control so that the deviation would not recur? Verification Report At the conclusion of the on-site verification, a rep",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6512298743588317,
+      "cosine_sim": 0.6512298748042189,
+      "chunk_len": 2638,
+      "preview": "FDA Food Code 2026 Annex 4. Management of Food Safety Practices – Achieving Active Managerial Control of Foodborne Illness Risk Factors 504 • Confirming that al",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.6361676358594663,
+      "cosine_sim": 0.6361676327052903,
+      "chunk_len": 591,
+      "preview": "If the answer is no to either of these questions, changes probably need to be made to the plan. The plan should also list who is responsible for taking correcti",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6293245017842641,
+      "cosine_sim": 0.6293244965974197,
+      "chunk_len": 1643,
+      "preview": "36 Step 1 - Document Review The review of the documents related to the food safety management system should be completed before you make on-site observations an",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    }
+  ]
+}

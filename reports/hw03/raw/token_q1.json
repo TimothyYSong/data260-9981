@@ -1,0 +1,74 @@
+{
+  "technique": "token",
+  "question_id": "q1",
+  "query": "What are the three major activities in the verification process for a voluntary food safety management system?",
+  "expected_answer": "The three major activities are document review, record review, and on-site verification.\n",
+  "expected_source": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.022736089304089546,
+    0.016523387283086777,
+    -0.03188064321875572,
+    -0.04794027656316757,
+    0.05016084015369415,
+    0.006033062003552914,
+    0.02393440529704094,
+    -0.0268405731767416
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 29.956291000416968,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7402347377534583,
+      "cosine_sim": 0.7402347357700446,
+      "chunk_len": 976,
+      "preview": "of record keeping procedures. FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a va",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7157264326229023,
+      "cosine_sim": 0.7157264296351626,
+      "chunk_len": 998,
+      "preview": "report similar to the one in Annex 7 of the Manual may be completed. The report in Annex 7 contains a suggested checklist to use when evaluating a food safety m",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7154128509507811,
+      "cosine_sim": 0.7154128536679684,
+      "chunk_len": 349,
+      "preview": "of HACCP. Therefore, flexibility is an important component when providing guidance for voluntarily implemented food safety management systems using HACCP princi",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7125744954723635,
+      "cosine_sim": 0.7125744967836521,
+      "chunk_len": 966,
+      "preview": "• Formulations or recipes • A flow diagram showing the preparation of the food • Training plans for managers and food employees • Scientific data or other infor",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7050522903348573,
+      "cosine_sim": 0.7050522927692905,
+      "chunk_len": 412,
+      "preview": "the operator. It should be noted, however, that you can sufficiently determine if an operator has active managerial control of foodborne illness risk factors by",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    }
+  ]
+}

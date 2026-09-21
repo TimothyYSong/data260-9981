@@ -1,0 +1,74 @@
+{
+  "technique": "token",
+  "question_id": "q2",
+  "query": "What is the primary purpose of field verification when reviewing a voluntary food safety management system?",
+  "expected_answer": "The primary purpose of field verification is to determine whether the activities carried out in support of a validated food safety management system are being conducted according to the written plan.\n",
+  "expected_source": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    -0.009101193398237228,
+    0.04461948201060295,
+    -0.03867289796471596,
+    -0.03248143196105957,
+    0.11751547455787659,
+    -0.00883092824369669,
+    0.03490833938121796,
+    -0.022668125107884407
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 26.897374998952728,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7948245180197241,
+      "cosine_sim": 0.7948245186576244,
+      "chunk_len": 976,
+      "preview": "of record keeping procedures. FIELD VERIFICATION The primary purpose of field verification is to determine whether the activities carried out in support of a va",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.699914116579295,
+      "cosine_sim": 0.6999141107747368,
+      "chunk_len": 1013,
+      "preview": "35 However, the facility may be completely comfortable with the record keeping that is already specified in their plan. If you see that records are not specifie",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.685303394006871,
+      "cosine_sim": 0.6853033936195272,
+      "chunk_len": 412,
+      "preview": "the operator. It should be noted, however, that you can sufficiently determine if an operator has active managerial control of foodborne illness risk factors by",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.6719387397710653,
+      "cosine_sim": 0.6719387418547556,
+      "chunk_len": 998,
+      "preview": "report similar to the one in Annex 7 of the Manual may be completed. The report in Annex 7 contains a suggested checklist to use when evaluating a food safety m",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6653054129200399,
+      "cosine_sim": 0.6653054148124914,
+      "chunk_len": 1027,
+      "preview": "in Annex 1. VALIDATION A voluntarily implemented food safety management system using HACCP principles needs to be “validated.” Validation, for the purposes of t",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    }
+  ]
+}

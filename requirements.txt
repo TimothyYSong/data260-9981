@@ -1,0 +1,16 @@
+
+fastapi
+uvicorn
+jinja2
+python-multipart
+bcrypt
+itsdangerous
+llama-index
+llama-index-embeddings-huggingface
+sentence-transformers
+faiss-cpu
+numpy
+pandas
+pypdf
+pyyaml
+fonttools

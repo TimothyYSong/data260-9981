@@ -1,0 +1,74 @@
+{
+  "technique": "token",
+  "question_id": "q5",
+  "query": "What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?",
+  "expected_answer": "The candidate must have an average score of at least 90 percent and must not disagree with the FDA Standard on more than 12 items in any one establishment.\n",
+  "expected_source": "retail_standardization_manual_2022.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.11198068410158157,
+    0.004936871584504843,
+    -0.08878888934850693,
+    -0.008654548786580563,
+    -0.029559284448623657,
+    0.06696674972772598,
+    -0.05505412817001343,
+    0.07585713267326355
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 27.080832995125093,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7663281854297931,
+      "cosine_sim": 0.7663281829252445,
+      "chunk_len": 1273,
+      "preview": "is the mechanism through which FDA, as a lead federal food protection agency, promotes uniform implementation of national food regulatory policy among federal, ",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7508607327896172,
+      "cosine_sim": 0.7508607344459006,
+      "chunk_len": 1010,
+      "preview": "Page | 13 Chapter 3: Field Requirements and Administration 3-1 SCOPE 3-101 Objective This chapter explains the field requirements leading to FDA STANDARDIZATION",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7468922731051089,
+      "cosine_sim": 0.7468922728781092,
+      "chunk_len": 1093,
+      "preview": "• Focused inspection on activities associated with FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS (with specific attention to handwashing, bare hand",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7404018449444336,
+      "cosine_sim": 0.7404018447314165,
+      "chunk_len": 1125,
+      "preview": "of the inspection process that need improvement. The check boxes may be used to check specific observations of the CANDIDATE’S performance. Only one checklist s",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7336259584798579,
+      "cosine_sim": 0.7336259548940096,
+      "chunk_len": 1266,
+      "preview": "hazards associated with foodborne illness or injury or on provisions that support or facilitate them. The Food Code designates these provisions as Priority and ",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    }
+  ]
+}

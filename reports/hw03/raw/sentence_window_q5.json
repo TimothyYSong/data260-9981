@@ -1,0 +1,74 @@
+{
+  "technique": "sentence_window",
+  "question_id": "q5",
+  "query": "What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?",
+  "expected_answer": "The candidate must have an average score of at least 90 percent and must not disagree with the FDA Standard on more than 12 items in any one establishment.\n",
+  "expected_source": "retail_standardization_manual_2022.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.11198068410158157,
+    0.004936871584504843,
+    -0.08878888934850693,
+    -0.008654548786580563,
+    -0.029559284448623657,
+    0.06696674972772598,
+    -0.05505412817001343,
+    0.07585713267326355
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 125.58204200468026,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.8480084772084333,
+      "cosine_sim": 0.8480084736082105,
+      "chunk_len": 433,
+      "preview": "3-102 Performance Areas The following areas of performance shall be addressed by the CANDIDATE during the food establishment inspections and evaluated by the ST",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": " \nPage | 13 \nChapter 3: Field Requirements and \nAdministration \n3-1 SCOPE \n3-101 Objective \nThis chapter explains the field requirements leading to FDA STANDARDIZATION. \n 3-102 Performance Areas \nThe following areas of performance shall be addressed by the CANDIDATE during the food establishment \ninspections and evaluated by the STANDARD: \n(A) FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS: \nThe CANDIDATE shall demonstrate knowledge of current FDA Food Code  provisions related to FOOD \nCODE INTERVENTIONS and FOODBORNE ILLNESS RISK FACTORS and the ability to interpret and apply \nthem. \n (B) GOOD RETAIL PRACTICES: \nThe CANDIDATE shall demonstrate knowledge of current FDA Food Code provisions related to GOOD \nRETAIL PRACTICES and the ability to interpret and apply them. \n (C) Application of HACCP Principles: \nThe CANDIDATE shall demonstrate the ability to verify compliance with an existing HACCP plan and \napply HACCP principles in the development of flow charts and RISK CONTROL PLANS (RCPs).  In the \nabsence of a HACCP Plan, the CANDIDATE shall demonstrate the ability to apply all seven HACCP \nprinciples to the inspection process. \n"
+    },
+    {
+      "rank": 2,
+      "store_score": 0.8249832850889931,
+      "cosine_sim": 0.8249832830030583,
+      "chunk_len": 83,
+      "preview": "Performance Area A – Foodborne Illness Risk Factors and Food Code Interventions.",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": "The checklist and comments should be used to help determine whether the CANDIDATE \ncompletes STANDARDIZATION/re-STANDARDIZATION and also to provide feedback to the CANDIDATE about \nelements of the inspection process that need improvement.   The check boxes may be used to check specific \nobservations of the CANDIDATE’S performance.  Only one checklist should be used for the entire exercise and \nnot a separate checklist for each inspection. \n Performance Area A – Foodborne Illness Risk Factors and Food Code \nInterventions. \n The Candidate demonstrated knowledge of current FDA Food Code provisions related to FOOD CODE \nINTERVENTIONS and FOODBORNE ILLNESS RISK FACTORS which are most frequently associated with foodborne \nillness or injury. \n • Completed the STANDARDIZATION inspection exercise with no more than 12 disagreements out of a \ntotal of 62 items in any one food establishment and an average score of 90% for all inspections. \n • Provided the correct Food Code provision for out of compliance FOODBORNE ILLNESS RISK \nFACTORS and FOOD CODE INTERVENTIONS identified during inspection. \n"
+    },
+    {
+      "rank": 3,
+      "store_score": 0.8022102056958308,
+      "cosine_sim": 0.8022102026617273,
+      "chunk_len": 298,
+      "preview": "(a) To satisfy the FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS performance area, the CANDIDATE shall not disagree with the STANDARD on more than ",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": "The STANDARD’s scoring \nof an item as “S” represents a disagreement between the CANDIDATE and the STANDARD. \n At the conclusion of each inspection, the STANDARD shall determine the number of \ndisagreements on items and record that number in the chart provided in Appendix 2.  At the \ncompletion of the final inspection, the STANDARD shall total the number of disagreements for \nall food establishments inspected. \n (a) To satisfy the FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS \nperformance area, the CANDIDATE shall not disagree with the STANDARD on more than \n12 items in any one establishment in this section of the STANDARDIZATION Inspection \nReport and have an average score of at least 90%. \n (b) To satisfy the GOOD RETAIL PRACTICES performance area, the CANDIDATE shall not \ndisagree with the STANDARD on more than 5 items in any one establishment in this \nsection of the STANDARDIZATION Inspection Report and have an average score of at \nleast 85%. \n (B) Application of HACCP Principles: \nDuring the food establishment inspections, the CANDIDATE shall demonstrate the proper inspection \napproach for food establishments with pre-existing HACCP plans and those without HACCP plans. \n Each CANDIDATE shall demonstrate an understanding of HACCP by: \n(1) Flow Charts: (Required for initial STANDARDIZATIONS, optional for re-STANDARDIZATIONS) \n(a) Preparing Process Flow Charts: \nDuring the joint inspections, the STANDARD shall select a total of three food preparation \nprocesses for the CANDIDATE to describe on a flow chart, to include: \n• Process 1 – No Cook Step \n• Process 2 – Same Day Service \n• Process 3 – Complex Food Preparation \nThe CANDIDATE shall develop each flow chart using information gained through actual \nobservations of operational steps during an inspection. "
+    },
+    {
+      "rank": 4,
+      "store_score": 0.7953173404707549,
+      "cosine_sim": 0.7953173358981206,
+      "chunk_len": 240,
+      "preview": "3-302 Performance Criteria To be standardized by FDA, a CANDIDATE shall meet the following criteria for each performance area: (A) FOODBORNE ILLNESS RISK FACTOR",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": "At the conclusion of the field exercise, the STANDARD shall tabulate and review the CANDIDATE’S \ninspection results and other observations to determine if the CANDIDATE has successfully completed \nthe requirements for STANDARDIZATION.  The checklist for STANDARDIZATION performance areas found \nin Appendix 2 can be used as an aid in this determination. \n (E) Termination of the Exercise/Inspection: \nWhen the STANDARD terminates the STANDARDIZATION exercise before completing the eight (initial) or \nsix (re-STANDARDIZATION) inspections because of the CANDIDATE’S inability to meet (or the likelihood of \nnot meeting) the performance criteria, the STANDARD will work with the CANDIDATE and his/her \nsupervisor to develop an action plan to help the CANDIDATE meet the performance criteria. \n 3-302 Performance Criteria \nTo be standardized by FDA, a CANDIDATE shall meet the following criteria for each performance area: \n(A) FOODBORNE ILLNESS RISK FACTORS, FOOD CODE INTERVENTIONS and GOOD RETAIL PRACTICES: \n(1) Inspection Report: "
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7681268856113284,
+      "cosine_sim": 0.7681268817186248,
+      "chunk_len": 298,
+      "preview": "Summary of Level of Agreement Required for Each Performance Area Performance Area Level Of Agreement FOODBORNE ILLNESS RISK FACTORS and FOOD CODE INTERVENTIONS ",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": " \nPage | 23 \nTable 2.  Summary of Level of Agreement Required for Each Performance Area \nPerformance Area Level Of Agreement \nFOODBORNE ILLNESS RISK \nFACTORS and FOOD CODE \nINTERVENTIONS \nNo more than 12 disagreements in any one food establishment and an average \nscore of 90% for all inspections in the STANDARDIZATION.  (Minimum of 80= No \nmore than 12 disagreements out of a total of 62 items) \nGOOD RETAIL PRACTICES \nNo more than five disagreements in any one food establishment and an average \nscore of 85% for all inspections in the STANDARDIZATION.  (Minimum of 80 = No \nmore than five disagreements out of a total of 27 items) \nApplication of HACCP \nPrinciples \n3 Process Flow Charts: (optional for re-STANDARDIZATION) Maximum of two \nerrors or omissions [3-302(B)(1)] \n1 RISK CONTROL PLAN: four parts accurately addressed [3-302( B)(2)] \n1 HACCP Plan Verification: Correctly review documentation records on three \ndifferent dates for a food establishment with a HACCP Plan [3-302(B)(3)] with \nagreement on at least eight out of the nine answers. \n Knowledge of HACCP principles: Accurately lists the seven principles and \nexplains how each applies to a food establishment (initial STANDARDIZATION \nonly) \nInspection Equipment5 \nCANDIDATE has equipment from the essential equipment list \nCANDIDATE demonstrates knowledge and use of essential equipment \n \nCommunication5 \nIntroductions to person in charge [4-102] \nFact finding questions through interview with person in charge [4-103] \nCANDIDATE setting an example [4-102] Exit conference with person in charge [4-\n104] \nRISK-BASED INSPECTION    \nMethodology5 \nEstablishing inspection priorities based on risk and using time wisely. \n"
+    }
+  ]
+}

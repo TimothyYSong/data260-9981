@@ -1,0 +1,74 @@
+{
+  "technique": "semantic",
+  "question_id": "q5",
+  "query": "What performance score is required for a candidate to satisfy the Foodborne Illness Risk Factors and Food Code Interventions performance area during FDA standardization?",
+  "expected_answer": "The candidate must have an average score of at least 90 percent and must not disagree with the FDA Standard on more than 12 items in any one establishment.\n",
+  "expected_source": "retail_standardization_manual_2022.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.11198068410158157,
+    0.004936871584504843,
+    -0.08878888934850693,
+    -0.008654548786580563,
+    -0.029559284448623657,
+    0.06696674972772598,
+    -0.05505412817001343,
+    0.07585713267326355
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 20.473750002565794,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.7535106782446215,
+      "cosine_sim": 0.7535106751710553,
+      "chunk_len": 2050,
+      "preview": "This process provides regulatory personnel with the opportunity to subject their knowledge and skills related to the Code’s provisions to a uniform system of me",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.7318042131771612,
+      "cosine_sim": 0.7318042122772411,
+      "chunk_len": 1693,
+      "preview": "Page | 34 Appendix 2: Instructions for Scoring and Determining Performance The purpose of the following chart is to tally the disagreement between the CANDIDATE",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.7193435844049649,
+      "cosine_sim": 0.7193435848277892,
+      "chunk_len": 2818,
+      "preview": "Page | 41 Template for Conducting a Risk-Based Inspection The STANDARDIZATION exercise serves as a template for regulatory inspections conducted by federal, sta",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.715283490981778,
+      "cosine_sim": 0.7152834906934731,
+      "chunk_len": 240,
+      "preview": "FDA Food Code 2026 Preface v Preface 1. Foodborne Illness Estimates, Risk Factors, and Interventions 2. PHS Model Codes History, Purpose, and Authority 3. Publi",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.7141371188078909,
+      "cosine_sim": 0.7141371134662622,
+      "chunk_len": 794,
+      "preview": "The checklist for STANDARDIZATION performance areas found in Appendix 2 can be used as an aid in this determination. (E) Termination of the Exercise/Inspection:",
+      "source_file": "retail_standardization_manual_2022.pdf",
+      "window_context": null
+    }
+  ]
+}

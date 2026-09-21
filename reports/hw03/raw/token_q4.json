@@ -1,0 +1,74 @@
+{
+  "technique": "token",
+  "question_id": "q4",
+  "query": "What are common examples of critical control points in a retail food HACCP system?",
+  "expected_answer": "Common examples include cooking, cooling, hot holding, and cold holding of ready-to-eat time/temperature control for safety foods.\n",
+  "expected_source": "fda-food-code-2026.pdf",
+  "k": 5,
+  "query_embedding_dimension": 384,
+  "query_embedding_first_8": [
+    0.006045117042958736,
+    -0.021328838542103767,
+    -0.07716592401266098,
+    0.030889352783560753,
+    -0.005775071680545807,
+    0.060758840292692184,
+    0.00328802689909935,
+    0.05551189184188843
+  ],
+  "query_vector_shape": [
+    384
+  ],
+  "doc_vector_shape": [
+    5,
+    384
+  ],
+  "latency_ms": 26.896374998614192,
+  "results": [
+    {
+      "rank": 1,
+      "store_score": 0.6825340286561902,
+      "cosine_sim": 0.6825340299936834,
+      "chunk_len": 992,
+      "preview": "2 strengths and weaknesses in their systems and suggesting possible solutions for improvement during inspections. This Manual was written to provide a \"roadmap\"",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 2,
+      "store_score": 0.6770718954922852,
+      "cosine_sim": 0.677071892948338,
+      "chunk_len": 338,
+      "preview": "53 Annex 2 Sample HACCP Tables Table 1a. Process #1 – Food Preparation with No Cook Step FOOD/MENU ITEMS: HAZARD(S) CRITICAL CONTROL POINTS (List Only the Opera",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 3,
+      "store_score": 0.6709836817366133,
+      "cosine_sim": 0.6709836839005495,
+      "chunk_len": 1085,
+      "preview": "consume the product should be considered to determine how each of these factors may influence the likely occurrence and severity of the hazard being controlled.",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 4,
+      "store_score": 0.6702482982418274,
+      "cosine_sim": 0.6702483015739733,
+      "chunk_len": 872,
+      "preview": "Since the 1980’s, operators and regulators have been exploring the use of the HACCP principles in restaurants, grocery stores, institutional care facilities, an",
+      "source_file": "fda-food-code-2026.pdf",
+      "window_context": null
+    },
+    {
+      "rank": 5,
+      "store_score": 0.6691584310279132,
+      "cosine_sim": 0.6691584286171458,
+      "chunk_len": 615,
+      "preview": "77 2. List Critical Control Points (CCPs) and Critical Limits identified by the establishment’s HACCP plan. Food Item or Process Critical Control Point Critical",
+      "source_file": "A-Regulator's-Manual-For-Applying-HACCP-Principles-to-Risk-based-Retail-and-Food-Service-Inspections-and-Evaluating-Voluntary-Food-Safety-Management-Systems.pdf",
+      "window_context": null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "homework": "HW3",
+  "student": "Timothy Song",
+  "sid4": 9981,
+  "domain_id": 5,
+  "status": "PASS",
+  "checks": {
+    "questions_yaml_exists": true,
+    "question_count": 5,
+    "corpus_directory_exists": true,
+    "corpus_pdf_count": 3,
+    "raw_directory_exists": true,
+    "retrieval_json_count": 15,
+    "token_result_count": 5,
+    "semantic_result_count": 5,
+    "sentence_window_result_count": 5,
+    "chunk_stats_exists": true,
+    "metrics_md_exists": true,
+    "run_log_exists": true,
+    "sources_md_exists": true,
+    "corpus_manifest_exists": true,
+    "ai_use_exists": true,
+    "run_instructions_exists": true,
+    "report_pdf_exists": true,
+    "embedding_dimension": 384,
+    "all_embedding_dimensions_384": true,
+    "all_required_retrieval_outputs_present": true
+  }
+}

@@ -10,6 +10,8 @@ PyMySQL
 requests
 chromadb
 langgraph
+langchain-ollama
+pydantic
 llama-index
 llama-index-embeddings-huggingface
 sentence-transformers

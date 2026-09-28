@@ -1,0 +1,717 @@
+################################################################################
+Q1: What is gradient descent?
+################################################################################
+================================================================================
+QUESTION: What is gradient descent?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+Gradient descent is an optimization algorithm used to minimize a function by iteratively adjusting its parameters in the direction opposite to the gradient of the function. Here's a structured explanation:
+
+1. **Core Concept**:  
+   Gradient descent finds the minimum of a cost function (e.g., error between predicted and actual values in machine learning) by moving parameters in the direction of the steepest descent, determined by the negative gradient.
+
+2. **Mathematical Formulation**:  
+   For a cost function $ J(\theta) $, the update rule is:  
+   $$
+   \theta_{\text{new}} = \theta_{\text{old}} - \alpha \nabla J(\theta_{\text{old}})
+   $$  
+   - $ \alpha $: Learning rate (controls step size).  
+   - $ \nabla J(\theta) $: Gradient (vector of partial derivatives).
+
+3. **Variants**:  
+   - **Batch Gradient Descent**: Uses the entire dataset for each update (stable but computationally heavy).  
+   - **Stochastic Gradient Descent (SGD)**: Uses a single data point (faster but noisier).  
+   - **Mini-Batch Gradient Descent**: Uses a small random subset (balances speed and stability).  
+   - **Momentum**: Adds a fraction of the previous update direction to accelerate convergence.  
+   - **Adaptive Methods (e.g., Adam)**: Adjust learning rates dynamically based on parameter history.
+
+4. **Key Considerations**:  
+   - **Learning Rate**: Too high may overshoot the minimum; too low slows convergence.  
+   - **Local Minima**: Non-convex functions may trap the algorithm, though convex problems have a single global minimum.  
+   - **Applications**: Widely used in training models like linear regression, neural networks, and logistic regression.
+
+In summary, gradient descent is a foundational technique for optimizing machine learning models by iteratively refining parameters to minimize error, with variations tailored to different computational and convergence needs.
+
+Question: What is gradient descent?
+Top-k: 3
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 2
+Score/Distance: 0.4096
+Chunk:
+𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝐽
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+w
+J(w)
+𝑊∗
+Gradient descent method
+• To find the weights that minimize a cost function, 
+gradient descent is commonly used as an optimization 
+algorithm.
+• Gradient(vector of partial derivatives) gives the input 
+direction in which the function decreases 
+• Step0: pick a random starting point
+• Step1: compute the gradient
+• Step2: take a small step in the direction of the gradien
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture6.pdf
+Chunk ID: 20
+Score/Distance: 0.5232
+Chunk:
+r method: based on Newton’s method, L-BFGS → not cover 
+Source: An overview of gradient descent optimization algorithms
+Comparison of optimizer functions
+iteration
+Accuracy
+Source: Evolutionary Deep Learning, Micheal Lanham
+Momentum update
+Gradient descent update
+x ≔ x – learning rate*dx
+Momentum update
+v = β*v – learning rate*dx
+x ≔ x + v
+v : velocity
+β : momentum
+
+Gradient descent with/wo Momentum
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Adagrad
+v ≔ v + dx**2
+x ≔ x
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture6.pdf
+Chunk ID: 14
+Score/Distance: 0.5370
+Chunk:
+decay
+• Optimizer
+
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+Batch & Stochastic gradient descent
+Source: Machine Learning, Emily Fox & Carlos Guestrin
+Batch 
+Gradient 
+descent
+Stochastic 
+Gradient 
+descent
+𝜕𝐽
+𝜕𝑊 = − 1
+𝑚 ෍
+𝑖=1
+𝑚
+[ ෡𝑦𝑖 − 𝑦𝑖 𝑥𝑗
+𝑖]
+𝜕𝐽
+𝜕𝑊 = − ෡𝑦𝑖 − 𝑦𝑖 𝑥𝑗
+𝑖
+(Sum over data points)
+(Each time, pick different data point)
+Mini-batch Gradient Descent
+• Batch Gradient Descent
+Computes the gradients based on full training set
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+Gradient descent is an optimization algorithm used to minimize a cost function by iteratively adjusting the model's parameters (weights) in the direction that reduces the function's value. Here's a concise breakdown:
+
+1. **Core Concept**:  
+   - The algorithm computes the gradient (vector of partial derivatives) of the cost function $ J(w) $ with respect to the parameters $ w $. This gradient indicates the direction of steepest ascent, so the update rule moves the parameters in the **opposite direction** (negative gradient) to minimize $ J(w) $.
+
+2. **Update Rule**:  
+   $$
+   W_j^t = W_j^{t-1} - \alpha \frac{\partial J}{\partial W_j}
+   $$  
+   - $ W_j $: Parameter being updated.  
+   - $ \alpha $: Learning rate (step size).  
+   - $ \frac{\partial J}{\partial W_j} $: Partial derivative of the cost function with respect to $ W_j $.
+
+3. **Key Steps**:  
+   - **Step 0**: Start with random initial weights.  
+   - **Step 1**: Compute the gradient of the cost function.  
+   - **Step 2**: Adjust the weights by taking a small step in the direction of the negative gradient.
+
+4. **Variants**:  
+   - **Batch Gradient Descent**: Uses the entire training dataset to compute the gradient.  
+   - **Stochastic Gradient Descent (SGD)**: Uses a single data point (or a small subset) for each update, introducing noise but faster convergence.  
+   - **Mini-batch Gradient Descent**: A balance between batch and stochastic, using small random subsets of data.  
+
+5. **Purpose**:  
+   Gradient descent is fundamental in machine learning for training models by iteratively minimizing loss functions, enabling models to learn optimal parameters for tasks like regression and classification.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Gradient descent is an optimization algorithm used to find the weights that minimize a cost function by iteratively adjusting parameters in the direction of the negative gradient. The process involves:  
+1. **Step 0**: Picking a random starting point.  
+2. **Step 1**: Computing the gradient (vector of partial derivatives) to determine the direction of steepest descent.  
+3. **Step 2**: Taking a small step in the direction of the gradient, updated by the learning rate (α) and the partial derivative of the cost function [Source 1].  
+
+The weight update rule is mathematically expressed as:  
+$$ W_j^t := W_j^{t-1} - \alpha \frac{\partial J}{\partial W} $$  
+where $ W_j $ represents the weights, $ \alpha $ is the learning rate, and $ \frac{\partial J}{\partial W} $ is the gradient of the cost function $ J $ with respect to the weights [Source 1, Source 3].  
+
+Variants like **batch gradient descent** compute the gradient using the entire training dataset, while **stochastic gradient descent** uses a single data point at each iteration [Source 3].
+
+################################################################################
+Q2: According to the lectures, how does batch gradient descent compute its gradient using the training data, and what velocity and parameter update equations are used by momentum gradient descent?
+################################################################################
+================================================================================
+QUESTION: According to the lectures, how does batch gradient descent compute its gradient using the training data, and what velocity and parameter update equations are used by momentum gradient descent?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+**Batch Gradient Descent:**  
+Batch gradient descent computes the gradient of the loss function using the entire training dataset. Specifically, it calculates the average gradient across all training examples. The gradient is given by:  
+$$
+\nabla J(\theta) = \frac{1}{N} \sum_{i=1}^N \nabla J_i(\theta)
+$$  
+where $ N $ is the number of training examples, and $ J_i(\theta) $ is the loss for the $ i $-th example. This ensures the update direction is based on the global average of the gradients, leading to stable convergence but potentially slow updates due to the large computational cost.
+
+**Momentum Gradient Descent:**  
+Momentum gradient descent introduces a **velocity** term to accelerate convergence by accumulating past gradients. The velocity $ v_t $ and parameter update equations are:  
+1. **Velocity Update:**  
+$$
+v_t = \beta v_{t-1} + \eta \nabla J(\theta)
+$$  
+where $ \beta $ is the momentum hyperparameter (e.g., 0.9), $ \eta $ is the learning rate, and $ \nabla J(\theta) $ is the gradient computed via batch gradient descent.  
+2. **Parameter Update:**  
+$$
+\theta_t = \theta_{t-1} - v_t
+$$  
+The velocity smooths the update direction by incorporating historical gradients, helping navigate flat regions and avoid local minima. This reduces oscillations and speeds up convergence compared to standard gradient descent.  
+
+**Key Difference:**  
+While batch gradient descent uses the full dataset's gradient, momentum adds a velocity term that exponentially weights past gradients, enabling faster and more stable optimization.
+
+Question: According to the lectures, how does batch gradient descent compute its gradient using the training data, and what velocity and parameter update equations are used by momentum gradient descent?
+Top-k: 3
+
+Result 1
+Source: lecture6.pdf
+Chunk ID: 15
+Score/Distance: 0.3700
+Chunk:
+Computes the gradients based on full training set
+Ex) Offline learning
+• Stochastic Gradient Descent
+Computes just one instance
+Ex) Online learning
+• Mini-batch Gradient Descent
+Computes the gradients on small random sets of instances
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+
+Batch & Stochastic gradient descent
+• " batch gradient descent" calculates the gradient using the entire training dataset for 
+each parameter update
+• "stochastic gradient descent" updates parameter
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture6.pdf
+Chunk ID: 20
+Score/Distance: 0.4346
+Chunk:
+r method: based on Newton’s method, L-BFGS → not cover 
+Source: An overview of gradient descent optimization algorithms
+Comparison of optimizer functions
+iteration
+Accuracy
+Source: Evolutionary Deep Learning, Micheal Lanham
+Momentum update
+Gradient descent update
+x ≔ x – learning rate*dx
+Momentum update
+v = β*v – learning rate*dx
+x ≔ x + v
+v : velocity
+β : momentum
+
+Gradient descent with/wo Momentum
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Adagrad
+v ≔ v + dx**2
+x ≔ x
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture6.pdf
+Chunk ID: 16
+Score/Distance: 0.4425
+Chunk:
+• "stochastic gradient descent" updates parameters based on the gradient calculated from 
+just one randomly selected data point at a time, making it significantly faster for large 
+datasets but potentially less stable due to the noisy updates
+batch stochastic Mini-batch
+1 epoch : 1 pass through 1 batch, whole data set, 
+1 iteration : 1 pass through 1 mini-batch
+When Learning rate is too high
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+If learning r
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+According to the lectures:  
+1. **Batch Gradient Descent** computes its gradient by using the **entire training dataset** for each parameter update. This approach, referred to as "offline learning," ensures stable convergence but can be computationally intensive for large datasets.  
+
+2. **Momentum Gradient Descent** uses the following equations:  
+   - **Velocity update**:  
+     $ v = \beta \cdot v - \text{learning rate} \cdot \frac{\partial J}{\partial W} $  
+     (where $ \beta $ is the momentum coefficient, and $ \frac{\partial J}{\partial W} $ is the gradient of the loss with respect to the parameters).  
+   - **Parameter update**:  
+     $ W = W - v $  
+     (the parameters are updated based on the accumulated velocity, which incorporates past gradients to accelerate convergence and mitigate oscillations).  
+
+This method combines the current gradient with historical gradient information, enabling faster traversal through flat regions of the loss landscape.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Batch gradient descent computes its gradient using the entire training dataset for each parameter update, as it calculates the gradient based on the full training set [Source 1]. 
+
+Momentum gradient descent uses the following equations:  
+- **Velocity update**: $ v = \beta \cdot v - \text{learning rate} \cdot \frac{\partial J}{\partial x} $ [Source 2].  
+- **Parameter update**: $ x \coloneqq x + v $ [Source 2].  
+
+These equations incorporate a velocity term ($ v $) to accelerate convergence by accumulating past gradients, as described in the momentum method.
+
+################################################################################
+Q3: How is gradient descent described across the lecture documents?
+################################################################################
+================================================================================
+QUESTION: How is gradient descent described across the lecture documents?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+Gradient descent is described across lecture documents as an iterative optimization algorithm used to minimize a function by following the negative gradient of the loss function. Key aspects typically covered include:
+
+1. **Core Concept**: The algorithm adjusts parameters (e.g., weights in a model) to reduce the loss function by moving in the direction opposite to the gradient. This is formalized by the update rule:  
+   **θ = θ − η∇J(θ)**, where η is the learning rate (step size) and ∇J(θ) is the gradient of the loss function.
+
+2. **Variants**:  
+   - **Batch Gradient Descent**: Uses the entire dataset for each update, leading to stable convergence but high computational cost.  
+   - **Stochastic Gradient Descent (SGD)**: Updates parameters using a single random sample at a time, introducing noise but enabling faster computation.  
+   - **Mini-Batch Gradient Descent**: A compromise, using small subsets of data to balance speed and stability.
+
+3. **Challenges**:  
+   - **Learning Rate**: Too large may cause divergence; too small may slow convergence. Techniques like learning rate decay or adaptive methods (e.g., Adam, RMSProp) are often discussed.  
+   - **Local Minima/Saddle Points**: The algorithm may converge to suboptimal solutions, especially in non-convex landscapes.  
+   - **Initialization**: Proper initialization is critical for avoiding poor convergence.
+
+4. **Applications**: Commonly applied in machine learning to minimize loss functions (e.g., mean squared error, cross-entropy) during model training. Visualizations of loss surfaces and parameter updates are often used to illustrate the process.
+
+5. **Mathematical Foundations**: Lectures typically explain the gradient computation, chain rule for backpropagation, and the role of derivatives in updating parameters.  
+
+6. **Comparisons**: Gradient descent is contrasted with other optimizers (e.g., Newton’s method, conjugate gradient) to highlight trade-offs in efficiency and convergence properties.  
+
+Overall, the description emphasizes its role as a foundational technique in training models, while addressing practical considerations and limitations.
+
+Question: How is gradient descent described across the lecture documents?
+Top-k: 3
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 2
+Score/Distance: 0.5412
+Chunk:
+𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝐽
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+w
+J(w)
+𝑊∗
+Gradient descent method
+• To find the weights that minimize a cost function, 
+gradient descent is commonly used as an optimization 
+algorithm.
+• Gradient(vector of partial derivatives) gives the input 
+direction in which the function decreases 
+• Step0: pick a random starting point
+• Step1: compute the gradient
+• Step2: take a small step in the direction of the gradien
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture6.pdf
+Chunk ID: 20
+Score/Distance: 0.5719
+Chunk:
+r method: based on Newton’s method, L-BFGS → not cover 
+Source: An overview of gradient descent optimization algorithms
+Comparison of optimizer functions
+iteration
+Accuracy
+Source: Evolutionary Deep Learning, Micheal Lanham
+Momentum update
+Gradient descent update
+x ≔ x – learning rate*dx
+Momentum update
+v = β*v – learning rate*dx
+x ≔ x + v
+v : velocity
+β : momentum
+
+Gradient descent with/wo Momentum
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Adagrad
+v ≔ v + dx**2
+x ≔ x
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture6.pdf
+Chunk ID: 15
+Score/Distance: 0.6051
+Chunk:
+Computes the gradients based on full training set
+Ex) Offline learning
+• Stochastic Gradient Descent
+Computes just one instance
+Ex) Online learning
+• Mini-batch Gradient Descent
+Computes the gradients on small random sets of instances
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+
+Batch & Stochastic gradient descent
+• " batch gradient descent" calculates the gradient using the entire training dataset for 
+each parameter update
+• "stochastic gradient descent" updates parameter
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+The lecture documents describe **gradient descent** as a fundamental optimization algorithm used to minimize cost functions in machine learning. Key points from the context include:
+
+1. **Basic Mechanism**:  
+   - Gradient descent updates parameters iteratively using the formula:  
+     $ W_j^t = W_j^{t-1} - \alpha \frac{\partial J}{\partial W} $,  
+     where $ \alpha $ is the learning rate, and the gradient ($ \frac{\partial J}{\partial W} $) indicates the direction of steepest descent.  
+   - It involves steps like selecting a starting point, computing gradients, and taking small steps toward the minimum.
+
+2. **Variants**:  
+   - **Batch Gradient Descent**: Uses the entire training dataset for each update (offline learning).  
+   - **Stochastic Gradient Descent (SGD)**: Updates parameters using a single instance (online learning).  
+   - **Mini-batch Gradient Descent**: Uses small random subsets of data (a balance between batch and stochastic).  
+
+3. **Advanced Techniques**:  
+   - **Momentum**: Introduces a velocity term ($ v $) to accelerate updates and dampen oscillations:  
+     $ v = \beta v - \alpha \cdot \text{dx} $, followed by $ x \leftarrow x + v $.  
+   - **Adagrad**: Adapts learning rates dynamically by accumulating squared gradients:  
+     $ v \leftarrow v + \text{dx}^2 $, then updates $ x $.  
+
+4. **Comparative Context**:  
+   - Gradient descent is contrasted with other optimizers like L-BFGS (not covered here) and compared based on factors like iteration speed and accuracy.  
+   - It is highlighted as a foundational method, with improvements (e.g., momentum, adaptive learning rates) addressing its limitations (e.g., slow convergence, sensitivity to learning rates).  
+
+In summary, the documents present gradient descent as a core algorithm, emphasizing its variants, optimization strategies, and role in training machine learning models.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Gradient descent is described across the lecture documents as an optimization algorithm used to minimize a cost function by iteratively adjusting weights in the direction of the steepest descent, determined by the gradient. Key descriptions include:  
+1. **Basic Gradient Descent**: The method involves computing the gradient of the cost function and updating weights using the formula $ W_j^t := W_j^{t-1} - \alpha \frac{\partial J}{\partial W} $, where $ \alpha $ is the learning rate [Source 1].  
+2. **Variants and Enhancements**:  
+   - **Momentum Update**: Introduces a velocity term $ v $ to accelerate convergence by incorporating past gradients, with the update rule $ v := \beta v - \text{learning rate} \cdot dx $ and $ x := x + v $ [Source 2].  
+   - **Adagrad**: Adjusts the learning rate adaptively based on historical gradients, using $ v := v + dx^2 $ and $ x := x - \text{learning rate} \cdot dx / \sqrt{v} $ [Source 2].  
+3. **Types of Gradient Descent**:  
+   - **Batch Gradient Descent**: Computes gradients using the entire training dataset for each update [Source 3].  
+   - **Stochastic Gradient Descent (SGD)**: Uses a single training instance per update [Source 3].  
+   - **Mini-batch Gradient Descent**: Averages gradients over small random subsets of the data [Source 3].  
+
+These descriptions highlight the core mechanism of gradient descent and its adaptations for efficiency and performance.
+
+################################################################################
+Q4: What does momentum mean?
+################################################################################
+================================================================================
+QUESTION: What does momentum mean?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+Momentum is a fundamental concept in physics that quantifies the motion of an object. It is defined as the product of an object's **mass** and its **velocity**. Mathematically, it is expressed as:  
+
+$$
+\text{Momentum} (\vec{p}) = m \cdot \vec{v}
+$$  
+
+Where:  
+- $ m $ = mass of the object (in kilograms, kg),  
+- $ \vec{v} $ = velocity of the object (in meters per second, m/s).  
+
+### Key Characteristics:  
+1. **Vector Quantity**: Momentum has both magnitude and direction, same as velocity.  
+2. **Units**: The SI unit of momentum is **kilogram-meter per second (kg·m/s)**.  
+3. **Dependence on Motion**: An object at rest has zero momentum, while a moving object has momentum proportional to its mass and speed.  
+
+### Example:  
+A truck moving at 20 m/s has a larger momentum than a bicycle moving at the same speed because its mass is much greater.  
+
+Momentum is crucial in analyzing collisions and understanding how forces affect motion over time.
+
+Question: What does momentum mean?
+Top-k: 3
+
+Result 1
+Source: lecture3.pdf
+Chunk ID: 25
+Score/Distance: 0.9016
+Chunk:
+ion”. 
+In simple terms, entropy indicates the amount of uncertainty of an event. 
+Source: https://neptune.ai/blog/cross-entropy-loss-and-its-applications-in-deep-learning
+https://machinelearningmastery.com/cross-entropy-for-machine-learning/
+               https://www.v7labs.com/blog/cross-entropy-loss-guide
+Entropy in information
+Information ℎ 𝑥  can be calculated for an event x, given the probability of the event 𝑃 𝑥  as follows:
+ℎ 𝑥 = −𝑙𝑜𝑔2(𝑃 𝑥 ) 
+where 𝑙𝑜𝑔2 is the base-2 logarithm, meaning t
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture3.pdf
+Chunk ID: 24
+Score/Distance: 0.9696
+Chunk:
+ss of a system.
+Source: https://www.scienceabc.com/
+
+Entropy in information
+Claude Shannon introduced the concept of information entropy in his 1948 paper, “A Mathematical Theory of 
+Communication”. 
+According to Shannon, entropy is the average number of bits required to represent or transmit an event drawn 
+from the probability distribution for the random variable.
+In other word, the entropy of a random variable is the average level of “information”. 
+In simple terms, entropy indicates the amou
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture3.pdf
+Chunk ID: 23
+Score/Distance: 0.9768
+Chunk:
+ayer Output layer
+𝑎1
+[0]
+𝑎2
+[0]
+𝑎3
+[0]
+𝑎 2
+𝑎1
+[1]
+𝑎2
+[1]
+ො𝑦 ො𝑦 = ൝1 𝑖𝑓𝑎[2] ≥ 0.5
+0 𝑖𝑓𝑎[2] < 0.5
+Accuracy in Classification
+Accuracy
+•   Sum(Prediction == Actual Y) / Total number of data
+•   mean(Prediction == Actual Y)*100
+𝑝𝑟𝑒𝑑𝑖𝑐𝑡𝑖𝑜𝑛 = ൝1 𝑖𝑓𝑎[2] ≥ 0.5
+0 𝑖𝑓𝑎[2] < 0.5
+Entropy in thermodynamics
+• Entropy is a concept of thermodynamics, introduced by Rudolf Clausius, a German physicist, in 1850.
+• Entropy is a measurement of the disorder or randomness of a system.
+Source: https://www.scienceabc.com
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+The provided context does not mention or define "momentum." The content focuses on **entropy**, **cross-entropy loss**, **information theory**, and related concepts in machine learning and thermodynamics. If you're asking about momentum in a different context (e.g., physics, engineering, or machine learning optimization), please clarify, and I can provide a general explanation.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+I cannot answer this question from the provided documents
+
+################################################################################
+Q5: What is SJSU's address?
+################################################################################
+================================================================================
+QUESTION: What is SJSU's address?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+San Jose State University (SJSU) is located at **1 Washington Square, San Jose, CA 95192**. This is the address for its main campus in downtown San Jose. The campus is also near the Diridon Caltrain Station and Almaden Boulevard.
+
+Question: What is SJSU's address?
+Top-k: 3
+
+Result 1
+Source: lecture1.pdf
+Chunk ID: 0
+Score/Distance: 0.8547
+Chunk:
+DATA 255 
+Deep Learning and Computer Vision in 
+Applied Data Intelligence
+Aug 19, 2026
+Taehee Jeong, Ph.D.
+San Jose State University
+
+Instructor 
+Taehee Jeong
+PhD in Electrical and Computer Engineering, Carnegie Mellon University
+email: taehee.jeong@sjsu.edu
+Office: ISB 866
+
+Office hours
+• By Walk-in/Appointment
+• between 5pm and 6pm on Monday and Tuesday
+• Or by Appointment
+• Or Zoom
+
+Instructional Student Assistant (ISA)
+Mamta Jha
+email: mamta.jha@sjsu.edu
+
+Courses for Advanced Data Science
+
+C
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture1.pdf
+Chunk ID: 1
+Score/Distance: 0.9650
+Chunk:
+jha@sjsu.edu
+
+Courses for Advanced Data Science
+
+Course Description
+Study deep learning theory, techniques and technologies; implement neural networks using deep 
+learning frameworks to solve problems in various application domains; build CNNs for vision, 
+RNNs/Transformers for sequences, and GANs for synthesis. Computer vision topics include image 
+preprocessing and augmentation, transfer learning, object detection, segmentation with a focus on 
+evaluation and robustness.
+Prerequisite(s): DATA
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture1.pdf
+Chunk ID: 5
+Score/Distance: 0.9871
+Chunk:
+n the course, as well as to maintain 
+academic integrity by reducing the instances of cheating. Students who record, distribute, or post these 
+materials will be referred to the Student Conduct and Ethical Development office. Unauthorized recording may 
+violate university and state law. 
+It is the responsibility of students who require special accommodations or assistive technology due to a 
+disability to notify the Accessible Education Center(AEC) at http://www.sjsu.edu/aec. AEC will in turn co
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+The provided context does not include San Jose State University's (SJSU) address. To find the official address, you may need to consult SJSU's official website or contact their administrative office directly.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+I cannot answer this question from the provided documents
+
+################################################################################
+Q6: What is today's weather?
+################################################################################
+================================================================================
+QUESTION: What is today's weather?
+================================================================================
+
+=== CONFIGURATION A: NO RAG ===
+I currently don't have access to real-time weather data or the ability to check live conditions. For today's weather, I recommend checking a reliable weather service like Weather.com, a weather app on your device, or a local weather forecast website. Let me know if you'd like help with anything else! ☀️🌧️
+
+Question: What is today's weather?
+Top-k: 3
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 0
+Score/Distance: 0.9598
+Chunk:
+DATA 255 
+Deep Learning and Computer Vision in 
+Applied Data Intelligence
+Sept 9, 2026
+Taehee Jeong, Ph.D.
+San Jose State University
+
+Today’s Topics(1)
+• Model optimization: Backward propagation
+
+Model optimizing procedure
+1. Initialize parameters
+2. Run the optimization loop
+1. Forward propagation to compute the loss function
+2. Backward propagation to compute the gradients with respect to the loss function
+3. Using the gradients, update your parameter with the gradient descent update rule
+3. R
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture3.pdf
+Chunk ID: 23
+Score/Distance: 1.0365
+Chunk:
+ayer Output layer
+𝑎1
+[0]
+𝑎2
+[0]
+𝑎3
+[0]
+𝑎 2
+𝑎1
+[1]
+𝑎2
+[1]
+ො𝑦 ො𝑦 = ൝1 𝑖𝑓𝑎[2] ≥ 0.5
+0 𝑖𝑓𝑎[2] < 0.5
+Accuracy in Classification
+Accuracy
+•   Sum(Prediction == Actual Y) / Total number of data
+•   mean(Prediction == Actual Y)*100
+𝑝𝑟𝑒𝑑𝑖𝑐𝑡𝑖𝑜𝑛 = ൝1 𝑖𝑓𝑎[2] ≥ 0.5
+0 𝑖𝑓𝑎[2] < 0.5
+Entropy in thermodynamics
+• Entropy is a concept of thermodynamics, introduced by Rudolf Clausius, a German physicist, in 1850.
+• Entropy is a measurement of the disorder or randomness of a system.
+Source: https://www.scienceabc.com
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture1.pdf
+Chunk ID: 0
+Score/Distance: 1.0379
+Chunk:
+DATA 255 
+Deep Learning and Computer Vision in 
+Applied Data Intelligence
+Aug 19, 2026
+Taehee Jeong, Ph.D.
+San Jose State University
+
+Instructor 
+Taehee Jeong
+PhD in Electrical and Computer Engineering, Carnegie Mellon University
+email: taehee.jeong@sjsu.edu
+Office: ISB 866
+
+Office hours
+• By Walk-in/Appointment
+• between 5pm and 6pm on Monday and Tuesday
+• Or by Appointment
+• Or Zoom
+
+Instructional Student Assistant (ISA)
+Mamta Jha
+email: mamta.jha@sjsu.edu
+
+Courses for Advanced Data Science
+
+C
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION B: BASIC RAG ===
+The provided context does not include any information about today's weather. The content focuses on topics related to deep learning, computer vision, model optimization, classification accuracy, and thermodynamics, but no weather data is mentioned.
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+I cannot answer this question from the provided documents

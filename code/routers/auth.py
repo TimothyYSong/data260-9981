@@ -1,145 +1,161 @@
-import time
-from pathlib import Path
+import secrets
+from datetime import datetime, timedelta
 
-from fastapi import APIRouter, Request, Form
-from fastapi.responses import RedirectResponse
-from fastapi.templating import Jinja2Templates
-from starlette.status import HTTP_302_FOUND
+import bcrypt
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from sqlalchemy.orm import Session as DatabaseSession
+
+from database import get_db
+from models import Session as SessionModel
+from models import User
+from schemas import LoginRequest
 
 
-# Create a router object
-# This behaves like a mini FastAPI app
 router = APIRouter()
 
-# Configure Jinja2 templates directory
-BASE_DIR = Path(__file__).resolve().parent.parent
-templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
-
-
-# Hardcoded credentials for demo purposes only
-# In real applications, credentials come from a database
-VALID_USERNAME = "admin"
-VALID_PASSWORD = "password"
-
-IDLE_TIMEOUT_SECONDS = 30
-
-
-def get_active_user(request: Request):
-    user = request.session.get("user")
-    last_activity = request.session.get("last_activity")
-
-    if not user or last_activity is None:
-        return None
-
-    current_time = time.time()
-
-    if current_time - last_activity > IDLE_TIMEOUT_SECONDS:
-        request.session.clear()
-        return None
-
-    request.session["last_activity"] = current_time
-    return user
-
-
-@router.get("/")
-def home(request: Request):
-    """
-    Home page route.
-
-    - Checks if a user is logged in using the session
-    - Passes user info to the template
-    """
-    user = request.session.get("user")
-
-    return templates.TemplateResponse(
-        request,
-        "index.html",
-        {
-            "user": user
-        }
-    )
-
-
-@router.get("/login")
-def login_page(
-    request: Request,
-    error: str | None = None,
-    expired: str | None = None
-):
-    user = request.session.get("user")
-
-    return templates.TemplateResponse(
-        request,
-        "login.html",
-        {
-            "user": user,
-            "error": error,
-            "expired": expired
-        }
-    )
+SESSION_COOKIE_NAME = "session_token"
+SESSION_DURATION_HOURS = 1
 
 
 @router.post("/login")
-def login(request: Request, username: str = Form(...), password: str = Form(...)):
-    """
-    Handles login form submission.
+def login(
+    credentials: LoginRequest,
+    response: Response,
+    db: DatabaseSession = Depends(get_db),
+):
+    user = (
+        db.query(User)
+        .filter(User.email == credentials.email)
+        .first()
+    )
 
-    - Reads username and password from the form
-    - Validates credentials
-    - Stores user info in session if valid
-    """
-    if username == VALID_USERNAME and password == VALID_PASSWORD:
-        request.session["user"] = username
-        request.session["last_activity"] = time.time()
-
-        return RedirectResponse(
-            url="/dashboard",
-            status_code=HTTP_302_FOUND
+    if user is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid email or password",
         )
 
-    return RedirectResponse(
-        url="/login?error=1",
-        status_code=HTTP_302_FOUND
+    password_valid = bcrypt.checkpw(
+        credentials.password.encode("utf-8"),
+        user.password_hash.encode("utf-8"),
     )
 
-
-@router.get("/dashboard")
-def dashboard(request: Request):
-    """
-    Protected route.
-
-    - Only accessible if user is logged in
-    - Redirects to login page if session is missing
-    """
-    user = get_active_user(request)
-
-    # If user is not logged in, block access
-    if not user:
-        return RedirectResponse(
-            url="/login?expired=1",
-            status_code=HTTP_302_FOUND
+    if not password_valid:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid email or password",
         )
 
-    return templates.TemplateResponse(
-        request,
-        "dashboard.html",
-        {
-            "user": user
-        }
+    session_token = secrets.token_urlsafe(32)
+
+    created_at = datetime.utcnow()
+    expires_at = created_at + timedelta(
+        hours=SESSION_DURATION_HOURS
     )
 
-
-@router.get("/logout")
-def logout(request: Request):
-    """
-    Logs the user out.
-
-    - Clears all session data
-    - Redirects back to home page
-    """
-    request.session.clear()
-
-    return RedirectResponse(
-        url="/",
-        status_code=HTTP_302_FOUND
+    session = SessionModel(
+        id=session_token,
+        user_id=user.id,
+        created_at=created_at,
+        expires_at=expires_at,
     )
+
+    db.add(session)
+    db.commit()
+
+    response.set_cookie(
+        key=SESSION_COOKIE_NAME,
+        value=session_token,
+        httponly=True,
+        samesite="lax",
+        secure=False,
+    )
+
+    return {
+        "id": user.id,
+        "name": user.name,
+        "email": user.email,
+    }
+
+
+def get_current_user(
+    request: Request,
+    db: DatabaseSession = Depends(get_db),
+):
+    session_token = request.cookies.get(SESSION_COOKIE_NAME)
+
+    if session_token is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Login required",
+        )
+
+    session = (
+        db.query(SessionModel)
+        .filter(SessionModel.id == session_token)
+        .first()
+    )
+
+    if session is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Login required",
+        )
+
+    if session.expires_at < datetime.utcnow():
+        db.delete(session)
+        db.commit()
+
+        raise HTTPException(
+            status_code=401,
+            detail="Session expired",
+        )
+
+    user = (
+        db.query(User)
+        .filter(User.id == session.user_id)
+        .first()
+    )
+
+    if user is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Login required",
+        )
+
+    return user
+
+
+@router.get("/me")
+def get_logged_in_user(
+    user: User = Depends(get_current_user),
+):
+    return {
+        "id": user.id,
+        "name": user.name,
+        "email": user.email,
+    }
+
+
+@router.post("/logout")
+def logout(
+    request: Request,
+    response: Response,
+    db: DatabaseSession = Depends(get_db),
+):
+    session_token = request.cookies.get(SESSION_COOKIE_NAME)
+
+    if session_token is not None:
+        session = (
+            db.query(SessionModel)
+            .filter(SessionModel.id == session_token)
+            .first()
+        )
+
+        if session is not None:
+            db.delete(session)
+            db.commit()
+
+    response.delete_cookie(SESSION_COOKIE_NAME)
+
+    return {"message": "Logged out"}

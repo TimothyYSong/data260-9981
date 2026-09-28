@@ -1,0 +1,245 @@
+################################################################################
+PART 4.5: CONTEXT SIZE K-SWEEP
+Question: How is gradient descent described across the lecture documents?
+################################################################################
+
+================================================================================
+K = 1
+================================================================================
+
+Question: How is gradient descent described across the lecture documents?
+Top-k: 1
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 2
+Score/Distance: 0.5412
+Chunk:
+𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝐽
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+w
+J(w)
+𝑊∗
+Gradient descent method
+• To find the weights that minimize a cost function, 
+gradient descent is commonly used as an optimization 
+algorithm.
+• Gradient(vector of partial derivatives) gives the input 
+direction in which the function decreases 
+• Step0: pick a random starting point
+• Step1: compute the gradient
+• Step2: take a small step in the direction of the gradien
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Gradient descent is described as a common optimization algorithm used to find the weights that minimize a cost function. It relies on the gradient, which is a vector of partial derivatives, to determine the direction in which the function decreases. The process involves three steps: (1) selecting a random starting point, (2) computing the gradient, and (3) taking a small step in the direction of the gradient. The update rule for weights is given by $ W_j^t := W_j^{t-1} - \alpha \frac{\partial J}{\partial W} $, where $ \alpha $ is the learning rate [Source 1].
+
+================================================================================
+K = 3
+================================================================================
+
+Question: How is gradient descent described across the lecture documents?
+Top-k: 3
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 2
+Score/Distance: 0.5412
+Chunk:
+𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝐽
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+w
+J(w)
+𝑊∗
+Gradient descent method
+• To find the weights that minimize a cost function, 
+gradient descent is commonly used as an optimization 
+algorithm.
+• Gradient(vector of partial derivatives) gives the input 
+direction in which the function decreases 
+• Step0: pick a random starting point
+• Step1: compute the gradient
+• Step2: take a small step in the direction of the gradien
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture6.pdf
+Chunk ID: 20
+Score/Distance: 0.5719
+Chunk:
+r method: based on Newton’s method, L-BFGS → not cover 
+Source: An overview of gradient descent optimization algorithms
+Comparison of optimizer functions
+iteration
+Accuracy
+Source: Evolutionary Deep Learning, Micheal Lanham
+Momentum update
+Gradient descent update
+x ≔ x – learning rate*dx
+Momentum update
+v = β*v – learning rate*dx
+x ≔ x + v
+v : velocity
+β : momentum
+
+Gradient descent with/wo Momentum
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Adagrad
+v ≔ v + dx**2
+x ≔ x
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture6.pdf
+Chunk ID: 15
+Score/Distance: 0.6051
+Chunk:
+Computes the gradients based on full training set
+Ex) Offline learning
+• Stochastic Gradient Descent
+Computes just one instance
+Ex) Online learning
+• Mini-batch Gradient Descent
+Computes the gradients on small random sets of instances
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+
+Batch & Stochastic gradient descent
+• " batch gradient descent" calculates the gradient using the entire training dataset for 
+each parameter update
+• "stochastic gradient descent" updates parameter
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Gradient descent is described across the lecture documents as an optimization algorithm used to minimize a cost function by iteratively adjusting weights in the direction of the steepest descent, as determined by the gradient [Source 1]. The method involves steps like selecting a starting point, computing the gradient, and updating parameters using a learning rate [Source 1]. Variants such as **momentum update** (which incorporates velocity and a momentum parameter β) and **stochastic gradient descent** (which uses single instances or mini-batches for gradient computation) are also mentioned [Source 2][Source 3]. These descriptions emphasize differences in computation methods (batch, stochastic, mini-batch) and enhancements like momentum for improving convergence [Source 2][Source 3].
+
+================================================================================
+K = 5
+================================================================================
+
+Question: How is gradient descent described across the lecture documents?
+Top-k: 5
+
+Result 1
+Source: lecture4.pdf
+Chunk ID: 2
+Score/Distance: 0.5412
+Chunk:
+𝑓𝑢𝑛𝑐𝑡𝑖𝑜𝑛 𝐽
+Gradient Descent
+𝑊𝑗
+𝑡: = 𝑊𝑗
+𝑡−1 −  α 𝜕𝐽
+𝜕𝑊
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+w
+J(w)
+𝑊∗
+Gradient descent method
+• To find the weights that minimize a cost function, 
+gradient descent is commonly used as an optimization 
+algorithm.
+• Gradient(vector of partial derivatives) gives the input 
+direction in which the function decreases 
+• Step0: pick a random starting point
+• Step1: compute the gradient
+• Step2: take a small step in the direction of the gradien
+--------------------------------------------------------------------------------
+Result 2
+Source: lecture6.pdf
+Chunk ID: 20
+Score/Distance: 0.5719
+Chunk:
+r method: based on Newton’s method, L-BFGS → not cover 
+Source: An overview of gradient descent optimization algorithms
+Comparison of optimizer functions
+iteration
+Accuracy
+Source: Evolutionary Deep Learning, Micheal Lanham
+Momentum update
+Gradient descent update
+x ≔ x – learning rate*dx
+Momentum update
+v = β*v – learning rate*dx
+x ≔ x + v
+v : velocity
+β : momentum
+
+Gradient descent with/wo Momentum
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Adagrad
+v ≔ v + dx**2
+x ≔ x
+--------------------------------------------------------------------------------
+Result 3
+Source: lecture6.pdf
+Chunk ID: 15
+Score/Distance: 0.6051
+Chunk:
+Computes the gradients based on full training set
+Ex) Offline learning
+• Stochastic Gradient Descent
+Computes just one instance
+Ex) Online learning
+• Mini-batch Gradient Descent
+Computes the gradients on small random sets of instances
+Source: Hands-On Machine Learning with Scikit-Learn & TensorFlow
+
+Batch & Stochastic gradient descent
+• " batch gradient descent" calculates the gradient using the entire training dataset for 
+each parameter update
+• "stochastic gradient descent" updates parameter
+--------------------------------------------------------------------------------
+Result 4
+Source: lecture4.pdf
+Chunk ID: 23
+Score/Distance: 0.6052
+Chunk:
+he model function.
+• Once the function is specified, PyTorch figures out how to compute its gradient through 
+the Autograd technology.
+Source: Math and Architectures of Deep Learning, Krishenedu Chauhury
+Differential equation (Derivative)
+when h is very small, 
+then the function is well approximated by a straight line, 
+and the derivative is its slope
+indicate the rate of change of a function with
+respect to that variable surrounding an 
+infinitesimally small region near a particular 
+point
+--------------------------------------------------------------------------------
+Result 5
+Source: lecture4.pdf
+Chunk ID: 22
+Score/Distance: 0.6107
+Chunk:
+gation.
+
+Autograd: PyTorch automatic gradient computation
+• For a specific model architecture, we computed the gradient using calculus. 
+• This approach does not scale to more complex models with millions of weights and 
+perhaps nonlinear complex functions. 
+• For scalability, we use an automatic differentiation software library like PyTorch 
+Autograd.
+• Users of the library need not worry about how to compute the gradients—they just 
+construct the model function.
+• Once the function is specifie
+--------------------------------------------------------------------------------
+
+=== CONFIGURATION C: CONTEXT-ENGINEERED RAG ===
+Gradient descent is described across the lecture documents as an optimization algorithm used to minimize a cost function by iteratively adjusting model weights in the direction of the steepest descent, determined by the gradient. Key points include:  
+1. **Basic Mechanism**: Gradient descent updates weights using the formula $ W_j^t := W_j^{t-1} - \alpha \frac{\partial J}{\partial W_j} $, where $ \alpha $ is the learning rate, and the gradient indicates the direction of maximum decrease [Source 1].  
+2. **Variants**:  
+   - **Batch Gradient Descent**: Computes gradients using the entire training dataset [Source 3].  
+   - **Stochastic Gradient Descent (SGD)**: Uses gradients from a single training instance for updates [Source 3].  
+   - **Momentum Update**: Enhances gradient descent by incorporating velocity ($ v = \beta v - \text{learning rate} \cdot dx $) to accelerate convergence [Source 2].  
+3. **Implementation**: Tools like PyTorch’s Autograd automate gradient computation, enabling scalable optimization without manual calculus [Source 4][Source 5].  
+
+These descriptions highlight gradient descent’s role as a foundational method, its variants for efficiency, and practical implementation via automatic differentiation.

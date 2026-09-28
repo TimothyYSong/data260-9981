@@ -1,6 +1,6 @@
 import random
 
-from database import db_session_basede26
+from database import SessionLocal
 from models import InspectionNote, RestaurantInspection
 
 SEED = 9981
@@ -10,7 +10,7 @@ RELATED_ROW_COUNT = 200
 
 def main():
     rng = random.Random(SEED)
-    db = db_session_basede26()
+    db = SessionLocal()
 
     try:
         # Clear related rows first because of the foreign key.

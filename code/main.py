@@ -1,18 +1,43 @@
-import os
 import uvicorn
 from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from starlette.middleware.sessions import SessionMiddleware
 
 from routers.auth import router as auth_router
-
+from routers.records import router as records_router
+from query_counter import query_counter
+from sqlalchemy.orm import relationship
 
 # Create FastAPI app
 app = FastAPI()
+
+@app.middleware("http")
+async def sql_query_count_middleware(request, call_next):
+    counter = {"count": 0}
+    token = query_counter.set(counter)
+
+    try:
+        response = await call_next(request)
+        response.headers["X-SQL-Query-Count"] = str(counter["count"])
+        return response
+    finally:
+        query_counter.reset(token)
+
+# Allow the React frontend to communicate with FastAPI
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Paths
@@ -20,21 +45,9 @@ BASE_DIR = Path(__file__).resolve().parent
 WEB_DIR = BASE_DIR / "web_application"
 
 
-# HW3 session management
-SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-secret-key")
-
-app.add_middleware(
-    SessionMiddleware,
-    secret_key=SECRET_KEY,
-    https_only=True,
-    same_site="lax",
-    max_age=3600
-)
-
-
-# HW3 authentication routes
+# HW4 authentication routes
 app.include_router(auth_router)
-
+app.include_router(records_router)
 
 # Previous homework static files
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
@@ -46,7 +59,6 @@ def stylesheet():
 
 
 # Previous homework page
-# Moved from "/" because HW3 authentication uses "/"
 @app.get("/restaurant-app")
 def restaurant_app():
     return FileResponse(WEB_DIR / "index.html")
@@ -57,7 +69,7 @@ restaurants = [
     {
         "id": 1,
         "restaurantName": "O2 Valley",
-        "restaurantAddress": "452 University Ave"
+        "restaurantAddress": "452 University Ave",
     }
 ]
 
@@ -79,7 +91,7 @@ def add_restaurant(restaurant: RestaurantCreate):
     new_restaurant = {
         "id": next_id,
         "restaurantName": restaurant.restaurantName,
-        "restaurantAddress": restaurant.restaurantAddress
+        "restaurantAddress": restaurant.restaurantAddress,
     }
 
     restaurants.append(new_restaurant)
@@ -127,5 +139,5 @@ if __name__ == "__main__":
         "main:app",
         host="127.0.0.1",
         port=8081,
-        reload=True
+        reload=True,
     )

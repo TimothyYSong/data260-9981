@@ -12,6 +12,10 @@ class RestaurantInspection(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     restaurant_name = Column(String(255), nullable=False)
     restaurant_address = Column(String(255), nullable=False)
+    notes = relationship(
+        "InspectionNote",
+        back_populates="restaurant_inspection",
+    )
 
 
 class User(Base):
@@ -46,3 +50,7 @@ class InspectionNote(Base):
         nullable=False,
     )
     note = Column(String(255), nullable=False)
+    restaurant_inspection = relationship(
+        "RestaurantInspection",
+        back_populates="notes",
+    )

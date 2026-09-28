@@ -1,0 +1,30 @@
+{
+  "homework": 4,
+  "sid4": 9981,
+  "commit_hash": "76c5c7a1fe1cca0db9ce15b31d3877284771a9a8",
+  "model_configuration": {
+    "llm": "qwen3:8b",
+    "embedding_model": "nomic-embed-text"
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "port_base": 8081,
+  "checks": [
+    {
+      "name": "FastAPI backend responds on PORT_BASE",
+      "passed": true,
+      "details": "HTTP 200"
+    },
+    {
+      "name": "Naive N+1 endpoint returns data",
+      "passed": true,
+      "details": "HTTP 200, returned 10 records"
+    },
+    {
+      "name": "Fixed endpoint returns data",
+      "passed": true,
+      "details": "HTTP 200, returned 10 records"
+    }
+  ],
+  "overall_passed": true
+}

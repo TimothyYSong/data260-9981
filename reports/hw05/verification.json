@@ -1,0 +1,43 @@
+{
+  "homework": 5,
+  "student": "Timothy Song",
+  "sid4": 9981,
+  "commit_hash": "fcc2881a8c04ca3ac3a943a12debd398014cc9de",
+  "model": "qwen3:8b",
+  "configuration": {
+    "port_base": 8081,
+    "prefix": "s9981",
+    "domain": "Local Restaurant Inspections"
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "generated_at": "2026-10-05T17:48:09.728754+00:00",
+  "checks": [
+    {
+      "check": "FastAPI smoke test",
+      "passed": true,
+      "details": "FastAPI responded on PORT_BASE 8081 with HTTP 200"
+    },
+    {
+      "check": "Meals MCP tool smoke test",
+      "passed": true,
+      "details": "Meals MCP tool search_meals_by_name returned at least one result"
+    },
+    {
+      "check": "Domain MCP tool smoke test",
+      "passed": true,
+      "details": "Domain MCP tool restaurant_inspection_summary returned ok=true"
+    },
+    {
+      "check": "Offline test suite",
+      "passed": true,
+      "details": "Offline test suite passed 8/8 tests"
+    },
+    {
+      "check": "Required raw artifacts",
+      "passed": true,
+      "details": "All 9 required raw artifact files are present"
+    }
+  ],
+  "overall_pass": true
+}

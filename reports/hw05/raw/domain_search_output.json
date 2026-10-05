@@ -1,0 +1,64 @@
+{
+  "tool": "search_inspections",
+  "input": {
+    "query": "Restaurant",
+    "limit": 5
+  },
+  "output": {
+    "ok": true,
+    "data": [
+      {
+        "id": 10016,
+        "restaurant_name": "Restaurant 12",
+        "restaurant_address": "112 Test Street",
+        "inspection_code": "INSP-10016",
+        "violation_count": 0,
+        "restaurant_id": 12
+      },
+      {
+        "id": 10017,
+        "restaurant_name": "Restaurant 13",
+        "restaurant_address": "113 Test Street",
+        "inspection_code": "INSP-10017",
+        "violation_count": 0,
+        "restaurant_id": 13
+      },
+      {
+        "id": 10018,
+        "restaurant_name": "Restaurant 14",
+        "restaurant_address": "114 Test Street",
+        "inspection_code": "INSP-10018",
+        "violation_count": 0,
+        "restaurant_id": 14
+      },
+      {
+        "id": 10019,
+        "restaurant_name": "Restaurant 15",
+        "restaurant_address": "115 Test Street",
+        "inspection_code": "INSP-10019",
+        "violation_count": 0,
+        "restaurant_id": 15
+      },
+      {
+        "id": 10020,
+        "restaurant_name": "Restaurant 16",
+        "restaurant_address": "116 Test Street",
+        "inspection_code": "INSP-10020",
+        "violation_count": 0,
+        "restaurant_id": 16
+      }
+    ],
+    "error": null
+  },
+  "invalid_test": {
+    "input": {
+      "query": "Restaurant",
+      "limit": 0
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "limit must be between 1 and 25"
+    }
+  }
+}

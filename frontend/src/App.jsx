@@ -38,11 +38,13 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <nav>
-          <Link to="/">Home</Link>{" "}
-          {!user && <Link to="/login">Login</Link>}{" "}
-          {user && <Link to="/create">Add Record</Link>}
-        </nav>
+       <nav>
+        <Link to="/">Home</Link>{" "}
+        {!user && <Link to="/login">Login</Link>}{" "}
+        {user && <Link to="/create">Add Record</Link>}{" "}
+        {user && <Link to="/update">Update Record</Link>}{" "}
+        {user && <Link to="/delete">Delete Record</Link>}
+      </nav>
 
         <Routes>
           <Route path="/" element={<Home user={user} />} />

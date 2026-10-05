@@ -1,12 +1,21 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { updateRecordAsync } from "../features/recordsSlice";
 
-function UpdateRecord({ user, updateRecord }) {
+function UpdateRecord({ user }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const loading = useSelector((state) => state.records.loading);
+  const reduxError = useSelector((state) => state.records.error);
+
   const [recordId, setRecordId] = useState("");
   const [restaurantName, setRestaurantName] = useState("");
   const [restaurantAddress, setRestaurantAddress] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [inspectionCode, setInspectionCode] = useState("");
+  const [violationCount, setViolationCount] = useState(0);
+  const [restaurantId, setRestaurantId] = useState("");
 
   if (!user) {
     return <p>Login required</p>;
@@ -14,17 +23,22 @@ function UpdateRecord({ user, updateRecord }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError("");
 
-    try {
-      await updateRecord(recordId, {
-        restaurant_name: restaurantName,
-        restaurant_address: restaurantAddress,
-      });
+    const resultAction = await dispatch(
+      updateRecordAsync({
+        id: Number(recordId),
+        recordData: {
+          restaurant_name: restaurantName,
+          restaurant_address: restaurantAddress,
+          inspection_code: inspectionCode,
+          violation_count: Number(violationCount),
+          restaurant_id: Number(restaurantId),
+        },
+      })
+    );
 
+    if (updateRecordAsync.fulfilled.match(resultAction)) {
       navigate("/");
-    } catch {
-      setError("Unable to update record.");
     }
   };
 
@@ -32,7 +46,7 @@ function UpdateRecord({ user, updateRecord }) {
     <div>
       <h1>Update Restaurant Inspection</h1>
 
-      {error && <p>{error}</p>}
+      {reduxError && <p>{reduxError}</p>}
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -40,6 +54,7 @@ function UpdateRecord({ user, updateRecord }) {
           <input
             id="recordId"
             type="number"
+            min="1"
             value={recordId}
             onChange={(event) => setRecordId(event.target.value)}
             required
@@ -68,7 +83,45 @@ function UpdateRecord({ user, updateRecord }) {
           />
         </div>
 
-        <button type="submit">Update Inspection</button>
+        <div>
+          <label htmlFor="inspectionCode">Inspection Code</label>
+          <input
+            id="inspectionCode"
+            type="text"
+            value={inspectionCode}
+            onChange={(event) => setInspectionCode(event.target.value)}
+            placeholder="INSP-30002"
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="violationCount">Violation Count</label>
+          <input
+            id="violationCount"
+            type="number"
+            min="0"
+            value={violationCount}
+            onChange={(event) => setViolationCount(event.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="restaurantId">Restaurant ID</label>
+          <input
+            id="restaurantId"
+            type="number"
+            min="1"
+            value={restaurantId}
+            onChange={(event) => setRestaurantId(event.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Updating..." : "Update Inspection"}
+        </button>
       </form>
     </div>
   );

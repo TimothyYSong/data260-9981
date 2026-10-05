@@ -1,0 +1,30 @@
+{
+  "tool": "inspection_detail",
+  "input": {
+    "inspection_id": 10016
+  },
+  "output": {
+    "ok": true,
+    "data": {
+      "id": 10016,
+      "restaurant_name": "Restaurant 12",
+      "restaurant_address": "112 Test Street",
+      "inspection_code": "INSP-10016",
+      "violation_count": 0,
+      "restaurant_id": 12,
+      "created_at": "2026-10-05T01:30:13",
+      "updated_at": "2026-10-05T01:35:35"
+    },
+    "error": null
+  },
+  "invalid_test": {
+    "input": {
+      "inspection_id": 0
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "inspection_id must be a positive integer"
+    }
+  }
+}

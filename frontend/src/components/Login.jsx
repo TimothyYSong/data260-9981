@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,6 +22,8 @@ function Login({ onLogin }) {
       if (onLogin) {
         onLogin(response.data);
       }
+
+      navigate("/");
     } catch {
       setError("Invalid email or password.");
     }

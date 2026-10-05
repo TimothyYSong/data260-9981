@@ -9,11 +9,13 @@ from pydantic import BaseModel
 
 from routers.auth import router as auth_router
 from routers.records import router as records_router
+from routers.restaurants import router as restaurants_router
 from query_counter import query_counter
 from sqlalchemy.orm import relationship
 
 # Create FastAPI app
 app = FastAPI()
+
 
 @app.middleware("http")
 async def sql_query_count_middleware(request, call_next):
@@ -26,6 +28,7 @@ async def sql_query_count_middleware(request, call_next):
         return response
     finally:
         query_counter.reset(token)
+
 
 # Allow the React frontend to communicate with FastAPI
 app.add_middleware(
@@ -45,9 +48,11 @@ BASE_DIR = Path(__file__).resolve().parent
 WEB_DIR = BASE_DIR / "web_application"
 
 
-# HW4 authentication routes
+# HW4/HW5 API routes
 app.include_router(auth_router)
 app.include_router(records_router)
+app.include_router(restaurants_router)
+
 
 # Previous homework static files
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")

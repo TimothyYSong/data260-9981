@@ -21,3 +21,5 @@ pandas
 pypdf
 pyyaml
 fonttools
+httpx
+mcp[cli]<2

@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
-import api from "../services/api";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchRecords,
+  deleteRecordAsync,
+} from "../features/recordsSlice";
 
 function Home({ user }) {
-  const [records, setRecords] = useState([]);
-  const [error, setError] = useState("");
+  const dispatch = useDispatch();
+
+  const records = useSelector((state) => state.records.items);
+  const loading = useSelector((state) => state.records.loading);
+  const error = useSelector((state) => state.records.error);
 
   useEffect(() => {
-    if (!user) {
-      return;
+    if (user && records.length === 0) {
+      dispatch(fetchRecords());
     }
+  }, [dispatch, user, records.length]);
 
-    const fetchRecords = async () => {
-      try {
-        const response = await api.get("/records");
-        setRecords(response.data);
-      } catch {
-        setError("Unable to load records.");
-      }
-    };
-
-    fetchRecords();
-  }, [user]);
+  const handleDelete = async (id) => {
+    await dispatch(deleteRecordAsync(id));
+  };
 
   if (!user) {
     return (
@@ -35,9 +35,11 @@ function Home({ user }) {
     <div>
       <h1>Local Restaurant Inspections</h1>
 
+      {loading && <p>Loading records...</p>}
+
       {error && <p>{error}</p>}
 
-      {records.length === 0 ? (
+      {!loading && records.length === 0 ? (
         <p>No records found.</p>
       ) : (
         <table>
@@ -46,6 +48,7 @@ function Home({ user }) {
               <th>ID</th>
               <th>Restaurant Name</th>
               <th>Restaurant Address</th>
+              <th>Action</th>
             </tr>
           </thead>
 
@@ -55,6 +58,15 @@ function Home({ user }) {
                 <td>{record.id}</td>
                 <td>{record.restaurant_name}</td>
                 <td>{record.restaurant_address}</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(record.id)}
+                    disabled={loading}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

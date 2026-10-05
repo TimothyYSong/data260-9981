@@ -6,12 +6,71 @@ from sqlalchemy.orm import relationship
 from database import Base
 
 
+class Restaurant(Base):
+    __tablename__ = "restaurants"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    name = Column(String(255), nullable=False)
+    address = Column(String(255), nullable=False)
+    permit_code = Column(String(100), unique=True, nullable=False, index=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    inspections = relationship(
+        "RestaurantInspection",
+        back_populates="restaurant",
+    )
+
+
 class RestaurantInspection(Base):
     __tablename__ = "restaurant_inspections"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     restaurant_name = Column(String(255), nullable=False)
     restaurant_address = Column(String(255), nullable=False)
+
+    inspection_code = Column(
+        String(100),
+        unique=True,
+        nullable=False,
+        index=True,
+    )
+
+    violation_count = Column(
+        Integer,
+        nullable=False,
+        default=0,
+    )
+
+    restaurant_id = Column(
+        Integer,
+        ForeignKey("restaurants.id", ondelete="RESTRICT"),
+        nullable=False,
+    )
+
+    created_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+    )
+
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )
+
+    restaurant = relationship(
+        "Restaurant",
+        back_populates="inspections",
+    )
+
     notes = relationship(
         "InspectionNote",
         back_populates="restaurant_inspection",
@@ -50,6 +109,7 @@ class InspectionNote(Base):
         nullable=False,
     )
     note = Column(String(255), nullable=False)
+
     restaurant_inspection = relationship(
         "RestaurantInspection",
         back_populates="notes",

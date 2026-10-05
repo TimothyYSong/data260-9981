@@ -1,0 +1,27 @@
+{
+  "tool": "restaurant_inspection_summary",
+  "input": {
+    "restaurant_id": 1
+  },
+  "output": {
+    "ok": true,
+    "data": {
+      "restaurant_id": 1,
+      "inspection_count": 1,
+      "total_violations": 2,
+      "average_violations": 2.0,
+      "maximum_violations": 2
+    },
+    "error": null
+  },
+  "invalid_test": {
+    "input": {
+      "restaurant_id": 0
+    },
+    "output": {
+      "ok": false,
+      "data": null,
+      "error": "restaurant_id must be a positive integer"
+    }
+  }
+}

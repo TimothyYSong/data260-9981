@@ -1,0 +1,277 @@
+Homework 5 Run Log
+Student: Timothy Song
+SID4: 9981
+Domain: Local Restaurant Inspections
+PORT_BASE: 8081
+PREFIX: s9981
+SEED: 9981
+VERIFY_SEED: 269981
+
+NOTE:
+Exact run timestamps were not captured at execution time.
+The console outputs below are the actual results used in the report and metrics.
+
+============================================================
+1. LOCAL OLLAMA MODEL CHECK
+============================================================
+
+Command:
+ollama list
+
+Output:
+NAME                       ID              SIZE      MODIFIED
+nomic-embed-text:latest    0a109f422b47    274 MB    6 days ago
+qwen3:8b                   500a1f067a9f    5.2 GB    5 weeks ago
+
+
+============================================================
+2. PART 3 - RETRY DEMONSTRATION
+============================================================
+
+Command:
+python code/retry_demo.py
+
+Observed results:
+
+Case 1:
+No injected failure.
+Operation succeeded on attempt 1.
+
+Result:
+ok = true
+inspection_count = 4991
+attempts = 1
+
+Case 2:
+One transient failure was injected.
+Attempt 1 failed and retried after 0.10 seconds.
+Operation then succeeded on attempt 2.
+
+Result:
+ok = true
+inspection_count = 4991
+attempts = 2
+
+Case 3:
+A transient failure was injected on every attempt.
+Attempt 1 failed and retried after 0.10 seconds.
+Attempt 2 failed and retried after 0.20 seconds.
+Attempt 3 failed and the bounded retry policy stopped.
+
+Result:
+ok = false
+data = null
+error = simulated transient failure on attempt 3
+attempts = 3
+
+
+============================================================
+3. PART 3 - REPRODUCIBLE FAILURE-INJECTION EXPERIMENT
+============================================================
+
+Command:
+python code/failure_experiment.py
+
+Output summary:
+
+Student: Timothy Song
+VERIFY_SEED: 269981
+
+Failure rate: 0%
+Calls: 50
+Success rate: 100.0%
+Mean latency: 2.305 ms
+P99 latency: 3.079 ms
+
+Failure rate: 20%
+Calls: 50
+Success rate: 100.0%
+Mean latency: 39.858 ms
+P99 latency: 312.882 ms
+
+Failure rate: 50%
+Calls: 50
+Success rate: 86.0%
+Mean latency: 85.292 ms
+P99 latency: 312.372 ms
+
+Saved 150 raw call records to:
+reports/hw05/raw/fault_injection_calls.csv
+
+
+============================================================
+4. PART 4 - EXECUTE_TOOL VALID CALL
+============================================================
+
+Command:
+python -c 'import sys; sys.path.append("code"); from tool_executor import execute_tool; print(execute_tool("inspection_detail", {"inspection_id": 10016}))'
+
+Output:
+{"ok": true, "data": {"id": 10016, "restaurant_name": "Restaurant 12", "restaurant_address": "112 Test Street", "inspection_code": "INSP-10016", "violation_count": 0, "restaurant_id": 12, "created_at": "2026-10-05T01:30:13", "updated_at": "2026-10-05T01:35:35"}, "error": null}
+
+
+============================================================
+5. PART 4 - EXECUTE_TOOL INVALID CALL
+============================================================
+
+Command:
+python -c 'import sys; sys.path.append("code"); from tool_executor import execute_tool; print(execute_tool("inspection_detail", {"inspection_id": 0}))'
+
+Output:
+{"ok": false, "data": null, "error": "inspection_id must be a positive integer"}
+
+
+============================================================
+6. PART 5 - SAFETY RULE ALLOWED CALL
+============================================================
+
+Command:
+python -c 'import sys; sys.path.append("code"); from tool_executor import execute_tool; print(execute_tool("restaurant_inspection_summary", {"restaurant_id": 1}))'
+
+Output:
+{"ok": true, "data": {"restaurant_id": 1, "inspection_count": 1, "total_violations": 2, "average_violations": 2.0, "maximum_violations": 2}, "error": null}
+
+
+============================================================
+7. PART 5 - SAFETY RULE BLOCKED CALL
+============================================================
+
+Command:
+python -c 'import sys; sys.path.append("code"); from tool_executor import execute_tool; print(execute_tool("restaurant_inspection_summary", {"restaurant_id": 5001}))'
+
+Output:
+{"ok": false, "data": null, "error": "safety rule blocked restaurant_id values greater than 5000"}
+
+
+============================================================
+8. PART 4 + PART 5 OFFLINE TEST SUITE
+============================================================
+
+Command:
+python code/test_tools.py
+
+Output:
+Student: Timothy Song
+Part 4 + Part 5 Offline Domain Tool Tests
+
+PASS: search_inspections valid input
+PASS: search_inspections invalid input
+PASS: inspection_detail valid input
+PASS: inspection_detail invalid input
+PASS: restaurant_inspection_summary valid input
+PASS: restaurant_inspection_summary invalid input
+PASS: execute_tool safety rule blocked
+PASS: run_agent MockModel max_steps
+
+FINAL SUMMARY: 8/8 tests passed
+
+
+============================================================
+9. PART 5 - AGENT LOOP INITIAL TEST
+============================================================
+
+Command:
+python code/agent.py
+
+Input:
+Find Restaurant 12 and tell me about one of its inspections.
+
+Output:
+{
+  "answer": "Restaurant 12 has 1 inspection record, and there are no violations reported in that inspection.",
+  "steps": 2,
+  "stop_reason": "normal_completion"
+}
+
+
+============================================================
+10. PART 5 - AGENT JSONL LOG CHECK
+============================================================
+
+Command:
+tail -n 5 reports/hw05/raw/agent_runs.jsonl
+
+Output:
+{"step": 1, "user_input": "Find Restaurant 12 and tell me about one of its inspections.", "model_output": {"action": "tool", "tool": "restaurant_inspection_summary", "inputs": {"restaurant_id": 12}}, "tool_call": "restaurant_inspection_summary", "tool_input": {"restaurant_id": 12}, "tool_result": {"ok": true, "data": {"restaurant_id": 12, "inspection_count": 1, "total_violations": 0, "average_violations": 0.0, "maximum_violations": 0}, "error": null}, "stop_reason": null, "timestamp": "2026-10-05T17:06:31.025015+00:00"}
+{"step": 2, "user_input": "Find Restaurant 12 and tell me about one of its inspections.", "model_output": {"action": "final", "answer": "Restaurant 12 has 1 inspection record, and there are no violations reported in that inspection."}, "tool_call": null, "tool_input": null, "tool_result": null, "final_answer": "Restaurant 12 has 1 inspection record, and there are no violations reported in that inspection.", "stop_reason": "normal_completion", "timestamp": "2026-10-05T17:06:32.104731+00:00"}
+
+
+============================================================
+11. PART 5 METRICS - SCENARIO 1
+============================================================
+
+Command:
+python code/agent.py
+
+Input:
+Find Restaurant 12 and summarize its inspection history.
+
+Output:
+{
+  "answer": "Restaurant 12 has a total of 1 inspection in its history. It has 0 violations, with an average of 0.0 violations and a maximum of 0 violations.",
+  "steps": 2,
+  "tool_calls": 1,
+  "stop_reason": "normal_completion"
+}
+
+
+============================================================
+12. PART 5 METRICS - SCENARIO 2
+============================================================
+
+Command:
+python code/agent.py
+
+Input:
+Search for Restaurant 20 and tell me about one inspection.
+
+Output:
+{
+  "answer": "Restaurant 20 has an inspection with ID INSP-10024. The inspection found 0 violations. The restaurant is located at 120 Test Street.",
+  "steps": 2,
+  "tool_calls": 1,
+  "stop_reason": "normal_completion"
+}
+
+
+============================================================
+13. PART 5 METRICS - SCENARIO 3
+============================================================
+
+Command:
+python code/agent.py
+
+Input:
+Give me the inspection details for inspection 10016.
+
+Output:
+{
+  "answer": "The inspection details for inspection ID 10016 are as follows: Restaurant Name: Restaurant 12, Restaurant Address: 112 Test Street, Inspection Code: INSP-10016, Violation Count: 0. The inspection was created on 2026-10-05T01:30:13 and last updated on 2026-10-05T01:35:35.",
+  "steps": 2,
+  "tool_calls": 1,
+  "stop_reason": "normal_completion"
+}
+
+
+============================================================
+14. PART 5 METRICS - SCENARIO 4
+============================================================
+
+Command:
+python code/agent.py
+
+Input:
+Summarize the inspection history for restaurant 5001.
+
+Output:
+{
+  "answer": "safety rule blocked restaurant_id values greater than 5000",
+  "steps": 1,
+  "tool_calls": 1,
+  "stop_reason": "safety_rule_block"
+}
+
+
+============================================================
+END OF RUN LOG
+============================================================

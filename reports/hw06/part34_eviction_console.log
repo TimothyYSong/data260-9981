@@ -1,0 +1,58 @@
+Timothy Song | DATA 260 HW6 | Part 3.4
+Policy: Evict historical assistant messages
+SHORT_TERM_N=12
+30 conversation messages + 5 probes
+
+
+========== SHORT_TERM_N=12 ==========
+Turn 01/30: PASS
+Turn 02/30: PASS
+Turn 03/30: PASS
+Turn 04/30: PASS
+Turn 05/30: PASS
+Turn 06/30: PASS
+Turn 07/30: PASS
+Turn 08/30: PASS
+Turn 09/30: PASS
+Turn 10/30: PASS
+Turn 11/30: PASS
+Turn 12/30: PASS
+Turn 13/30: PASS
+Turn 14/30: PASS
+Turn 15/30: PASS
+Turn 16/30: PASS
+Turn 17/30: PASS
+Turn 18/30: PASS
+Turn 19/30: PASS
+Turn 20/30: PASS
+Turn 21/30: PASS
+Turn 22/30: PASS
+Turn 23/30: PASS
+Turn 24/30: PASS
+Turn 25/30: PASS
+Turn 26/30: PASS
+Turn 27/30: PASS
+Turn 28/30: PASS
+Turn 29/30: PASS
+Turn 30/30: PASS
+Probe P1: score 5/5
+Probe P2: score 5/5
+Probe P3: score 3/5
+Probe P4: score 3/5
+Probe P5: score 4/5
+Mean prompt tokens: 441.37
+Mean latency (ms): 24382.33
+Mean probe quality: 4
+Raw output: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/sweep_n12_1792435165.json
+
+========== PART 3.4 RESULTS ==========
+Baseline prompt tokens: 1848.50
+Eviction prompt tokens: 441.37
+Token savings/turn: 1407.13
+Token savings: 76.12%
+Eviction latency (ms): 24382.33
+Eviction preliminary quality: 4
+Final quality delta: Pending manual probe review
+Raw results: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/eviction_n12_1792435165.json
+Summary: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/eviction_n12_summary.json
+PASS: Eviction experiment completed.

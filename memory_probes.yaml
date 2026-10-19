@@ -1,0 +1,54 @@
+# DATA 260 HW6 - Part 3 Memory Probes
+# Domain: Local Restaurant Inspections
+# SID4: 9981
+
+version: 1
+domain: local_restaurant_inspections
+
+scoring_rubric:
+  1: "Incorrect: Neither required fact is recalled correctly."
+  2: "Poor: Only one required fact is recalled correctly."
+  3: "Partial: One fact is correct and the other is partially correct."
+  4: "Good: Both facts are correct, with minor imprecision."
+  5: "Excellent: Both required facts are recalled accurately."
+
+probes:
+  - id: P1
+    question: "Which city and inspection type did I prioritize?"
+    expected_answer: "Oakland and routine restaurant inspections."
+    required_facts:
+      - "Oakland"
+      - "Routine restaurant inspections"
+    seed_turns: [1, 2]
+
+  - id: P2
+    question: "Which two food safety concerns did I prioritize?"
+    expected_answer: "Cross-contamination and pest activity."
+    required_facts:
+      - "Cross-contamination"
+      - "Pest activity"
+    seed_turns: [7, 9]
+
+  - id: P3
+    question: "What time range and comparison scope did I request?"
+    expected_answer: "The last 12 months, comparing multiple restaurants."
+    required_facts:
+      - "Last 12 months"
+      - "Multiple restaurants"
+    seed_turns: [14, 16]
+
+  - id: P4
+    question: "How should findings be formatted, and what should be highlighted?"
+    expected_answer: "Concise bullet points highlighting repeat violation counts."
+    required_facts:
+      - "Concise bullet points"
+      - "Repeat violation counts"
+    seed_turns: [21, 23]
+
+  - id: P5
+    question: "Which Oakland neighborhood did I focus on, and what information did I want first?"
+    expected_answer: "Temescal and the most recent routine inspection date."
+    required_facts:
+      - "Temescal"
+      - "Most recent routine inspection date"
+    seed_turns: [26, 28]

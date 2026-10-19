@@ -1,0 +1,54 @@
+INFO:     Started server process [3881]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53465 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53466 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53509 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53529 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53549 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53590 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53610 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53631 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53674 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53701 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53738 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53754 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53776 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53807 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53827 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53843 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53864 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53880 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53903 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53923 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53945 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:53961 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53977 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54009 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54049 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54070 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:54091 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54118 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:54134 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54166 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:54181 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3881]

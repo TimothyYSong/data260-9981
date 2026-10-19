@@ -1,0 +1,35 @@
+[
+  {
+    "setting": "SHORT_TERM_N=4",
+    "short_term_n": 4,
+    "user_id": "hw6_sweep_n4_1792399369",
+    "session_id": "session_n4_1792399369",
+    "conversation_turns": 30,
+    "probe_turns": 5,
+    "mean_prompt_tokens_per_turn": 2166.17,
+    "mean_latency_ms": 42648.34,
+    "mean_probe_quality": 3.6
+  },
+  {
+    "setting": "SHORT_TERM_N=12",
+    "short_term_n": 12,
+    "user_id": "hw6_sweep_n12_1792401498",
+    "session_id": "session_n12_1792401498",
+    "conversation_turns": 30,
+    "probe_turns": 5,
+    "mean_prompt_tokens_per_turn": 1848.5,
+    "mean_latency_ms": 45597.09,
+    "mean_probe_quality": 3.8
+  },
+  {
+    "setting": "SHORT_TERM_N=30",
+    "short_term_n": 30,
+    "user_id": "hw6_sweep_n30_1792401498",
+    "session_id": "session_n30_1792401498",
+    "conversation_turns": 30,
+    "probe_turns": 5,
+    "mean_prompt_tokens_per_turn": 1839.27,
+    "mean_latency_ms": 44651.92,
+    "mean_probe_quality": 4.2
+  }
+]

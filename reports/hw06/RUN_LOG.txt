@@ -1,0 +1,472 @@
+Timothy Song | DATA 260 | Homework 6
+RUN_LOG.txt — recorded runs, console output, and evidence references
+Date of work: 2026-10-19 (America/Los_Angeles)
+Hardware: MacBook Pro M4 Pro (14 CPU cores, 24 GB RAM)
+Model: Ollama qwen3:8b; embeddings: nomic-embed-text (768 dimensions)
+SID4=9981 | PORT_BASE=8081 | PREFIX=s9981 | SEED=9981 | VERIFY_SEED=269981 | DOMAIN_ID=5
+MongoDB database: s9981_doc; collection names include inspections, messages, summaries, episodes.
+
+RECORD INTEGRITY
+- Part 3 console sections below are copied verbatim from existing .log files in the uploaded repository ZIP.
+- Part 3 per-request date/time ranges are derived from timestamp_utc fields in raw/memory_usage.jsonl.
+- Part 4 console excerpts reproduce the actual terminal outputs supplied during the student's recorded work.
+- Exact execution times are not available for Part 1/2 and most Part 4 manual tests; dates/times are NOT invented.
+- The quality values printed by the sweep/eviction runners are preliminary AUTOMATED scores.
+  Manually reviewed values in the report/metric tables are N=4 3.60, N=12 3.40, N=30 4.00, eviction 4.20.
+- Data is from local model inference; cost estimates are hypothetical hosted-model equivalents.
+
+==============================================================================
+PART 1 — MongoDB Document API (evidence reference)
+==============================================================================
+Date: 2026-10-19 (exact command execution timestamps were not preserved in the ZIP).
+The original MongoDB shell / Swagger evidence is presented in the HW6 report, Figures 1–21:
+database and inspections collection, schema enforcement, CRUD operations, error responses, CORS, and validation.
+No original Part 1 command transcript was found in the uploaded repository ZIP; none is fabricated here.
+
+==============================================================================
+PART 2 — Short-, Long-, and Episodic Memory
+==============================================================================
+Date: 2026-10-19 (the saved Part 2 transcript does not contain per-request timestamps).
+SOURCE: reports/hw06/raw/part2_ten_turns_1792395654.jsonl
+Saved POST /api/chat JSON transcript records: 10
+Actual user_id: hw6_memory_9981_1792395654
+Actual session_id: hw6_session_1792395654
+Representative saved assistant response from turn 1 (raw record):
+I understand you prefer routine restaurant inspections! How can I assist you today? For example, I can help you find inspection reports, compare restaurant scores, or provide tips for reviewing inspection data. Let me know your specific needs!
+Part 2 endpoint and MongoDB persistence screenshots are in the HW6 report, Figures 22–46.
+The transcript above is a saved API result, not a fabricated shell test.
+
+==============================================================================
+PART 3.1 — Token-usage logging smoke record
+==============================================================================
+SOURCE: reports/hw06/raw/memory_usage.jsonl (original JSONL event)
+{"timestamp_utc": "2026-10-19T08:27:03.207373+00:00", "user_id": "hw6_metrics_test_9981", "session_id": "metrics_session001", "model": "qwen3:8b", "experiment": "baseline", "short_term_n": 12, "prompt_tokens": 109, "completion_tokens": 243, "system_primer_tokens_est": 73, "long_term_summary_tokens_est": 8, "short_term_window_tokens_est": 2, "current_message_tokens_est": 14, "episodic_facts_tokens_est": 2, "latency_ms": 19236.1, "component_token_method": "estimated_chars_divided_by_4"}
+
+==============================================================================
+PART 3.2 — Five fixed memory probes
+==============================================================================
+SOURCE: repository-root memory_probes.yaml
+Five benchmark probes P1–P5 with expected facts and the 1–5 rubric were used in every run.
+Scoring results are preserved in each sweep JSON and eviction JSON; reviewed eviction scores also in
+reports/hw06/raw/eviction_probe_review.json.
+
+==============================================================================
+PART 3.3 — SHORT_TERM_N sweep (4, 12, 30)
+==============================================================================
+N=4 actual request-event interval: 2026-10-19T01:43:03-07:00 to 2026-10-19T02:06:25-07:00 (America/Los_Angeles; from timestamped memory_usage.jsonl); logged requests: 35 (30 conversation + 5 probes).
+N=12 actual request-event interval: 2026-10-19T02:18:30-07:00 to 2026-10-19T02:43:26-07:00 (America/Los_Angeles; from timestamped memory_usage.jsonl); logged requests: 35 (30 conversation + 5 probes).
+N=30 actual request-event interval: 2026-10-19T02:43:38-07:00 to 2026-10-19T03:08:05-07:00 (America/Los_Angeles; from timestamped memory_usage.jsonl); logged requests: 35 (30 conversation + 5 probes).
+Command: python -u code/run_memory_sweep.py | tee reports/hw06/part3_sweep_console.log
+SOURCE: reports/hw06/part3_sweep_console.log
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 3.3
+Three short-term memory configurations
+30 conversation messages + 5 probes each
+
+
+========== SHORT_TERM_N=4 ==========
+Turn 01/30: PASS
+Turn 02/30: PASS
+Turn 03/30: PASS
+Turn 04/30: PASS
+Turn 05/30: PASS
+Turn 06/30: PASS
+Turn 07/30: PASS
+Turn 08/30: PASS
+Turn 09/30: PASS
+Turn 10/30: PASS
+Turn 11/30: PASS
+Turn 12/30: PASS
+Turn 13/30: PASS
+Turn 14/30: PASS
+Turn 15/30: PASS
+Turn 16/30: PASS
+Turn 17/30: PASS
+Turn 18/30: PASS
+Turn 19/30: PASS
+Turn 20/30: PASS
+Turn 21/30: PASS
+Turn 22/30: PASS
+Turn 23/30: PASS
+Turn 24/30: PASS
+Turn 25/30: PASS
+Turn 26/30: PASS
+Turn 27/30: PASS
+Turn 28/30: PASS
+Turn 29/30: PASS
+Turn 30/30: PASS
+Probe P1: score 5/5
+Probe P2: score 5/5
+Probe P3: score 2/5
+Probe P4: score 3/5
+Probe P5: score 3/5
+Mean prompt tokens: 2166.17
+Mean latency (ms): 42648.34
+Mean probe quality: 3.6
+Raw output: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/sweep_n4_1792399369.json
+Timothy Song | DATA 260 HW6 | Part 3.3
+Three short-term memory configurations
+30 conversation messages + 5 probes each
+
+SKIP SHORT_TERM_N=4: previously completed
+
+========== SHORT_TERM_N=12 ==========
+Turn 01/30: PASS
+Turn 02/30: PASS
+Turn 03/30: PASS
+Turn 04/30: PASS
+Turn 05/30: PASS
+Turn 06/30: PASS
+Turn 07/30: PASS
+Turn 08/30: PASS
+Turn 09/30: PASS
+Turn 10/30: PASS
+Turn 11/30: PASS
+Turn 12/30: PASS
+Turn 13/30: PASS
+Turn 14/30: PASS
+Turn 15/30: PASS
+Turn 16/30: PASS
+Turn 17/30: PASS
+Turn 18/30: PASS
+Turn 19/30: PASS
+Turn 20/30: PASS
+Turn 21/30: PASS
+Turn 22/30: PASS
+Turn 23/30: PASS
+Turn 24/30: PASS
+Turn 25/30: PASS
+Turn 26/30: PASS
+Turn 27/30: PASS
+Turn 28/30: PASS
+Turn 29/30: PASS
+Turn 30/30: PASS
+Probe P1: score 3/5
+Probe P2: score 5/5
+Probe P3: score 5/5
+Probe P4: score 3/5
+Probe P5: score 3/5
+Mean prompt tokens: 1848.5
+Mean latency (ms): 45597.09
+Mean probe quality: 3.8
+Raw output: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/sweep_n12_1792401498.json
+
+========== SHORT_TERM_N=30 ==========
+Turn 01/30: PASS
+Turn 02/30: PASS
+Turn 03/30: PASS
+Turn 04/30: PASS
+Turn 05/30: PASS
+Turn 06/30: PASS
+Turn 07/30: PASS
+Turn 08/30: PASS
+Turn 09/30: PASS
+Turn 10/30: PASS
+Turn 11/30: PASS
+Turn 12/30: PASS
+Turn 13/30: PASS
+Turn 14/30: PASS
+Turn 15/30: PASS
+Turn 16/30: PASS
+Turn 17/30: PASS
+Turn 18/30: PASS
+Turn 19/30: PASS
+Turn 20/30: PASS
+Turn 21/30: PASS
+Turn 22/30: PASS
+Turn 23/30: PASS
+Turn 24/30: PASS
+Turn 25/30: PASS
+Turn 26/30: PASS
+Turn 27/30: PASS
+Turn 28/30: PASS
+Turn 29/30: PASS
+Turn 30/30: PASS
+Probe P1: score 5/5
+Probe P2: score 5/5
+Probe P3: score 2/5
+Probe P4: score 5/5
+Probe P5: score 4/5
+Mean prompt tokens: 1839.27
+Mean latency (ms): 44651.92
+Mean probe quality: 4.2
+Raw output: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/sweep_n30_1792401498.json
+
+========== FINAL RESULTS ==========
+SHORT_TERM_N=4 | Prompt: 2166.17 | Latency: 42648.34 | Quality: 3.6
+SHORT_TERM_N=12 | Prompt: 1848.5 | Latency: 45597.09 | Quality: 3.8
+SHORT_TERM_N=30 | Prompt: 1839.27 | Latency: 44651.92 | Quality: 4.2
+
+PASS: All three 30-message experiments completed.
+PASS: All 15 memory probes completed.
+PASS: Raw experiment results saved.
+----- END ORIGINAL CONSOLE OUTPUT -----
+Raw files: reports/hw06/raw/sweep_n4_1792399369.json, sweep_n12_1792401498.json,
+sweep_n30_1792401498.json, short_term_sweep_summary.json, memory_usage.jsonl.
+
+==============================================================================
+PART 3.4 — Assistant-message eviction (SHORT_TERM_N=12)
+==============================================================================
+Actual request-event interval: 2026-10-19T11:39:37-07:00 to 2026-10-19T11:53:23-07:00 (America/Los_Angeles; from timestamped memory_usage.jsonl); logged requests: 35 (30 conversation + 5 probes).
+Command: python -u code/run_eviction_test.py | tee reports/hw06/part34_eviction_console.log
+SOURCE: reports/hw06/part34_eviction_console.log
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 3.4
+Policy: Evict historical assistant messages
+SHORT_TERM_N=12
+30 conversation messages + 5 probes
+
+
+========== SHORT_TERM_N=12 ==========
+Turn 01/30: PASS
+Turn 02/30: PASS
+Turn 03/30: PASS
+Turn 04/30: PASS
+Turn 05/30: PASS
+Turn 06/30: PASS
+Turn 07/30: PASS
+Turn 08/30: PASS
+Turn 09/30: PASS
+Turn 10/30: PASS
+Turn 11/30: PASS
+Turn 12/30: PASS
+Turn 13/30: PASS
+Turn 14/30: PASS
+Turn 15/30: PASS
+Turn 16/30: PASS
+Turn 17/30: PASS
+Turn 18/30: PASS
+Turn 19/30: PASS
+Turn 20/30: PASS
+Turn 21/30: PASS
+Turn 22/30: PASS
+Turn 23/30: PASS
+Turn 24/30: PASS
+Turn 25/30: PASS
+Turn 26/30: PASS
+Turn 27/30: PASS
+Turn 28/30: PASS
+Turn 29/30: PASS
+Turn 30/30: PASS
+Probe P1: score 5/5
+Probe P2: score 5/5
+Probe P3: score 3/5
+Probe P4: score 3/5
+Probe P5: score 4/5
+Mean prompt tokens: 441.37
+Mean latency (ms): 24382.33
+Mean probe quality: 4
+Raw output: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/sweep_n12_1792435165.json
+
+========== PART 3.4 RESULTS ==========
+Baseline prompt tokens: 1848.50
+Eviction prompt tokens: 441.37
+Token savings/turn: 1407.13
+Token savings: 76.12%
+Eviction latency (ms): 24382.33
+Eviction preliminary quality: 4
+Final quality delta: Pending manual probe review
+Raw results: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/eviction_n12_1792435165.json
+Summary: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/eviction_n12_summary.json
+PASS: Eviction experiment completed.
+----- END ORIGINAL CONSOLE OUTPUT -----
+Reviewed score after manual inspection: 4.20/5 (P1=5, P2=5, P3=5, P4=3, P5=3).
+SOURCE: reports/hw06/raw/eviction_probe_review.json and eviction_n12_1792435165.json
+
+==============================================================================
+PART 3.5 — Estimated cost for 10,000 conversations
+==============================================================================
+Date: 2026-10-19. The console log has no embedded timestamp; no exact execution time is claimed.
+Command: python code/calculate_memory_cost.py | tee reports/hw06/part35_cost_console.log
+SOURCE: reports/hw06/part35_cost_console.log
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 3.5
+Estimated hosted-model inference cost
+Input: $1/M tokens | Output: $5/M tokens
+
+Setting: N=4
+  Mean input tokens/turn: 2166.17
+  Mean output tokens/turn: 1018.93
+  Cost per conversation: $0.217825
+  Cost for 10,000 conversations: $2178.25
+
+Setting: N=12
+  Mean input tokens/turn: 1848.5
+  Mean output tokens/turn: 1113.67
+  Cost per conversation: $0.222505
+  Cost for 10,000 conversations: $2225.05
+
+Setting: N=30
+  Mean input tokens/turn: 1839.27
+  Mean output tokens/turn: 1071.23
+  Cost per conversation: $0.215863
+  Cost for 10,000 conversations: $2158.63
+
+Setting: N=12 + eviction
+  Mean input tokens/turn: 441.37
+  Mean output tokens/turn: 560.4
+  Cost per conversation: $0.097301
+  Cost for 10,000 conversations: $973.01
+
+BEST BY RECALL QUALITY: N=12 + eviction
+WORST BY RECALL QUALITY: N=12
+
+PASS: Cost estimates calculated.
+Saved: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/memory_cost_table.json
+----- END ORIGINAL CONSOLE OUTPUT -----
+
+==============================================================================
+PART 4.1 — AGENT.md and MEMORY.md created
+==============================================================================
+Date: 2026-10-19 (exact execution timestamp not captured in terminal output).
+SOURCE: actual user-supplied terminal verification output:
+Timothy Song | DATA 260 HW6 | Part 4.1
+-rw-r--r--@ 1 optim  staff  830 Oct 19 12:20 AGENT.md
+-rw-r--r--@ 1 optim  staff  677 Oct 19 12:20 MEMORY.md
+AGENT.md contains 8 instructions across 5 categories; MEMORY.md contains durable restaurant inspection preferences.
+
+==============================================================================
+PART 4.2 — File loading, prompt inclusion, 40-line / 24-hour triggers
+==============================================================================
+Date: 2026-10-19 (exact execution timestamp not recorded).
+SOURCE: student-provided Part 4.2 terminal test output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.2
+PASS: AGENT.md and MEMORY.md loaded
+PASS: File-based memory included in system prompt
+PASS: Never-consolidated memory flagged
+PASS: 40 lines and recent timestamp do not trigger
+PASS: 41 lines trigger consolidation
+PASS: Timestamp older than 24 hours triggers
+PASS: Line-count and time-based rules verified
+
+PASS: All Part 4.2 tests completed.
+Current MEMORY.md status: {'non_comment_lines': 12, 'last_consolidated': None, 'over_40_lines': False, 'timestamp_missing_or_never': True, 'older_than_24_hours': False, 'consolidation_required': True}
+----- END ORIGINAL CONSOLE OUTPUT -----
+
+==============================================================================
+PART 4.3 — /memory, /compact, /dream, /help
+==============================================================================
+Date: 2026-10-19 (exact execution timestamp not recorded).
+SOURCE: student-provided Part 4.3 unit test and API test output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.3
+PASS: /help lists all four commands
+PASS: /memory displays stored facts
+PASS: /compact reports before/after counts
+PASS: Duplicate and contradiction handling
+PASS: /dream adds useful durable facts
+PASS: Normal messages remain unaffected
+
+PASS: All Part 4.3 tests completed.
+
+Timothy Song | DATA 260 HW6 | Part 4.3 API Test
+PASS: /help via POST /api/chat
+PASS: /memory via POST /api/chat
+PASS: Memory command API integration verified.
+----- END ORIGINAL CONSOLE OUTPUT -----
+NOTE: /compact and /dream were unit-tested with an isolated temporary memory file; the API smoke test covered /help and /memory.
+
+==============================================================================
+PART 4.4 — AGENT.md function compliance
+==============================================================================
+Date: 2026-10-19 (exact execution timestamp not recorded).
+SOURCE: student-provided Part 4.4 terminal test output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.4
+PASS: AGENT.md contains all five categories
+PASS: Snake_case, type hints, and docstring verified
+PASS: Valid inspection formatted correctly
+Generated output: - Restaurant: Synthetic Test Restaurant; Inspection type: routine; Status: pending
+PASS: Invalid inputs rejected
+PASS: No fabricated dates or violations
+PASS: Bullet-format output verified
+
+PASS: All Part 4.4 tests completed.
+----- END ORIGINAL CONSOLE OUTPUT -----
+
+==============================================================================
+PART 4.5 — Consolidation, correction and two Git commits
+==============================================================================
+Date: 2026-10-19 (timestamps for the two Git commits are read from the repository reflog).
+SOURCE: student-provided 55-line original-memory creation output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.5
+Original MEMORY.md
+Physical lines: 55
+Memory fact entries: 52
+Distinct duplicated facts: 3
+Deliberate contradictions: 3
+Contradiction: priority_city: Berkeley
+Contradiction: inspection_type: complaint
+Contradiction: report_format: long paragraphs
+PASS: Original 55-line MEMORY.md created.
+----- END ORIGINAL CONSOLE OUTPUT -----
+SOURCE: student-provided automatic /compact console output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.5
+Testing MEMORY.md consolidation
+
+========== CONSOLIDATION RESULTS ==========
+Memory consolidation completed.
+Message count before: 52
+Message count after: 19
+Non-comment lines before: 54
+Non-comment lines after: 25
+Duplicates removed: 30
+Contradictions documented: 3
+
+Physical lines after: 29
+Qualifying lines after: 25
+PASS: Consolidated MEMORY.md has fewer than 40 lines
+PASS: All three contradictions documented
+
+========== CONTRADICTION RESOLUTIONS ==========
+Resolved priority_city: 'priority_city: Oakland' -> 'priority_city: Berkeley' (latest entry retained; manual verification required).
+Resolved inspection_type: 'inspection_type: routine' -> 'inspection_type: complaint' (latest entry retained; manual verification required).
+Resolved report_format: 'report_format: concise bullet points' -> 'report_format: long paragraphs' (latest entry retained; manual verification required).
+
+PASS: Initial consolidation test completed.
+----- END ORIGINAL CONSOLE OUTPUT -----
+SOURCE: student-provided manual correction output
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.5
+Original physical lines: 55
+After automatic consolidation: 29
+After manual correction: 32
+Qualifying lines: 28
+Corrected priority_city: 'Berkeley' was incorrectly retained by the latest-entry rule; restored 'Oakland' using the known benchmark facts.
+Corrected inspection_type: 'complaint' was incorrectly retained by the latest-entry rule; restored 'routine' using the known benchmark facts.
+Corrected report_format: 'long paragraphs' was incorrectly retained by the latest-entry rule; restored 'concise bullet points' using the known benchmark facts.
+PASS: Three incorrect resolutions corrected
+PASS: Original contradiction history preserved
+PASS: Final MEMORY.md contains fewer than 40 lines
+PASS: Consolidated memory saved
+----- END ORIGINAL CONSOLE OUTPUT -----
+Git verification (student-provided terminal output):
+0fc7dda (HEAD -> main) HW6 Part 4.5: consolidate memory and resolve contradictions
+f7c2363 HW6 Part 4.5: original 55-line memory test
+Original committed version: 55 lines
+Final consolidated version: 32 lines
+Git commit f7c2363 recorded time: 2026-10-19T13:29:31-07:00 (America/Los_Angeles; from .git/logs/HEAD)
+Git commit 0fc7dda recorded time: 2026-10-19T13:32:36-07:00 (America/Los_Angeles; from .git/logs/HEAD)
+Preserved files: reports/hw06/raw/MEMORY_original_55.md, MEMORY_initial_consolidated.md, MEMORY_consolidated.md.
+
+==============================================================================
+PART 4.6 — Comparison and file verification
+==============================================================================
+Date: 2026-10-19 (exact execution timestamp not recorded).
+Comparison (inspectability, persistence, scalability, must-not-forget facts) documented in report pages 79–80.
+SOURCE: student-provided Part 4.6 file-presence check
+----- BEGIN ORIGINAL CONSOLE OUTPUT -----
+Timothy Song | DATA 260 HW6 | Part 4.6
+PASS: AGENT.md
+PASS: MEMORY.md
+PASS: reports/hw06/raw/MEMORY_original_55.md
+PASS: reports/hw06/raw/MEMORY_consolidated.md
+PASS: code/file_memory.py
+PASS: code/chat_prompt.py
+PASS: code/file_memory_commands.py
+PASS: code/routers/chat.py
+PASS: code/agent_instruction_demo.py
+----- END ORIGINAL CONSOLE OUTPUT -----

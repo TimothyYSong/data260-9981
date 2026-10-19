@@ -1,0 +1,389 @@
+INFO:     Started server process [89124]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50726 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50727 - "POST /api/chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+  |     yield
+  |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 190, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/opt/anaconda3/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     )
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         self.scope, self.receive, self.send
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    |     return await self.app(scope, receive, send)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    |     raise exc
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 189, in __call__
+    |     with collapse_excgroups():
+    |          ~~~~~~~~~~~~~~~~~~^^
+    |   File "/opt/anaconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_utils.py", line 91, in collapse_excgroups
+    |     raise exc
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/Users/optim/Desktop/260/data260-9981/code/main.py", line 28, in sql_query_count_middleware
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 165, in call_next
+    |     raise app_exc
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 151, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 762, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 782, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    |     raise exc
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    |     response = await func(request)
+    |                ^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 299, in app
+    |     raise e
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 294, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         dependant=dependant, values=values, is_coroutine=is_coroutine
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/starlette/concurrency.py", line 40, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func, *args)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2505, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1005, in run
+    |     result = context.run(func, *args)
+    |   File "/Users/optim/Desktop/260/data260-9981/code/routers/chat.py", line 43, in chat
+    |     save_message(
+    |     ~~~~~~~~~~~~^
+    |         request.user_id,
+    |         ^^^^^^^^^^^^^^^^
+    |     ...<2 lines>...
+    |         request.message,
+    |         ^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/Users/optim/Desktop/260/data260-9981/code/memory_store.py", line 22, in save_message
+    |     result = messages_collection.insert_one(
+    |         message.model_dump()
+    |     )
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/collection.py", line 875, in insert_one
+    |     self._insert_one(
+    |     ~~~~~~~~~~~~~~~~^
+    |         document,
+    |         ^^^^^^^^^
+    |     ...<5 lines>...
+    |         comment=comment,
+    |         ^^^^^^^^^^^^^^^^
+    |     ),
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/collection.py", line 815, in _insert_one
+    |     self._database.client._retryable_write(
+    |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+    |         acknowledged, _insert_command, session, operation=_Op.INSERT
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2154, in _retryable_write
+    |     return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+    |            ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2024, in _retry_with_session
+    |     return self._retry_internal(
+    |            ~~~~~~~~~~~~~~~~~~~~^
+    |         func=func,
+    |         ^^^^^^^^^^
+    |     ...<4 lines>...
+    |         operation_id=operation_id,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/_csot.py", line 126, in csot_wrapper
+    |     return func(self, *args, **kwargs)
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2077, in _retry_internal
+    |     ).run()
+    |       ~~~^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2947, in run
+    |     res = self._read() if self._is_read else self._write()
+    |                                              ~~~~~~~~~~~^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3144, in _write
+    |     self._server = self._get_server()
+    |                    ~~~~~~~~~~~~~~~~^^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3120, in _get_server
+    |     return self._client._select_server(
+    |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+    |         self._server_selector,
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<4 lines>...
+    |         operation_id=self._operation_id,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 1917, in _select_server
+    |     server = topology.select_server(
+    |         server_selector,
+    |     ...<2 lines>...
+    |         operation_id=operation_id,
+    |     )
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 357, in select_server
+    |     server = self._select_server(
+    |         selector,
+    |     ...<4 lines>...
+    |         operation_id=operation_id,
+    |     )
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 331, in _select_server
+    |     servers = self.select_servers(
+    |         selector,
+    |     ...<4 lines>...
+    |         deprioritized_servers,
+    |     )
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 249, in select_servers
+    |     server_descriptions = self._select_servers_loop(
+    |         selector,
+    |     ...<4 lines>...
+    |         deprioritized_servers=deprioritized_servers,
+    |     )
+    |   File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 297, in _select_servers_loop
+    |     raise ServerSelectionTimeoutError(
+    |         f"{self._error_message(selector)}, Timeout: {timeout}s, Topology Description: {self.description!r}"
+    |     )
+    | pymongo.errors.ServerSelectionTimeoutError: 127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6ad5d78adc1810072a9078e4, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+         ~~~~~~~~~~~~~~~~~~^^
+  File "/opt/anaconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_utils.py", line 91, in collapse_excgroups
+    raise exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/optim/Desktop/260/data260-9981/code/main.py", line 28, in sql_query_count_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 762, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 782, in app
+    await route.handle(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 299, in app
+    raise e
+  File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 294, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        dependant=dependant, values=values, is_coroutine=is_coroutine
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/starlette/concurrency.py", line 40, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2505, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1005, in run
+    result = context.run(func, *args)
+  File "/Users/optim/Desktop/260/data260-9981/code/routers/chat.py", line 43, in chat
+    save_message(
+    ~~~~~~~~~~~~^
+        request.user_id,
+        ^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        request.message,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/optim/Desktop/260/data260-9981/code/memory_store.py", line 22, in save_message
+    result = messages_collection.insert_one(
+        message.model_dump()
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/collection.py", line 875, in insert_one
+    self._insert_one(
+    ~~~~~~~~~~~~~~~~^
+        document,
+        ^^^^^^^^^
+    ...<5 lines>...
+        comment=comment,
+        ^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/collection.py", line 815, in _insert_one
+    self._database.client._retryable_write(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        acknowledged, _insert_command, session, operation=_Op.INSERT
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2154, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2024, in _retry_with_session
+    return self._retry_internal(
+           ~~~~~~~~~~~~~~~~~~~~^
+        func=func,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        operation_id=operation_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/_csot.py", line 126, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2077, in _retry_internal
+    ).run()
+      ~~~^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 2947, in run
+    res = self._read() if self._is_read else self._write()
+                                             ~~~~~~~~~~~^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3144, in _write
+    self._server = self._get_server()
+                   ~~~~~~~~~~~~~~~~^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 3120, in _get_server
+    return self._client._select_server(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._server_selector,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        operation_id=self._operation_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/mongo_client.py", line 1917, in _select_server
+    server = topology.select_server(
+        server_selector,
+    ...<2 lines>...
+        operation_id=operation_id,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 357, in select_server
+    server = self._select_server(
+        selector,
+    ...<4 lines>...
+        operation_id=operation_id,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 331, in _select_server
+    servers = self.select_servers(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 249, in select_servers
+    server_descriptions = self._select_servers_loop(
+        selector,
+    ...<4 lines>...
+        deprioritized_servers=deprioritized_servers,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/pymongo/synchronous/topology.py", line 297, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+        f"{self._error_message(selector)}, Timeout: {timeout}s, Topology Description: {self.description!r}"
+    )
+pymongo.errors.ServerSelectionTimeoutError: 127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 6ad5d78adc1810072a9078e4, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 61] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89124]

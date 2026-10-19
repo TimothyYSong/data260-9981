@@ -1,0 +1,49 @@
+{
+  "pricing": {
+    "input_per_million": 1.0,
+    "output_per_million": 5.0
+  },
+  "conversation_turns": 30,
+  "number_of_conversations": 10000,
+  "settings": [
+    {
+      "setting": "N=4",
+      "mean_prompt_tokens": 2166.17,
+      "mean_completion_tokens": 1018.93,
+      "reviewed_probe_quality": 3.6,
+      "cost_per_30_turn_conversation": 0.217825,
+      "cost_for_10000_conversations": 2178.25,
+      "source_file": "sweep_n4_1792399369.json"
+    },
+    {
+      "setting": "N=12",
+      "mean_prompt_tokens": 1848.5,
+      "mean_completion_tokens": 1113.67,
+      "reviewed_probe_quality": 3.4,
+      "cost_per_30_turn_conversation": 0.222505,
+      "cost_for_10000_conversations": 2225.05,
+      "source_file": "sweep_n12_1792401498.json"
+    },
+    {
+      "setting": "N=30",
+      "mean_prompt_tokens": 1839.27,
+      "mean_completion_tokens": 1071.23,
+      "reviewed_probe_quality": 4.0,
+      "cost_per_30_turn_conversation": 0.215863,
+      "cost_for_10000_conversations": 2158.63,
+      "source_file": "sweep_n30_1792401498.json"
+    },
+    {
+      "setting": "N=12 + eviction",
+      "mean_prompt_tokens": 441.37,
+      "mean_completion_tokens": 560.4,
+      "reviewed_probe_quality": 4.2,
+      "cost_per_30_turn_conversation": 0.097301,
+      "cost_for_10000_conversations": 973.01,
+      "source_file": "eviction_n12_1792435165.json"
+    }
+  ],
+  "best_by_recall_quality": "N=12 + eviction",
+  "worst_by_recall_quality": "N=12",
+  "scope": "Primary chat-model inference only; additional summarization and extraction calls excluded."
+}

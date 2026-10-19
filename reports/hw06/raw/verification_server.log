@@ -1,0 +1,15 @@
+INFO:     Started server process [30834]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54653 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54654 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54655 - "POST /api/chat HTTP/1.1" 200 OK
+WARNING:root:Episodic extraction skipped: missing facts list. Model output: {}
+INFO:     127.0.0.1:54656 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54703 - "GET /api/memory/hw6_verify_a120a2596b4d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54704 - "GET /api/aggregate/hw6_verify_a120a2596b4d HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30834]

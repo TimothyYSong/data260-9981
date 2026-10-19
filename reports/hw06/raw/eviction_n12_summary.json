@@ -1,0 +1,13 @@
+{
+  "policy": "evict_assistant",
+  "short_term_n": 12,
+  "baseline_mean_prompt_tokens": 1848.5,
+  "eviction_mean_prompt_tokens": 441.37,
+  "token_savings_per_turn": 1407.13,
+  "token_savings_percent": 76.12,
+  "eviction_mean_latency_ms": 24382.33,
+  "eviction_automated_probe_quality": 4,
+  "baseline_reviewed_probe_quality": 3.4,
+  "quality_review_pending": true,
+  "raw_results": "/Users/optim/Desktop/260/data260-9981/reports/hw06/raw/eviction_n12_1792435165.json"
+}

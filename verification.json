@@ -1,0 +1,48 @@
+{
+  "homework": 6,
+  "student": "Timothy Song",
+  "sid4": 9981,
+  "commit_hash": "0fc7dda8248d0927b95b16da8f6d4ca9f076f70a",
+  "model": "qwen3:8b",
+  "configuration": {
+    "port_base": 8081,
+    "prefix": "s9981",
+    "domain_id": 5,
+    "domain": "Local restaurant inspections",
+    "embedding_model": "nomic-embed-text",
+    "short_term_n": 12,
+    "memory_policy": "default"
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "generated_at_utc": "2026-10-19T21:09:22.909863+00:00",
+  "checks": [
+    {
+      "check": "FastAPI on port 8081",
+      "passed": true,
+      "details": "FastAPI GET /docs returned HTTP 200 on PORT_BASE=8081"
+    },
+    {
+      "check": "Memory /help command",
+      "passed": true,
+      "details": "POST /api/chat accepted /help and returned all four commands"
+    },
+    {
+      "check": "POST /api/chat local-model reply",
+      "passed": true,
+      "details": "POST /api/chat returned a nonempty Ollama reply and memory_used"
+    },
+    {
+      "check": "MongoDB memory persistence",
+      "passed": true,
+      "details": "GET /api/memory returned persisted user and assistant messages"
+    },
+    {
+      "check": "Daily aggregate endpoint",
+      "passed": true,
+      "details": "GET /api/aggregate returned daily message counts"
+    }
+  ],
+  "overall_pass": true,
+  "server_log": "reports/hw06/raw/verification_server.log"
+}

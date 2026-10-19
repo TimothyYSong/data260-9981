@@ -12,6 +12,8 @@ from routers.records import router as records_router
 from routers.restaurants import router as restaurants_router
 from query_counter import query_counter
 from sqlalchemy.orm import relationship
+from routers.inspections import router as inspections_router
+from routers.chat import router as chat_router
 
 # Create FastAPI app
 app = FastAPI()
@@ -52,6 +54,8 @@ WEB_DIR = BASE_DIR / "web_application"
 app.include_router(auth_router)
 app.include_router(records_router)
 app.include_router(restaurants_router)
+app.include_router(inspections_router)
+app.include_router(chat_router)
 
 
 # Previous homework static files

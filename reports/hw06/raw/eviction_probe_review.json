@@ -1,0 +1,16 @@
+{
+  "policy": "evict_assistant",
+  "short_term_n": 12,
+  "scoring_method": "Manual 1-5 rubric review",
+  "probe_scores": {
+    "P1": 5,
+    "P2": 5,
+    "P3": 5,
+    "P4": 3,
+    "P5": 3
+  },
+  "mean_probe_quality": 4.2,
+  "baseline_reviewed_quality": 3.4,
+  "quality_delta": 0.8,
+  "token_savings_percent": 76.12
+}

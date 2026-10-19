@@ -1,0 +1,12 @@
+Timothy Song | DATA 260 HW6 | Verification
+Starting a fresh FastAPI process for the smoke test.
+
+PASS: FastAPI on port 8081 — FastAPI GET /docs returned HTTP 200 on PORT_BASE=8081
+PASS: Memory /help command — POST /api/chat accepted /help and returned all four commands
+PASS: POST /api/chat local-model reply — POST /api/chat returned a nonempty Ollama reply and memory_used
+PASS: MongoDB memory persistence — GET /api/memory returned persisted user and assistant messages
+PASS: Daily aggregate endpoint — GET /api/aggregate returned daily message counts
+
+OVERALL: PASS
+Saved: verification.json
+Copy: reports/hw06/verification.json

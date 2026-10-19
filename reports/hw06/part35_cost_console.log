@@ -1,0 +1,33 @@
+Timothy Song | DATA 260 HW6 | Part 3.5
+Estimated hosted-model inference cost
+Input: $1/M tokens | Output: $5/M tokens
+
+Setting: N=4
+  Mean input tokens/turn: 2166.17
+  Mean output tokens/turn: 1018.93
+  Cost per conversation: $0.217825
+  Cost for 10,000 conversations: $2178.25
+
+Setting: N=12
+  Mean input tokens/turn: 1848.5
+  Mean output tokens/turn: 1113.67
+  Cost per conversation: $0.222505
+  Cost for 10,000 conversations: $2225.05
+
+Setting: N=30
+  Mean input tokens/turn: 1839.27
+  Mean output tokens/turn: 1071.23
+  Cost per conversation: $0.215863
+  Cost for 10,000 conversations: $2158.63
+
+Setting: N=12 + eviction
+  Mean input tokens/turn: 441.37
+  Mean output tokens/turn: 560.4
+  Cost per conversation: $0.097301
+  Cost for 10,000 conversations: $973.01
+
+BEST BY RECALL QUALITY: N=12 + eviction
+WORST BY RECALL QUALITY: N=12
+
+PASS: Cost estimates calculated.
+Saved: /Users/optim/Desktop/260/data260-9981/reports/hw06/raw/memory_cost_table.json

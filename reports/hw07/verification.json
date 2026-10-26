@@ -1,0 +1,54 @@
+{
+  "homework": 7,
+  "sid4": "9981",
+  "commit_hash": "286c892f0a5df0b6195506638ebf45ef6726041d",
+  "git_tag": "hw7",
+  "tag_commit_hash": "286c892f0a5df0b6195506638ebf45ef6726041d",
+  "timestamp_utc": "2026-10-26T20:36:48.748074+00:00",
+  "model": "qwen3:8b",
+  "configuration": {
+    "port_base": 8081,
+    "prefix": "s9981",
+    "domain_id": 5
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "checks": [
+    {
+      "name": "Tagged commit",
+      "status": "PASS",
+      "detail": "HEAD=286c892f0a5df0b6195506638ebf45ef6726041d; hw7=286c892f0a5df0b6195506638ebf45ef6726041d"
+    },
+    {
+      "name": "FastAPI authentication routes",
+      "status": "PASS",
+      "detail": "OpenAPI routes inspected"
+    },
+    {
+      "name": "Unauthenticated access rejected",
+      "status": "PASS",
+      "detail": "HTTP 401"
+    },
+    {
+      "name": "Invalid login rejected",
+      "status": "PASS",
+      "detail": "HTTP 401"
+    },
+    {
+      "name": "Ollama qwen3:8b available",
+      "status": "PASS",
+      "detail": "['qwen3:8b', 'nomic-embed-text:latest']"
+    },
+    {
+      "name": "Agent verification task A",
+      "status": "PASS",
+      "detail": "stop_reason=normal_completion; successful_tools=['search_inspections', 'inspection_detail']; expected=['search_inspections', 'inspection_detail']"
+    },
+    {
+      "name": "Command safety gate",
+      "status": "PASS",
+      "detail": "safe_result={'allowed': True, 'reason': 'Command matches SAFE_PREFIXES.'}; unsafe_result={'allowed': False, 'reason': 'Destructive command requires explicit confirmation.'}"
+    }
+  ],
+  "overall_status": "PASS"
+}

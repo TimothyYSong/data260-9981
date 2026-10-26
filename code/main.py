@@ -1,18 +1,20 @@
-import uvicorn
 from pathlib import Path
 
-from fastapi import FastAPI
+import uvicorn
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from query_counter import query_counter
+from routers.auth import get_current_user, require_roles
 from routers.auth import router as auth_router
+from routers.chat import router as chat_router
+from routers.inspections import router as inspections_router
 from routers.records import router as records_router
 from routers.restaurants import router as restaurants_router
-from query_counter import query_counter
-from routers.inspections import router as inspections_router
-from routers.chat import router as chat_router
+
 
 # Create FastAPI app
 app = FastAPI()
@@ -88,12 +90,17 @@ class RestaurantCreate(BaseModel):
 
 
 @app.get("/api/restaurants")
-def get_restaurants():
+def get_restaurants(
+    user=Depends(get_current_user),
+):
     return restaurants
 
 
 @app.post("/api/restaurants")
-def add_restaurant(restaurant: RestaurantCreate):
+def add_restaurant(
+    restaurant: RestaurantCreate,
+    user=Depends(require_roles("writer", "moderator")),
+):
     next_id = max((r["id"] for r in restaurants), default=0) + 1
 
     new_restaurant = {
@@ -107,7 +114,10 @@ def add_restaurant(restaurant: RestaurantCreate):
 
 
 @app.put("/api/restaurants/1")
-def update_restaurant_one(restaurant: RestaurantCreate):
+def update_restaurant_one(
+    restaurant: RestaurantCreate,
+    user=Depends(require_roles("writer", "moderator")),
+):
     for existing_restaurant in restaurants:
         if existing_restaurant["id"] == 1:
             existing_restaurant["restaurantName"] = restaurant.restaurantName
@@ -118,7 +128,9 @@ def update_restaurant_one(restaurant: RestaurantCreate):
 
 
 @app.delete("/api/restaurants/highest")
-def delete_highest_restaurant():
+def delete_highest_restaurant(
+    user=Depends(require_roles("moderator")),
+):
     if not restaurants:
         return {"error": "No restaurants to delete"}
 
@@ -131,7 +143,10 @@ def delete_highest_restaurant():
 
 
 @app.get("/api/restaurants/search")
-def search_restaurants(query: str):
+def search_restaurants(
+    query: str,
+    user=Depends(get_current_user),
+):
     query = query.lower()
 
     return [

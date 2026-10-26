@@ -5,7 +5,7 @@ from sqlalchemy.orm import joinedload
 
 from database import get_db
 from models import InspectionNote, Restaurant, RestaurantInspection, User
-from routers.auth import get_current_user
+from routers.auth import get_current_user, require_roles
 from schemas import (
     RestaurantInspectionCreate,
     RestaurantInspectionResponse,
@@ -25,7 +25,7 @@ router = APIRouter(prefix="/records", tags=["records"])
 def create_record(
     record: RestaurantInspectionCreate,
     db: DatabaseSession = Depends(get_db),
-    user: User = Depends(get_current_user),
+    user: User = Depends(require_roles("writer", "moderator")),
 ):
     restaurant = (
         db.query(Restaurant)
@@ -193,7 +193,7 @@ def update_record(
     record_id: int,
     updated_record: RestaurantInspectionUpdate,
     db: DatabaseSession = Depends(get_db),
-    user: User = Depends(get_current_user),
+    user: User = Depends(require_roles("writer", "moderator")),
 ):
     record = (
         db.query(RestaurantInspection)
@@ -245,7 +245,7 @@ def update_record(
 def delete_record(
     record_id: int,
     db: DatabaseSession = Depends(get_db),
-    user: User = Depends(get_current_user),
+    user: User = Depends(require_roles("moderator")),
 ):
     record = (
         db.query(RestaurantInspection)
@@ -265,5 +265,3 @@ def delete_record(
 
     db.delete(record)
     db.commit()
-
-    

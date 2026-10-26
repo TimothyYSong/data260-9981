@@ -84,6 +84,8 @@ class User(Base):
     name = Column(String(255), nullable=False)
     email = Column(String(255), unique=True, nullable=False, index=True)
     password_hash = Column(String(255), nullable=False)
+    username = Column(String(255), unique=True, nullable=False, index=True)
+    role = Column(String(20), nullable=False, default="reader")
 
     sessions = relationship("Session", back_populates="user")
 

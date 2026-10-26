@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException, status
+from bson import ObjectId
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from pymongo.errors import PyMongoError
 
@@ -7,15 +8,19 @@ from inspection_schemas import (
     InspectionDocument,
     utc_now,
 )
+from models import User
 from mongo_database import inspections_collection
-from bson import ObjectId
+from routers.auth import get_current_user, require_roles
 
 
 router = APIRouter(prefix="/api/inspections", tags=["Inspections"])
 
 
 @router.post("", status_code=status.HTTP_201_CREATED)
-def create_inspection(inspection: InspectionCreate):
+def create_inspection(
+    inspection: InspectionCreate,
+    user: User = Depends(require_roles("writer", "moderator")),
+):
     document = InspectionDocument(
         **inspection.model_dump(exclude_none=True)
     )
@@ -39,7 +44,9 @@ def create_inspection(inspection: InspectionCreate):
 
 
 @router.get("")
-def get_all_inspections():
+def get_all_inspections(
+    user: User = Depends(get_current_user),
+):
     try:
         documents = list(inspections_collection.find({}))
     except PyMongoError as exc:
@@ -55,7 +62,10 @@ def get_all_inspections():
 
 
 @router.get("/{inspection_id}")
-def get_inspection_by_id(inspection_id: str):
+def get_inspection_by_id(
+    inspection_id: str,
+    user: User = Depends(get_current_user),
+):
     if not ObjectId.is_valid(inspection_id):
         raise HTTPException(
             status_code=400,
@@ -86,7 +96,8 @@ def get_inspection_by_id(inspection_id: str):
 @router.put("/{inspection_id}")
 def update_inspection(
     inspection_id: str,
-    inspection: InspectionCreate
+    inspection: InspectionCreate,
+    user: User = Depends(require_roles("writer", "moderator")),
 ):
     if not ObjectId.is_valid(inspection_id):
         raise HTTPException(
@@ -142,7 +153,10 @@ def update_inspection(
 
 
 @router.delete("/{inspection_id}")
-def delete_inspection(inspection_id: str):
+def delete_inspection(
+    inspection_id: str,
+    user: User = Depends(require_roles("moderator")),
+):
     if not ObjectId.is_valid(inspection_id):
         raise HTTPException(
             status_code=400,

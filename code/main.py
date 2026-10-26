@@ -11,7 +11,6 @@ from routers.auth import router as auth_router
 from routers.records import router as records_router
 from routers.restaurants import router as restaurants_router
 from query_counter import query_counter
-from sqlalchemy.orm import relationship
 from routers.inspections import router as inspections_router
 from routers.chat import router as chat_router
 

@@ -24,3 +24,4 @@ fonttools
 httpx
 mcp[cli]<2
 pymongo
+PyJWT==2.10.1

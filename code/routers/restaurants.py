@@ -3,7 +3,8 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from database import get_db
-from models import Restaurant, RestaurantInspection
+from models import Restaurant, RestaurantInspection, User
+from routers.auth import get_current_user, require_roles
 from schemas import (
     RestaurantCreate,
     RestaurantInspectionResponse,
@@ -26,6 +27,7 @@ router = APIRouter(
 def create_restaurant(
     payload: RestaurantCreate,
     db: Session = Depends(get_db),
+    user: User = Depends(require_roles("writer", "moderator")),
 ):
     restaurant = Restaurant(
         name=payload.name,
@@ -56,6 +58,7 @@ def list_restaurants(
     skip: int = Query(default=0, ge=0),
     limit: int = Query(default=10, ge=1, le=100),
     db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
 ):
     restaurants = (
         db.query(Restaurant)
@@ -74,6 +77,7 @@ def list_restaurants(
 def get_restaurant(
     restaurant_id: int,
     db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
 ):
     restaurant = (
         db.query(Restaurant)
@@ -97,6 +101,7 @@ def get_restaurant(
 def get_restaurant_inspections(
     restaurant_id: int,
     db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
 ):
     restaurant = (
         db.query(Restaurant)
@@ -127,6 +132,7 @@ def update_restaurant(
     restaurant_id: int,
     payload: RestaurantUpdate,
     db: Session = Depends(get_db),
+    user: User = Depends(require_roles("writer", "moderator")),
 ):
     restaurant = (
         db.query(Restaurant)
@@ -164,6 +170,7 @@ def update_restaurant(
 def delete_restaurant(
     restaurant_id: int,
     db: Session = Depends(get_db),
+    user: User = Depends(require_roles("moderator")),
 ):
     restaurant = (
         db.query(Restaurant)

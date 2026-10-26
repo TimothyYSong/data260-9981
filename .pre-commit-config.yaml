@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Ruff Python Linter
+        entry: python -m ruff check
+        language: system
+        types: [python]
+        pass_filenames: true

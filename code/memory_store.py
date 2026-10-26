@@ -1,5 +1,5 @@
 from mongo_database import mongo_db
-from memory_schemas import MessageDocument, SummaryDocument
+from memory_schemas import MessageDocument
 
 import os
 import math

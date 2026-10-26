@@ -1,331 +1,582 @@
 import json
-import os
+import sys
+import uuid
 from datetime import datetime, timezone
+from pathlib import Path
 
-import requests
+from langchain_core.messages import (
+    AIMessage,
+    HumanMessage,
+    SystemMessage,
+    ToolMessage,
+)
 
+sys.path.insert(
+    0,
+    str(Path(__file__).resolve().parents[1] / "src"),
+)
+
+from model_client import ModelClient
 from tool_executor import execute_tool
 
 
 MODEL = "qwen3:8b"
-OLLAMA_URL = "http://localhost:11434/api/chat"
-LOG_FILE = "reports/hw05/raw/agent_runs.jsonl"
+MAX_STEPS = 8
+MAX_REPAIRS = 1
 
-TOOLS = [
-    "search_inspections",
-    "inspection_detail",
-    "restaurant_inspection_summary",
+ROOT = Path(__file__).resolve().parents[1]
+LOG_FILE = ROOT / "reports/hw07/raw/agent_runs.jsonl"
+RUN_LOG = ROOT / "reports/hw07/RUN_LOG.txt"
+
+TOOL_SCHEMAS = [
+    {
+        "type": "function",
+        "function": {
+            "name": "search_inspections",
+            "description": (
+                "Search restaurant inspections by restaurant name, "
+                "address, or inspection code. Returns inspection IDs "
+                "and restaurant IDs for follow-up tool calls."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {"type": "string"},
+                    "limit": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 25,
+                    },
+                },
+                "required": ["query"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "inspection_detail",
+            "description": (
+                "Retrieve full inspection details using an inspection ID."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "inspection_id": {
+                        "type": "integer",
+                        "minimum": 1,
+                    },
+                },
+                "required": ["inspection_id"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "restaurant_inspection_summary",
+            "description": (
+                "Calculate aggregate inspection statistics for one "
+                "restaurant using its restaurant ID."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "restaurant_id": {
+                        "type": "integer",
+                        "minimum": 1,
+                    },
+                },
+                "required": ["restaurant_id"],
+            },
+        },
+    },
 ]
 
+SCHEMAS_BY_NAME = {
+    item["function"]["name"]: item["function"]
+    for item in TOOL_SCHEMAS
+}
+
 SYSTEM_PROMPT = """
-You are an agent for a Local Restaurant Inspections system.
+You are a tool-using assistant for local restaurant inspections.
 
-You have exactly three tools:
+Use the provided tools to answer inspection-data questions.
+Never invent inspection IDs, restaurant IDs, statistics, or results.
 
-1. search_inspections
-   Inputs:
-   {
-     "query": string,
-     "limit": integer from 1 to 25
-   }
+For multi-step questions:
+- Search first when you do not know the relevant IDs.
+- Use the IDs returned by search for detail and summary calls.
+- For aggregate questions, calculate the summary and retrieve
+  at least one supporting inspection.
+- For comparisons, retrieve details for both entities.
+- Complete all necessary tool calls before answering.
+- Do not request a follow-up prompt between tool calls.
 
-2. inspection_detail
-   Inputs:
-   {
-     "inspection_id": positive integer
-   }
-
-3. restaurant_inspection_summary
-   Inputs:
-   {
-     "restaurant_id": positive integer
-   }
-
-When you need a tool, respond ONLY with JSON in this form:
-
-{
-  "action": "tool",
-  "tool": "tool_name",
-  "inputs": {
-    ...
-  }
-}
-
-When you have enough information to answer the user, respond ONLY with:
-
-{
-  "action": "final",
-  "answer": "your answer"
-}
-
-Do not invent tool results.
-Use tool results before giving factual answers about inspection data.
+Use at most one tool call at a time.
+If a tool returns an ordinary "not found" result, explain that
+result without inventing replacement data.
+If you receive a validation error, correct the tool call.
+Only use information supported by tool observations.
 """
 
 
+def timestamp():
+    return datetime.now(timezone.utc).isoformat()
+
+
 def write_log(record):
-    os.makedirs(
-        os.path.dirname(LOG_FILE),
+    entry = {
+        "timestamp": timestamp(),
+        **record,
+    }
+
+    LOG_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+    RUN_LOG.parent.mkdir(
+        parents=True,
         exist_ok=True,
     )
 
-    record["timestamp"] = datetime.now(
-        timezone.utc
-    ).isoformat()
-
-    with open(
-        LOG_FILE,
-        "a",
-        encoding="utf-8",
-    ) as file:
-        file.write(
-            json.dumps(record) + "\n"
-        )
-
-
-def call_ollama(messages):
-    response = requests.post(
-        OLLAMA_URL,
-        json={
-            "model": MODEL,
-            "messages": messages,
-            "stream": False,
-            "format": "json",
-            "think": False,
-        },
-        timeout=60,
+    line = json.dumps(
+        entry,
+        ensure_ascii=False,
+        default=str,
     )
 
-    response.raise_for_status()
+    with LOG_FILE.open("a", encoding="utf-8") as file:
+        file.write(line + "\n")
 
-    data = response.json()
-    content = data["message"]["content"]
-
-    return json.loads(content)
+    with RUN_LOG.open("a", encoding="utf-8") as file:
+        file.write(line + "\n")
 
 
-def run_agent(user_input, max_steps=5, model=None):
+def validate_tool_call(name, inputs):
+    if name not in SCHEMAS_BY_NAME:
+        return f"unknown tool: {name}"
+
+    if not isinstance(inputs, dict):
+        return "tool inputs must be a JSON object"
+
+    properties = SCHEMAS_BY_NAME[name]["parameters"]["properties"]
+    required = SCHEMAS_BY_NAME[name]["parameters"]["required"]
+
+    for field in required:
+        if field not in inputs:
+            return f"missing required argument: {field}"
+
+    for field, value in inputs.items():
+        if field not in properties:
+            return f"unexpected argument: {field}"
+
+        specification = properties[field]
+        expected_type = specification["type"]
+
+        if expected_type == "string":
+            if not isinstance(value, str) or not value.strip():
+                return f"{field} must be a non-empty string"
+
+        if expected_type == "integer":
+            if type(value) is not int:
+                return f"{field} must be an integer"
+
+            minimum = specification.get("minimum")
+            maximum = specification.get("maximum")
+
+            if minimum is not None and value < minimum:
+                return f"{field} must be at least {minimum}"
+
+            if maximum is not None and value > maximum:
+                return f"{field} must be at most {maximum}"
+
+    return None
+
+
+def run_agent(
+    user_input,
+    max_steps=MAX_STEPS,
+    model=None,
+    max_repairs=MAX_REPAIRS,
+    max_tool_calls=None,
+    max_total_tokens=None,
+):
+    run_id = uuid.uuid4().hex[:12]
+
     messages = [
-        {
-            "role": "system",
-            "content": SYSTEM_PROMPT,
-        },
-        {
-            "role": "user",
-            "content": user_input,
-        },
+        SystemMessage(content=SYSTEM_PROMPT),
+        HumanMessage(content=user_input),
     ]
 
     tool_call_count = 0
+    repair_count = 0
+    total_tokens = 0
+    input_tokens = 0
+    output_tokens = 0
+    history = []
+
+    def log(event, **fields):
+        write_log(
+            {
+                "run_id": run_id,
+                "user_input": user_input,
+                "event": event,
+                **fields,
+            }
+        )
+
+    def finish(answer, steps, stop_reason, error=None):
+        result = {
+            "run_id": run_id,
+            "answer": answer,
+            "steps": steps,
+            "tool_calls": tool_call_count,
+            "repairs": repair_count,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "total_tokens": total_tokens,
+            "stop_reason": stop_reason,
+            "history": history,
+        }
+
+        if error is not None:
+            result["error"] = error
+
+        log(
+            "agent_finished",
+            steps=steps,
+            tool_call_count=tool_call_count,
+            repair_count=repair_count,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            total_tokens=total_tokens,
+            stop_reason=stop_reason,
+            answer=answer,
+            error=error,
+        )
+
+        return result
+
+    try:
+        client = model if model is not None else ModelClient(
+            model_name=MODEL,
+            temperature=0.0,
+        )
+    except Exception as error:
+        return finish(
+            None,
+            0,
+            "model_error",
+            str(error),
+        )
+
+    log(
+        "agent_started",
+        model=MODEL,
+        max_steps=max_steps,
+        max_repairs=max_repairs,
+    )
 
     for step in range(1, max_steps + 1):
         try:
-            if model is None:
-                model_output = call_ollama(messages)
-            else:
-                model_output = model.generate(messages)
+            remaining_tokens = (
+                None
+                if max_total_tokens is None
+                else max_total_tokens - total_tokens
+            )
+
+            if (
+                remaining_tokens is not None
+                and remaining_tokens <= 0
+            ):
+                return finish(
+                    None,
+                    step,
+                    "budget_exhausted",
+                    "token budget reached",
+                )
+
+            if remaining_tokens is not None:
+                input_reserve = 4000
+
+                if remaining_tokens <= input_reserve:
+                    return finish(
+                        None,
+                        step,
+                        "budget_exhausted",
+                        "insufficient remaining token budget",
+                    )
+
+                output_limit = min(
+                    2000,
+                    remaining_tokens - input_reserve,
+                )
+
+            response = client.complete(
+                messages,
+                tools=TOOL_SCHEMAS,
+                **(
+                    {}
+                    if remaining_tokens is None
+                    else {
+                        "max_output_tokens": output_limit,
+                    }
+                ),
+            )
+
+            if not isinstance(response, AIMessage):
+                raise TypeError(
+                    "model adapter did not return an AIMessage"
+                )
 
         except Exception as error:
-            stop_reason = "model_error"
-
-            write_log(
-                {
-                    "step": step,
-                    "user_input": user_input,
-                    "tool_call": None,
-                    "tool_input": None,
-                    "tool_result": None,
-                    "tool_call_count": tool_call_count,
-                    "stop_reason": stop_reason,
-                    "error": str(error),
-                }
+            return finish(
+                None,
+                step,
+                "model_error",
+                str(error),
             )
 
-            return {
-                "answer": None,
-                "steps": step,
-                "tool_calls": tool_call_count,
-                "stop_reason": stop_reason,
-                "error": str(error),
-            }
-
-        action = model_output.get("action")
-
-        if action == "final":
-            answer = model_output.get(
-                "answer",
-                "",
-            )
-
-            stop_reason = "normal_completion"
-
-            write_log(
-                {
-                    "step": step,
-                    "user_input": user_input,
-                    "model_output": model_output,
-                    "tool_call": None,
-                    "tool_input": None,
-                    "tool_result": None,
-                    "tool_call_count": tool_call_count,
-                    "final_answer": answer,
-                    "stop_reason": stop_reason,
-                }
-            )
-
-            return {
-                "answer": answer,
-                "steps": step,
-                "tool_calls": tool_call_count,
-                "stop_reason": stop_reason,
-            }
-
-        if action != "tool":
-            stop_reason = "invalid_model_output"
-
-            write_log(
-                {
-                    "step": step,
-                    "user_input": user_input,
-                    "model_output": model_output,
-                    "tool_call": None,
-                    "tool_input": None,
-                    "tool_result": None,
-                    "tool_call_count": tool_call_count,
-                    "stop_reason": stop_reason,
-                }
-            )
-
-            return {
-                "answer": None,
-                "steps": step,
-                "tool_calls": tool_call_count,
-                "stop_reason": stop_reason,
-                "error": "model returned an invalid action",
-            }
-
-        tool_name = model_output.get("tool")
-        tool_inputs = model_output.get(
-            "inputs",
-            {},
-        )
-
-        tool_call_count += 1
-
-        if tool_name not in TOOLS:
-            result = json.dumps(
-                {
-                    "ok": False,
-                    "data": None,
-                    "error": (
-                        f"unknown tool requested by model: "
-                        f"{tool_name}"
-                    ),
-                }
-            )
-        else:
-            result = execute_tool(
-                tool_name,
-                tool_inputs,
-            )
-
-        result_object = json.loads(result)
-
-        write_log(
-            {
-                "step": step,
-                "user_input": user_input,
-                "model_output": model_output,
-                "tool_call": tool_name,
-                "tool_input": tool_inputs,
-                "tool_result": result_object,
-                "tool_call_count": tool_call_count,
-                "stop_reason": None,
-            }
-        )
+        usage = response.usage_metadata or {}
+        input_tokens += usage.get("input_tokens", 0)
+        output_tokens += usage.get("output_tokens", 0)
+        total_tokens += usage.get("total_tokens", 0)
 
         if (
-            result_object.get("ok") is False
-            and result_object.get("error", "").startswith(
-                "safety rule blocked"
-            )
+            max_total_tokens is not None
+            and total_tokens >= max_total_tokens
         ):
-            stop_reason = "safety_rule_block"
+            return finish(
+                None,
+                step,
+                "budget_exhausted",
+                "token budget reached",
+            )
 
-            write_log(
+        invalid_calls = response.invalid_tool_calls or []
+        tool_calls = response.tool_calls or []
+
+        if invalid_calls:
+            problem = (
+                "Malformed tool-call arguments: "
+                + str(invalid_calls[0].get("error", "invalid JSON"))
+            )
+
+            log(
+                "invalid_tool_call",
+                step=step,
+                problem=problem,
+            )
+
+            if repair_count >= max_repairs:
+                return finish(
+                    None,
+                    step,
+                    "repair_exhausted",
+                    problem,
+                )
+
+            repair_count += 1
+            messages.append(
+                HumanMessage(
+                    content=(
+                        f"Your previous tool call failed: {problem}. "
+                        "Correct the tool name and arguments, "
+                        "then try again once."
+                    )
+                )
+            )
+            continue
+
+        if not tool_calls:
+            answer = response.content
+            if isinstance(answer, list):
+                answer = json.dumps(answer, ensure_ascii=False)
+
+            answer = str(answer).strip()
+
+            if tool_call_count == 0:
+                problem = (
+                    "You must use the inspection tools before "
+                    "answering a question about inspection data."
+                )
+
+                log(
+                    "text_without_tool",
+                    step=step,
+                    problem=problem,
+                    answer=answer,
+                )
+
+                if repair_count >= max_repairs:
+                    return finish(
+                        None,
+                        step,
+                        "repair_exhausted",
+                        problem,
+                    )
+
+                repair_count += 1
+                messages.append(
+                    HumanMessage(
+                        content=(
+                            problem
+                            + " Make the appropriate tool call now."
+                        )
+                    )
+                )
+                continue
+
+            return finish(
+                answer,
+                step,
+                "normal_completion",
+            )
+
+        # Keep the model's tool-call message in conversation history.
+        messages.append(response)
+
+        for call in tool_calls:
+            name = call.get("name")
+            inputs = call.get("args")
+            call_id = call.get("id")
+
+            problem = validate_tool_call(name, inputs)
+
+            if problem is not None:
+                result = {
+                    "ok": False,
+                    "data": None,
+                    "error": problem,
+                }
+
+                history.append(
+                    {
+                        "step": step,
+                        "tool": name,
+                        "inputs": inputs,
+                        "result": result,
+                        "validation_error": True,
+                    }
+                )
+
+                log(
+                    "tool_validation_failed",
+                    step=step,
+                    tool_call=name,
+                    tool_input=inputs,
+                    tool_result=result,
+                    problem=problem,
+                )
+
+                messages.append(
+                    ToolMessage(
+                        content=json.dumps(result),
+                        tool_call_id=call_id,
+                        name=str(name),
+                    )
+                )
+
+                if repair_count >= max_repairs:
+                    return finish(
+                        None,
+                        step,
+                        "repair_exhausted",
+                        problem,
+                    )
+
+                repair_count += 1
+                messages.append(
+                    HumanMessage(
+                        content=(
+                            f"The tool call failed validation: {problem}. "
+                            "Correct it and retry once."
+                        )
+                    )
+                )
+                break
+
+            if (
+                max_tool_calls is not None
+                and tool_call_count >= max_tool_calls
+            ):
+                return finish(
+                    None,
+                    step,
+                    "budget_exhausted",
+                    "tool-call budget reached",
+                )
+
+            tool_call_count += 1
+
+            raw_result = execute_tool(name, inputs)
+
+            try:
+                result = json.loads(raw_result)
+            except (TypeError, ValueError):
+                result = {
+                    "ok": False,
+                    "data": None,
+                    "error": "tool returned invalid JSON",
+                }
+
+            history.append(
                 {
                     "step": step,
-                    "user_input": user_input,
-                    "tool_call": tool_name,
-                    "tool_input": tool_inputs,
-                    "tool_result": result_object,
-                    "tool_call_count": tool_call_count,
-                    "stop_reason": stop_reason,
+                    "tool": name,
+                    "inputs": inputs,
+                    "result": result,
+                    "validation_error": False,
                 }
             )
 
-            return {
-                "answer": result_object["error"],
-                "steps": step,
-                "tool_calls": tool_call_count,
-                "stop_reason": stop_reason,
-            }
+            log(
+                "tool_invocation",
+                step=step,
+                tool_call=name,
+                tool_input=inputs,
+                tool_result=result,
+                tool_call_count=tool_call_count,
+            )
 
-        messages.append(
-            {
-                "role": "assistant",
-                "content": json.dumps(
-                    model_output
-                ),
-            }
-        )
+            messages.append(
+                ToolMessage(
+                    content=json.dumps(result),
+                    tool_call_id=call_id,
+                    name=name,
+                )
+            )
 
-        messages.append(
-            {
-                "role": "user",
-                "content": (
-                    "Tool result:\n"
-                    + result
-                    + "\nUse this result to decide "
-                    "whether another tool is needed "
-                    "or return the final answer."
-                ),
-            }
-        )
+            if (
+                result.get("ok") is False
+                and str(result.get("error", "")).startswith(
+                    "safety rule blocked"
+                )
+            ):
+                return finish(
+                    result["error"],
+                    step,
+                    "safety_rule_block",
+                )
 
-    stop_reason = "max_steps"
-
-    write_log(
-        {
-            "step": max_steps,
-            "user_input": user_input,
-            "tool_call": None,
-            "tool_input": None,
-            "tool_result": None,
-            "tool_call_count": tool_call_count,
-            "stop_reason": stop_reason,
-        }
+    return finish(
+        None,
+        max_steps,
+        "max_steps",
+        "maximum number of agent steps reached",
     )
-
-    return {
-        "answer": None,
-        "steps": max_steps,
-        "tool_calls": tool_call_count,
-        "stop_reason": stop_reason,
-        "error": "maximum number of agent steps reached",
-    }
 
 
 if __name__ == "__main__":
-    user_input = input(
+    question = input(
         "Enter a restaurant-inspection question: "
     )
 
-    result = run_agent(user_input)
-
     print(
         json.dumps(
-            result,
+            run_agent(question),
             indent=2,
+            ensure_ascii=False,
         )
     )

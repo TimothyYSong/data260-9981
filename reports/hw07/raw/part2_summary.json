@@ -1,0 +1,20 @@
+{
+  "before": {
+    "attempts": 21,
+    "task_successes": 21,
+    "task_success_rate": 1.0,
+    "valid_tool_calls": 56,
+    "invalid_tool_calls": 0,
+    "well_formed_call_rate": 1.0,
+    "failure_classification": {}
+  },
+  "after": {
+    "attempts": 21,
+    "task_successes": 21,
+    "task_success_rate": 1.0,
+    "valid_tool_calls": 56,
+    "invalid_tool_calls": 0,
+    "well_formed_call_rate": 1.0,
+    "failure_classification": {}
+  }
+}

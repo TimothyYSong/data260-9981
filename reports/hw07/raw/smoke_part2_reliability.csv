@@ -1,0 +1,7 @@
+timestamp,case_id,trial,mode,model,temperature,max_steps,max_repairs,run_id,tool_sequence,tool_calls,valid_calls,invalid_calls,repair_attempts,stop_reason,task_success,failure_types
+2026-10-26T04:34:25.522202+00:00,A,1,before,qwen3:8b,0.0,8,0,ffe1fd1da410,"[""search_inspections"", ""inspection_detail""]",2,2,0,0,normal_completion,True,[]
+2026-10-26T04:34:49.236922+00:00,A,1,after,qwen3:8b,0.0,8,1,0feaaf858ff7,"[""search_inspections"", ""inspection_detail""]",2,2,0,0,normal_completion,True,[]
+2026-10-26T04:35:35.499746+00:00,B,1,before,qwen3:8b,0.0,8,0,144119e0fc50,"[""search_inspections"", ""restaurant_inspection_summary"", ""inspection_detail""]",3,3,0,0,normal_completion,True,[]
+2026-10-26T04:36:21.058807+00:00,B,1,after,qwen3:8b,0.0,8,1,aa20a9f95963,"[""search_inspections"", ""restaurant_inspection_summary"", ""inspection_detail""]",3,3,0,0,normal_completion,True,[]
+2026-10-26T04:36:51.383555+00:00,C,1,before,qwen3:8b,0.0,8,0,8b61ecd7c874,"[""search_inspections"", ""inspection_detail"", ""inspection_detail""]",3,3,0,0,normal_completion,True,[]
+2026-10-26T04:37:21.756795+00:00,C,1,after,qwen3:8b,0.0,8,1,dcf5faa6967a,"[""search_inspections"", ""inspection_detail"", ""inspection_detail""]",3,3,0,0,normal_completion,True,[]

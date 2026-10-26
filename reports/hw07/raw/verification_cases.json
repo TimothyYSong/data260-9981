@@ -1,0 +1,31 @@
+[
+  {
+    "case_id": "A",
+    "name": "Search then detail lookup",
+    "question": "Perform this TWO-STEP restaurant-inspection verification task. Step 1: Call search_inspections with query='restaurant' and limit=1. Step 2: Take the inspection_id from the FIRST search result and call inspection_detail with that exact ID. Do not provide a final answer until BOTH tools have been called. Include the inspection's created_at and updated_at timestamps from inspection_detail in your answer.",
+    "expected_tools": [
+      "search_inspections",
+      "inspection_detail"
+    ]
+  },
+  {
+    "case_id": "B",
+    "name": "Aggregate then supporting example",
+    "question": "Perform a restaurant-inspection verification task. First, call search_inspections with query='restaurant' and limit=1 to identify the first restaurant and its restaurant_id. Second, call restaurant_inspection_summary using that restaurant_id to calculate its aggregate inspection statistics. Third, call inspection_detail using the inspection ID from the first search result to obtain a supporting example. Do not answer until all three tools have been called. Report the restaurant name, total inspections, total violations, average violations, and the supporting inspection ID and violation count.",
+    "expected_tools": [
+      "search_inspections",
+      "restaurant_inspection_summary",
+      "inspection_detail"
+    ]
+  },
+  {
+    "case_id": "C",
+    "name": "Compare two inspections",
+    "question": "Perform a three-step restaurant-inspection comparison task. First, call search_inspections with query='restaurant' and limit=10. Select the FIRST TWO DIFFERENT inspection IDs returned. Second, call inspection_detail for the FIRST inspection ID. Third, call inspection_detail for the SECOND inspection ID. Do not provide your final answer until all three tool calls are completed. Compare the two inspections by restaurant name, inspection ID, inspection code, and violation count. Explain which inspection has more violations, or whether they have the same number.",
+    "expected_tools": [
+      "search_inspections",
+      "inspection_detail",
+      "inspection_detail"
+    ]
+  }
+]

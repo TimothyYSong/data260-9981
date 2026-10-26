@@ -1,0 +1,33 @@
+{
+  "source": "reports/hw07/raw/202601-baywheels-tripdata.csv",
+  "source_sha256": "8dd18bc96f3886e0cc14fc6adc6fc46ad3d950d21303a5a51d52996d8dd4312f",
+  "method": "500 authentic classic-bike observations per scenario. scenario_selected identifies a hypothetical monthly rider profile, not a recovered individual customer.",
+  "scenarios": [
+    {
+      "scenario": "membership",
+      "source_rows": 500,
+      "selected_rides": 24,
+      "weekly_selected_rides": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "scenario_file": "reports/hw07/raw/part4_membership_500.csv",
+      "scenario_sha256": "d62208a6556787f2d8783bcdbd8cc0677ac5354307aa1c4c15609a832f233f2e"
+    },
+    {
+      "scenario": "pay_per_use",
+      "source_rows": 500,
+      "selected_rides": 3,
+      "weekly_selected_rides": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "scenario_file": "reports/hw07/raw/part4_pay_per_use_500.csv",
+      "scenario_sha256": "61799832066151345912e5ec56cd640e836fb2d4659a4f04cc68a4a1d1ce91ab"
+    }
+  ]
+}

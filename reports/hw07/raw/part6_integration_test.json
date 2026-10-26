@@ -1,0 +1,34 @@
+{
+  "test": "glob_search_read",
+  "timestamp_utc": "2026-10-26T19:37:51.296416+00:00",
+  "sandbox": "/private/var/folders/zp/t1rqbjm51q76vqty5jb19wv00000gn/T/data260_hw07_part6_f9mkr83n",
+  "instruction": "Find the Python file containing DEBUG and show its contents.",
+  "glob": {
+    "pattern": "integration_test/*.py",
+    "files": [
+      "integration_test/alpha.py",
+      "integration_test/beta.py",
+      "integration_test/gamma.py"
+    ],
+    "count": 3
+  },
+  "search": {
+    "query": "DEBUG",
+    "file_pattern": "integration_test/*.py",
+    "matches": [
+      {
+        "file": "integration_test/beta.py",
+        "line_number": 2,
+        "text": "DEBUG = True"
+      }
+    ],
+    "match_count": 1
+  },
+  "read": {
+    "path": "/private/var/folders/zp/t1rqbjm51q76vqty5jb19wv00000gn/T/data260_hw07_part6_f9mkr83n/integration_test/beta.py",
+    "content": "NAME = 'beta'\nDEBUG = True\nVALUE = 20\n",
+    "lines_returned": 3,
+    "max_lines": 20
+  },
+  "passed": true
+}

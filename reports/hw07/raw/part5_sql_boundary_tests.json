@@ -1,0 +1,56 @@
+{
+  "test": "part5_sql_tool_boundary",
+  "timestamp": "2026-10-26T18:59:20.150626+00:00",
+  "csv_path": "reports/hw07/raw/part4_pay_per_use_500.csv",
+  "results": [
+    {
+      "operation": "DELETE",
+      "sql": "DELETE FROM trips",
+      "expected_success": false,
+      "actual_success": false,
+      "error": "Only SELECT queries are permitted.",
+      "passed": true
+    },
+    {
+      "operation": "DROP",
+      "sql": "DROP TABLE trips",
+      "expected_success": false,
+      "actual_success": false,
+      "error": "Only SELECT queries are permitted.",
+      "passed": true
+    },
+    {
+      "operation": "UPDATE",
+      "sql": "UPDATE trips SET member_casual = 'member'",
+      "expected_success": false,
+      "actual_success": false,
+      "error": "Only SELECT queries are permitted.",
+      "passed": true
+    },
+    {
+      "operation": "INSERT",
+      "sql": "INSERT INTO trips (ride_id) VALUES ('test')",
+      "expected_success": false,
+      "actual_success": false,
+      "error": "Only SELECT queries are permitted.",
+      "passed": true
+    },
+    {
+      "operation": "MULTI",
+      "sql": "SELECT COUNT(*) FROM trips; DELETE FROM trips",
+      "expected_success": false,
+      "actual_success": false,
+      "error": "Exactly one SQL statement is required.",
+      "passed": true
+    },
+    {
+      "operation": "SELECT",
+      "sql": "SELECT COUNT(*) AS total FROM trips",
+      "expected_success": true,
+      "actual_success": true,
+      "error": null,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

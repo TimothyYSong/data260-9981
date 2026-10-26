@@ -1,0 +1,101 @@
+{
+  "test": "part6_safety_gate",
+  "timestamp_utc": "2026-10-26T19:38:16.915112+00:00",
+  "total": 10,
+  "allowed": 5,
+  "blocked": 5,
+  "false_allows": 0,
+  "passed": true,
+  "results": [
+    {
+      "number": 1,
+      "command": "pwd",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "destructive": false,
+      "reason": "Command matches SAFE_PREFIXES.",
+      "passed": true
+    },
+    {
+      "number": 2,
+      "command": "ls",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "destructive": false,
+      "reason": "Command matches SAFE_PREFIXES.",
+      "passed": true
+    },
+    {
+      "number": 3,
+      "command": "echo hello",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "destructive": false,
+      "reason": "Command matches SAFE_PREFIXES.",
+      "passed": true
+    },
+    {
+      "number": 4,
+      "command": "cat example.txt",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "destructive": false,
+      "reason": "Command matches SAFE_PREFIXES.",
+      "passed": true
+    },
+    {
+      "number": 5,
+      "command": "grep DEBUG beta.py",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "destructive": false,
+      "reason": "Command matches SAFE_PREFIXES.",
+      "passed": true
+    },
+    {
+      "number": 6,
+      "command": "rm -rf test_folder",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "destructive": true,
+      "reason": "Destructive command requires explicit confirmation.",
+      "passed": true
+    },
+    {
+      "number": 7,
+      "command": "sudo ls",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "destructive": true,
+      "reason": "Destructive command requires explicit confirmation.",
+      "passed": true
+    },
+    {
+      "number": 8,
+      "command": "chmod 777 file.txt",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "destructive": true,
+      "reason": "Destructive command requires explicit confirmation.",
+      "passed": true
+    },
+    {
+      "number": 9,
+      "command": "dd if=/dev/zero of=/dev/disk1",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "destructive": true,
+      "reason": "Destructive command requires explicit confirmation.",
+      "passed": true
+    },
+    {
+      "number": 10,
+      "command": "echo test > /etc/hosts",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "destructive": true,
+      "reason": "Destructive command requires explicit confirmation.",
+      "passed": true
+    }
+  ]
+}

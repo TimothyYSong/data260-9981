@@ -1,0 +1,20 @@
+{
+  "original": {
+    "executions": 9,
+    "task_success_rate": 1.0,
+    "unsupported_claims": 0,
+    "retry_rate": 0.0,
+    "mean_tool_calls": 2.6666666666666665,
+    "mean_tokens": 4443.666666666667,
+    "mean_latency_ms": 33340.62333333333
+  },
+  "reflexion": {
+    "executions": 9,
+    "task_success_rate": 1.0,
+    "unsupported_claims": 0,
+    "retry_rate": 0.0,
+    "mean_tool_calls": 2.6666666666666665,
+    "mean_tokens": 4621.777777777777,
+    "mean_latency_ms": 37016.94333333333
+  }
+}

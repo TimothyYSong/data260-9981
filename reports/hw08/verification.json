@@ -1,0 +1,42 @@
+{
+  "homework": 8,
+  "sid4": 9981,
+  "commit_hash": "5f0e328a8a7cdc4f237eab71babdfd7e2157c4b9",
+  "model": "No LLM invoked by this Kafka smoke test",
+  "configuration": {
+    "prefix": "s9981",
+    "port_base": 8081,
+    "domain": "Local Restaurant Inspections",
+    "kafka_bootstrap_servers": "kafka:19092"
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "tested_at_utc": "2026-11-02T20:42:57.970747+00:00",
+  "checks": [
+    {
+      "name": "CREATE_INSPECTION success and UUID",
+      "passed": true,
+      "result": "PASS",
+      "detail": "inspection_id=5040f7e7-294f-4292-a517-96a986f0ff94"
+    },
+    {
+      "name": "CREATE correlation ID preserved",
+      "passed": true,
+      "result": "PASS",
+      "detail": "correlation_id=2f4c6d31-3400-4ba4-8def-4eeb3667dfac"
+    },
+    {
+      "name": "GET_INSPECTION round trip",
+      "passed": true,
+      "result": "PASS",
+      "detail": "retrieved_inspection_id=5040f7e7-294f-4292-a517-96a986f0ff94"
+    },
+    {
+      "name": "GET correlation ID preserved",
+      "passed": true,
+      "result": "PASS",
+      "detail": "correlation_id=5c4ac5e4-941c-4569-a805-7e41620a8c8e"
+    }
+  ],
+  "overall": "PASS"
+}

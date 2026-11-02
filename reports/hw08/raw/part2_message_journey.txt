@@ -1,0 +1,14 @@
+=== PART 2: FOUR-TOPIC KAFKA MESSAGE JOURNEY ===
+Sun Nov  1 20:43:31 PST 2026
+
+=== TOPIC: s9981_inbox ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?"}
+
+=== TOPIC: s9981_tasks ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+
+=== TOPIC: s9981_drafts ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+=== TOPIC: s9981_final ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "status": "approved", "answer": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}

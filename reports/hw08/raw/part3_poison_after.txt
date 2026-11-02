@@ -1,0 +1,6 @@
+c 2026-11-02 05:14:55,623 INFO WRITER RECEIVED: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=1/3, error='steps'
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=2/3, error='steps'
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=3/3, error='steps'
+2026-11-02 05:14:55,628 ERROR WRITER DEAD LETTER SENT: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "original_message": {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}, "error": "'steps'", "attempts": 3, "source_topic": "s9981_tasks"}
+2026-11-02 05:14:55,629 INFO WRITER OFFSET COMMITTED: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, offset=4

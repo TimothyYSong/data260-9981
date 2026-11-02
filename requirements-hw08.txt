@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+kafka-python==2.2.15
+python-dotenv
+SQLAlchemy
+PyMySQL
+PyJWT==2.10.1
+bcrypt
+itsdangerous
+python-multipart
+pymongo

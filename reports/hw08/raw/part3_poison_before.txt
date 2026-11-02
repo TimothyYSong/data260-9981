@@ -1,0 +1,9 @@
+2026-11-02 05:12:56,652 INFO WRITER READY: s9981_tasks -> s9981_drafts
+2026-11-02 05:13:18,030 INFO WRITER RECEIVED: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}
+Traceback (most recent call last):
+  File "/app/writer.py", line 102, in <module>
+    main()
+  File "/app/writer.py", line 59, in main
+    steps = task["steps"]
+            ~~~~^^^^^^^^^
+KeyError: 'steps'

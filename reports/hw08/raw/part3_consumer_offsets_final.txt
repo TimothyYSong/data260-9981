@@ -1,0 +1,4 @@
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+s9981_writers   s9981_tasks     0          16              16              0               kafka-python-2.2.15-3750f36d-98ae-4f0e-a965-c0b24047dc19 /172.18.0.6     kafka-python-2.2.15
+s9981_writers   s9981_tasks     1          33              33              0               kafka-python-2.2.15-ed637e07-066b-4ac4-a8fb-7bcbcee70a12 /172.18.0.8     kafka-python-2.2.15

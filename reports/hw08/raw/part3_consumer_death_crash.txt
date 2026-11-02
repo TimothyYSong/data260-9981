@@ -1,0 +1,7 @@
+ Container data260-9981-worker-run-8162ec0932ce Creating 
+ Container data260-9981-worker-run-8162ec0932ce Created 
+CRASH TEST ID: 6f145446-d7ca-4fb3-b614-47ec84fbeda3
+PARTITION: 0 OFFSET: 3
+PROCESSING LOG DETECTED
+data260-9981-worker-run-d5eb82c50356
+WRITER KILLED DURING PROCESSING

@@ -1,0 +1,22 @@
+=== WRITER 1 ===
+2026-11-02 05:22:03,339 INFO WRITER ORDER: sequence=2, partition=0, offset=6, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,345 INFO WRITER ORDER: sequence=3, partition=0, offset=7, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,347 INFO WRITER ORDER: sequence=4, partition=0, offset=8, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,350 INFO WRITER ORDER: sequence=7, partition=0, offset=9, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,353 INFO WRITER ORDER: sequence=9, partition=0, offset=10, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,356 INFO WRITER ORDER: sequence=14, partition=0, offset=11, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,358 INFO WRITER ORDER: sequence=16, partition=0, offset=12, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,362 INFO WRITER ORDER: sequence=17, partition=0, offset=13, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,365 INFO WRITER ORDER: sequence=18, partition=0, offset=14, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,367 INFO WRITER ORDER: sequence=20, partition=0, offset=15, entity_id=restaurant-9981, pid=1
+=== WRITER 2 ===
+2026-11-02 05:22:03,338 INFO WRITER ORDER: sequence=1, partition=1, offset=3, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,342 INFO WRITER ORDER: sequence=5, partition=1, offset=4, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,346 INFO WRITER ORDER: sequence=6, partition=1, offset=5, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,347 INFO WRITER ORDER: sequence=8, partition=1, offset=6, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,351 INFO WRITER ORDER: sequence=10, partition=1, offset=7, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,353 INFO WRITER ORDER: sequence=11, partition=1, offset=8, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,356 INFO WRITER ORDER: sequence=12, partition=1, offset=9, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,358 INFO WRITER ORDER: sequence=13, partition=1, offset=10, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,362 INFO WRITER ORDER: sequence=15, partition=1, offset=11, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,364 INFO WRITER ORDER: sequence=19, partition=1, offset=12, entity_id=restaurant-9981, pid=1

@@ -1,0 +1,367 @@
+DATA 260 — HW8 RUN LOG
+SID4: 9981 | PREFIX: s9981 | VERIFY_SEED: 269981
+Domain: Local Restaurant Inspections
+
+PROVENANCE: Consolidated from the actual RUN_LOG.txt and raw/ evidence in the user-provided repository ZIP data260-9981(20261102-054456).zip. Log messages, IDs, offsets, and their timestamps are retained from the recorded files; section headers were added for navigation. Dates in app/Docker logs are shown as recorded (typically UTC); some shell date lines are PST. Sections without recorded timestamps are not assigned invented timestamps. This is a record of prior runs, not a newly executed test.
+NOTE: The archive also contains raw/part3_consumer_death_before.txt (0 bytes). It is intentionally not treated as evidence; the recorded crash, recovery and consumer-group records are included below. The final consumer-group snapshot was taken after subsequent ordering tests; it shows final lag, not an immediate post-crash snapshot.
+
+========================================================================================
+Part 1 — Existing timestamped run log (original record)
+Source: reports/hw08/RUN_LOG.txt
+========================================================================================
+s9981-worker  | 2026-11-02T03:37:36.938358429Z 2026-11-02 03:37:36,938 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:36.938500721Z 2026-11-02 03:37:36,938 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Connect attempt returned error 111. Disconnecting.
+s9981-worker  | 2026-11-02T03:37:36.938509138Z 2026-11-02 03:37:36,938 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+s9981-worker  | 2026-11-02T03:37:36.938586471Z 2026-11-02 03:37:36,938 WARNING No node available during check_version; sleeping 0.05 secs
+s9981-worker  | 2026-11-02T03:37:36.991489596Z 2026-11-02 03:37:36,991 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:36.991598221Z 2026-11-02 03:37:36,991 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Connect attempt returned error 111. Disconnecting.
+s9981-worker  | 2026-11-02T03:37:36.991606096Z 2026-11-02 03:37:36,991 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+s9981-worker  | 2026-11-02T03:37:36.991672929Z 2026-11-02 03:37:36,991 WARNING No node available during check_version; sleeping 0.09 secs
+s9981-worker  | 2026-11-02T03:37:37.088592929Z 2026-11-02 03:37:37,088 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:37.088687304Z 2026-11-02 03:37:37,088 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Connect attempt returned error 111. Disconnecting.
+s9981-worker  | 2026-11-02T03:37:37.088690221Z 2026-11-02 03:37:37,088 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+s9981-worker  | 2026-11-02T03:37:37.088768429Z 2026-11-02 03:37:37,088 WARNING No node available during check_version; sleeping 0.19 secs
+s9981-worker  | 2026-11-02T03:37:37.286507721Z 2026-11-02 03:37:37,286 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:37.286667263Z 2026-11-02 03:37:37,286 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Connect attempt returned error 111. Disconnecting.
+s9981-worker  | 2026-11-02T03:37:37.286677888Z 2026-11-02 03:37:37,286 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+s9981-worker  | 2026-11-02T03:37:37.286789596Z 2026-11-02 03:37:37,286 WARNING No node available during check_version; sleeping 0.33 secs
+s9981-worker  | 2026-11-02T03:37:37.621461555Z 2026-11-02 03:37:37,621 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:37.621563180Z 2026-11-02 03:37:37,621 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Connect attempt returned error 111. Disconnecting.
+s9981-worker  | 2026-11-02T03:37:37.621579596Z 2026-11-02 03:37:37,621 ERROR <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+s9981-worker  | 2026-11-02T03:37:37.621654055Z 2026-11-02 03:37:37,621 WARNING No node available during check_version; sleeping 0.78 secs
+s9981-worker  | 2026-11-02T03:37:38.399200180Z 2026-11-02 03:37:38,398 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:38.407062555Z 2026-11-02 03:37:38,406 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <checking_api_versions_recv> [IPv4 ('172.18.0.2', 19092)]>: Broker version identified as 2.6
+s9981-worker  | 2026-11-02T03:37:38.407112430Z 2026-11-02 03:37:38,406 INFO <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:19092 <connected> [IPv4 ('172.18.0.2', 19092)]>: Connection complete.
+s9981-worker  | 2026-11-02T03:37:38.409664222Z 2026-11-02 03:37:38,409 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=bootstrap-0 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:38.412074930Z 2026-11-02 03:37:38,411 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=bootstrap-0 host=kafka:19092 <checking_api_versions_recv> [IPv4 ('172.18.0.2', 19092)]>: Broker version identified as 2.6
+s9981-worker  | 2026-11-02T03:37:38.412101972Z 2026-11-02 03:37:38,411 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=bootstrap-0 host=kafka:19092 <connected> [IPv4 ('172.18.0.2', 19092)]>: Connection complete.
+s9981-worker  | 2026-11-02T03:37:38.412520847Z 2026-11-02 03:37:38,412 INFO Updating subscribed topics to: ('s9981_entity_requests',)
+s9981-worker  | 2026-11-02T03:37:38.412530013Z 2026-11-02 03:37:38,412 INFO Consumer is ready and listening...
+s9981-worker  | 2026-11-02T03:37:38.415675513Z 2026-11-02 03:37:38,415 ERROR Topic s9981_entity_requests not found in cluster metadata
+s9981-worker  | 2026-11-02T03:37:38.416171138Z 2026-11-02 03:37:38,416 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=1 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:38.416339263Z 2026-11-02 03:37:38,416 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=1 host=kafka:19092 <connected> [IPv4 ('172.18.0.2', 19092)]>: Connection complete.
+s9981-worker  | 2026-11-02T03:37:38.416346388Z 2026-11-02 03:37:38,416 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=bootstrap-0 host=kafka:19092 <connected> [IPv4 ('172.18.0.2', 19092)]>: Closing connection. 
+s9981-worker  | 2026-11-02T03:37:38.628575055Z 2026-11-02 03:37:38,628 INFO Coordinator for group/s9981_inspection_workers is BrokerMetadata(nodeId='coordinator-1', host='kafka', port=19092, rack=None)
+s9981-worker  | 2026-11-02T03:37:38.628581180Z 2026-11-02 03:37:38,628 INFO Discovered coordinator coordinator-1 for group s9981_inspection_workers
+s9981-worker  | 2026-11-02T03:37:38.628652347Z 2026-11-02 03:37:38,628 INFO Starting new heartbeat thread
+s9981-worker  | 2026-11-02T03:37:38.628844764Z 2026-11-02 03:37:38,628 INFO Revoking previously assigned partitions set() for group s9981_inspection_workers
+s9981-worker  | 2026-11-02T03:37:38.628849139Z 2026-11-02 03:37:38,628 INFO Failed to join group s9981_inspection_workers: NodeNotReadyError: coordinator-1
+s9981-worker  | 2026-11-02T03:37:38.629311139Z 2026-11-02 03:37:38,629 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=coordinator-1 host=kafka:19092 <connecting> [IPv4 ('172.18.0.2', 19092)]>: connecting to kafka:19092 [('172.18.0.2', 19092) IPv4]
+s9981-worker  | 2026-11-02T03:37:38.629459264Z 2026-11-02 03:37:38,629 INFO <BrokerConnection client_id=kafka-python-2.2.15, node_id=coordinator-1 host=kafka:19092 <connected> [IPv4 ('172.18.0.2', 19092)]>: Connection complete.
+s9981-worker  | 2026-11-02T03:37:38.729683722Z 2026-11-02 03:37:38,729 INFO (Re-)joining group s9981_inspection_workers
+s9981-worker  | 2026-11-02T03:37:38.733191055Z 2026-11-02 03:37:38,733 INFO Received member id kafka-python-2.2.15-ed62cbfb-86bf-45d9-8a63-dd17d53999a2 for group s9981_inspection_workers; will retry join-group
+s9981-worker  | 2026-11-02T03:37:38.733252889Z 2026-11-02 03:37:38,733 INFO Failed to join group s9981_inspection_workers: [Error 79] MemberIdRequiredError
+s9981-worker  | 2026-11-02T03:37:38.733255472Z 2026-11-02 03:37:38,733 INFO (Re-)joining group s9981_inspection_workers
+s9981-worker  | 2026-11-02T03:37:41.751699376Z 2026-11-02 03:37:41,751 INFO Successfully joined group s9981_inspection_workers <Generation 1 (member_id: kafka-python-2.2.15-ed62cbfb-86bf-45d9-8a63-dd17d53999a2, protocol: range)>
+s9981-worker  | 2026-11-02T03:37:41.751724667Z 2026-11-02 03:37:41,751 INFO Elected group leader -- performing partition assignments using range
+s9981-worker  | 2026-11-02T03:37:41.751769834Z 2026-11-02 03:37:41,751 WARNING No partition metadata for topic s9981_entity_requests
+s9981-worker  | 2026-11-02T03:37:41.753874042Z 2026-11-02 03:37:41,753 ERROR Topic s9981_entity_requests not found in cluster metadata
+s9981-worker  | 2026-11-02T03:37:41.765324459Z 2026-11-02 03:37:41,765 INFO Updated partition assignment: []
+s9981-worker  | 2026-11-02T03:37:41.765348792Z 2026-11-02 03:37:41,765 INFO Setting newly assigned partitions set() for group s9981_inspection_workers
+=== HW8 Part 1: Worker readiness verification ===
+Sun Nov  1 19:40:51 PST 2026
+s9981-worker  | 2026-11-02T03:37:38.412530013Z 2026-11-02 03:37:38,412 INFO Consumer is ready and listening...
+s9981-worker  | 2026-11-02T03:37:41.751699376Z 2026-11-02 03:37:41,751 INFO Successfully joined group s9981_inspection_workers <Generation 1 (member_id: kafka-python-2.2.15-ed62cbfb-86bf-45d9-8a63-dd17d53999a2, protocol: range)>
+s9981-worker  | 2026-11-02T03:37:41.765324459Z 2026-11-02 03:37:41,765 INFO Updated partition assignment: []
+s9981-worker  | 2026-11-02T03:39:51.129567380Z 2026-11-02 03:39:51,129 INFO Consumer is ready and listening...
+s9981-worker  | 2026-11-02T03:39:58.210590717Z 2026-11-02 03:39:58,210 INFO Successfully joined group s9981_inspection_workers <Generation 2 (member_id: kafka-python-2.2.15-16f4e000-8759-4a06-8487-5c725bf0524c, protocol: range)>
+s9981-worker  | 2026-11-02T03:39:58.213565842Z 2026-11-02 03:39:58,213 INFO Updated partition assignment: [TopicPartition(topic='s9981_entity_requests', partition=0)]
+
+=== HW8 Part 1: Successful CREATE and GET Kafka tests ===
+Sun Nov  1 19:45:24 PST 2026
+s9981-worker  | 2026-11-02T03:44:40.460241250Z 2026-11-02 03:44:40,460 INFO WORKER RECEIVED: {"correlation_id": "ae4bbf28-8fe5-437f-8805-6ae1ee5cf5bb", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "Routine inspection test"}}
+s9981-worker  | 2026-11-02T03:44:40.460500542Z 2026-11-02 03:44:40,460 INFO WORKER PROCESSED: CREATE_INSPECTION
+s9981-worker  | 2026-11-02T03:44:40.464785250Z 2026-11-02 03:44:40,464 INFO WORKER SENT RESPONSE: {"success": true, "inspection_id": "7fd52020-9931-4d56-a0a5-c3ba0b1773f3", "message": "Entity created", "correlation_id": "ae4bbf28-8fe5-437f-8805-6ae1ee5cf5bb"}
+s9981-worker  | 2026-11-02T03:45:04.827484303Z 2026-11-02 03:45:04,827 INFO WORKER RECEIVED: {"correlation_id": "867686b4-ed7c-4338-a997-78d582cac19c", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "7fd52020-9931-4d56-a0a5-c3ba0b1773f3"}}
+s9981-worker  | 2026-11-02T03:45:04.827529678Z 2026-11-02 03:45:04,827 INFO WORKER PROCESSED: GET_INSPECTION
+s9981-worker  | 2026-11-02T03:45:04.829589012Z 2026-11-02 03:45:04,829 INFO WORKER SENT RESPONSE: {"success": true, "entity": {"inspection_id": "7fd52020-9931-4d56-a0a5-c3ba0b1773f3", "restaurant_name": "O2 Valley", "description": "Routine inspection test", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "867686b4-ed7c-4338-a997-78d582cac19c"}
+
+=== HW8 Part 1: Error handling verification ===
+Sun Nov  1 19:46:38 PST 2026
+s9981-worker  | 2026-11-02T03:45:46.022481461Z 2026-11-02 03:45:46,022 INFO WORKER RECEIVED: {"correlation_id": "16495d49-15ee-49de-ac00-d35e25215202", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "nonexistent-inspection"}}
+s9981-worker  | 2026-11-02T03:46:05.796559387Z 2026-11-02 03:46:05,796 INFO WORKER SENT RESPONSE: {"success": false, "error": "Invalid inspection data: 2 validation error(s)", "correlation_id": "042ccdc9-9cd6-44c8-8744-c99adcb4d3d9"}
+s9981-worker  | 2026-11-02T03:46:22.291232839Z 2026-11-02 03:46:22,290 INFO WORKER RECEIVED: {"correlation_id": "696bad0e-2850-41ac-a5de-20313cd6e1e8", "reply_to": "s9981_entity_responses", "operation": "DELETE_INSPECTION", "data": {"inspection_id": "nonexistent-inspection"}}
+s9981-worker  | 2026-11-02T03:46:22.292873631Z 2026-11-02 03:46:22,292 INFO WORKER SENT RESPONSE: {"success": false, "error": "Unknown operation", "correlation_id": "696bad0e-2850-41ac-a5de-20313cd6e1e8"}
+
+=== HW8 PART 1: COMPLETE CREATE -> GET DEMONSTRATION ===
+Sun Nov  1 19:53:07 PST 2026
+ Container data260-9981-worker-run-66916617811a Creating 
+ Container data260-9981-worker-run-66916617811a Created 
+2026-11-02 03:53:08,723 INFO === CREATE_INSPECTION ===
+2026-11-02 03:53:08,724 INFO CREATE correlation_id: 2ba46f4e-dd0b-44ac-bd6e-06801e12fa00
+2026-11-02 03:53:08,724 INFO CLIENT SENT REQUEST: {"correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "HW8 complete Kafka demonstration"}}
+2026-11-02 03:53:08,735 INFO CLIENT RECEIVED RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+2026-11-02 03:53:08,735 INFO CREATE RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+2026-11-02 03:53:08,735 INFO Generated inspection_id: 2473033f-0b19-457c-b2fa-30071989a84e
+2026-11-02 03:53:08,735 INFO CREATE correlation_id preserved: PASS
+2026-11-02 03:53:08,735 INFO === GET_INSPECTION ===
+2026-11-02 03:53:08,735 INFO GET correlation_id: a85ffa6f-169e-4753-abe8-3f5bf7e2d790
+2026-11-02 03:53:08,735 INFO CLIENT SENT REQUEST: {"correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e"}}
+2026-11-02 03:53:08,739 INFO CLIENT RECEIVED RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+2026-11-02 03:53:08,739 INFO GET RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+2026-11-02 03:53:08,739 INFO RETRIEVED ENTITY: {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}
+2026-11-02 03:53:08,740 INFO GET correlation_id preserved: PASS
+2026-11-02 03:53:08,740 INFO CREATE -> GET round trip: PASS
+
+=== HW8 PART 1: MATCHING WORKER LOGS ===
+Sun Nov  1 19:53:29 PST 2026
+s9981-worker  | 2026-11-02T03:51:58.278261467Z 2026-11-02 03:51:58,278 INFO WORKER PROCESSED: DELETE_INSPECTION
+s9981-worker  | 2026-11-02T03:52:38.202672930Z 2026-11-02 03:52:38,202 INFO WORKER PROCESSED: CREATE_INSPECTION
+s9981-worker  | 2026-11-02T03:52:38.208077638Z 2026-11-02 03:52:38,207 INFO WORKER PROCESSED: GET_INSPECTION
+s9981-worker  | 2026-11-02T03:53:08.733053889Z 2026-11-02 03:53:08,732 INFO WORKER RECEIVED: {"correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "HW8 complete Kafka demonstration"}}
+s9981-worker  | 2026-11-02T03:53:08.733157222Z 2026-11-02 03:53:08,733 INFO WORKER PROCESSED: CREATE_INSPECTION
+s9981-worker  | 2026-11-02T03:53:08.734952597Z 2026-11-02 03:53:08,734 INFO WORKER SENT RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+s9981-worker  | 2026-11-02T03:53:08.738173014Z 2026-11-02 03:53:08,738 INFO WORKER RECEIVED: {"correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e"}}
+s9981-worker  | 2026-11-02T03:53:08.738184889Z 2026-11-02 03:53:08,738 INFO WORKER PROCESSED: GET_INSPECTION
+s9981-worker  | 2026-11-02T03:53:08.739622097Z 2026-11-02 03:53:08,739 INFO WORKER SENT RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+
+========================================================================================
+Part 1 — Worker flow
+Source: reports/hw08/raw/part1_worker_flow.txt
+========================================================================================
+s9981-worker  | 2026-11-02T03:53:08.733053889Z 2026-11-02 03:53:08,732 INFO WORKER RECEIVED: {"correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "HW8 complete Kafka demonstration"}}
+s9981-worker  | 2026-11-02T03:53:08.733157222Z 2026-11-02 03:53:08,733 INFO WORKER PROCESSED: CREATE_INSPECTION
+s9981-worker  | 2026-11-02T03:53:08.734952597Z 2026-11-02 03:53:08,734 INFO WORKER SENT RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+s9981-worker  | 2026-11-02T03:53:08.738173014Z 2026-11-02 03:53:08,738 INFO WORKER RECEIVED: {"correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e"}}
+s9981-worker  | 2026-11-02T03:53:08.738184889Z 2026-11-02 03:53:08,738 INFO WORKER PROCESSED: GET_INSPECTION
+s9981-worker  | 2026-11-02T03:53:08.739622097Z 2026-11-02 03:53:08,739 INFO WORKER SENT RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+
+========================================================================================
+Part 1 — Kafka message flow
+Source: reports/hw08/raw/part1_message_flow.txt
+========================================================================================
+2026-11-02 03:53:08,724 INFO CLIENT SENT REQUEST: {"correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "HW8 complete Kafka demonstration"}}
+2026-11-02 03:53:08,732 INFO WORKER RECEIVED: {"correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00", "reply_to": "s9981_entity_responses", "operation": "CREATE_INSPECTION", "data": {"restaurant_name": "O2 Valley", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00", "description": "HW8 complete Kafka demonstration"}}
+2026-11-02 03:53:08,733 INFO WORKER PROCESSED: CREATE_INSPECTION
+2026-11-02 03:53:08,734 INFO WORKER SENT RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+2026-11-02 03:53:08,735 INFO CLIENT RECEIVED RESPONSE: {"success": true, "inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "message": "Entity created", "correlation_id": "2ba46f4e-dd0b-44ac-bd6e-06801e12fa00"}
+2026-11-02 03:53:08,735 INFO CLIENT SENT REQUEST: {"correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e"}}
+2026-11-02 03:53:08,738 INFO WORKER RECEIVED: {"correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790", "reply_to": "s9981_entity_responses", "operation": "GET_INSPECTION", "data": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e"}}
+2026-11-02 03:53:08,738 INFO WORKER PROCESSED: GET_INSPECTION
+2026-11-02 03:53:08,739 INFO WORKER SENT RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+2026-11-02 03:53:08,739 INFO CLIENT RECEIVED RESPONSE: {"success": true, "entity": {"inspection_id": "2473033f-0b19-457c-b2fa-30071989a84e", "restaurant_name": "O2 Valley", "description": "HW8 complete Kafka demonstration", "status": "pending", "inspection_type": "routine", "inspection_date": "2026-11-01T12:00:00"}, "correlation_id": "a85ffa6f-169e-4753-abe8-3f5bf7e2d790"}
+
+========================================================================================
+Part 2 — Agent logs
+Source: reports/hw08/raw/part2_agent_logs.txt
+========================================================================================
+=== PART 2: AGENT EXECUTION LOGS ===
+Sun Nov  1 20:44:25 PST 2026
+
+=== data260-9981-worker-run-8a7c3aab6e3e ===
+2026-11-02 04:37:51,589 INFO PLANNER READY: s9981_inbox -> s9981_tasks
+2026-11-02 04:39:34,212 INFO PLANNER RECEIVED: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?"}
+2026-11-02 04:39:34,214 INFO PLANNER SENT: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+
+=== data260-9981-worker-run-f3a815fe3f89 ===
+2026-11-02 04:39:07,407 INFO WRITER READY: s9981_tasks -> s9981_drafts
+2026-11-02 04:39:34,214 INFO WRITER RECEIVED: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+2026-11-02 04:39:34,216 INFO WRITER SENT: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+=== data260-9981-worker-run-caa06c9acdcb ===
+2026-11-02 04:39:20,640 INFO REVIEWER READY: s9981_drafts -> s9981_final
+2026-11-02 04:39:34,217 INFO REVIEWER RECEIVED: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+2026-11-02 04:39:34,219 INFO REVIEWER SENT: {"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "status": "approved", "answer": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+========================================================================================
+Part 2 — Four-topic message journey
+Source: reports/hw08/raw/part2_message_journey.txt
+========================================================================================
+=== PART 2: FOUR-TOPIC KAFKA MESSAGE JOURNEY ===
+Sun Nov  1 20:43:31 PST 2026
+
+=== TOPIC: s9981_inbox ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?"}
+
+=== TOPIC: s9981_tasks ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+
+=== TOPIC: s9981_drafts ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+=== TOPIC: s9981_final ===
+{"correlation_id": "da401bf5-0ad9-4fb5-a3f2-f8180aa0e7c8", "status": "approved", "answer": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+========================================================================================
+Part 3.I — Duplicate delivery, before idempotency
+Source: reports/hw08/raw/part3_duplicate_before.txt
+========================================================================================
+2026-11-02 04:59:45,906 INFO WRITER RECEIVED: {"correlation_id": "4eb38054-894a-46b9-8cd3-72b1ffefb7c0", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+2026-11-02 04:59:45,907 INFO WRITER SENT: {"correlation_id": "4eb38054-894a-46b9-8cd3-72b1ffefb7c0", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+2026-11-02 04:59:45,909 INFO WRITER RECEIVED: {"correlation_id": "4eb38054-894a-46b9-8cd3-72b1ffefb7c0", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+2026-11-02 04:59:45,910 INFO WRITER SENT: {"correlation_id": "4eb38054-894a-46b9-8cd3-72b1ffefb7c0", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+
+========================================================================================
+Part 3.I — Duplicate delivery, after in-memory idempotency
+Source: reports/hw08/raw/part3_duplicate_after.txt
+========================================================================================
+2026-11-02 05:02:57,591 INFO WRITER RECEIVED: {"correlation_id": "104bf2dd-8dee-410b-aa78-2290daae9a3f", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+2026-11-02 05:02:57,593 INFO WRITER SENT: {"correlation_id": "104bf2dd-8dee-410b-aa78-2290daae9a3f", "question": "What should a restaurant inspection checklist include?", "plan": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."], "draft": "Question: What should a restaurant inspection checklist include? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+2026-11-02 05:02:57,595 INFO WRITER RECEIVED: {"correlation_id": "104bf2dd-8dee-410b-aa78-2290daae9a3f", "question": "What should a restaurant inspection checklist include?", "steps": ["Identify the restaurant inspection objective.", "List relevant food safety inspection checks.", "Organize the checks into a clear answer."]}
+2026-11-02 05:02:57,595 INFO WRITER DUPLICATE SKIPPED: correlation_id=104bf2dd-8dee-410b-aa78-2290daae9a3f
+
+========================================================================================
+Part 3.II — Writer killed mid-processing
+Source: reports/hw08/raw/part3_consumer_death_crash.txt
+========================================================================================
+ Container data260-9981-worker-run-8162ec0932ce Creating 
+ Container data260-9981-worker-run-8162ec0932ce Created 
+CRASH TEST ID: 6f145446-d7ca-4fb3-b614-47ec84fbeda3
+PARTITION: 0 OFFSET: 3
+PROCESSING LOG DETECTED
+data260-9981-worker-run-d5eb82c50356
+WRITER KILLED DURING PROCESSING
+
+========================================================================================
+Part 3.II — Writer restart / recovery
+Source: reports/hw08/raw/part3_consumer_death_after.txt
+========================================================================================
+2026-11-02 05:09:55,196 INFO WRITER RECEIVED: {"correlation_id": "6f145446-d7ca-4fb3-b614-47ec84fbeda3", "question": "Consumer death recovery test", "steps": ["Inspect food safety", "Check temperatures", "Write findings"]}
+2026-11-02 05:09:55,201 INFO WRITER SENT: {"correlation_id": "6f145446-d7ca-4fb3-b614-47ec84fbeda3", "question": "Consumer death recovery test", "plan": ["Inspect food safety", "Check temperatures", "Write findings"], "draft": "Question: Consumer death recovery test A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+2026-11-02 05:09:55,202 INFO WRITER OFFSET COMMITTED: correlation_id=6f145446-d7ca-4fb3-b614-47ec84fbeda3, offset=3
+
+========================================================================================
+Part 3.II — Final consumer-group offset and lag snapshot
+Source: reports/hw08/raw/part3_consumer_offsets_final.txt
+========================================================================================
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+s9981_writers   s9981_tasks     0          16              16              0               kafka-python-2.2.15-3750f36d-98ae-4f0e-a965-c0b24047dc19 /172.18.0.6     kafka-python-2.2.15
+s9981_writers   s9981_tasks     1          33              33              0               kafka-python-2.2.15-ed637e07-066b-4ac4-a8fb-7bcbcee70a12 /172.18.0.8     kafka-python-2.2.15
+
+========================================================================================
+Part 3.III — Poison message before retries
+Source: reports/hw08/raw/part3_poison_before.txt
+========================================================================================
+2026-11-02 05:12:56,652 INFO WRITER READY: s9981_tasks -> s9981_drafts
+2026-11-02 05:13:18,030 INFO WRITER RECEIVED: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}
+Traceback (most recent call last):
+  File "/app/writer.py", line 102, in <module>
+    main()
+  File "/app/writer.py", line 59, in main
+    steps = task["steps"]
+            ~~~~^^^^^^^^^
+KeyError: 'steps'
+
+========================================================================================
+Part 3.III — Poison message retries / DLQ
+Source: reports/hw08/raw/part3_poison_after.txt
+========================================================================================
+c 2026-11-02 05:14:55,623 INFO WRITER RECEIVED: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=1/3, error='steps'
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=2/3, error='steps'
+2026-11-02 05:14:55,624 WARNING WRITER RETRY: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, attempt=3/3, error='steps'
+2026-11-02 05:14:55,628 ERROR WRITER DEAD LETTER SENT: {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "original_message": {"correlation_id": "0937f3d4-db05-4c6e-9d64-09b8fd2d0b39", "question": "Poison message test: missing steps"}, "error": "'steps'", "attempts": 3, "source_topic": "s9981_tasks"}
+2026-11-02 05:14:55,629 INFO WRITER OFFSET COMMITTED: correlation_id=0937f3d4-db05-4c6e-9d64-09b8fd2d0b39, offset=4
+
+========================================================================================
+Part 3.III — Valid message after poison message
+Source: reports/hw08/raw/part3_poison_valid_after.txt
+========================================================================================
+2026-11-02 05:15:55,447 INFO WRITER RECEIVED: {"correlation_id": "1a26fcdc-edfb-436b-8b70-629d5d1114f5", "question": "What should inspectors check for food safety?", "steps": ["Inspect food storage conditions.", "Check employee hygiene.", "Summarize food safety findings."]}
+2026-11-02 05:15:55,448 INFO WRITER SENT: {"correlation_id": "1a26fcdc-edfb-436b-8b70-629d5d1114f5", "question": "What should inspectors check for food safety?", "plan": ["Inspect food storage conditions.", "Check employee hygiene.", "Summarize food safety findings."], "draft": "Question: What should inspectors check for food safety? A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."}
+2026-11-02 05:15:55,449 INFO WRITER OFFSET COMMITTED: correlation_id=1a26fcdc-edfb-436b-8b70-629d5d1114f5, offset=5
+
+========================================================================================
+Part 3.IV — Two-partition baseline Writer processing logs
+Source: reports/hw08/raw/part3_ordering_before_logs.txt
+========================================================================================
+=== WRITER 1 ===
+2026-11-02 05:22:03,339 INFO WRITER ORDER: sequence=2, partition=0, offset=6, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,345 INFO WRITER ORDER: sequence=3, partition=0, offset=7, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,347 INFO WRITER ORDER: sequence=4, partition=0, offset=8, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,350 INFO WRITER ORDER: sequence=7, partition=0, offset=9, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,353 INFO WRITER ORDER: sequence=9, partition=0, offset=10, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,356 INFO WRITER ORDER: sequence=14, partition=0, offset=11, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,358 INFO WRITER ORDER: sequence=16, partition=0, offset=12, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,362 INFO WRITER ORDER: sequence=17, partition=0, offset=13, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,365 INFO WRITER ORDER: sequence=18, partition=0, offset=14, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,367 INFO WRITER ORDER: sequence=20, partition=0, offset=15, entity_id=restaurant-9981, pid=1
+=== WRITER 2 ===
+2026-11-02 05:22:03,338 INFO WRITER ORDER: sequence=1, partition=1, offset=3, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,342 INFO WRITER ORDER: sequence=5, partition=1, offset=4, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,346 INFO WRITER ORDER: sequence=6, partition=1, offset=5, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,347 INFO WRITER ORDER: sequence=8, partition=1, offset=6, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,351 INFO WRITER ORDER: sequence=10, partition=1, offset=7, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,353 INFO WRITER ORDER: sequence=11, partition=1, offset=8, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,356 INFO WRITER ORDER: sequence=12, partition=1, offset=9, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,358 INFO WRITER ORDER: sequence=13, partition=1, offset=10, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,362 INFO WRITER ORDER: sequence=15, partition=1, offset=11, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:03,364 INFO WRITER ORDER: sequence=19, partition=1, offset=12, entity_id=restaurant-9981, pid=1
+
+========================================================================================
+Part 3.IV — Same-entity keyed Writer processing logs
+Source: reports/hw08/raw/part3_ordering_after_clean.txt
+========================================================================================
+2026-11-02 05:22:43,634 INFO WRITER ORDER: sequence=1, partition=1, offset=13, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,638 INFO WRITER ORDER: sequence=2, partition=1, offset=14, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,640 INFO WRITER ORDER: sequence=3, partition=1, offset=15, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,643 INFO WRITER ORDER: sequence=4, partition=1, offset=16, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,645 INFO WRITER ORDER: sequence=5, partition=1, offset=17, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,647 INFO WRITER ORDER: sequence=6, partition=1, offset=18, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,648 INFO WRITER ORDER: sequence=7, partition=1, offset=19, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,650 INFO WRITER ORDER: sequence=8, partition=1, offset=20, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,651 INFO WRITER ORDER: sequence=9, partition=1, offset=21, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,654 INFO WRITER ORDER: sequence=10, partition=1, offset=22, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,656 INFO WRITER ORDER: sequence=11, partition=1, offset=23, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,658 INFO WRITER ORDER: sequence=12, partition=1, offset=24, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,660 INFO WRITER ORDER: sequence=13, partition=1, offset=25, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,662 INFO WRITER ORDER: sequence=14, partition=1, offset=26, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,664 INFO WRITER ORDER: sequence=15, partition=1, offset=27, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,665 INFO WRITER ORDER: sequence=16, partition=1, offset=28, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,666 INFO WRITER ORDER: sequence=17, partition=1, offset=29, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,668 INFO WRITER ORDER: sequence=18, partition=1, offset=30, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,669 INFO WRITER ORDER: sequence=19, partition=1, offset=31, entity_id=restaurant-9981, pid=1
+2026-11-02 05:22:43,670 INFO WRITER ORDER: sequence=20, partition=1, offset=32, entity_id=restaurant-9981, pid=1
+
+========================================================================================
+Part 3.IV — Producer metadata CSV, baseline
+Source: reports/hw08/raw/part3_ordering_before.csv
+========================================================================================
+sequence,entity_id,partition,offset
+1,restaurant-9981,1,3
+2,restaurant-9981,0,6
+3,restaurant-9981,0,7
+4,restaurant-9981,0,8
+5,restaurant-9981,1,4
+6,restaurant-9981,1,5
+7,restaurant-9981,0,9
+8,restaurant-9981,1,6
+9,restaurant-9981,0,10
+10,restaurant-9981,1,7
+11,restaurant-9981,1,8
+12,restaurant-9981,1,9
+13,restaurant-9981,1,10
+14,restaurant-9981,0,11
+15,restaurant-9981,1,11
+16,restaurant-9981,0,12
+17,restaurant-9981,0,13
+18,restaurant-9981,0,14
+19,restaurant-9981,1,12
+20,restaurant-9981,0,15
+
+========================================================================================
+Part 3.IV — Producer metadata CSV, keyed
+Source: reports/hw08/raw/part3_ordering_after.csv
+========================================================================================
+sequence,entity_id,partition,offset
+1,restaurant-9981,1,13
+2,restaurant-9981,1,14
+3,restaurant-9981,1,15
+4,restaurant-9981,1,16
+5,restaurant-9981,1,17
+6,restaurant-9981,1,18
+7,restaurant-9981,1,19
+8,restaurant-9981,1,20
+9,restaurant-9981,1,21
+10,restaurant-9981,1,22
+11,restaurant-9981,1,23
+12,restaurant-9981,1,24
+13,restaurant-9981,1,25
+14,restaurant-9981,1,26
+15,restaurant-9981,1,27
+16,restaurant-9981,1,28
+17,restaurant-9981,1,29
+18,restaurant-9981,1,30
+19,restaurant-9981,1,31
+20,restaurant-9981,1,32

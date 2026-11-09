@@ -31,6 +31,7 @@ class RestaurantInspection(Base):
     __tablename__ = "restaurant_inspections"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    view_count = Column(Integer, nullable=False, default=0)
     restaurant_name = Column(String(255), nullable=False)
     restaurant_address = Column(String(255), nullable=False)
 

@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session as DatabaseSession
 from sqlalchemy.orm import joinedload
+from inspection_cache import InspectionCache
 
 from database import get_db
 from models import InspectionNote, Restaurant, RestaurantInspection, User
@@ -13,7 +14,7 @@ from schemas import (
     RestaurantInspectionWithNotesResponse,
 )
 
-
+inspection_cache = InspectionCache()
 router = APIRouter(prefix="/records", tags=["records"])
 
 
@@ -161,6 +162,7 @@ def get_records_with_notes_fixed(
     return result
 
 
+
 @router.get(
     "/{record_id}",
     response_model=RestaurantInspectionResponse,
@@ -182,7 +184,11 @@ def get_record(
             detail="Record not found.",
         )
 
+    # HW9 Part 1: Increment Redis-backed inspection views.
+    inspection_cache.increment_inspection_views(record_id)
+
     return record
+
 
 
 @router.put(

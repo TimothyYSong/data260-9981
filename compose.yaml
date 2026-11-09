@@ -49,6 +49,13 @@ services:
       - worker
     restart: unless-stopped
 
+  redis:
+    image: redis:7-alpine
+    container_name: s9981-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: unless-stopped
+
 volumes:
   kafka-data:
 

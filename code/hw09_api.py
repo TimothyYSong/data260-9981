@@ -17,7 +17,7 @@ cache = SemanticCache()
 
 class QuestionRequest(BaseModel):
     question: str = Field(min_length=1)
-    threshold: float = Field(default=0.85, ge=0.0, le=1.0)
+    threshold: float = Field(default=0.95, ge=0.0, le=1.0)
     data_version: str = "v1"
 
 

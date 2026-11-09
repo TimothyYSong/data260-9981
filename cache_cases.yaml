@@ -1,10 +1,5 @@
 # DATA 260 HW9 Part 3.1 — pre-registered semantic-cache evaluation set
 # Domain: Local Restaurant Inspection | PREFIX: s9981
-# IMPORTANT: Commit this file before running any threshold sweep.
-# Preload only seed_queries as cached answers before each sweep.
-# expected_hit is a semantic ground-truth label, not a predicted outcome.
-# Do not edit labels after viewing sweep results; document corrections separately.
-# The benchmark must reset to the SAME seed state for every threshold.
 seed_queries:
 - id: seed_01
   query: Find inspections for Restaurant 13.

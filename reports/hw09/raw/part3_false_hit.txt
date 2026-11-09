@@ -1,0 +1,26 @@
+Timothy Song | DATA 260 | HW9 Part 3.3
+=== Verified False Hit ===
+Cached query: Find inspections for Restaurant 17.
+Incoming query: Find inspections for Restaurant 18.
+Similarity: 0.941031
+Threshold: 0.85
+Actual cache hit: True
+
+INCORRECT CACHED ANSWER:
+The search found 10 inspections, but only the first one matches "Restaurant 17" in the name. Here's the relevant inspection:
+
+**Inspection ID:** 10021  
+**Restaurant:** Restaurant 17  
+**Address:** 117 Test Street  
+**Inspection Code:** INSP-10021  
+**Violations:** 0  
+
+The other results appear to be for restaurants named "Restaurant 170", "Restaurant 171", etc., which are distinct entities. Would you like details about this specific inspection or need help finding other inspections?
+
+CORRECT ANSWER (verified via inspection search tool):
+Restaurant: Restaurant 18
+Restaurant ID: 18
+Inspection ID: 10022
+Inspection code: INSP-10022
+Address: 118 Test Street
+Violation count: 0

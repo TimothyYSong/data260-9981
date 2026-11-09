@@ -1,0 +1,229 @@
+# DATA 260 HW9 Part 3.1 — pre-registered semantic-cache evaluation set
+# Domain: Local Restaurant Inspection | PREFIX: s9981
+# IMPORTANT: Commit this file before running any threshold sweep.
+# Preload only seed_queries as cached answers before each sweep.
+# expected_hit is a semantic ground-truth label, not a predicted outcome.
+# Do not edit labels after viewing sweep results; document corrections separately.
+# The benchmark must reset to the SAME seed state for every threshold.
+seed_queries:
+- id: seed_01
+  query: Find inspections for Restaurant 13.
+- id: seed_02
+  query: Find inspections for Restaurant 14.
+- id: seed_03
+  query: Find inspections for Restaurant 15.
+- id: seed_04
+  query: Find inspections for Restaurant 16.
+- id: seed_05
+  query: Find inspections for Restaurant 17.
+- id: seed_06
+  query: Retrieve inspection details for inspection 10017.
+- id: seed_07
+  query: Retrieve inspection details for inspection 10018.
+- id: seed_08
+  query: Retrieve inspection details for inspection 10019.
+- id: seed_09
+  query: Retrieve inspection details for inspection 10020.
+- id: seed_10
+  query: Retrieve inspection details for inspection 10021.
+cases:
+- id: dup_01
+  category: exact_duplicate
+  reference_id: seed_01
+  query: Find inspections for Restaurant 13.
+  expected_hit: true
+- id: dup_02
+  category: exact_duplicate
+  reference_id: seed_02
+  query: Find inspections for Restaurant 14.
+  expected_hit: true
+- id: dup_03
+  category: exact_duplicate
+  reference_id: seed_03
+  query: Find inspections for Restaurant 15.
+  expected_hit: true
+- id: dup_04
+  category: exact_duplicate
+  reference_id: seed_04
+  query: Find inspections for Restaurant 16.
+  expected_hit: true
+- id: dup_05
+  category: exact_duplicate
+  reference_id: seed_05
+  query: Find inspections for Restaurant 17.
+  expected_hit: true
+- id: dup_06
+  category: exact_duplicate
+  reference_id: seed_06
+  query: Retrieve inspection details for inspection 10017.
+  expected_hit: true
+- id: dup_07
+  category: exact_duplicate
+  reference_id: seed_07
+  query: Retrieve inspection details for inspection 10018.
+  expected_hit: true
+- id: dup_08
+  category: exact_duplicate
+  reference_id: seed_08
+  query: Retrieve inspection details for inspection 10019.
+  expected_hit: true
+- id: dup_09
+  category: exact_duplicate
+  reference_id: seed_09
+  query: Retrieve inspection details for inspection 10020.
+  expected_hit: true
+- id: dup_10
+  category: exact_duplicate
+  reference_id: seed_10
+  query: Retrieve inspection details for inspection 10021.
+  expected_hit: true
+- id: para_01
+  category: paraphrase
+  reference_id: seed_01
+  query: Show inspection records associated with Restaurant 13.
+  expected_hit: true
+- id: para_02
+  category: paraphrase
+  reference_id: seed_02
+  query: Show inspection records associated with Restaurant 14.
+  expected_hit: true
+- id: para_03
+  category: paraphrase
+  reference_id: seed_03
+  query: Show inspection records associated with Restaurant 15.
+  expected_hit: true
+- id: para_04
+  category: paraphrase
+  reference_id: seed_04
+  query: Show inspection records associated with Restaurant 16.
+  expected_hit: true
+- id: para_05
+  category: paraphrase
+  reference_id: seed_05
+  query: Show inspection records associated with Restaurant 17.
+  expected_hit: true
+- id: para_06
+  category: paraphrase
+  reference_id: seed_06
+  query: Show the details of inspection 10017.
+  expected_hit: true
+- id: para_07
+  category: paraphrase
+  reference_id: seed_07
+  query: Show the details of inspection 10018.
+  expected_hit: true
+- id: para_08
+  category: paraphrase
+  reference_id: seed_08
+  query: Show the details of inspection 10019.
+  expected_hit: true
+- id: para_09
+  category: paraphrase
+  reference_id: seed_09
+  query: Show the details of inspection 10020.
+  expected_hit: true
+- id: para_10
+  category: paraphrase
+  reference_id: seed_10
+  query: Show the details of inspection 10021.
+  expected_hit: true
+- id: diff_01
+  category: similar_different
+  reference_id: seed_01
+  query: Find inspections for Restaurant 18.
+  expected_hit: false
+- id: diff_02
+  category: similar_different
+  reference_id: seed_02
+  query: Find inspections for Restaurant 19.
+  expected_hit: false
+- id: diff_03
+  category: similar_different
+  reference_id: seed_03
+  query: Find inspections for Restaurant 20.
+  expected_hit: false
+- id: diff_04
+  category: similar_different
+  reference_id: seed_04
+  query: Find inspections for Restaurant 21.
+  expected_hit: false
+- id: diff_05
+  category: similar_different
+  reference_id: seed_05
+  query: Find inspections for Restaurant 22.
+  expected_hit: false
+- id: diff_06
+  category: similar_different
+  reference_id: seed_06
+  query: Retrieve inspection details for inspection 10022.
+  expected_hit: false
+- id: diff_07
+  category: similar_different
+  reference_id: seed_07
+  query: Retrieve inspection details for inspection 10023.
+  expected_hit: false
+- id: diff_08
+  category: similar_different
+  reference_id: seed_08
+  query: Retrieve inspection details for inspection 10024.
+  expected_hit: false
+- id: diff_09
+  category: similar_different
+  reference_id: seed_09
+  query: Retrieve inspection details for inspection 10025.
+  expected_hit: false
+- id: diff_10
+  category: similar_different
+  reference_id: seed_10
+  query: Retrieve inspection details for inspection 10026.
+  expected_hit: false
+- id: unrelated_01
+  category: unrelated
+  reference_id: null
+  query: Search restaurant inspection records for Blue Harbor Cafe.
+  expected_hit: false
+- id: unrelated_02
+  category: unrelated
+  reference_id: null
+  query: Find inspections for the establishment named Golden Orchid Kitchen.
+  expected_hit: false
+- id: unrelated_03
+  category: unrelated
+  reference_id: null
+  query: Look up restaurant inspection reports for North Star Bistro.
+  expected_hit: false
+- id: unrelated_04
+  category: unrelated
+  reference_id: null
+  query: Search inspections for a restaurant called Willow Creek Diner.
+  expected_hit: false
+- id: unrelated_05
+  category: unrelated
+  reference_id: null
+  query: Locate inspection records for Pine Lantern Noodle House.
+  expected_hit: false
+- id: unrelated_06
+  category: unrelated
+  reference_id: null
+  query: Find restaurant inspection results for Sunset Terrace Grill.
+  expected_hit: false
+- id: unrelated_07
+  category: unrelated
+  reference_id: null
+  query: Look up inspections for the business named Copper Kettle Bakery.
+  expected_hit: false
+- id: unrelated_08
+  category: unrelated
+  reference_id: null
+  query: Search for inspection records at 900 Oak Avenue.
+  expected_hit: false
+- id: unrelated_09
+  category: unrelated
+  reference_id: null
+  query: Find inspection reports for Maple Moon Sushi.
+  expected_hit: false
+- id: unrelated_10
+  category: unrelated
+  reference_id: null
+  query: Locate restaurant inspection records for Riverstone Tacos.
+  expected_hit: false

@@ -1,0 +1,13 @@
+Timothy Song | DATA 260 | HW9 Part 3.4
+Cost per miss: $0.01
+Cost per false hit: $0.25
+
+Threshold | Misses | False hits | Total cost
+0.75 | 10 | 10 | $2.60
+0.80 | 10 | 10 | $2.60
+0.85 | 16 | 10 | $2.66
+0.90 | 21 | 9 | $2.46
+0.95 | 25 | 5 | $1.50
+
+Chosen threshold: 0.95
+Reason: Lowest cost under the stated cost assumptions.

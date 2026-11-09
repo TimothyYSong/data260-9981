@@ -25,7 +25,7 @@ INDEX_NAME = f"{PREFIX}:semantic:index"
 KEY_PREFIX = f"{PREFIX}:semantic:entry:"
 
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-DEFAULT_THRESHOLD = 0.85
+DEFAULT_THRESHOLD = 0.95
 DEFAULT_DATA_VERSION = "v1"
 
 # Number of nearest candidates to examine

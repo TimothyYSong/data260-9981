@@ -1,4 +1,10 @@
 services:
+  redis-search:
+    image: redis/redis-stack-server:7.4.0-v8
+    container_name: s9981-redis-search
+    ports:
+      - "127.0.0.1:6380:6379"
+    restart: unless-stopped
   kafka:
     image: apache/kafka:3.9.1
     container_name: s9981-kafka

@@ -1,0 +1,302 @@
+[
+  {
+    "case_id": "case_01",
+    "correlation_id": "eeff3940-c0d3-4253-8f75-914e3958e675",
+    "question": "Retrieve inspection details for inspection 10016.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10016:\n- Inspection Code: INSP-10016\n- Restaurant: Restaurant 12\n- Address: 112 Test Street\n- Violation Count: 0\n- Restaurant ID: 12\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-11-09T04:46:46",
+    "final_answer": "Inspection details for ID 10016:\n- Inspection Code: INSP-10016\n- Restaurant: Restaurant 12\n- Address: 112 Test Street\n- Violation Count: 0\n- Restaurant ID: 12\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-11-09T04:46:46",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_02",
+    "correlation_id": "9f9244e2-1d26-46c3-8ed7-2113da2b4c81",
+    "question": "Retrieve inspection details for inspection 10017.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10017:\n- Inspection Code: INSP-10017\n- Restaurant: Restaurant 13\n- Address: 113 Test Street\n- Violation Count: 0\n- Restaurant ID: 13\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-11-09T22:22:55",
+    "final_answer": "Inspection details for ID 10017:\n- Inspection Code: INSP-10017\n- Restaurant: Restaurant 13\n- Address: 113 Test Street\n- Violation Count: 0\n- Restaurant ID: 13\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-11-09T22:22:55",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_03",
+    "correlation_id": "189591ed-80d2-4fec-b537-a3788ddd1a13",
+    "question": "Retrieve inspection details for inspection 10018.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10018:\n- Inspection Code: INSP-10018\n- Restaurant: Restaurant 14\n- Address: 114 Test Street\n- Violation Count: 0\n- Restaurant ID: 14\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10018:\n- Inspection Code: INSP-10018\n- Restaurant: Restaurant 14\n- Address: 114 Test Street\n- Violation Count: 0\n- Restaurant ID: 14\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_04",
+    "correlation_id": "2164c69b-e99c-493a-a33d-8f30ee425827",
+    "question": "Retrieve inspection details for inspection 10019.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10019:\n- Inspection Code: INSP-10019\n- Restaurant: Restaurant 15\n- Address: 115 Test Street\n- Violation Count: 0\n- Restaurant ID: 15\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10019:\n- Inspection Code: INSP-10019\n- Restaurant: Restaurant 15\n- Address: 115 Test Street\n- Violation Count: 0\n- Restaurant ID: 15\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_05",
+    "correlation_id": "bce907fe-3aae-459a-bdcb-41326556fc38",
+    "question": "Retrieve inspection details for inspection 10020.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10020:\n- Inspection Code: INSP-10020\n- Restaurant: Restaurant 16\n- Address: 116 Test Street\n- Violation Count: 0\n- Restaurant ID: 16\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10020:\n- Inspection Code: INSP-10020\n- Restaurant: Restaurant 16\n- Address: 116 Test Street\n- Violation Count: 0\n- Restaurant ID: 16\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_06",
+    "correlation_id": "10d3e2ab-3fa2-4497-a359-ed26480c129c",
+    "question": "Retrieve inspection details for inspection 10021.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10021:\n- Inspection Code: INSP-10021\n- Restaurant: Restaurant 17\n- Address: 117 Test Street\n- Violation Count: 0\n- Restaurant ID: 17\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10021:\n- Inspection Code: INSP-10021\n- Restaurant: Restaurant 17\n- Address: 117 Test Street\n- Violation Count: 0\n- Restaurant ID: 17\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_07",
+    "correlation_id": "e1dfb35d-ea4e-42d8-9e2f-d795cbb85989",
+    "question": "Retrieve inspection details for inspection 10022.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10022:\n- Inspection Code: INSP-10022\n- Restaurant: Restaurant 18\n- Address: 118 Test Street\n- Violation Count: 0\n- Restaurant ID: 18\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10022:\n- Inspection Code: INSP-10022\n- Restaurant: Restaurant 18\n- Address: 118 Test Street\n- Violation Count: 0\n- Restaurant ID: 18\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_08",
+    "correlation_id": "51f54238-c1c6-4606-9ced-fbc9b704b22e",
+    "question": "Retrieve inspection details for inspection 10023.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10023:\n- Inspection Code: INSP-10023\n- Restaurant: Restaurant 19\n- Address: 119 Test Street\n- Violation Count: 0\n- Restaurant ID: 19\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10023:\n- Inspection Code: INSP-10023\n- Restaurant: Restaurant 19\n- Address: 119 Test Street\n- Violation Count: 0\n- Restaurant ID: 19\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_09",
+    "correlation_id": "df2510bf-64e3-4d73-8171-19fcc4ccce38",
+    "question": "Retrieve inspection details for inspection 10024.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10024:\n- Inspection Code: INSP-10024\n- Restaurant: Restaurant 20\n- Address: 120 Test Street\n- Violation Count: 0\n- Restaurant ID: 20\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10024:\n- Inspection Code: INSP-10024\n- Restaurant: Restaurant 20\n- Address: 120 Test Street\n- Violation Count: 0\n- Restaurant ID: 20\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_10",
+    "correlation_id": "fec19b32-f5af-4176-b050-2dfb67e40e7a",
+    "question": "Retrieve inspection details for inspection 10025.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection details for ID 10025:\n- Inspection Code: INSP-10025\n- Restaurant: Restaurant 21\n- Address: 121 Test Street\n- Violation Count: 0\n- Restaurant ID: 21\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "final_answer": "Inspection details for ID 10025:\n- Inspection Code: INSP-10025\n- Restaurant: Restaurant 21\n- Address: 121 Test Street\n- Violation Count: 0\n- Restaurant ID: 21\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_11",
+    "correlation_id": "a5f76ea5-9d90-49f3-b438-61c56553feb6",
+    "question": "Retrieve inspection details for inspection 99991.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection 99991 was not found in the available records.",
+    "final_answer": "Inspection 99991 was not found in the available records.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_12",
+    "correlation_id": "5b9627e8-2cbe-4226-a0cd-acc26e90d557",
+    "question": "Retrieve inspection details for inspection 99992.",
+    "plan": [
+      "Identify the requested inspection record.",
+      "Retrieve inspection details from the inspection data service.",
+      "Summarize the actual inspection record without inventing data."
+    ],
+    "draft": "Inspection 99992 was not found in the available records.",
+    "final_answer": "Inspection 99992 was not found in the available records.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft addresses the requested inspection record.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_13",
+    "correlation_id": "0d3a1d24-0fa2-40c6-948f-87497eb4334e",
+    "question": "Provide a restaurant food safety inspection checklist.",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "final_answer": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_14",
+    "correlation_id": "2a8714ed-cf1b-4604-8244-eef0955ecdcc",
+    "question": "What should a restaurant sanitation checklist include?",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "final_answer": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_15",
+    "correlation_id": "a48bd600-907e-4170-a243-3093ba7d178b",
+    "question": "Give a checklist for checking restaurant food storage.",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "final_answer": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_16",
+    "correlation_id": "39b8e539-9435-4259-bb4a-b16e08313440",
+    "question": "What belongs on a basic restaurant hygiene checklist?",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "final_answer": "A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_17",
+    "correlation_id": "4169c84c-f469-4f16-9039-dd1447fa1317",
+    "question": "Find inspections for Restaurant 14.",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "final_answer": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_18",
+    "correlation_id": "0c2194cd-ca7f-44cd-8a61-46663107c911",
+    "question": "Search restaurant inspection records for Restaurant 15.",
+    "plan": [
+      "Identify the requested restaurant or search criteria.",
+      "Search available restaurant inspection records.",
+      "Present the matching records and relevant inspection details."
+    ],
+    "draft": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "final_answer": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_19",
+    "correlation_id": "8f78b4a4-95ed-4085-b8bf-657432e82cf7",
+    "question": "Summarize inspections for restaurant ID 14.",
+    "plan": [
+      "Identify the restaurant inspection question.",
+      "Determine the relevant food safety information.",
+      "Provide a clear answer appropriate to the question."
+    ],
+    "draft": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "final_answer": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  },
+  {
+    "case_id": "case_20",
+    "correlation_id": "cc995632-9c93-424b-8e4b-660b78b09c9f",
+    "question": "Compare inspection outcomes for Restaurants 14 and 15.",
+    "plan": [
+      "Identify the restaurant inspection question.",
+      "Determine the relevant food safety information.",
+      "Provide a clear answer appropriate to the question."
+    ],
+    "draft": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "final_answer": "The requested task is not yet supported by the Kafka Writer's available retrieval logic.",
+    "reviewer_status": "approved",
+    "review_reason": "Draft is nonempty and passes basic relevance checks.",
+    "source": "actual Kafka Planner/Writer/Reviewer messages"
+  }
+]

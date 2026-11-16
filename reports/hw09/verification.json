@@ -1,0 +1,63 @@
+{
+  "homework_number": 9,
+  "SID4": "9981",
+  "commit_hash": "cf6332c7f76af223ff6e504c9a06c0f9b31f9a8c",
+  "tag": "hw9",
+  "tag_commit_hash": "cf6332c7f76af223ff6e504c9a06c0f9b31f9a8c",
+  "model": "qwen3:8b",
+  "configuration": {
+    "domain_id": 5,
+    "domain": "Local Restaurant Inspection",
+    "prefix": "s9981",
+    "semantic_embedding_model": "all-MiniLM-L6-v2",
+    "semantic_default_threshold": 0.95
+  },
+  "SEED": 9981,
+  "VERIFY_SEED": 269981,
+  "verified_at_utc": "2026-11-16T19:40:00.938827+00:00",
+  "checks": [
+    {
+      "check": "Git tag points to checked-out commit",
+      "status": "PASS",
+      "detail": "hw9 -> cf6332c7f76a"
+    },
+    {
+      "check": "Reference and split datasets",
+      "status": "PASS",
+      "detail": "40 reference inspections; 8/8/8 nonoverlapping input-only questions"
+    },
+    {
+      "check": "Stored results and lesson structure",
+      "status": "PASS",
+      "detail": "four saved variant results, eight-case validation and lesson schema valid"
+    },
+    {
+      "check": "Saved threshold sweep totals",
+      "status": "PASS",
+      "detail": "five thresholds, 40 queries per threshold, totals consistent"
+    },
+    {
+      "check": "Part 1 Redis connection and INCR",
+      "status": "PASS",
+      "detail": "Redis PING and temporary s9981-prefixed INCR round-trip passed; temp key deleted"
+    },
+    {
+      "check": "Part 2 Redis vector index",
+      "status": "PASS",
+      "detail": "Redis Stack PING and existing s9981 semantic vector index confirmed"
+    },
+    {
+      "check": "Domain inspection tool smoke test",
+      "status": "PASS",
+      "detail": "inspection_detail(10016) returned a successful record"
+    },
+    {
+      "check": "Live Answering and Evaluator agents",
+      "status": "PASS",
+      "detail": "live answer PASS; deliberately wrong violation count REVISE"
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "overall": "PASS"
+}

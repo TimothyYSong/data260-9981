@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response provides a concise and accurate checklist covering essential food safety areas like temperature control, hygiene, and cross-contamination prevention. It directly addresses the user's request with relevant, actionable items without unnecessary details, aligning well with the evaluation criteria for completeness and relevance.",
+  "latency_ms": 9563.03,
+  "case_id": "case_13",
+  "repeat": 3,
+  "trace_id": "0d3a1d24-0fa2-40c6-948f-87497eb4334e",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

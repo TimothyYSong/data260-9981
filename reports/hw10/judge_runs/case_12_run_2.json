@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response accurately informs the user that inspection 99992 was not found in records, directly addressing the query with a clear and specific statement. It is relevant, accurate, and complete for the task, with no omitted information or unsupported claims.",
+  "latency_ms": 10173.13,
+  "case_id": "case_12",
+  "repeat": 2,
+  "trace_id": "5b9627e8-2cbe-4226-a0cd-acc26e90d557",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

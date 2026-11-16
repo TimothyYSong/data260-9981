@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly answers the user's question by providing all relevant inspection details for ID 10021, demonstrating accuracy, completeness, and relevance. It includes specific information about the restaurant, address, and timestamps without omitting requested data.",
+  "latency_ms": 7221.03,
+  "case_id": "case_06",
+  "repeat": 2,
+  "trace_id": "10d3e2ab-3fa2-4497-a359-ed26480c129c",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

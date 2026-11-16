@@ -1,0 +1,43 @@
+{
+  "case_id": "0d0a40af-21ca-4dfd-9c1e-c3e4852e6a9b",
+  "trace_id": "0d0a40af-21ca-4dfd-9c1e-c3e4852e6a9b",
+  "correlation_id": "0d0a40af-21ca-4dfd-9c1e-c3e4852e6a9b",
+  "question": "Retrieve inspection details for inspection 10022.",
+  "plan": [
+    "Identify the requested inspection record.",
+    "Retrieve inspection details from the inspection data service.",
+    "Summarize the actual inspection record without inventing data."
+  ],
+  "draft": "Inspection details for ID 10022:\n- Inspection Code: INSP-10022\n- Restaurant: Restaurant 18\n- Address: 118 Test Street\n- Violation Count: 0\n- Restaurant ID: 18\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+  "final_answer": "Inspection details for ID 10022:\n- Inspection Code: INSP-10022\n- Restaurant: Restaurant 18\n- Address: 118 Test Street\n- Violation Count: 0\n- Restaurant ID: 18\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+  "reviewer_status": "approved",
+  "judge_model": "qwen3:8b",
+  "evaluated_at": "2026-11-16T21:28:55.969806+00:00",
+  "metrics": {
+    "plan_quality": {
+      "raw_geval_score": 1.0,
+      "score_1_to_5": 5.0,
+      "reason": "The steps are logical, actionable, and directly address the task of retrieving inspection details. They avoid inventing data and follow a clear process, though they do not explicitly mention the specific inspection number 10022. However, the steps are general and focus on the methodology rather than the exact data retrieval, which aligns with the evaluation criteria.",
+      "latency_ms": 46398.98
+    },
+    "writer_helpfulness": {
+      "raw_geval_score": 1.0,
+      "score_1_to_5": 5.0,
+      "reason": "The response accurately provides the requested inspection details for ID 10022, including all relevant fields without fabricated information. It is fully aligned with the user's query and meets the criteria for relevance, accuracy, and completeness.",
+      "latency_ms": 9247.99
+    },
+    "final_helpfulness": {
+      "raw_geval_score": 1.0,
+      "score_1_to_5": 5.0,
+      "reason": "The response accurately provides the requested inspection details for ID 10022, including all relevant fields without fabricated information. It is fully aligned with the user's query and meets the criteria for relevance, accuracy, and completeness.",
+      "latency_ms": 8757.21
+    },
+    "final_vs_draft": {
+      "writer_score": 5.0,
+      "final_score": 5.0,
+      "score_difference": 0.0,
+      "text_changed": false,
+      "interpretation": "Reviewer left the draft unchanged; no actual textual improvement occurred. Score differences may reflect judge variability."
+    }
+  }
+}

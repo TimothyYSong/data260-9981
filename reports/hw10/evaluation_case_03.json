@@ -1,0 +1,43 @@
+{
+  "case_id": "case_03",
+  "trace_id": "189591ed-80d2-4fec-b537-a3788ddd1a13",
+  "correlation_id": "189591ed-80d2-4fec-b537-a3788ddd1a13",
+  "question": "Retrieve inspection details for inspection 10018.",
+  "plan": [
+    "Identify the requested inspection record.",
+    "Retrieve inspection details from the inspection data service.",
+    "Summarize the actual inspection record without inventing data."
+  ],
+  "draft": "Inspection details for ID 10018:\n- Inspection Code: INSP-10018\n- Restaurant: Restaurant 14\n- Address: 114 Test Street\n- Violation Count: 0\n- Restaurant ID: 14\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+  "final_answer": "Inspection details for ID 10018:\n- Inspection Code: INSP-10018\n- Restaurant: Restaurant 14\n- Address: 114 Test Street\n- Violation Count: 0\n- Restaurant ID: 14\n- Created At: 2026-10-05T01:30:13\n- Updated At: 2026-10-05T01:35:35",
+  "reviewer_status": "approved",
+  "judge_model": "qwen3:8b",
+  "evaluated_at": "2026-11-16T20:52:20.610208+00:00",
+  "metrics": {
+    "plan_quality": {
+      "raw_geval_score": 0.6,
+      "score_1_to_5": 3.4,
+      "reason": "The steps are logical and actionable but fail to address the specific request for inspection 10018. The plan lacks the critical detail of the inspection ID, making it incomplete for the exact user query.",
+      "latency_ms": 12490.18
+    },
+    "writer_helpfulness": {
+      "raw_geval_score": 1.0,
+      "score_1_to_5": 5.0,
+      "reason": "The response directly addresses the user's request by providing exact inspection details for ID 10018, including all relevant fields without fabricated or unsupported information. It is accurate, complete, and fully aligned with the evaluation criteria.",
+      "latency_ms": 9257.66
+    },
+    "final_helpfulness": {
+      "raw_geval_score": 1.0,
+      "score_1_to_5": 5.0,
+      "reason": "The response directly addresses the user's request by providing exact inspection details for ID 10018, including all relevant fields without fabricated or unsupported information. It is accurate, complete, and fully aligned with the evaluation criteria.",
+      "latency_ms": 8934.54
+    },
+    "final_vs_draft": {
+      "writer_score": 5.0,
+      "final_score": 5.0,
+      "score_difference": 0.0,
+      "text_changed": false,
+      "interpretation": "Reviewer left the draft unchanged; no actual textual improvement occurred. Score differences may reflect judge variability."
+    }
+  }
+}

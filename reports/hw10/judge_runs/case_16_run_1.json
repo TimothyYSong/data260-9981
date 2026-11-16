@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly addresses the user's question by listing essential elements of a basic restaurant hygiene checklist. It includes accurate, relevant, and actionable items such as food storage temperatures, employee hygiene, and cross-contamination prevention, which are standard components of such a checklist. The answer is specific, complete for a 'basic' scope, and avoids generic or unsupported information.",
+  "latency_ms": 10595.9,
+  "case_id": "case_16",
+  "repeat": 1,
+  "trace_id": "39b8e539-9435-4259-bb4a-b16e08313440",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

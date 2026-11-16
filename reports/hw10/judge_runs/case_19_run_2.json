@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.2,
+  "score_1_to_5": 1.8,
+  "reason": "The response correctly identifies the task limitation but fails to provide helpful alternatives or next steps, making it unhelpful despite accurate acknowledgment of system constraints.",
+  "latency_ms": 6097.38,
+  "case_id": "case_19",
+  "repeat": 2,
+  "trace_id": "8f78b4a4-95ed-4085-b8bf-657432e82cf7",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

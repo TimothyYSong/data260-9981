@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.2,
+  "score_1_to_5": 1.8,
+  "reason": "The response correctly identifies the task as unsupported but fails to address the user's request for inspection records. It is generic and omits specific information about Restaurant 15, lacking helpfulness despite acknowledging the task's unavailability.",
+  "latency_ms": 10268.12,
+  "case_id": "case_18",
+  "repeat": 1,
+  "trace_id": "0c2194cd-ca7f-44cd-8a61-46663107c911",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

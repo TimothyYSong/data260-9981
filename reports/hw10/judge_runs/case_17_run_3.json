@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.0,
+  "score_1_to_5": 1.0,
+  "reason": "The response correctly identifies the task as unsupported but fails to provide any alternative solutions or additional information, making it unhelpful and generic. It omits the requested inspection data entirely, which is penalized under the evaluation steps.",
+  "latency_ms": 7228.72,
+  "case_id": "case_17",
+  "repeat": 3,
+  "trace_id": "4169c84c-f469-4f16-9039-dd1447fa1317",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

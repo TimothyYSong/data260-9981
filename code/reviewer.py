@@ -3,6 +3,7 @@ import logging
 import os
 
 from kafka import KafkaConsumer, KafkaProducer
+from hw10_tracing import trace_stage, record_kafka_queue_wait
 
 PREFIX = "s9981"
 INPUT_TOPIC = f"{PREFIX}_drafts"
@@ -41,23 +42,68 @@ def main():
         logger.info("REVIEWER RECEIVED: %s", json.dumps(draft_message))
 
         correlation_id = draft_message["correlation_id"]
-        draft = draft_message["draft"]
+        record_kafka_queue_wait(
+            message, correlation_id, 'reviewer'
+        )
+        with trace_stage(
+            correlation_id, 'reviewer',
+            input_topic=INPUT_TOPIC,
+            output_topic=OUTPUT_TOPIC,
+        ):
+            draft = draft_message["draft"]
 
-        if isinstance(draft, str) and draft.strip():
-            status = "approved"
-            answer = draft
-        else:
-            status = "rejected"
-            answer = "The draft was empty or invalid."
 
-        final_message = {
-            "correlation_id": correlation_id,
-            "status": status,
-            "answer": answer,
-        }
+            question = draft_message.get("question", "")
+            plan = draft_message.get("plan", [])
 
-        producer.send(OUTPUT_TOPIC, value=final_message).get(timeout=15)
-        logger.info("REVIEWER SENT: %s", json.dumps(final_message))
+            if not isinstance(draft, str) or not draft.strip():
+                status = "rejected"
+                answer = "The draft was empty or invalid."
+                review_reason = "Empty or invalid Writer draft."
+
+            elif (
+                "inspection" in question.lower()
+                and any(
+                    word in question.lower()
+                    for word in ("retrieve", "detail", "show", "get")
+                )
+            ):
+                if (
+                    "inspection details for id" in draft.lower()
+                    or "was not found" in draft.lower()
+                ):
+                    status = "approved"
+                    answer = draft
+                    review_reason = (
+                        "Draft addresses the requested inspection record."
+                    )
+                else:
+                    status = "rejected"
+                    answer = draft
+                    review_reason = (
+                        "Draft does not provide requested inspection details."
+                    )
+
+            else:
+                status = "approved"
+                answer = draft
+                review_reason = (
+                    "Draft is nonempty and passes basic relevance checks."
+                )
+
+            final_message = {
+                "correlation_id": correlation_id,
+                "question": question,
+                "plan": plan,
+                "draft": draft,
+                "status": status,
+                "answer": answer,
+                "review_reason": review_reason,
+            }
+
+
+            producer.send(OUTPUT_TOPIC, value=final_message).get(timeout=15)
+            logger.info("REVIEWER SENT: %s", json.dumps(final_message))
 
         consumer.commit()
 

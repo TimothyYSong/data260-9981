@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.9,
+  "score_1_to_5": 4.6,
+  "reason": "The response directly addresses the question by listing key components of a restaurant sanitation checklist, including food storage temperatures, employee hygiene, cross-contamination prevention, and equipment cleanliness. These are all standard and relevant elements. However, it could be more complete by including additional common items like waste disposal protocols, record-keeping practices, or specific cleaning schedules. The answer remains accurate and useful without being generic.",
+  "latency_ms": 9782.65,
+  "case_id": "case_14",
+  "repeat": 3,
+  "trace_id": "2a8714ed-cf1b-4604-8244-eef0955ecdcc",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

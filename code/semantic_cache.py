@@ -13,6 +13,7 @@ from redis.exceptions import ResponseError
 from sentence_transformers import SentenceTransformer
 
 from agent import run_agent
+from hw10_tracing import trace_stage
 
 logger = logging.getLogger(__name__)
 
@@ -305,6 +306,7 @@ class SemanticCache:
         question,
         threshold=DEFAULT_THRESHOLD,
         data_version=DEFAULT_DATA_VERSION,
+        trace_id=None,
     ):
         """
         Handle a domain Q&A request.
@@ -332,15 +334,39 @@ class SemanticCache:
 
         question = question.strip()
 
-        # Generate embedding for incoming question.
-        embedding = self.embed(question)
-
-        # Search Redis using similarity and entity compatibility.
-        match = self.search(
-            embedding,
-            data_version,
-            question,
-        )
+        # Measure cache lookup independently of agent execution.
+        if trace_id is not None:
+            with trace_stage(
+                trace_id,
+                "cache_lookup",
+                threshold=threshold,
+                data_version=data_version,
+            ) as span:
+                embedding = self.embed(question)
+                match = self.search(
+                    embedding,
+                    data_version,
+                    question,
+                )
+                is_hit = (
+                    match is not None
+                    and match["similarity"] >= threshold
+                )
+                span["cache_result"] = (
+                    "hit" if is_hit else "miss"
+                )
+                span["similarity"] = (
+                    match["similarity"]
+                    if match is not None
+                    else None
+                )
+        else:
+            embedding = self.embed(question)
+            match = self.search(
+                embedding,
+                data_version,
+                question,
+            )
 
         # --------------------------------------------------
         # CACHE HIT — return the previous answer immediately.

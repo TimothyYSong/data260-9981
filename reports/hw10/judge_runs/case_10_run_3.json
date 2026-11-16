@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly answers the user's request by providing all inspection details for ID 10025, including specific fields like Restaurant, Address, and Violation Count. It is accurate, complete, and relevant without omitting any requested information.",
+  "latency_ms": 5926.15,
+  "case_id": "case_10",
+  "repeat": 3,
+  "trace_id": "fec19b32-f5af-4176-b050-2dfb67e40e7a",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.5,
+  "score_1_to_5": 3.0,
+  "reason": "The response addresses restaurant inspections but omits specific food storage checklist details requested. While it mentions temperatures (a relevant storage aspect), it includes unrelated elements like employee hygiene and pest control, failing to focus on the exact food storage checklist requested. This partial relevance and omission of key requested information warrants a moderate score.",
+  "latency_ms": 5692.08,
+  "case_id": "case_15",
+  "repeat": 2,
+  "trace_id": "a48bd600-907e-4170-a243-3093ba7d178b",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

@@ -1,0 +1,16 @@
+{
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048,
+  "cases": 20,
+  "judge_runs": 60,
+  "spearman_rho": 0.8942729987095904,
+  "spearman_p_value": 1.062105642625975e-07,
+  "mean_absolute_difference": 0.51,
+  "cases_with_score_changes": 0,
+  "score_change_rate": 0.0,
+  "mean_pairwise_absolute_change": 0.0,
+  "max_pairwise_absolute_change": 0.0,
+  "score_scale": "1 + 4 * normalized GEval score",
+  "reference_label_provenance": "Must be documented accurately in report"
+}

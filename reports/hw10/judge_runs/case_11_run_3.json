@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly addresses the user's query by confirming inspection 99991 was not found, demonstrating accuracy and relevance. It follows the helpfulness standard for not-found cases and provides complete information without omitting requested details.",
+  "latency_ms": 7873.59,
+  "case_id": "case_11",
+  "repeat": 3,
+  "trace_id": "a5f76ea5-9d90-49f3-b438-61c56553feb6",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

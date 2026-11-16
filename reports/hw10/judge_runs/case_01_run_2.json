@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly answers the user's question by providing specific inspection details for ID 10016, including all requested fields with accurate and complete information. It demonstrates strong relevance, accuracy, and completeness without omitting any requested data or introducing unsupported content.",
+  "latency_ms": 7301.16,
+  "case_id": "case_01",
+  "repeat": 2,
+  "trace_id": "eeff3940-c0d3-4253-8f75-914e3958e675",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

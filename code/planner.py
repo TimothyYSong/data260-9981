@@ -3,6 +3,7 @@ import logging
 import os
 
 from kafka import KafkaConsumer, KafkaProducer
+from hw10_tracing import trace_stage, record_kafka_queue_wait
 
 PREFIX = "s9981"
 INPUT_TOPIC = f"{PREFIX}_inbox"
@@ -41,20 +42,54 @@ def main():
         logger.info("PLANNER RECEIVED: %s", json.dumps(request))
 
         correlation_id = request["correlation_id"]
-        question = request["question"]
+        record_kafka_queue_wait(
+            message, correlation_id, 'planner'
+        )
+        with trace_stage(
+            correlation_id, 'planner',
+            input_topic=INPUT_TOPIC,
+            output_topic=OUTPUT_TOPIC,
+        ):
+            question = request["question"]
 
-        plan = {
-            "correlation_id": correlation_id,
-            "question": question,
-            "steps": [
-                "Identify the restaurant inspection objective.",
-                "List relevant food safety inspection checks.",
-                "Organize the checks into a clear answer.",
-            ],
-        }
+            question_lower = question.lower()
 
-        producer.send(OUTPUT_TOPIC, value=plan).get(timeout=15)
-        logger.info("PLANNER SENT: %s", json.dumps(plan))
+            if "inspection" in question_lower and (
+                "detail" in question_lower
+                or "retrieve" in question_lower
+            ):
+                steps = [
+                    "Identify the requested inspection record.",
+                    "Retrieve inspection details from the inspection data service.",
+                    "Summarize the actual inspection record without inventing data.",
+                ]
+
+            elif "restaurant" in question_lower and (
+                "find" in question_lower
+                or "search" in question_lower
+                or "list" in question_lower
+            ):
+                steps = [
+                    "Identify the requested restaurant or search criteria.",
+                    "Search available restaurant inspection records.",
+                    "Present the matching records and relevant inspection details.",
+                ]
+
+            else:
+                steps = [
+                    "Identify the restaurant inspection question.",
+                    "Determine the relevant food safety information.",
+                    "Provide a clear answer appropriate to the question.",
+                ]
+
+            plan = {
+                "correlation_id": correlation_id,
+                "question": question,
+                "steps": steps,
+            }
+
+            producer.send(OUTPUT_TOPIC, value=plan).get(timeout=15)
+            logger.info("PLANNER SENT: %s", json.dumps(plan))
 
         consumer.commit()
 

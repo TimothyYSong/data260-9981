@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly answers the user's query by providing all requested inspection details for ID 10020 with accurate and specific information, demonstrating completeness, relevance, and correctness without omissions or unsupported claims.",
+  "latency_ms": 6853.93,
+  "case_id": "case_05",
+  "repeat": 2,
+  "trace_id": "bce907fe-3aae-459a-bdcb-41326556fc38",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

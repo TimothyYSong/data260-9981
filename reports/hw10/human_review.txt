@@ -1,0 +1,269 @@
+===========================================================================
+CASE: case_01
+QUESTION: Retrieve inspection details for inspection 10016.
+
+WRITER DRAFT:
+Inspection details for ID 10016:
+- Inspection Code: INSP-10016
+- Restaurant: Restaurant 12
+- Address: 112 Test Street
+- Violation Count: 0
+- Restaurant ID: 12
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-11-09T04:46:46
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_02
+QUESTION: Retrieve inspection details for inspection 10017.
+
+WRITER DRAFT:
+Inspection details for ID 10017:
+- Inspection Code: INSP-10017
+- Restaurant: Restaurant 13
+- Address: 113 Test Street
+- Violation Count: 0
+- Restaurant ID: 13
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-11-09T22:22:55
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_03
+QUESTION: Retrieve inspection details for inspection 10018.
+
+WRITER DRAFT:
+Inspection details for ID 10018:
+- Inspection Code: INSP-10018
+- Restaurant: Restaurant 14
+- Address: 114 Test Street
+- Violation Count: 0
+- Restaurant ID: 14
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_04
+QUESTION: Retrieve inspection details for inspection 10019.
+
+WRITER DRAFT:
+Inspection details for ID 10019:
+- Inspection Code: INSP-10019
+- Restaurant: Restaurant 15
+- Address: 115 Test Street
+- Violation Count: 0
+- Restaurant ID: 15
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_05
+QUESTION: Retrieve inspection details for inspection 10020.
+
+WRITER DRAFT:
+Inspection details for ID 10020:
+- Inspection Code: INSP-10020
+- Restaurant: Restaurant 16
+- Address: 116 Test Street
+- Violation Count: 0
+- Restaurant ID: 16
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_06
+QUESTION: Retrieve inspection details for inspection 10021.
+
+WRITER DRAFT:
+Inspection details for ID 10021:
+- Inspection Code: INSP-10021
+- Restaurant: Restaurant 17
+- Address: 117 Test Street
+- Violation Count: 0
+- Restaurant ID: 17
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_07
+QUESTION: Retrieve inspection details for inspection 10022.
+
+WRITER DRAFT:
+Inspection details for ID 10022:
+- Inspection Code: INSP-10022
+- Restaurant: Restaurant 18
+- Address: 118 Test Street
+- Violation Count: 0
+- Restaurant ID: 18
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_08
+QUESTION: Retrieve inspection details for inspection 10023.
+
+WRITER DRAFT:
+Inspection details for ID 10023:
+- Inspection Code: INSP-10023
+- Restaurant: Restaurant 19
+- Address: 119 Test Street
+- Violation Count: 0
+- Restaurant ID: 19
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_09
+QUESTION: Retrieve inspection details for inspection 10024.
+
+WRITER DRAFT:
+Inspection details for ID 10024:
+- Inspection Code: INSP-10024
+- Restaurant: Restaurant 20
+- Address: 120 Test Street
+- Violation Count: 0
+- Restaurant ID: 20
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_10
+QUESTION: Retrieve inspection details for inspection 10025.
+
+WRITER DRAFT:
+Inspection details for ID 10025:
+- Inspection Code: INSP-10025
+- Restaurant: Restaurant 21
+- Address: 121 Test Street
+- Violation Count: 0
+- Restaurant ID: 21
+- Created At: 2026-10-05T01:30:13
+- Updated At: 2026-10-05T01:35:35
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_11
+QUESTION: Retrieve inspection details for inspection 99991.
+
+WRITER DRAFT:
+Inspection 99991 was not found in the available records.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_12
+QUESTION: Retrieve inspection details for inspection 99992.
+
+WRITER DRAFT:
+Inspection 99992 was not found in the available records.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_13
+QUESTION: Provide a restaurant food safety inspection checklist.
+
+WRITER DRAFT:
+A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_14
+QUESTION: What should a restaurant sanitation checklist include?
+
+WRITER DRAFT:
+A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_15
+QUESTION: Give a checklist for checking restaurant food storage.
+
+WRITER DRAFT:
+A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_16
+QUESTION: What belongs on a basic restaurant hygiene checklist?
+
+WRITER DRAFT:
+A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_17
+QUESTION: Find inspections for Restaurant 14.
+
+WRITER DRAFT:
+The requested task is not yet supported by the Kafka Writer's available retrieval logic.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_18
+QUESTION: Search restaurant inspection records for Restaurant 15.
+
+WRITER DRAFT:
+The requested task is not yet supported by the Kafka Writer's available retrieval logic.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_19
+QUESTION: Summarize inspections for restaurant ID 14.
+
+WRITER DRAFT:
+The requested task is not yet supported by the Kafka Writer's available retrieval logic.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________
+
+===========================================================================
+CASE: case_20
+QUESTION: Compare inspection outcomes for Restaurants 14 and 15.
+
+WRITER DRAFT:
+The requested task is not yet supported by the Kafka Writer's available retrieval logic.
+
+YOUR HELPFULNESS SCORE (1-5): _____
+YOUR REASON: ___________________________

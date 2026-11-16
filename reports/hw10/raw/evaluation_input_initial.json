@@ -1,0 +1,40 @@
+{
+  "correlation_id": "a838ff74-61ea-4eed-9438-532cc856e86e",
+  "trace_id": "a838ff74-61ea-4eed-9438-532cc856e86e",
+  "question": "Retrieve inspection details for inspection 10017.",
+  "plan": [
+    "Identify the restaurant inspection objective.",
+    "List relevant food safety inspection checks.",
+    "Organize the checks into a clear answer."
+  ],
+  "draft": "Question: Retrieve inspection details for inspection 10017. A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+  "final_answer": "Question: Retrieve inspection details for inspection 10017. A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness.",
+  "reviewer_status": "approved",
+  "collected_at": "2026-11-16T20:25:41.629159+00:00",
+  "original_messages": {
+    "planner": {
+      "correlation_id": "a838ff74-61ea-4eed-9438-532cc856e86e",
+      "question": "Retrieve inspection details for inspection 10017.",
+      "steps": [
+        "Identify the restaurant inspection objective.",
+        "List relevant food safety inspection checks.",
+        "Organize the checks into a clear answer."
+      ]
+    },
+    "writer": {
+      "correlation_id": "a838ff74-61ea-4eed-9438-532cc856e86e",
+      "question": "Retrieve inspection details for inspection 10017.",
+      "plan": [
+        "Identify the restaurant inspection objective.",
+        "List relevant food safety inspection checks.",
+        "Organize the checks into a clear answer."
+      ],
+      "draft": "Question: Retrieve inspection details for inspection 10017. A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."
+    },
+    "reviewer": {
+      "correlation_id": "a838ff74-61ea-4eed-9438-532cc856e86e",
+      "status": "approved",
+      "answer": "Question: Retrieve inspection details for inspection 10017. A restaurant inspection checklist should cover food storage temperatures, employee hygiene, sanitation, cross-contamination prevention, pest control, and equipment cleanliness."
+    }
+  }
+}

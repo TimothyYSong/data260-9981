@@ -4,6 +4,9 @@ import os
 import time
 
 from kafka import KafkaConsumer, KafkaProducer
+from hw10_tracing import trace_stage, record_kafka_queue_wait
+import re
+from tool_executor import execute_tool
 
 PREFIX = "s9981"
 INPUT_TOPIC = f"{PREFIX}_tasks"
@@ -27,6 +30,7 @@ logger = logging.getLogger(__name__)
 processed_ids = set()
 
 
+
 def create_draft(task):
     correlation_id = task["correlation_id"]
     question = task["question"]
@@ -44,24 +48,74 @@ def create_draft(task):
     ):
         raise ValueError("Invalid plan step")
 
-    # Part 3.II: Optional processing delay for crash testing.
+    # Preserve HW8's optional processing delay.
     delay = float(os.getenv("WRITER_PROCESSING_DELAY", "0"))
 
     if delay > 0:
-        logger.info(
-            "WRITER PROCESSING: correlation_id=%s, delay=%ss",
-            correlation_id,
-            delay,
-        )
         time.sleep(delay)
 
-    answer = (
-        f"Question: {question} "
-        "A restaurant inspection checklist should cover food "
-        "storage temperatures, employee hygiene, sanitation, "
-        "cross-contamination prevention, pest control, and "
-        "equipment cleanliness."
+    question_lower = question.lower()
+
+    # Retrieve inspection records by numeric ID.
+    match = re.search(
+        r"\binspection\s*(?:id\s*)?#?\s*(\d+)\b",
+        question_lower,
     )
+
+    if match and any(
+        word in question_lower
+        for word in ("retrieve", "detail", "show", "get")
+    ):
+        inspection_id = int(match.group(1))
+
+        tool_result = json.loads(
+            execute_tool(
+                "inspection_detail",
+                {"inspection_id": inspection_id},
+            )
+        )
+
+        if tool_result.get("ok"):
+            data = tool_result["data"]
+
+            answer = (
+                f"Inspection details for ID {inspection_id}:\n"
+                f"- Inspection Code: {data.get('inspection_code')}\n"
+                f"- Restaurant: {data.get('restaurant_name')}\n"
+                f"- Address: {data.get('restaurant_address')}\n"
+                f"- Violation Count: {data.get('violation_count')}\n"
+                f"- Restaurant ID: {data.get('restaurant_id')}\n"
+                f"- Created At: {data.get('created_at')}\n"
+                f"- Updated At: {data.get('updated_at')}"
+            )
+        else:
+            error = tool_result.get("error", "Unknown error")
+
+            if "not found" in error.lower():
+                answer = (
+                    f"Inspection {inspection_id} was not found "
+                    "in the available records."
+                )
+            else:
+                # Preserve retry/dead-letter behavior for
+                # actual inspection retrieval failures.
+                raise ValueError(
+                    f"Inspection retrieval failed: {error}"
+                )
+
+    elif "checklist" in question_lower:
+        answer = (
+            "A restaurant inspection checklist should cover "
+            "food storage temperatures, employee hygiene, "
+            "sanitation, cross-contamination prevention, "
+            "pest control, and equipment cleanliness."
+        )
+
+    else:
+        answer = (
+            "The requested task is not yet supported by "
+            "the Kafka Writer's available retrieval logic."
+        )
 
     return {
         "correlation_id": correlation_id,
@@ -69,6 +123,7 @@ def create_draft(task):
         "plan": steps,
         "draft": answer,
     }
+
 
 
 def main():
@@ -120,6 +175,10 @@ def main():
             else "missing"
         )
 
+        record_kafka_queue_wait(
+            message, correlation_id, 'writer'
+        )
+
         # Part 3.I: Skip previously processed tasks.
         if correlation_id in processed_ids:
             logger.info(
@@ -132,20 +191,26 @@ def main():
         # Part 3.III: Retry failed processing up to three times.
         for attempt in range(1, MAX_ATTEMPTS + 1):
             try:
-                draft = create_draft(task)
+                with trace_stage(
+                    correlation_id, 'writer',
+                    attempt=attempt,
+                    input_topic=INPUT_TOPIC,
+                    output_topic=OUTPUT_TOPIC,
+                ):
+                    draft = create_draft(task)
 
-                producer.send(
-                    OUTPUT_TOPIC,
-                    value=draft,
-                ).get(timeout=15)
+                    producer.send(
+                        OUTPUT_TOPIC,
+                        value=draft,
+                    ).get(timeout=15)
 
-                logger.info(
-                    "WRITER SENT: %s",
-                    json.dumps(draft),
-                )
+                    logger.info(
+                        "WRITER SENT: %s",
+                        json.dumps(draft),
+                    )
 
-                processed_ids.add(correlation_id)
-                break
+                    processed_ids.add(correlation_id)
+                    break
 
             except (KeyError, TypeError, ValueError) as error:
                 logger.warning(
@@ -166,10 +231,14 @@ def main():
                         "source_topic": INPUT_TOPIC,
                     }
 
-                    producer.send(
-                        DEAD_LETTER_TOPIC,
-                        value=dead_letter,
-                    ).get(timeout=15)
+                    with trace_stage(
+                        correlation_id, 'dead_letter_publish',
+                        output_topic=DEAD_LETTER_TOPIC,
+                    ):
+                        producer.send(
+                            DEAD_LETTER_TOPIC,
+                            value=dead_letter,
+                        ).get(timeout=15)
 
                     logger.error(
                         "WRITER DEAD LETTER SENT: %s",

@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 0.0,
+  "score_1_to_5": 1.0,
+  "reason": "The response fails to address the user's request to compare inspection outcomes for specific restaurants. It incorrectly states the task is unsupported without providing alternative solutions or clarifying the limitations, thereby omitting requested information and failing to meet helpfulness standards.",
+  "latency_ms": 7006.47,
+  "case_id": "case_20",
+  "repeat": 2,
+  "trace_id": "cc995632-9c93-424b-8e4b-660b78b09c9f",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

@@ -1,0 +1,100 @@
+{
+  "run_id": "9caacad92c",
+  "started_at": "2026-11-16T21:33:47.184954+00:00",
+  "finished_at": "2026-11-16T21:33:54.414006+00:00",
+  "target_confirmed_misses": 50,
+  "confirmed_misses": 50,
+  "failed_attempts": 0,
+  "attempts": 50,
+  "evaluation_executed": false,
+  "workload": "Same inspection question; distinct data_version per request to guarantee cold-cache misses",
+  "timing_notes": "Kafka queue waits use record timestamps. final_response_wait overlaps agent and queue spans, so stage durations must not all be summed.",
+  "statistics": {
+    "api_latency_ms": {
+      "mean_ms": 140.091,
+      "p50_ms": 136.75,
+      "p95_ms": 149.879,
+      "min_ms": 124.8,
+      "max_ms": 262.61
+    },
+    "queue_wait_total_ms": {
+      "mean_ms": 9.037,
+      "p50_ms": 8.303,
+      "p95_ms": 12.967,
+      "min_ms": 5.737,
+      "max_ms": 14.651
+    },
+    "cache_lookup_ms": {
+      "mean_ms": 12.767,
+      "p50_ms": 10.008,
+      "p95_ms": 12.654,
+      "min_ms": 7.337,
+      "max_ms": 135.647
+    },
+    "inbox_publish_ms": {
+      "mean_ms": 108.878,
+      "p50_ms": 108.466,
+      "p95_ms": 112.836,
+      "min_ms": 104.92,
+      "max_ms": 114.069
+    },
+    "planner_ms": {
+      "mean_ms": 2.03,
+      "p50_ms": 1.944,
+      "p95_ms": 3.305,
+      "min_ms": 1.049,
+      "max_ms": 3.577
+    },
+    "writer_ms": {
+      "mean_ms": 3.799,
+      "p50_ms": 3.646,
+      "p95_ms": 5.452,
+      "min_ms": 2.05,
+      "max_ms": 9.146
+    },
+    "reviewer_ms": {
+      "mean_ms": 1.623,
+      "p50_ms": 1.629,
+      "p95_ms": 2.172,
+      "min_ms": 0.957,
+      "max_ms": 2.53
+    },
+    "final_response_wait_ms": {
+      "mean_ms": 10.108,
+      "p50_ms": 9.626,
+      "p95_ms": 14.913,
+      "min_ms": 5.892,
+      "max_ms": 16.76
+    },
+    "cache_store_ms": {
+      "mean_ms": 0.815,
+      "p50_ms": 0.787,
+      "p95_ms": 1.144,
+      "min_ms": 0.454,
+      "max_ms": 1.188
+    },
+    "queue_planner_ms": {
+      "mean_ms": 3.478,
+      "p50_ms": 3.18,
+      "p95_ms": 5.611,
+      "min_ms": 1.558,
+      "max_ms": 6.019
+    },
+    "queue_writer_ms": {
+      "mean_ms": 2.878,
+      "p50_ms": 2.702,
+      "p95_ms": 4.103,
+      "min_ms": 1.749,
+      "max_ms": 4.703
+    },
+    "queue_reviewer_ms": {
+      "mean_ms": 2.681,
+      "p50_ms": 2.552,
+      "p95_ms": 3.495,
+      "min_ms": 1.27,
+      "max_ms": 6.619
+    }
+  },
+  "queue_wait_percent_of_e2e": 6.451,
+  "failures": []
+}

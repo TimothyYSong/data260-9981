@@ -1,0 +1,12 @@
+{
+  "raw_geval_score": 1.0,
+  "score_1_to_5": 5.0,
+  "reason": "The response directly answers the user's query by providing all requested inspection details for ID 10022, including specific fields like Inspection Code, Restaurant, Address, and timestamps. It is accurate, complete, and relevant without omitting any requested information.",
+  "latency_ms": 7131.59,
+  "case_id": "case_07",
+  "repeat": 2,
+  "trace_id": "e1dfb35d-ea4e-42d8-9e2f-d795cbb85989",
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "num_predict": 2048
+}

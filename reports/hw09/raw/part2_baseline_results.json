@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Find inspections for Restaurant 13.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": false,
+    "similarity": null,
+    "latency_ms": 23863.72,
+    "data_version": "v1"
+  },
+  {
+    "question": "Find inspections for Restaurant 13.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 43.22,
+    "data_version": "v1"
+  },
+  {
+    "question": "Show inspections associated with Restaurant 13.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": true,
+    "similarity": 0.9373,
+    "latency_ms": 176.52,
+    "data_version": "v1"
+  },
+  {
+    "question": "Find inspections for Restaurant 14.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": true,
+    "similarity": 0.9475,
+    "latency_ms": 8.4,
+    "data_version": "v1"
+  },
+  {
+    "question": "Find inspections for Restaurant 14.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": true,
+    "similarity": 0.9475,
+    "latency_ms": 8.54,
+    "data_version": "v1"
+  },
+  {
+    "question": "Show inspection records for Restaurant 14.",
+    "answer": "Here is the inspection detail for **Restaurant 14** (ID 10018):\n\n- **Inspection Code**: INSP-10018  \n- **Address**: 114 Test Street  \n- **Inspection Date**: October 5, 2026  \n- **Violation Count**: 0  \n- **Created At**: 2026-10-05T01:30:13  \n- **Last Updated**: 2026-10-05T01:35:35  \n\nWould you like details for any other inspections in this list?",
+    "is_cached": false,
+    "similarity": 0.8157,
+    "latency_ms": 47574.61,
+    "data_version": "v1"
+  },
+  {
+    "question": "Retrieve inspection details for inspection 10017.",
+    "answer": "Here are the details for inspection **10017**:\n\n- **Inspection Code**: INSP-10017  \n- **Restaurant Name**: Restaurant 13  \n- **Restaurant Address**: 113 Test Street  \n- **Violation Count**: 0  \n- **Created At**: 2026-10-05T01:30:13  \n- **Updated At**: 2026-11-09T05:26:18  \n\nNo violations were noted for this inspection.",
+    "is_cached": false,
+    "similarity": 0.6141,
+    "latency_ms": 10945.28,
+    "data_version": "v1"
+  },
+  {
+    "question": "Retrieve inspection details for inspection 10017.",
+    "answer": "Here are the details for inspection **10017**:\n\n- **Inspection Code**: INSP-10017  \n- **Restaurant Name**: Restaurant 13  \n- **Restaurant Address**: 113 Test Street  \n- **Violation Count**: 0  \n- **Created At**: 2026-10-05T01:30:13  \n- **Updated At**: 2026-11-09T05:26:18  \n\nNo violations were noted for this inspection.",
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 44.94,
+    "data_version": "v1"
+  },
+  {
+    "question": "Show the details of inspection 10017.",
+    "answer": "Here are the details for inspection **10017**:\n\n- **Inspection Code**: INSP-10017  \n- **Restaurant Name**: Restaurant 13  \n- **Restaurant Address**: 113 Test Street  \n- **Violation Count**: 0  \n- **Created At**: 2026-10-05T01:30:13  \n- **Updated At**: 2026-11-09T05:26:18  \n\nThis inspection shows no violations were recorded.",
+    "is_cached": false,
+    "similarity": 0.8444,
+    "latency_ms": 10220.19,
+    "data_version": "v1"
+  },
+  {
+    "question": "Find inspections for Restaurant 15.",
+    "answer": "The search returned 10 inspections. The first entry is for \"Restaurant 13\" at 113 Test Street (restaurant ID 13). Other results include restaurants numbered 130-138 with similar naming patterns. Would you like details about a specific inspection or restaurant?",
+    "is_cached": true,
+    "similarity": 0.938,
+    "latency_ms": 97.19,
+    "data_version": "v1"
+  }
+]

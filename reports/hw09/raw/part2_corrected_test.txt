@@ -1,0 +1,70 @@
+W1108 21:52:09.252000 62573 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+INFO:sentence_transformers.base.model:No device provided, using mps
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8855.82it/s]
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:semantic_cache:Redis vector index already exists: s9981:semantic:index
+Timothy Song | DATA 260 | HW9 Part 2
+=== Semantic Cache Test ===
+INFO:semantic_cache:CACHE MISS question=Find inspections for Restaurant 13. nearest_similarity=None
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:semantic_cache:CACHE STORED key=s9981:semantic:entry:dd69af3380a74d1fb97479fae8164484 version=v1
+INFO:semantic_cache:CACHE MISS COMPLETED latency_ms=21696.67
+Query #1 | Cached=False | Similarity=None | Latency=21696.67 ms
+INFO:semantic_cache:CACHE HIT similarity=1.0000 latency_ms=82.26
+Query #2 | Cached=True | Similarity=1.0 | Latency=82.26 ms
+INFO:semantic_cache:CACHE HIT similarity=0.9373 latency_ms=17.69
+Query #3 | Cached=True | Similarity=0.9373 | Latency=17.69 ms
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Find inspections for Restaurant 14. | cached=Find inspections for Restaurant 13.
+INFO:semantic_cache:CACHE MISS question=Find inspections for Restaurant 14. nearest_similarity=None
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:semantic_cache:CACHE STORED key=s9981:semantic:entry:575d0283c4a941559c1550cbfc451ed4 version=v1
+INFO:semantic_cache:CACHE MISS COMPLETED latency_ms=19031.53
+Query #4 | Cached=False | Similarity=None | Latency=19031.53 ms
+INFO:semantic_cache:CACHE HIT similarity=1.0000 latency_ms=75.51
+Query #5 | Cached=True | Similarity=1.0 | Latency=75.51 ms
+INFO:semantic_cache:CACHE HIT similarity=0.8646 latency_ms=6.56
+Query #6 | Cached=True | Similarity=0.8646 | Latency=6.56 ms
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Retrieve inspection details for inspection 10017. | cached=Find inspections for Restaurant 14.
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Retrieve inspection details for inspection 10017. | cached=Find inspections for Restaurant 13.
+INFO:semantic_cache:CACHE MISS question=Retrieve inspection details for inspection 10017. nearest_similarity=None
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:semantic_cache:CACHE STORED key=s9981:semantic:entry:d500dcb7785b4d0187be5c6273a35241 version=v1
+INFO:semantic_cache:CACHE MISS COMPLETED latency_ms=10631.50
+Query #7 | Cached=False | Similarity=None | Latency=10631.50 ms
+INFO:semantic_cache:CACHE HIT similarity=1.0000 latency_ms=42.94
+Query #8 | Cached=True | Similarity=1.0 | Latency=42.94 ms
+INFO:semantic_cache:CACHE MISS question=Show the details of inspection 10017. nearest_similarity=0.8444
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:semantic_cache:CACHE STORED key=s9981:semantic:entry:2eb73858e84d401e880477dd6d21d63f version=v1
+INFO:semantic_cache:CACHE MISS COMPLETED latency_ms=10121.03
+Query #9 | Cached=False | Similarity=0.8444 | Latency=10121.03 ms
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Find inspections for Restaurant 15. | cached=Find inspections for Restaurant 14.
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Find inspections for Restaurant 15. | cached=Find inspections for Restaurant 13.
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Find inspections for Restaurant 15. | cached=Retrieve inspection details for inspection 10017.
+INFO:semantic_cache:CACHE CANDIDATE REJECTED: entity mismatch | incoming=Find inspections for Restaurant 15. | cached=Show the details of inspection 10017.
+INFO:semantic_cache:CACHE MISS question=Find inspections for Restaurant 15. nearest_similarity=None
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:semantic_cache:CACHE STORED key=s9981:semantic:entry:14406653408c49cbb3067a4991a31f1c version=v1
+INFO:semantic_cache:CACHE MISS COMPLETED latency_ms=16167.67
+Query #10 | Cached=False | Similarity=None | Latency=16167.67 ms
+
+=== Performance Summary ===
+Total queries: 10
+Cache hits: 5
+Cache misses: 5
+Hit rate: 50.00%
+Average cached latency: 44.99 ms
+Average non-cached latency: 15529.68 ms
+
+Saved results to reports/hw09/raw/part2_results.json

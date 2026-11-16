@@ -1,0 +1,207 @@
+{
+  "summary": {
+    "validation_cases": 8,
+    "before_correct": 8,
+    "after_correct": 8,
+    "before_incorrect": 0,
+    "after_incorrect": 0,
+    "regressions": [],
+    "relevant_regressions": [],
+    "unrelated_failures": [],
+    "decision": "KEEP"
+  },
+  "results": [
+    {
+      "id": "val_01",
+      "question": "What is the violation count for inspection 10024?",
+      "inspection_id": 10024,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The violation count for inspection 10024 is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the violation_count of 0 from the ground truth data.  \n3. No factual correction is needed.",
+        "latency_ms": 10006.26
+      },
+      "after": {
+        "answer": "The violation count for inspection 10024 is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the violation_count of 0 from the ground truth data.  \n3. No factual correction is needed.",
+        "latency_ms": 9396.76
+      }
+    },
+    {
+      "id": "val_02",
+      "question": "What is the restaurant name and address for inspection 10025?",
+      "inspection_id": 10025,
+      "lesson_relevant": false,
+      "before": {
+        "answer": "The restaurant name is Restaurant 21, and the address is 121 Test Street.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides the restaurant name and address as specified in the ground truth.  \n3. No factual corrections are needed.",
+        "latency_ms": 11318.67
+      },
+      "after": {
+        "answer": "The restaurant name is Restaurant 21, and the address is 121 Test Street.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides the restaurant name and address as specified in the ground truth.  \n3. No factual corrections are needed.",
+        "latency_ms": 10356.63
+      }
+    },
+    {
+      "id": "val_03",
+      "question": "What is the inspection code and violation count for inspection 10026?",
+      "inspection_id": 10026,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The inspection code for inspection 10026 is **INSP-10026**, and the violation count is **0**.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the ground truth data without adding or omitting any information.  \n3. No factual corrections are needed.",
+        "latency_ms": 10986.96
+      },
+      "after": {
+        "answer": "The inspection code for inspection 10026 is **INSP-10026**, and the violation count is **0**.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the ground truth data without adding or omitting any information.  \n3. No factual corrections are needed.",
+        "latency_ms": 11323.48
+      }
+    },
+    {
+      "id": "val_04",
+      "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10027.",
+      "inspection_id": 10027,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The restaurant name is Restaurant 23, the inspection code is INSP-10027, the address is 123 Test Street, and the violation count is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides all requested details (restaurant name, inspection code, address, and violation count) as specified in the ground truth data.  \n3. No factual corrections are needed.",
+        "latency_ms": 13230.93
+      },
+      "after": {
+        "answer": "The restaurant name is Restaurant 23, the inspection code is INSP-10027, the address is 123 Test Street, and the violation count is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides all requested details (restaurant name, inspection code, address, and violation count) as specified in the ground truth data.  \n3. No factual corrections are needed.",
+        "latency_ms": 11497.59
+      }
+    },
+    {
+      "id": "val_05",
+      "question": "What is the violation count for inspection 10028?",
+      "inspection_id": 10028,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The violation count for inspection 10028 is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the violation count from the ground truth data.  \n3. No factual correction is needed.",
+        "latency_ms": 10402.16
+      },
+      "after": {
+        "answer": "The violation count for inspection 10028 is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the violation count from the ground truth data.  \n3. No factual correction is needed.",
+        "latency_ms": 10630.04
+      }
+    },
+    {
+      "id": "val_06",
+      "question": "What is the restaurant name and address for inspection 10029?",
+      "inspection_id": 10029,
+      "lesson_relevant": false,
+      "before": {
+        "answer": "The restaurant name is **Restaurant 25** and the address is **125 Test Street**.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides the restaurant name and address as specified in the ground truth.  \n3. No factual corrections are needed.",
+        "latency_ms": 10737.62
+      },
+      "after": {
+        "answer": "The restaurant name is **Restaurant 25** and the address is **125 Test Street**.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides the restaurant name and address as specified in the ground truth.  \n3. No factual corrections are needed.",
+        "latency_ms": 9917.26
+      }
+    },
+    {
+      "id": "val_07",
+      "question": "What is the inspection code and violation count for inspection 10030?",
+      "inspection_id": 10030,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The inspection code for inspection 10030 is **INSP-10030**, and the violation count is **0**.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the ground truth data without adding or omitting any information.  \n3. No factual corrections are needed.",
+        "latency_ms": 11213.12
+      },
+      "after": {
+        "answer": "The inspection code for inspection 10030 is INSP-10030, and the violation count is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer accurately reflects the ground truth data without adding or omitting any information.  \n3. No factual corrections are needed.",
+        "latency_ms": 11365.72
+      }
+    },
+    {
+      "id": "val_08",
+      "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10031.",
+      "inspection_id": 10031,
+      "lesson_relevant": true,
+      "before": {
+        "answer": "The restaurant name is Restaurant 27, the inspection code is INSP-10031, the address is 127 Test Street, and the violation count is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides all requested details (restaurant name, inspection code, address, and violation count) as specified in the ground truth data.  \n3. No factual corrections are needed.",
+        "latency_ms": 12361.3
+      },
+      "after": {
+        "answer": "The restaurant name is Restaurant 27, the inspection code is INSP-10031, the address is 127 Test Street, and the violation count is 0.",
+        "passed": true,
+        "deterministic_result": "PASS",
+        "llm_result": "PASS",
+        "explanation": "All required facts match the reference dataset.",
+        "llm_assessment": "1. PASS  \n2. The answer correctly provides all requested details (restaurant name, inspection code, address, and violation count) as specified in the ground truth data.  \n3. No factual corrections are needed.",
+        "latency_ms": 12222.72
+      }
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+
+=======================================================
+TEST 1: CONTROLLED FAILURE AND REPAIR
+=======================================================
+
+=== ATTEMPT 1 ===
+Question: What is the violation count for inspection 10016?
+Answer: Inspection 10016 has 3 violations.
+Evaluation: REVISE
+Explanation: One or both evaluation checks rejected the answer.
+Feedback: Correct using these reference facts: violation_count=0
+Also address the evaluator's concerns:
+REVISE
+Reason: The answer incorrectly states there are 3 violations, but the ground truth shows the violation count is 0.
+Correction: Change "3 violations" to "0 violations"
+
+=== ATTEMPT 2 ===
+Question: What is the violation count for inspection 10016?
+Answer: The violation count for inspection 10016 is 0.
+Evaluation: PASS
+Explanation: Deterministic and LLM checks passed.
+
+=== FINAL RESULT 1 ===
+{
+  "question": "What is the violation count for inspection 10016?",
+  "inspection_id": 10016,
+  "final_answer": "The violation count for inspection 10016 is 0.",
+  "final_evaluation": "PASS",
+  "attempts": 2,
+  "latency_ms": 12772.7,
+  "history": [
+    {
+      "attempt": 1,
+      "answer": "Inspection 10016 has 3 violations.",
+      "evaluation": {
+        "result": "REVISE",
+        "explanation": "One or both evaluation checks rejected the answer.",
+        "feedback": "Correct using these reference facts: violation_count=0\nAlso address the evaluator's concerns:\nREVISE\nReason: The answer incorrectly states there are 3 violations, but the ground truth shows the violation count is 0.\nCorrection: Change \"3 violations\" to \"0 violations\"",
+        "missing_or_incorrect": [
+          {
+            "field": "violation_count",
+            "expected": "0"
+          }
+        ],
+        "llm_result": "REVISE",
+        "llm_assessment": "REVISE\nReason: The answer incorrectly states there are 3 violations, but the ground truth shows the violation count is 0.\nCorrection: Change \"3 violations\" to \"0 violations\""
+      }
+    },
+    {
+      "attempt": 2,
+      "answer": "The violation count for inspection 10016 is 0.",
+      "evaluation": {
+        "result": "PASS",
+        "explanation": "Deterministic and LLM checks passed.",
+        "feedback": null,
+        "missing_or_incorrect": [],
+        "llm_result": "PASS",
+        "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10016 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+      }
+    }
+  ]
+}
+
+=======================================================
+TEST 2: NORMAL ANSWERING WORKFLOW
+=======================================================
+
+=== ATTEMPT 1 ===
+Question: What is the violation count for inspection 10017?
+Answer: The violation count for inspection 10017 is 0.
+Evaluation: PASS
+Explanation: Deterministic and LLM checks passed.
+
+=== FINAL RESULT 2 ===
+{
+  "question": "What is the violation count for inspection 10017?",
+  "inspection_id": 10017,
+  "final_answer": "The violation count for inspection 10017 is 0.",
+  "final_evaluation": "PASS",
+  "attempts": 1,
+  "latency_ms": 7863.04,
+  "history": [
+    {
+      "attempt": 1,
+      "answer": "The violation count for inspection 10017 is 0.",
+      "evaluation": {
+        "result": "PASS",
+        "explanation": "Deterministic and LLM checks passed.",
+        "feedback": null,
+        "missing_or_incorrect": [],
+        "llm_result": "PASS",
+        "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10017 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+      }
+    }
+  ]
+}
+
+ALL REVISION WORKFLOW TESTS PASSED

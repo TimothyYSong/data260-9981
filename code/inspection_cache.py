@@ -8,11 +8,14 @@ from models import RestaurantInspection
 
 logger = logging.getLogger(__name__)
 
+# Student-specific prefix required for all Redis keys.
 PREFIX = "s9981"
 
 
 class InspectionCache:
     def __init__(self):
+        # STEP 1: Connect to Redis.
+        # Redis stores the view counter in memory for fast updates.
         self.redis_client = redis.Redis(
             host=os.getenv("REDIS_HOST", "localhost"),
             port=int(os.getenv("REDIS_PORT", "6379")),
@@ -20,14 +23,18 @@ class InspectionCache:
         )
 
     def increment_inspection_views(self, inspection_id):
+        # STEP 2: Create a unique Redis key for this inspection.
+        # Example: s9981:views:inspection:10016
         key = f"{PREFIX}:views:inspection:{inspection_id}"
 
-        # Verify inspection exists.
+        # STEP 3: Verify the inspection exists in the SQL database.
+        # Also retrieve the previously saved view count.
         with SessionLocal() as session:
             inspection = session.get(
                 RestaurantInspection, inspection_id
             )
 
+            # Prevent counting views for nonexistent inspections.
             if inspection is None:
                 raise ValueError(
                     f"Inspection {inspection_id} not found"
@@ -35,20 +42,27 @@ class InspectionCache:
 
             persisted_count = inspection.view_count
 
-        # Initialize counter from database if missing.
+        # STEP 4: Initialize the Redis counter if it doesn't exist.
+        # SETNX only sets the value when the key is missing.
+        # This prevents resetting an existing counter.
         self.redis_client.setnx(key, persisted_count)
 
-        # Increment Redis on each access.
+        # STEP 5: Increment the Redis counter by 1.
+        # INCR is atomic and returns the updated count.
         count = self.redis_client.incr(key)
 
-        # Persist to SQL every 10 increments.
+        # STEP 6: Synchronize the counter with SQL every 10 views.
+        # Example: counts 10, 20, 30, etc.
         if count % 10 == 0:
+
+            # Update the inspection's view_count in the SQL database.
             with SessionLocal.begin() as session:
                 inspection = session.get(
                     RestaurantInspection, inspection_id
                 )
                 inspection.view_count = count
 
+            # Log a message confirming database synchronization.
             logger.info(
                 "Synced views to database: "
                 "inspection=%s, count=%s",
@@ -56,4 +70,6 @@ class InspectionCache:
                 count,
             )
 
+        # STEP 7: Return the current count from Redis.
+        # Example: Access #25 -> Total = 25
         return count

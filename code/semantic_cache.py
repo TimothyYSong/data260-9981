@@ -1,4 +1,3 @@
-
 import logging
 import os
 import re
@@ -17,6 +16,8 @@ from agent import run_agent
 
 logger = logging.getLogger(__name__)
 
+# DEMO 1 — Configuration: all cache keys use my student prefix (s9981).
+# The selected default similarity threshold is 0.95 (tested in Part 3).
 # Personal configuration
 PREFIX = "s9981"
 
@@ -32,6 +33,8 @@ DEFAULT_DATA_VERSION = "v1"
 TOP_K = 20
 
 
+# DEMO 2 — Extra safety: extract explicit restaurant/inspection IDs so
+# questions about two different IDs do not share an answer by mistake.
 def extract_entity_ids(question):
     """
     Extract explicit restaurant and inspection identifiers.
@@ -82,6 +85,8 @@ def compatible_entities(incoming, cached):
 
 
 class SemanticCache:
+    # DEMO 3 — Setup: connect to Redis Stack (vector-search capable),
+    # load SentenceTransformers, and ensure the vector index exists.
     def __init__(self):
         # Connect to Redis Stack, separate from HW9 Part 1 Redis.
         self.redis_client = redis.Redis(
@@ -104,6 +109,9 @@ class SemanticCache:
         # Ensure the Redis vector index exists.
         self.create_index()
 
+    # DEMO 4 — Index schema: store original question, final answer,
+    # data-version tag, and 384-dimensional FLOAT32 vector.
+    # Redis uses COSINE distance when searching nearest vectors.
     def create_index(self):
         """
         Create a Redis vector index if one does not already exist.
@@ -158,6 +166,8 @@ class SemanticCache:
             INDEX_NAME,
         )
 
+    # DEMO 5 — EMBEDDING: convert the incoming question to a
+    # normalized 384-number vector representing its semantic meaning.
     def embed(self, query):
         """
         Convert a question into a normalized FLOAT32 embedding.
@@ -175,6 +185,9 @@ class SemanticCache:
             dtype=np.float32,
         ).tobytes()
 
+    # DEMO 6 — SEARCH: find up to 20 nearest cached questions in Redis,
+    # filter to the requested data version, reject mismatched IDs,
+    # then turn Redis cosine DISTANCE into SIMILARITY (1 - distance).
     def search(self, embedding, data_version, question):
         """
         Search Redis for semantically similar cached questions.
@@ -251,6 +264,8 @@ class SemanticCache:
         # No entity-compatible candidate found.
         return None
 
+    # DEMO 7 — STORE: on a successful miss, save the question,
+    # embedding, final answer, and data-version marker in Redis.
     def store(
         self,
         query,
@@ -283,6 +298,8 @@ class SemanticCache:
 
         return key
 
+    # DEMO 8 — MAIN FLOW: measure time, embed question, search cache,
+    # and choose HIT or MISS based on similarity >= threshold.
     def ask(
         self,
         question,
@@ -326,6 +343,8 @@ class SemanticCache:
         )
 
         # --------------------------------------------------
+        # CACHE HIT — return the previous answer immediately.
+        # Do NOT call run_agent(). is_cached=True and latency is reported.
         # CACHE HIT
         # --------------------------------------------------
         if (
@@ -354,6 +373,8 @@ class SemanticCache:
             }
 
         # --------------------------------------------------
+        # CACHE MISS — call the existing HW8 agent, check success,
+        # store its answer, and return is_cached=False with latency.
         # CACHE MISS
         # --------------------------------------------------
         logger.info(

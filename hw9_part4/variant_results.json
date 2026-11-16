@@ -1,0 +1,1071 @@
+{
+  "model": "qwen3:8b",
+  "test_dataset_sha256": "0ca3964b1572e0e9211eb1ba6472b198b572cb39f5f1c0df77a932e3f037c05c",
+  "test_cases": 8,
+  "validation_decision": "KEEP",
+  "summary": [
+    {
+      "variant": "Baseline",
+      "correct_answers": 8,
+      "incorrect_answers": 0,
+      "average_attempts": 1,
+      "average_latency_ms": 5396.04
+    },
+    {
+      "variant": "Evaluator Repair",
+      "correct_answers": 8,
+      "incorrect_answers": 0,
+      "average_attempts": 1,
+      "average_latency_ms": 9844.12
+    },
+    {
+      "variant": "Lesson Memory",
+      "correct_answers": 8,
+      "incorrect_answers": 0,
+      "average_attempts": 1,
+      "average_latency_ms": 10230.15
+    },
+    {
+      "variant": "Validated Improvement",
+      "correct_answers": 8,
+      "incorrect_answers": 0,
+      "average_attempts": 1,
+      "average_latency_ms": 10222.26
+    }
+  ],
+  "results": {
+    "Baseline": [
+      {
+        "id": "test_01",
+        "question": "What is the violation count for inspection 10032?",
+        "inspection_id": 10032,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10032 is 0.",
+        "attempts": 1,
+        "latency_ms": 4698.01,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10032 is 0.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_02",
+        "question": "What is the restaurant name and address for inspection 10033?",
+        "inspection_id": 10033,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+        "attempts": 1,
+        "latency_ms": 5335.14,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+        }
+      },
+      {
+        "id": "test_03",
+        "question": "What is the inspection code and violation count for inspection 10034?",
+        "inspection_id": 10034,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 5351.43,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_04",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10035.",
+        "inspection_id": 10035,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 5415.01,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+        }
+      },
+      {
+        "id": "test_05",
+        "question": "What is the violation count for inspection 10036?",
+        "inspection_id": 10036,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10036 is 0.",
+        "attempts": 1,
+        "latency_ms": 4577.62,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10036 is 0.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_06",
+        "question": "What is the restaurant name and address for inspection 10037?",
+        "inspection_id": 10037,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+        "attempts": 1,
+        "latency_ms": 5939.81,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_07",
+        "question": "What is the inspection code and violation count for inspection 10038?",
+        "inspection_id": 10038,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10038 is **INSP-10038**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 5372.67,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10038 is **INSP-10038**, and the violation count is **0**.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10038\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_08",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10039.",
+        "inspection_id": 10039,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 6478.6,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+            "evaluation": null
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without omission, contradiction, or unsupported claims. All values match the ground truth data."
+        }
+      }
+    ],
+    "Evaluator Repair": [
+      {
+        "id": "test_01",
+        "question": "What is the violation count for inspection 10032?",
+        "inspection_id": 10032,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10032 is 0.",
+        "attempts": 1,
+        "latency_ms": 8454.1,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10032 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_02",
+        "question": "What is the restaurant name and address for inspection 10033?",
+        "inspection_id": 10033,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+        "attempts": 1,
+        "latency_ms": 9396.53,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+        }
+      },
+      {
+        "id": "test_03",
+        "question": "What is the inspection code and violation count for inspection 10034?",
+        "inspection_id": 10034,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 10252.18,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_04",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10035.",
+        "inspection_id": 10035,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11168.13,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+        }
+      },
+      {
+        "id": "test_05",
+        "question": "What is the violation count for inspection 10036?",
+        "inspection_id": 10036,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10036 is 0.",
+        "attempts": 1,
+        "latency_ms": 7860.12,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10036 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_06",
+        "question": "What is the restaurant name and address for inspection 10037?",
+        "inspection_id": 10037,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+        "attempts": 1,
+        "latency_ms": 9865.99,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_07",
+        "question": "What is the inspection code and violation count for inspection 10038?",
+        "inspection_id": 10038,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10038 is **INSP-10038**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 10250.62,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10038 is **INSP-10038**, and the violation count is **0**.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10038\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10038\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_08",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10039.",
+        "inspection_id": 10039,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11505.31,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without omission, contradiction, or unsupported claims. All values match the ground truth data."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without omission, contradiction, or unsupported claims. All values match the ground truth data."
+        }
+      }
+    ],
+    "Lesson Memory": [
+      {
+        "id": "test_01",
+        "question": "What is the violation count for inspection 10032?",
+        "inspection_id": 10032,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10032 is 0.",
+        "attempts": 1,
+        "latency_ms": 9005.3,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10032 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_02",
+        "question": "What is the restaurant name and address for inspection 10033?",
+        "inspection_id": 10033,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+        "attempts": 1,
+        "latency_ms": 9350.89,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+        }
+      },
+      {
+        "id": "test_03",
+        "question": "What is the inspection code and violation count for inspection 10034?",
+        "inspection_id": 10034,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 11427.4,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_04",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10035.",
+        "inspection_id": 10035,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11473.31,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+        }
+      },
+      {
+        "id": "test_05",
+        "question": "What is the violation count for inspection 10036?",
+        "inspection_id": 10036,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10036 is 0.",
+        "attempts": 1,
+        "latency_ms": 7967.67,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10036 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_06",
+        "question": "What is the restaurant name and address for inspection 10037?",
+        "inspection_id": 10037,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+        "attempts": 1,
+        "latency_ms": 9827.13,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_07",
+        "question": "What is the inspection code and violation count for inspection 10038?",
+        "inspection_id": 10038,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10038 is INSP-10038, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11418.13,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10038 is INSP-10038, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code (INSP-10038) and violation count (0) from the ground truth data without adding or omitting information.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code (INSP-10038) and violation count (0) from the ground truth data without adding or omitting information.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_08",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10039.",
+        "inspection_id": 10039,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "Restaurant 35, INSP-10039, 135 Test Street, violation count: 0.",
+        "attempts": 1,
+        "latency_ms": 11371.36,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "Restaurant 35, INSP-10039, 135 Test Street, violation count: 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly lists all requested fields (restaurant name, inspection code, address, violation count) without omission, error, or contradiction, fully supported by the ground truth data.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly lists all requested fields (restaurant name, inspection code, address, violation count) without omission, error, or contradiction, fully supported by the ground truth data.\nCorrection: None"
+        }
+      }
+    ],
+    "Validated Improvement": [
+      {
+        "id": "test_01",
+        "question": "What is the violation count for inspection 10032?",
+        "inspection_id": 10032,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10032 is 0.",
+        "attempts": 1,
+        "latency_ms": 8884.5,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10032 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10032 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_02",
+        "question": "What is the restaurant name and address for inspection 10033?",
+        "inspection_id": 10033,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+        "attempts": 1,
+        "latency_ms": 9470.76,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is **Restaurant 29** and the address is **129 Test Street** for inspection 10033.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10033 as specified in the ground truth. No factual errors or omissions are present."
+        }
+      },
+      {
+        "id": "test_03",
+        "question": "What is the inspection code and violation count for inspection 10034?",
+        "inspection_id": 10034,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+        "attempts": 1,
+        "latency_ms": 11540.96,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10034 is **INSP-10034**, and the violation count is **0**.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code \"INSP-10034\" and violation count \"0\" directly from the ground truth data without modification.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_04",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10035.",
+        "inspection_id": 10035,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11537.65,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 31, the inspection code is INSP-10035, the address is 131 Test Street, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without errors or omissions, fully aligning with the ground truth data."
+        }
+      },
+      {
+        "id": "test_05",
+        "question": "What is the violation count for inspection 10036?",
+        "inspection_id": 10036,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The violation count for inspection 10036 is 0.",
+        "attempts": 1,
+        "latency_ms": 7928.1,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The violation count for inspection 10036 is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly states the violation count for inspection 10036 as 0, which matches the violation_count field in the ground truth.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_06",
+        "question": "What is the restaurant name and address for inspection 10037?",
+        "inspection_id": 10037,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+        "attempts": 1,
+        "latency_ms": 9817.85,
+        "lessons_loaded": [],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 33, and the address is 133 Test Street.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly identifies the restaurant name and address for inspection 10037 as specified in the ground truth data.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_07",
+        "question": "What is the inspection code and violation count for inspection 10038?",
+        "inspection_id": 10038,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The inspection code for inspection 10038 is INSP-10038, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11018.33,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The inspection code for inspection 10038 is INSP-10038, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code (INSP-10038) and violation count (0) from the ground truth data without adding or omitting information.\nCorrection: None"
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides the inspection code (INSP-10038) and violation count (0) from the ground truth data without adding or omitting information.\nCorrection: None"
+        }
+      },
+      {
+        "id": "test_08",
+        "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10039.",
+        "inspection_id": 10039,
+        "correct": true,
+        "final_evaluation": "PASS",
+        "final_answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+        "attempts": 1,
+        "latency_ms": 11579.9,
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "history": [
+          {
+            "attempt": 1,
+            "answer": "The restaurant name is Restaurant 35, the inspection code is INSP-10039, the address is 135 Test Street, and the violation count is 0.",
+            "evaluation": {
+              "result": "PASS",
+              "explanation": "Deterministic and LLM checks passed.",
+              "feedback": null,
+              "missing_or_incorrect": [],
+              "llm_result": "PASS",
+              "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without omission, contradiction, or unsupported claims. All values match the ground truth data."
+            }
+          }
+        ],
+        "final_grading": {
+          "result": "PASS",
+          "explanation": "Deterministic and LLM checks passed.",
+          "feedback": null,
+          "missing_or_incorrect": [],
+          "llm_result": "PASS",
+          "llm_assessment": "PASS\nReason: The answer correctly provides all requested details (restaurant name, inspection code, address, violation count) without omission, contradiction, or unsupported claims. All values match the ground truth data."
+        }
+      }
+    ]
+  },
+  "latency_definition": "Elapsed time until the variant returns its final answer. Baseline grading is excluded; evaluator and revision latency are included for other variants."
+}

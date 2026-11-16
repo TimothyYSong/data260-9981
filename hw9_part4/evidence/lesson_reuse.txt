@@ -1,0 +1,7 @@
+=== LESSON REUSE DEMONSTRATION ===
+Question: What is the violation count for inspection 10018?
+Loaded lesson: lesson_001
+Correction: When a question asks about violations, explicitly state the violation count from the inspection record. Never guess or omit it.
+Answer: The violation count for inspection 10018 is 0.
+Evaluation: PASS
+Use count: 2

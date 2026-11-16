@@ -1,0 +1,42 @@
+[
+  {
+    "id": "val_01",
+    "inspection_id": 10024,
+    "question": "What is the violation count for inspection 10024?"
+  },
+  {
+    "id": "val_02",
+    "inspection_id": 10025,
+    "question": "What is the restaurant name and address for inspection 10025?"
+  },
+  {
+    "id": "val_03",
+    "inspection_id": 10026,
+    "question": "What is the inspection code and violation count for inspection 10026?"
+  },
+  {
+    "id": "val_04",
+    "inspection_id": 10027,
+    "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10027."
+  },
+  {
+    "id": "val_05",
+    "inspection_id": 10028,
+    "question": "What is the violation count for inspection 10028?"
+  },
+  {
+    "id": "val_06",
+    "inspection_id": 10029,
+    "question": "What is the restaurant name and address for inspection 10029?"
+  },
+  {
+    "id": "val_07",
+    "inspection_id": 10030,
+    "question": "What is the inspection code and violation count for inspection 10030?"
+  },
+  {
+    "id": "val_08",
+    "inspection_id": 10031,
+    "question": "Provide the restaurant name, inspection code, address, and violation count for inspection 10031."
+  }
+]

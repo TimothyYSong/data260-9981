@@ -1,0 +1,138 @@
+Timothy Song | DATA 260 | Homework 9
+RUN_LOG.txt — Recorded execution and verification summary
+Domain: Local Restaurant Inspection | SID4: 9981 | PREFIX: s9981
+Local model: qwen3:8b | Embeddings: all-MiniLM-L6-v2
+
+PURPOSE AND EVIDENCE
+This file summarizes experiments that were previously executed locally. It is not a claim that all commands were rerun when this log was assembled. Full or structured results are stored under reports/hw09/raw/ and hw9_part4/. Measured values below come from those saved outputs and the documented Part 3 stale-cache demonstration.
+
+PART 1 — REDIS VIEW COUNTER
+Evidence: reports/hw09/raw/part1_counter.txt
+Entity: RestaurantInspection; tested inspection ID: 10017
+Key format: s9981:views:inspection:{id}
+Operation: Redis INCR on every access; persist SQL view_count when count % 10 == 0.
+Recorded outcomes:
+  Access #1: Total = 1
+  Access #10: Total = 10; SQL synchronization logged
+  Access #20: Total = 20; SQL synchronization logged
+  Access #25: Total = 25
+  Post-test verification in HW9 report: Redis = 25; SQL = 20
+Result: Counter increments succeeded; periodic SQL synchronization observed.
+
+PART 2 — SEMANTIC RESPONSE CACHE
+Evidence: reports/hw09/raw/part2_corrected_test.txt and part2_results.json
+Implementation: Redis vector index, cosine similarity, versioned cached answers, HW8 agent on misses. Tested threshold = 0.85 with entity-aware rejection of mismatched inspection/restaurant identifiers.
+Recorded outcomes:
+  Total questions: 10
+  Cache hits: 5
+  Cache misses: 5
+  Hit rate: 50.00%
+  Mean cached latency: 44.99 ms
+  Mean non-cached latency: 15,529.68 ms
+  Example exact duplicate: similarity = 1.0000, cache hit
+  Example paraphrase: similarity = 0.9373, cache hit
+  Another valid paraphrase: similarity = 0.8444, cache miss below 0.85 threshold
+Result: Cache bypassed agent inference on hits and recorded hit/miss, similarity, and latency.
+
+PART 3.1 — PREREGISTERED LABELS
+Evidence: cache_cases.yaml; HW9 report documents preregistration commit dcc20be
+Reference queries: 10
+Labeled cases: 40 (10 exact duplicates; 10 paraphrases; 10 similar-but-different; 10 unrelated)
+Expected: 20 hits and 20 misses.
+
+PART 3.2 — THRESHOLD SWEEP
+Evidence: reports/hw09/raw/part3_sweep_summary.json, part3_sweep_results.json, part3_sweep_log.txt
+Five thresholds x 40 labeled cases = 200 evaluations.
+Threshold | Hits | Misses | False hits | Hit rate | False-hit rate | Mean latency (ms)
+0.75      | 30   | 10     | 10         | 75.00%   | 25.00%         | 2492.84
+0.80      | 30   | 10     | 10         | 75.00%   | 25.00%         | 2468.31
+0.85      | 24   | 16     | 10         | 60.00%   | 25.00%         | 4512.16
+0.90      | 19   | 21     | 9          | 47.50%   | 22.50%         | 8173.39
+0.95      | 15   | 25     | 5          | 37.50%   | 12.50%         | 10385.84
+The sweep evaluated raw cosine similarity without the entity-aware safeguard, to expose false-hit risk.
+
+PART 3.3 — FALSE HIT
+Evidence: reports/hw09/raw/part3_false_hit.txt
+Cached query: Find inspections for Restaurant 17.
+Incoming query: Find inspections for Restaurant 18.
+Similarity: 0.941031; evaluated threshold: 0.85
+Observed outcome: incorrect cache hit returned Restaurant 17 / inspection 10021 / 117 Test Street / 0 violations.
+Verified correct record: Restaurant 18 / inspection 10022 / 118 Test Street / 0 violations.
+Cause: near-identical query text obscured distinct restaurant identifiers in the embedding similarity.
+
+PART 3.4 — COST MODEL
+Evidence: reports/hw09/raw/part3_cost_model.txt
+Assumptions: cache miss costs $0.01; false hit costs $0.25. These are illustrative modeled costs, not measured expenses.
+Threshold | Misses | False hits | Modeled total
+0.75      | 10     | 10         | $2.60
+0.80      | 10     | 10         | $2.60
+0.85      | 16     | 10         | $2.66
+0.90      | 21     | 9          | $2.46
+0.95      | 25     | 5          | $1.50
+Selected threshold: 0.95 (lowest modeled cost in these experiments). Five false hits remained at this threshold; entity-aware safeguards are still important.
+
+PART 3.5 — STALE ANSWERS AND INVALIDATION
+Evidence: HW9 report Section 3.5 (terminal text retained there; original screenshots were not preserved).
+Inspection 10017 originally had violation_count = 0.
+  Version hw09stale1: initial query miss; repeated query hit returning 0.
+  SQL update: violation_count changed from 0 to 3.
+  Repeated query at old version: stale cache hit returned 0 while SQL had 3.
+  Version advanced to hw09stale2: cache miss; fresh answer returned 3.
+  Repeated new-version query: cache hit returned 3.
+  SQL restored to violation_count = 0; next required version was documented as hw09stale3.
+Result: Demonstrated stale response and version-based exclusion of older cache entries. Trade-off: broad invalidation can increase cache misses; version advancement must track database updates.
+
+PART 4 — SELF-IMPROVING MULTI-AGENT SYSTEM
+Evidence directory: hw9_part4/
+Source files: answering_agent.py, evaluator_agent.py, revision_workflow.py, lesson_memory.py, validate_lessons.py, compare_variants.py
+Ground truth: reference_data.json (40 unique inspection records)
+Input datasets: training_data.json (8); validation_data.json (8); test_data.json (8). The three input splits used distinct inspection IDs and contained no expected-answer fields.
+
+PART 4.1 — ANSWER REVISION
+Evidence: hw9_part4/evidence/revision_demo.txt
+Controlled question: What is the violation count for inspection 10016?
+  Attempt 1: "Inspection 10016 has 3 violations." -> REVISE
+  Feedback: reference violation_count=0; remove incorrect claim of 3.
+  Attempt 2: "The violation count for inspection 10016 is 0." -> PASS
+  Final attempts: 2; final result: PASS; demonstration latency: 12,772.70 ms.
+Normal question on inspection 10017: passed in 1 attempt; demonstration latency: 7,863.04 ms.
+Maximum permitted answer attempts: 2.
+
+EVALUATOR ROBUSTNESS CHECK
+Evidence: prior console results and hw9_part4/test_evaluator_robustness.py
+Initial version: 4/6 correctly classified; contradictory and unsupported-extra-fact answers were incorrectly passed by final decision logic.
+Corrected version: 6/6 correctly classified. Final PASS requires both deterministic checks and an explicit independent LLM PASS. A failed check generates REVISE and feedback.
+
+PART 4.2 — LESSON MEMORY
+Evidence: hw9_part4/lessons.json and hw9_part4/evidence/lesson_reuse.txt
+Two controlled training failures led to lesson_001 for "Missing or incorrect violation count".
+Saved fields: lesson_id, failure_pattern, correction, created_at, use_count.
+Later question: What is the violation count for inspection 10018?
+Loaded lesson: lesson_001; answer: 0 violations; evaluation: PASS.
+Recorded lesson use_count after later demonstration: 2.
+This demonstrates persistence and reuse, not an independently measured accuracy gain.
+
+PART 4.3 — LESSON VALIDATION
+Evidence: hw9_part4/validation_results.json
+Validation questions: 8
+Without lesson: 8 correct, 0 incorrect
+With lesson: 8 correct, 0 incorrect
+Regressions: 0; unrelated failures: 0
+Decision: KEEP (non-regression observed; no accuracy improvement demonstrated).
+
+PART 4.4 — HELD-OUT FOUR-VARIANT COMPARISON
+Evidence: hw9_part4/variant_results.json
+Same 8 held-out questions for each variant; 32 total executions.
+Variant               | Correct | Incorrect | Mean attempts | Mean latency (ms)
+Baseline              | 8       | 0         | 1.000         | 5396.04
+Evaluator Repair      | 8       | 0         | 1.000         | 9844.12
+Lesson Memory         | 8       | 0         | 1.000         | 10230.15
+Validated Improvement | 8       | 0         | 1.000         | 10222.26
+Test dataset unchanged: YES
+Lessons file unchanged during comparison: YES
+Result: All variants were correct on this small held-out set. No test-time revision was required; evaluator and lesson-enabled variants had additional latency without measured accuracy gains.
+
+FINAL NOTES
+- This summary is grounded in saved experiment artifacts; it does not substitute for raw logs, code, or the report figures.
+- The stale-cache sequence relies on the report's retained terminal excerpts, not a complete raw console transcript.
+- Keep the repository paths above with the final submission. Final Git tag, commit hash, and upload status are not asserted here because they have not been independently verified in these records.

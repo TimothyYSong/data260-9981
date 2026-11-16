@@ -1,0 +1,64 @@
+W1108 21:46:52.001000 60803 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+INFO:sentence_transformers.base.model:No device provided, using mps
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10036.08it/s]
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/optim/Desktop/260/data260-9981/code/semantic_cache.py:36: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  self.dimensions = self.model.get_sentence_embedding_dimension()
+INFO:semantic_cache:Redis vector index already exists
+Timothy Song | DATA 260 | HW9 Part 2
+=== Semantic Cache Test ===
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.11s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.11s/it]
+INFO:semantic_cache:CACHE MISS question=Find inspections for Restaurant 13. nearest_similarity=None
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Query #1 | Cached=False | Similarity=None | Latency=23863.72 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 25.84it/s]
+INFO:semantic_cache:CACHE HIT similarity=1.0000 latency_ms=43.22
+Query #2 | Cached=True | Similarity=1.0 | Latency=43.22 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.75it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.75it/s]
+INFO:semantic_cache:CACHE HIT similarity=0.9373 latency_ms=176.52
+Query #3 | Cached=True | Similarity=0.9373 | Latency=176.52 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 153.21it/s]
+INFO:semantic_cache:CACHE HIT similarity=0.9475 latency_ms=8.40
+Query #4 | Cached=True | Similarity=0.9475 | Latency=8.40 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 150.17it/s]
+INFO:semantic_cache:CACHE HIT similarity=0.9475 latency_ms=8.54
+Query #5 | Cached=True | Similarity=0.9475 | Latency=8.54 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 152.63it/s]
+INFO:semantic_cache:CACHE MISS question=Show inspection records for Restaurant 14. nearest_similarity=0.8157
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Query #6 | Cached=False | Similarity=0.8157 | Latency=47574.61 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.28it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.27it/s]
+INFO:semantic_cache:CACHE MISS question=Retrieve inspection details for inspection 10017. nearest_similarity=0.6141
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Query #7 | Cached=False | Similarity=0.6141 | Latency=10945.28 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 24.61it/s]
+INFO:semantic_cache:CACHE HIT similarity=1.0000 latency_ms=44.94
+Query #8 | Cached=True | Similarity=1.0 | Latency=44.94 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 180.45it/s]
+INFO:semantic_cache:CACHE MISS question=Show the details of inspection 10017. nearest_similarity=0.8444
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Query #9 | Cached=False | Similarity=0.8444 | Latency=10220.19 ms
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 10.83it/s]
+INFO:semantic_cache:CACHE HIT similarity=0.9380 latency_ms=97.19
+Query #10 | Cached=True | Similarity=0.938 | Latency=97.19 ms
+
+=== Performance Summary ===
+Total queries: 10
+Cache hits: 6
+Cache misses: 4
+Hit rate: 60.00%
+Average cached latency: 63.13 ms
+Average non-cached latency: 23150.95 ms
+
+Saved results to reports/hw09/raw/part2_results.json

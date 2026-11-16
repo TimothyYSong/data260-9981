@@ -1,0 +1,154 @@
+DATA 260 HOMEWORK 10 — EXPERIMENT RUN LOG
+SID4: 9981
+Domain: Local Restaurant Inspection
+Kafka prefix: s9981
+
+LOG PROVENANCE
+This file is reconstructed from preserved machine-readable
+experiment outputs, not copied from a historical terminal session.
+Timestamps and measurements below come from saved records.
+Generated at: 2026-11-16T21:57:17.069091+00:00
+
+======================================================================
+PART 3 — JUDGE VALIDATION
+======================================================================
+Model: qwen3:8b
+Temperature: 0
+num_predict: 2048
+Cases: 20
+Total judge runs: 60
+Spearman rho: 0.8942729987095904
+Mean absolute difference: 0.51
+Cases with changes: 0
+Mean pairwise change: 0.0
+Maximum pairwise change: 0.0
+Evidence: judge_runs/, judge_validation_cases.csv,
+judge_validation_summary.json
+
+======================================================================
+PART 4 — 50 CONFIRMED CACHE MISSES
+======================================================================
+Run ID: 9caacad92c
+Start (UTC): 2026-11-16T21:33:47.184954+00:00
+End (UTC): 2026-11-16T21:33:54.414006+00:00
+Confirmed misses: 50
+Failed attempts: 0
+GEval disabled during this benchmark.
+
+01/50 PASS trace_id=ee28fbf5-f8c6-4bdc-b2ea-ab21c3da17cf API=262.61ms queue=8.10ms data_version=hw10_bench_9caacad92c_1
+02/50 PASS trace_id=9ab294e4-4ec7-496d-a50a-575039a0ca89 API=131.40ms queue=8.42ms data_version=hw10_bench_9caacad92c_2
+03/50 PASS trace_id=710d0cc0-6811-495c-9bd4-b9d6f046c276 API=137.24ms queue=9.70ms data_version=hw10_bench_9caacad92c_3
+04/50 PASS trace_id=bb6a4711-6a21-4a93-83ba-97f4ff2681f5 API=132.29ms queue=7.39ms data_version=hw10_bench_9caacad92c_4
+05/50 PASS trace_id=029cf3a2-fa1e-4751-bad5-5d8e227ac5cd API=129.56ms queue=6.13ms data_version=hw10_bench_9caacad92c_5
+06/50 PASS trace_id=c54d30a7-bfba-4ebe-af5c-0a4bbfb94715 API=131.46ms queue=8.12ms data_version=hw10_bench_9caacad92c_6
+07/50 PASS trace_id=cf03e054-4c1e-45cc-883e-d8cfd0fac801 API=124.80ms queue=5.74ms data_version=hw10_bench_9caacad92c_7
+08/50 PASS trace_id=c9d2a090-4e45-4c63-b978-2db90ad3bdf5 API=130.38ms queue=5.74ms data_version=hw10_bench_9caacad92c_8
+09/50 PASS trace_id=ee297060-d7cf-4a85-81d2-3a9d64f9b14d API=130.63ms queue=6.99ms data_version=hw10_bench_9caacad92c_9
+10/50 PASS trace_id=8f73d8f8-711e-4682-910b-7a0dab17278e API=134.22ms queue=8.79ms data_version=hw10_bench_9caacad92c_10
+11/50 PASS trace_id=872d6009-1c0d-48f9-9591-d7d4ea093385 API=146.02ms queue=11.08ms data_version=hw10_bench_9caacad92c_11
+12/50 PASS trace_id=57ce1e1c-9c22-427b-87dd-282efeae0447 API=148.90ms queue=11.94ms data_version=hw10_bench_9caacad92c_12
+13/50 PASS trace_id=93951d83-1e05-4c30-87f6-01a2c62967f7 API=136.26ms queue=9.16ms data_version=hw10_bench_9caacad92c_13
+14/50 PASS trace_id=ff45d305-9913-4cca-be2f-45c2d609958c API=135.18ms queue=9.43ms data_version=hw10_bench_9caacad92c_14
+15/50 PASS trace_id=5c4a9b68-6966-49b1-97bc-9cdd51f1d47f API=139.05ms queue=8.42ms data_version=hw10_bench_9caacad92c_15
+16/50 PASS trace_id=c250f40a-d19e-4e80-9bbc-79651602b921 API=142.72ms queue=12.05ms data_version=hw10_bench_9caacad92c_16
+17/50 PASS trace_id=f4b0e455-1bc1-4812-a16e-55ea0de265e8 API=143.31ms queue=10.58ms data_version=hw10_bench_9caacad92c_17
+18/50 PASS trace_id=e1b4fb69-8515-4460-9b6a-3923c7b427b3 API=146.23ms queue=11.03ms data_version=hw10_bench_9caacad92c_18
+19/50 PASS trace_id=32cbc169-a35f-473a-8d45-43b72de66ad5 API=133.95ms queue=6.96ms data_version=hw10_bench_9caacad92c_19
+20/50 PASS trace_id=c80a0c84-f147-49ce-8d10-c114950ef945 API=132.20ms queue=7.32ms data_version=hw10_bench_9caacad92c_20
+21/50 PASS trace_id=41b6a273-0db1-46d6-b53d-a85f36e255f0 API=131.39ms queue=7.88ms data_version=hw10_bench_9caacad92c_21
+22/50 PASS trace_id=ba4969a7-b363-40a5-b97d-183cec891928 API=134.56ms queue=7.06ms data_version=hw10_bench_9caacad92c_22
+23/50 PASS trace_id=d4f60690-ee83-4ed2-b8b5-41e6fd2f8f4f API=133.12ms queue=7.79ms data_version=hw10_bench_9caacad92c_23
+24/50 PASS trace_id=4233f925-a29a-4856-803c-e1f494fb3ce1 API=139.81ms queue=8.14ms data_version=hw10_bench_9caacad92c_24
+25/50 PASS trace_id=d723a884-b41f-4eab-aa6e-38c1d7404581 API=131.04ms queue=6.20ms data_version=hw10_bench_9caacad92c_25
+26/50 PASS trace_id=30c17749-ede0-4ec3-9559-d8cd9a4859d3 API=133.34ms queue=8.18ms data_version=hw10_bench_9caacad92c_26
+27/50 PASS trace_id=e8d2b619-e5db-4183-ad8b-cec65074c614 API=138.37ms queue=9.64ms data_version=hw10_bench_9caacad92c_27
+28/50 PASS trace_id=4fd71952-60e5-48da-8ce7-a16994958650 API=139.90ms queue=8.10ms data_version=hw10_bench_9caacad92c_28
+29/50 PASS trace_id=6a44713b-bedb-411f-9b93-e17701bb64a5 API=140.26ms queue=10.13ms data_version=hw10_bench_9caacad92c_29
+30/50 PASS trace_id=faa39e15-5f42-43a5-97ac-4e33f7436447 API=132.83ms queue=7.86ms data_version=hw10_bench_9caacad92c_30
+31/50 PASS trace_id=9f379bcf-4b66-4b27-a9ab-52893701c662 API=130.83ms queue=7.03ms data_version=hw10_bench_9caacad92c_31
+32/50 PASS trace_id=e66da4ad-ba4e-4bb1-b2be-fc488989bbb6 API=129.68ms queue=8.03ms data_version=hw10_bench_9caacad92c_32
+33/50 PASS trace_id=15b540fa-6fa2-4a71-88b5-cc0d21abc7c8 API=132.29ms queue=7.45ms data_version=hw10_bench_9caacad92c_33
+34/50 PASS trace_id=59c71e27-9469-4868-883d-f0a514a6d95d API=143.50ms queue=13.29ms data_version=hw10_bench_9caacad92c_34
+35/50 PASS trace_id=87a79c06-cd46-45d5-84f5-684b2c79dd7b API=147.40ms queue=10.27ms data_version=hw10_bench_9caacad92c_35
+36/50 PASS trace_id=25b21d93-57e4-4a14-91a8-6b529d3ad472 API=135.75ms queue=7.30ms data_version=hw10_bench_9caacad92c_36
+37/50 PASS trace_id=17635dc8-9934-4742-8c5c-5190960fe247 API=138.54ms queue=9.79ms data_version=hw10_bench_9caacad92c_37
+38/50 PASS trace_id=64800efb-bf9a-4a2f-a2d3-99d65e737167 API=149.56ms queue=12.58ms data_version=hw10_bench_9caacad92c_38
+39/50 PASS trace_id=d2a56738-acab-4886-aa15-0cf98b180c62 API=150.33ms queue=11.68ms data_version=hw10_bench_9caacad92c_39
+40/50 PASS trace_id=b467fd0f-9eb1-44a3-8218-47f9f7c33492 API=145.38ms queue=10.79ms data_version=hw10_bench_9caacad92c_40
+41/50 PASS trace_id=5038fd7e-a5e6-45df-ad26-b3ffa0de3721 API=142.11ms queue=9.79ms data_version=hw10_bench_9caacad92c_41
+42/50 PASS trace_id=79b92b67-8569-4177-810f-89ad809b0b03 API=140.67ms queue=8.10ms data_version=hw10_bench_9caacad92c_42
+43/50 PASS trace_id=b072cfbc-f4dc-4d11-ab83-dfee4ac6983e API=133.12ms queue=6.46ms data_version=hw10_bench_9caacad92c_43
+44/50 PASS trace_id=e68afe41-8296-4378-a5cf-abb4f71f3bc5 API=127.97ms queue=7.37ms data_version=hw10_bench_9caacad92c_44
+45/50 PASS trace_id=caa69d3a-e81e-4d73-8192-7cadbb7435d2 API=135.50ms queue=9.51ms data_version=hw10_bench_9caacad92c_45
+46/50 PASS trace_id=44def06f-5ec3-4960-82f3-c4822b0daac4 API=144.99ms queue=14.65ms data_version=hw10_bench_9caacad92c_46
+47/50 PASS trace_id=22e87f54-3275-4469-b99e-b59b9fba461c API=145.47ms queue=13.46ms data_version=hw10_bench_9caacad92c_47
+48/50 PASS trace_id=7dccc331-1cc4-43e9-a443-4f9f4261833b API=138.20ms queue=7.94ms data_version=hw10_bench_9caacad92c_48
+49/50 PASS trace_id=6cd82094-9f1a-41dc-bf85-ed5eddfef60c API=140.08ms queue=10.25ms data_version=hw10_bench_9caacad92c_49
+50/50 PASS trace_id=8663eed6-7de8-425a-8624-1cc4251ad88f API=150.14ms queue=12.02ms data_version=hw10_bench_9caacad92c_50
+
+Queue/E2E: 6.451%
+
+STAGE LATENCY SUMMARY
+api_latency_ms: mean=140.091ms p50=136.75ms p95=149.879ms
+queue_wait_total_ms: mean=9.037ms p50=8.303ms p95=12.967ms
+cache_lookup_ms: mean=12.767ms p50=10.008ms p95=12.654ms
+inbox_publish_ms: mean=108.878ms p50=108.466ms p95=112.836ms
+planner_ms: mean=2.03ms p50=1.944ms p95=3.305ms
+writer_ms: mean=3.799ms p50=3.646ms p95=5.452ms
+reviewer_ms: mean=1.623ms p50=1.629ms p95=2.172ms
+final_response_wait_ms: mean=10.108ms p50=9.626ms p95=14.913ms
+cache_store_ms: mean=0.815ms p50=0.787ms p95=1.144ms
+queue_planner_ms: mean=3.478ms p50=3.18ms p95=5.611ms
+queue_writer_ms: mean=2.878ms p50=2.702ms p95=4.103ms
+queue_reviewer_ms: mean=2.681ms p50=2.552ms p95=3.495ms
+
+======================================================================
+DISTRIBUTED TRACE EXAMPLES
+======================================================================
+
+[CACHE HIT]
+trace_id=50470ced-148e-44a6-86d7-b70757fb96b7
+2026-11-16T21:15:44.215288+00:00 stage=cache_lookup status=success duration_ms=480.972 error=None
+
+[SUCCESSFUL KAFKA MISS]
+trace_id=7c287cc0-1d2b-4c6e-a1c9-962567dbbdef
+2026-11-16T21:24:47.908866+00:00 stage=cache_lookup status=success duration_ms=95.619 error=None
+2026-11-16T21:24:48.011381+00:00 stage=inbox_publish status=success duration_ms=107.974 error=None
+2026-11-16T21:24:48.117000+00:00 stage=queue_wait status=success duration_ms=4.053 error=None
+2026-11-16T21:24:48.119662+00:00 stage=final_response_wait status=success duration_ms=39.824 error=None
+2026-11-16T21:24:48.121302+00:00 stage=planner status=success duration_ms=2.917 error=None
+2026-11-16T21:24:48.123000+00:00 stage=queue_wait status=success duration_ms=1.633 error=None
+2026-11-16T21:24:48.124866+00:00 stage=writer status=success duration_ms=29.735 error=None
+2026-11-16T21:24:48.152000+00:00 stage=queue_wait status=success duration_ms=3.276 error=None
+2026-11-16T21:24:48.155686+00:00 stage=reviewer status=success duration_ms=3.391 error=None
+2026-11-16T21:24:48.160004+00:00 stage=cache_store status=success duration_ms=0.754 error=None
+
+[EVALUATOR-INCLUSIVE MISS]
+trace_id=0d0a40af-21ca-4dfd-9c1e-c3e4852e6a9b
+2026-11-16T21:28:55.062554+00:00 stage=cache_lookup status=success duration_ms=107.282 error=None
+2026-11-16T21:28:55.175507+00:00 stage=inbox_publish status=success duration_ms=105.878 error=None
+2026-11-16T21:28:55.280000+00:00 stage=queue_wait status=success duration_ms=1.632 error=None
+2026-11-16T21:28:55.281000+00:00 stage=queue_wait status=success duration_ms=2.14 error=None
+2026-11-16T21:28:55.281655+00:00 stage=final_response_wait status=success duration_ms=5.406 error=None
+2026-11-16T21:28:55.281781+00:00 stage=planner status=success duration_ms=1.074 error=None
+2026-11-16T21:28:55.283329+00:00 stage=writer status=success duration_ms=2.131 error=None
+2026-11-16T21:28:55.284000+00:00 stage=queue_wait status=success duration_ms=1.804 error=None
+2026-11-16T21:28:55.285959+00:00 stage=reviewer status=success duration_ms=0.838 error=None
+2026-11-16T21:28:55.287552+00:00 stage=evaluation status=success duration_ms=65550.77 error=None
+2026-11-16T21:30:00.838656+00:00 stage=cache_store status=success duration_ms=2.468 error=None
+
+[KAFKA FAILURE]
+trace_id=f9931c32-45ea-463b-b4f7-540e1e4d13fc
+2026-11-16T21:40:35.100227+00:00 stage=cache_lookup status=success duration_ms=98.036 error=None
+2026-11-16T21:40:35.199410+00:00 stage=kafka_round_trip status=error duration_ms=3.089 error=ValueError: Invalid file object: None
+
+======================================================================
+SOURCE FILES
+======================================================================
+reports/hw10/traces.jsonl
+reports/hw10/hw10_benchmark_50.csv
+reports/hw10/hw10_benchmark_summary.json
+reports/hw10/judge_runs/
+reports/hw10/judge_validation_cases.csv
+reports/hw10/judge_validation_summary.json
+reports/hw10/live_evaluations/

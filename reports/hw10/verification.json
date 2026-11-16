@@ -1,0 +1,89 @@
+{
+  "homework_number": 10,
+  "sid4": "9981",
+  "domain": "Local Restaurant Inspection",
+  "prefix": "s9981",
+  "commit_hash": "8555a822f944da0fb873b67df19c2a9b48172a81",
+  "model_configuration": {
+    "judge": "qwen3:8b",
+    "temperature": 0,
+    "num_predict": 2048,
+    "smoke_test_evaluation_enabled": false
+  },
+  "seed": 9981,
+  "verify_seed": 269981,
+  "started_at_utc": "2026-11-16T21:59:08.018552+00:00",
+  "finished_at_utc": "2026-11-16T21:59:08.263191+00:00",
+  "api": "http://127.0.0.1:8082/api/hw10/ask",
+  "checks": [
+    {
+      "name": "Cold-cache Kafka request succeeds",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Trace ID propagated across Kafka stages",
+      "passed": true,
+      "status": "PASS",
+      "detail": "trace_id=e24fa328-7594-4539-adff-ec2134fecc92; stages=['cache_lookup', 'cache_store', 'final_response_wait', 'inbox_publish', 'planner', 'queue_wait', 'reviewer', 'writer']"
+    },
+    {
+      "name": "Three Kafka queue-wait spans",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Cache miss recorded in tracing",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Smoke test skips GEval",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Repeated request returns semantic-cache hit",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Cache hit bypasses Kafka agents",
+      "passed": true,
+      "status": "PASS",
+      "detail": "trace_id=4e541c1d-d73c-4ab8-a0ff-bd3e2cac5102"
+    },
+    {
+      "name": "Judge validation has 20 cases and 60 runs",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "50 recorded confirmed cache misses",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Saved live GEval output matches trace",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Failure trace includes stage error",
+      "passed": true,
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "overall_status": "PASS"
+}

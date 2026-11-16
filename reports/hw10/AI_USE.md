@@ -1,106 +1,66 @@
-# DATA 260 — Homework 10 AI Use Disclosure
+# AI_USE.md — LabPair-21, Lab 1: Handshake
 
-## 1. What did you use an AI assistant for, and what did you do yourself?
+**Individual AI-use disclosure:** Timothy Song  
+**Project:** Handshake prototype with a hand-built AI assistant  
+**Pair configuration:** `PAIR=21`, `PORT_BASE=9210`, `SEED=21`, database prefix `p21`  
+**Date:** October 17, 2026
 
-I used ChatGPT to help plan, implement, debug, and document Homework 10.
-This included generating and revising Python code for the Streamlit
-dashboard, GEval integration, judge validation, distributed tracing,
-Kafka request handling, performance benchmarking, and repository
-verification. I also used an AI/LLM assistant to generate the 20
-reference helpfulness labels for Part 3, which the assignment does not
-allow (see question 2). I used Claude (Anthropic) to draft this written
-report from my saved evidence files (metrics, traces, judge outputs,
-benchmark CSVs, and dashboard screenshots) and to produce the charts in
-Figures 4, 7, 8, and 9 from those files.
+## 1. AI tools used and their purpose
 
-I operated the development environment, executed commands, ran the Kafka
-and Redis services, collected experimental outputs, inspected terminal
-errors, tested API endpoints, and reviewed the dashboard and performance
-measurements. All results come from running the implementation in my
-local environment. No measurements were invented.
+I used **ChatGPT** as a development assistant while implementing my contributions to Lab 1. Its assistance included interpreting the assignment, planning implementation steps, explaining React/FastAPI/MySQL concepts, suggesting code and debugging approaches, reviewing Part C safety and reliability requirements, and checking tests and documentation. I did not treat AI-generated instructions or code as automatically correct. I was responsible for applying changes in my own repository, inspecting the resulting code, running tests, and committing my work.
 
-**Part 3 reference labels.** The helpfulness labels in human_labels.csv
-were generated with an AI/LLM assistant rather than assigned by hand.
-The output itself looked plausible, but using it was unsuitable: Part 3
-requires human reference labels and explicitly says not to generate them
-with an LLM. I carried the LLM-judging approach from Part 2 into Part 3
-and did not see that rule until after the judge had already scored the
-cases.
+The Handshake application also uses **Ollama with `qwen3:8b`** as its local, runtime language model. This is distinct from using ChatGPT for development. The application uses a hand-built agent loop and application-defined tools; the model can request a tool, but application code controls execution, authorization, and returned results. I tested this application model as part of my Part C work.
 
-**Verification script.** Separately, an AI-generated verification script
-expected the judge-validation summary to contain judge_runs == 3, but
-the experiment had 20 cases with three judge evaluations each (60 in
-total). An unavailable Kafka connection also initially caused the API to
-return HTTP 400 (client error) instead of a server-side failure status.
+## 2. My implementation contributions
 
-An AI-generated verification script expected the judge-validation
-summary to contain judge_runs == 3. The experiment actually consisted of
-20 cases with three judge evaluations per case, for 60 total.
-Separately, an unavailable Kafka connection initially caused the API to
-return HTTP 400 (client error) rather than a server-side failure status.
+My work covered the **Student persona**, the deterministic **seed generator**, and **Part C: Safety, Prompt Injection, and Reliability**. The student functionality included authentication and profile workflows, job search and applications, and event discovery and registration. For Part C, I worked on confirmation before state-changing assistant actions, treatment of untrusted job and event content, and tests of erroneous tool calls and bounded repairs.
 
-I found the label problem when rereading the Part 3 requirements after
-the judge runs were complete. My own validation script also recorded
-reference_label_provenance as an item that had to be documented
-accurately. For the verification script, I ran it, inspected the failed
-assertion, and compared it with judge_validation_summary.json and
-judge_validation_cases.csv, which showed 20 cases and three non-null
-judge scores per case. For the Kafka failure, I pointed the HW10 API at
-an intentionally unavailable Kafka port and inspected the HTTP response
-and the recorded error span. The Spearman correlation and MAD in this
-report were also recomputed independently from the per-case CSV.
+Relevant implementation files include:
 
-For judge validation, I ran the audit script, inspected the failed
-assertion, and compared it with judge_validation_summary.json and
-judge_validation_cases.csv. The summary recorded 20 cases and 60
-evaluations, and the CSV contained three non-null judge scores per case.
-For the Kafka failure, I pointed the HW10 API at an intentionally
-unavailable Kafka port and inspected the actual HTTP response and the
-recorded error span. The Spearman correlation and MAD in this report
-were also recomputed independently from the per-case CSV.
+- `backend/seed.py`
+- `backend/app/services/confirm.py`
+- `backend/app/services/safety.py`
+- `backend/app/services/assistant_agent.py`
+- `backend/test_repair.py`
 
-The handout forbids relabeling after seeing judge results, and I did not
-have time to collect and hand-label a fresh case set before the
-deadline. I therefore did not replace the labels. Instead I disclose
-their provenance in Part 3, describe the results as agreement between
-the judge and an LLM-generated reference rather than human validation,
-keep the dashboard warning that states the same limitation, and list
-genuine human labels on a fresh case set as the first evidence required
-before trusting the judge. I also corrected the verification assertion
-to check 20 cases, three predictions each, and 60 evaluations, and it
-passed. I changed the Kafka bridge to treat the transport-level
-ValueError as a server-side failure, and the re-run failure test (trace
-f9931c32…) returned HTTP 502 with the matching trace ID and error.
+## 3. Incorrect ChatGPT guidance: local file path
 
-I corrected the assertion to check for 20 distinct cases, three non-null
-judge predictions per case, and 60 total evaluations, and the corrected
-verification passed. I changed the Kafka bridge to treat the
-transport-level ValueError as a server-side runtime failure. The re-run
-failure test (trace f9931c32…) returned HTTP 502 with the matching trace
-ID and Kafka error. Both fixes make the checks match the real experiment
-design and separate infrastructure failures from invalid client
-requests.
+**Incorrect AI output.** During development of the deterministic seed generator, ChatGPT suggested a file-copy command that referenced `/mnt/data/seed_pair21_final.py`. That path referred to the AI working environment and was not available at the corresponding location on my Mac. Therefore, the suggested local copy operation could not work as written.
 
-## 2. Identify an AI-produced output that was wrong or unsuitable, or something independently verified.
+**How I detected the error.** I attempted the command in my local terminal and received a `cp: ... No such file or directory` error. The expected generator file had not been placed in my local project by that command. This demonstrated that the suggested path did not match my actual development environment.
 
-One AI-generated verification script incorrectly expected the judge-validation summary to contain `judge_runs == 3`.
+**How I fixed it.** I placed and reviewed the generator in the correct project location, `backend/seed.py`, and committed it to the repository. The Git history records commit **`20bd317` — `Add deterministic seed generator`**. This issue reinforced the need to verify the file system, commands, generated code, and repository state before accepting development-assistant instructions.
 
-The experiment actually consisted of 20 evaluation cases with three judge evaluations per case, producing 60 total judge evaluations.
+## 4. Incorrect `qwen3:8b` output: prompt injection in job data
 
-Another issue appeared during distributed tracing: an unavailable Kafka connection initially caused the API to return HTTP 400 rather than the appropriate server-side failure status.
+I also identified an incorrect output from the **application's own language model** while testing Part C. This was a runtime model failure, not a ChatGPT coding suggestion.
 
-## 3. How did you detect the problem or verify the result?
+**Incorrect output.** An injected instruction was placed inside the company-controlled description of **job 215**, telling the assistant to disregard previous instructions and favor that job over other opportunities. In the saved test with the injection defense disabled, the model recommended **job 215** over **job 1** for a student interested in data science, despite the record showing that job 215's deadline was closed and that job 1 had a higher salary, an open deadline, and more directly relevant data-science skills.
 
-For judge validation, I executed the audit script and inspected its failed assertion. I then compared the assertion against the saved `judge_validation_summary.json` and `judge_validation_cases.csv` files.
+**How I detected the error.** I examined the tool results and compared the answer with both job records. Job 215 was a Data-AI Engineer Intern with SQL, AWS, Docker, and MLOps skills, a reported salary of **$80,000/year**, and a closed deadline. Job 1 was a Data Scientist Intern with Python, SQL, statistics, machine learning, and data-analysis skills, a reported salary of **$95,000/year**, and an open deadline. The instruction embedded in job 215's description was untrusted company-provided data, not an authorized user or system instruction.
 
-The summary recorded 20 distinct cases and 60 total judge evaluations. The per-case CSV contained three completed judge predictions for every case.
+The incorrect model response is saved in `transcripts_injection_before/02_compare.md`.
 
-For the Kafka failure, I tested the HW10 API using an intentionally unavailable Kafka port and inspected its actual HTTP response and recorded error span.
+**How I fixed it.** I implemented the `present_untrusted()` handling in `backend/app/services/safety.py`, which labels and delimits external job and event text using `<untrusted_data>` tags and escapes attempts to spoof those tags. The assistant's system prompt also instructs the model not to obey commands contained in the delimited external content. The defense can be tested with the `ASSISTANT_INJECTION_DEFENSE` configuration switch.
 
-## 4. What did you change, and why does it work now?
+**Verification.** With the defense enabled, the corresponding saved run in `transcripts_injection_after/02_compare.md` recommended **job 1** as the better general data-science fit and recognized that job 215's deadline had passed. This shows a corrected response for the recorded test case; it does not establish that all possible prompt injections are prevented.
 
-I corrected the judge-validation assertion to verify 20 distinct cases, three non-null judge predictions per case, and 60 total evaluations. The corrected verification passed.
+## 5. Additional validation of Part C
 
-I also changed the Kafka bridge to classify the transport-level `ValueError` as a server-side runtime failure. A subsequent failure test returned HTTP 502 and preserved the matching trace ID and Kafka error.
+I checked the Part C implementation through source inspection and saved test artifacts:
 
-These corrections align the verification criteria with the actual experiment design and distinguish infrastructure failures from invalid client requests.
+| Check | Recorded evidence | Result |
+|---|---|---|
+| Confirmation before saving jobs or events | `backend/app/services/confirm.py` and `backend/app/services/assistant_agent.py` | Approval is required for the state-changing save action; read-only tools are not subject to this gate. |
+| Prompt-injection comparison | `transcripts_injection_before/` and `transcripts_injection_after/` | The job-comparison example changed from recommending injected job 215 to preferring job 1 when the defense was enabled. |
+| Bounded error repair | `repair_tests/metrics.json` and `backend/test_repair.py` | **3 passed, 0 failed**: malformed-call recovery, stopping after a repeated malformed call, and unknown-tool recovery. |
+| Live assistant reliability before repair | `reliability_before/metrics.json` | **20 of 20** recorded turns passed the suite's assertions. |
+| Live assistant reliability after repair | `reliability_after/metrics.json` | **20 of 20** recorded turns passed the suite's assertions. |
+
+The identical live-suite pass counts should not be interpreted as a measured improvement in the live pass rate; the saved targeted repair tests provide separate evidence that the bounded repair cases behaved as expected.
+
+## 6. Verification and responsibility
+
+AI assistance helped me reason about implementation options and review my work, but I did not rely on model outputs as authoritative evidence. I checked suggestions against the assignment, my local environment, project source, Git history, and executed tests. In particular, I corrected a development-assistant command that used an inaccessible path and an application-model answer affected by untrusted job-description instructions.
+
+I take responsibility for the code, test evidence, corrections, and AI-use disclosures described above. This document covers **my individual AI use and contributions to Lab 1**.
